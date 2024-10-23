@@ -35,7 +35,7 @@
                                         </a>
                                     </div>
                                     <div class="w-20">
-                                        <img src="{{ Vite::asset('resources/images/01 KETUA UMUM OSIS.png') }}" />
+                                        <img src="{{ asset('images/01 KETUA UMUM OSIS.png') }}" />
                                     </div>
                                 </div>
                             </div>

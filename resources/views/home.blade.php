@@ -43,21 +43,21 @@
                 <div class="relative h-120 overflow-hidden rounded-lg md:h-96">
                     <!-- Item 1 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                        <img src="{{ Vite::asset('public/images/one.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        <img src="{{ asset('images/one.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         <a href="/program-kerja/akademis/mamacu-kakacu" class="absolute block px-8 py-10 bottom-0 left-0 text-4xl font-bold text-white hover:underline">
                             Mamacu Kakacu
                         </a>
                     </div>
                     <!-- Item 2 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="{{ Vite::asset('public/images/two.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        <img src="{{ asset('images/two.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         <a href="https://www.instagram.com/thamrinolymcup" target="_blank" class="absolute block px-8 py-10 bottom-0 left-0 text-4xl font-bold text-white hover:underline">
                             TOC 15
                         </a>
                     </div>
                     <!-- Item 3 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="{{ Vite::asset('public/images/three.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        <img src="{{ asset('images/three.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         <a href="https://www.instagram.com/thamrinolymcup" target="_blank" class="absolute block px-8 py-10 bottom-0 left-0 text-4xl font-bold text-white hover:underline">
                             JVLYN 9.0
                         </a>
@@ -91,7 +91,7 @@
         <!-- Logo Meaning -->
         <section class="flex flex-row justify-center space-x-6">
             <div class="w-[250px]">
-                <img src="{{ Vite::asset('public/images/shidou.png') }}">
+                <img src="{{ asset('images/shidou.png') }}">
             </div>
             <div class="w-2/3 text-left">
                 <h3 class="text-2xl mt-2 mb-6 text-black">
@@ -138,7 +138,7 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat minus obcaecati minima laboriosam expedita officia accusantium quo asperiores eaque maxime, temporibus culpa quia cumque optio enim sequi, amet corrupti adipisci?
             </p>
             <div class="my-8">
-                <img src="{{ Vite::asset('public/images/sae vs rin.png') }}" alt="">
+                <img src="{{ asset('images/sae vs rin.png') }}" alt="">
             </div>
             <a href="/merchandise" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
                 Get started
