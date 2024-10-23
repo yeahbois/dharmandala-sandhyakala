@@ -54,14 +54,14 @@
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div class="grid gap-4">
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img class="h-auto max-w-full rounded-lg" src="{{ Vite::asset('resources/images/program-kerja/k3or/thamfam/img_0942.jpg') }}" alt="">
+                            <img class="h-auto max-w-full rounded-lg" src="{{ asset('images/program-kerja/k3or/thamfam/img_0942.jpg') }}" alt="">
                             <div class="p-4">
                                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
                             </div>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                             <video class="w-full" controls>
-                                <source src="{{ Vite::asset('resources/videos/MVI_7285.MOV') }}" type="video/mp4">
+                                <source src="{{ asset('videos/MVI_7285.MOV') }}" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                             <div class="p-4">
@@ -69,7 +69,7 @@
                             </div>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img class="h-auto max-w-full rounded-lg" src="{{ Vite::asset('resources/images/program-kerja/k3or/thamfam/img_20240817_113057.jpg') }}" alt="">
+                            <img class="h-auto max-w-full rounded-lg" src="{{ asset('images/program-kerja/k3or/thamfam/img_20240817_113057.jpg') }}" alt="">
                             <div class="p-4">
                                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
                             </div>
@@ -77,19 +77,19 @@
                     </div>
                     <div class="grid gap-4">
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img class="h-auto max-w-full rounded-lg" src="{{ Vite::asset('resources/images/program-kerja/k3or/thamfam/img_20240817_113235.jpg') }}" alt="">
+                            <img class="h-auto max-w-full rounded-lg" src="{{ asset('images/program-kerja/k3or/thamfam/img_20240817_113235.jpg') }}" alt="">
                             <div class="p-4">
                                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
                             </div>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img class="h-auto max-w-full rounded-lg" src="{{ Vite::asset('resources/images/program-kerja/k3or/thamfam/img_20240817_104305.jpg') }}" alt="">
+                            <img class="h-auto max-w-full rounded-lg" src="{{ asset('images/program-kerja/k3or/thamfam/img_20240817_104305.jpg') }}" alt="">
                             <div class="p-4">
                                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
                             </div>
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img class="h-auto max-w-full rounded-lg" src="{{ Vite::asset('resources/images/program-kerja/k3or/thamfam/img_0783.jpg') }}" alt="">
+                            <img class="h-auto max-w-full rounded-lg" src="{{ asset('images/program-kerja/k3or/thamfam/img_0783.jpg') }}" alt="">
                             <div class="p-4">
                                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
                             </div>

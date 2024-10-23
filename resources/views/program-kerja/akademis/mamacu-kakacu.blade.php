@@ -61,7 +61,7 @@
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                             <video class="w-full" controls>
-                                <source src="{{ Vite::asset('resources/videos/MVI_7285.MOV') }}" type="video/mp4">
+                                <source src="{{ asset('videos/MVI_7285.MOV') }}" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                             <div class="p-4">

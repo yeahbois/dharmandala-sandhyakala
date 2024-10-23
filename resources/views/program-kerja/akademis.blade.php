@@ -27,7 +27,7 @@
         <section class="py-8 w-full flex flex-col items-start space-y-16">
             <div class="flex self-center">
                 <div>
-                    <img src="{{ Vite::asset('resources/images/10 AKADEMIS.png') }}" class="w-32" />
+                    <img src="{{ asset('images/10 AKADEMIS.png') }}" class="w-32" />
                 </div>
                 <h1 class="py-4 font-semibold text-6xl text-center w-full">
                     Akademis
@@ -45,7 +45,7 @@
                 <div class="flex flex-row space-x-8">
                     <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="/program-kerja/mamacu-kakacu">
-                            <img class="rounded-t-lg" src="{{ Vite::asset('resources/images/unnamed.png') }}" alt="" />
+                            <img class="rounded-t-lg" src="{{ asset('images/unnamed.png') }}" alt="" />
                         </a>
                         <div class="p-5">
                             <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">Akademis</span>
@@ -57,7 +57,7 @@
                     </div>
                     <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
-                            <img class="rounded-t-lg" src="{{ Vite::asset('resources/images/unnamed.png') }}" alt="" />
+                            <img class="rounded-t-lg" src="{{ asset('images/unnamed.png') }}" alt="" />
                         </a>
                         <div class="p-5">
                             <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">K3OR</span>
@@ -69,7 +69,7 @@
                     </div>
                     <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
-                            <img class="rounded-t-lg" src="{{ Vite::asset('resources/images/unnamed.png') }}" alt="" />
+                            <img class="rounded-t-lg" src="{{ asset('images/unnamed.png') }}" alt="" />
                         </a>
                         <div class="p-5">
                             <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">MPK</span>
@@ -90,7 +90,7 @@
                 <div class="flex flex-row space-x-8">
                     <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="/program-kerja/mamacu-kakacu">
-                            <img class="rounded-t-lg" src="{{ Vite::asset('resources/images/unnamed.png') }}" alt="" />
+                            <img class="rounded-t-lg" src="{{ asset('images/unnamed.png') }}" alt="" />
                         </a>
                         <div class="p-5">
                             <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">K3OR</span>
@@ -102,7 +102,7 @@
                     </div>
                     <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
-                            <img class="rounded-t-lg" src="{{ Vite::asset('resources/images/unnamed.png') }}" alt="" />
+                            <img class="rounded-t-lg" src="{{ asset('images/unnamed.png') }}" alt="" />
                         </a>
                         <div class="p-5">
                             <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">K3OR</span>
@@ -114,7 +114,7 @@
                     </div>
                     <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
-                            <img class="rounded-t-lg" src="{{ Vite::asset('resources/images/unnamed.png') }}" alt="" />
+                            <img class="rounded-t-lg" src="{{ asset('images/unnamed.png') }}" alt="" />
                         </a>
                         <div class="p-5">
                             <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">MPK</span>
