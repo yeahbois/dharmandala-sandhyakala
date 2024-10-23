@@ -41,7 +41,7 @@
                     Mamacu Kakacu
                 </h1>
                 <p class="py-2 max-w-[75ch]">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo obcaecati sit culpa nesciunt quo fuga sint numquam, nisi a perspiciatis soluta saepe, hic magnam? Provident dignissimos temporibus assumenda eligendi obcaecati.
+                    Program kerja ini dirancang oleh Seksi Akademis untuk menyediakan media bagi peserta didik SMA Negeri Unggulan M.H. Thamrin yang ingin secara sukarela mengajar anak-anak di tingkat SD/MI, SMP/MTs, dan di asrama panti asuhan sekaligus membantu memberikan materi tambahan kepada peserta didik SD/MI sederajat, SMP/MTs sederajat di sekitar Jakarta maupun anak-anak di panti asuhan. <br><br> <span class="font-medium">Tertarik untuk belajar bersama?</span> Yuk daftar <a href="https://bit.ly/mamacukakacu" target="_blank" class="underline text-blue-500 hover:text-blue-400">di sini!</a>
                 </p>
             </div>
 

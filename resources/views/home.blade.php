@@ -5,7 +5,7 @@
 
     <main class="flex flex-col flex-grow max-w-[1080px] w-full items-center h-full py-12 space-y-24">
         <section class="w-full flex flex-col items-center">
-            <div id="toast-default" class="flex items-center p-4 w-fit text-gray-500 bg-white rounded-lg shadow-lg dark:text-gray-400 dark:bg-gray-800" role="alert">
+            {{-- <div id="toast-default" class="flex items-center p-4 w-fit text-gray-500 bg-white rounded-lg shadow-lg dark:text-gray-400 dark:bg-gray-800" role="alert">
                 <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-orange-500 bg-orange-200 rounded-lg dark:bg-blue-800 dark:text-blue-200">
                     <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.147 15.085a7.159 7.159 0 0 1-6.189 3.307A6.713 6.713 0 0 1 3.1 15.444c-2.679-4.513.287-8.737.888-9.548A4.373 4.373 0 0 0 5 1.608c1.287.953 6.445 3.218 5.537 10.5 1.5-1.122 2.706-3.01 2.853-6.14 1.433 1.049 3.993 5.395 1.757 9.117Z"/>
@@ -21,13 +21,13 @@
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                     </svg>
                 </button>
-            </div>
+            </div> --}}
             <div class="py-4">
                 <h1 class="font-bold text-6xl">
                     Agradama Navaleksa
                 </h1>
                 <p class="mt-1 text-gray-500">
-                    Selamat datang. Kami adalah OSIS SMA Negeri Unggulan M. H. Thamrin. 2024/2025.
+                    Selamat datang di beranda OSIS SMA Negeri Unggulan M. H. Thamrin, 2024/2025.
                 </p>
             </div>
             <!-- <div class="space-x-4">
@@ -91,7 +91,7 @@
         <!-- Logo Meaning -->
         <section class="flex flex-row justify-center space-x-6">
             <div class="w-[250px]">
-                <img src="{{ asset('images/shidou.png') }}">
+                <img src="{{ asset('images/logo/general/ospk.webp') }}">
             </div>
             <div class="w-2/3 text-left">
                 <h3 class="text-2xl mt-2 mb-6 text-black">
@@ -130,7 +130,7 @@
             </div>
         </section>
         <!-- Link to /merchandise -->
-        <section class="bg-white dark:bg-gray-900">
+        {{-- <section class="bg-white dark:bg-gray-900">
             <h3 class="text-6xl font-semibold">
                 Merchandise
             </h3>
@@ -144,6 +144,6 @@
                 Get started
                 <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
             </a>
-        </section>
+        </section> --}}
     </main>
 </x-layout>

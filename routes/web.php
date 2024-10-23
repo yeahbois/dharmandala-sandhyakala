@@ -18,6 +18,10 @@ Route::get('/program-kerja/akademis', function() {
     return view('program-kerja.akademis');
 });
 
+Route::get('/program-kerja/k3or', function() {
+    return view('program-kerja.k3or');
+});
+
 Route::get('/program-kerja/akademis/mamacu-kakacu', function() {
     return view('program-kerja.akademis.mamacu-kakacu');
 });
@@ -36,8 +40,4 @@ Route::get('/kabinet/osis', function() {
 
 Route::get('/kabinet/mpk', function() {
     return view('kabinet.mpk');
-});
-
-Route::get('/kabinet/asrama', function() {
-    return view('kabinet.asrama');
 });

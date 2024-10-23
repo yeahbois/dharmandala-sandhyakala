@@ -25,14 +25,9 @@
             </ol>
         </nav>
         <section class="py-8 w-full flex flex-col items-start space-y-16">
-            <div class="flex self-center">
-                <div>
-                    <img src="{{ asset('images/10 AKADEMIS.png') }}" class="w-32" />
-                </div>
-                <h1 class="py-4 font-semibold text-6xl text-center w-full">
-                    Akademis
-                </h1>
-            </div>
+            <x-seksi title="akad">
+                <x-slot:name>Akademis</x-slot:name>
+            </x-seksi>
             <div>
                 <div class="flex flex-row justify-between pb-4 items-end">
                     <h3 class="text-2xl text-left">
