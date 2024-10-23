@@ -11,7 +11,7 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
-        @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/tabs.js'])
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="bg-white text-black flex flex-col items-center w-full min-h-screen text-center">
         <!-- Header -->
