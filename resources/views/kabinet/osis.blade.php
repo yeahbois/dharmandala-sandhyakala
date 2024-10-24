@@ -1,151 +1,78 @@
-<x-layout>
-    <x-slot:title>
-        OSIS | Agradama Navaleksa
-    </x-slot:title>
-
+<x-layout title="OSIS">
     <main class="flex flex-col flex-grow w-full h-full">
         <section class="bg-white dark:bg-gray-900">
             <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                 <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-                    <h2 class="mb-4 text-6xl tracking-tight font-semibold text-gray-900 dark:text-white">
+                    <h1 class="mb-4 text-6xl tracking-tight font-semibold text-gray-900 dark:text-white">
                         Pengurus OSIS MHT
-                    </h2>
+                    </h1>
                     <p class="text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
-                        Explore the whole collection of open-source web components and elements built with the utility classes from Tailwind.
+                        Agradama Navaleksa 2024/2025.
                     </p>
                 </div>
                 <div class="space-y-32">
-                    <div>
-                        <h3 class="text-left text-3xl font-semibold my-8">
-                            Badan Pengurus Harian
-                        </h3>
-                        <div class="grid gap-8 [grid-template-columns:repeat(auto-fit,minmax(125px,1fr))]">
-                            <div class="flex flex-col items-center rounded-lg shadow-lg">
-                                <img class="w-32 rounded-lg sm:rounded-none sm:rounded-l-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="Bonnie Avatar">
-                                <div class="flex flex-row w-full items-center justify-between p-6">
-                                    <div class="flex flex-col w-fit items-start">
-                                        <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                            <a href="#">Bonnie Green</a>
-                                        </h3>
-                                        <span class="text-gray-500 dark:text-gray-400">Ketua Umum OSIS</span>
-                                        <a href="#" class="pt-2 text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                    <div class="w-20">
-                                        <img src="{{ asset('images/01 KETUA UMUM OSIS.png') }}" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col items-center rounded-lg shadow-lg">
-                                <img class="w-32 rounded-lg sm:rounded-none sm:rounded-l-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="Jese Avatar">
-                                <div class="p-5 flex flex-col w-full items-center">
-                                    <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                        <a href="#">Jese Leos</a>
-                                    </h3>
-                                    <span class="text-gray-500 dark:text-gray-400">CTO</span>
-                                    <a href="#" class="pt-2 text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="flex flex-col items-center rounded-lg shadow-lg">
-                                <img class="w-32 rounded-lg sm:rounded-none sm:rounded-l-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="Michael Avatar">
-                                <div class="p-5 flex flex-col w-full items-center">
-                                    <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                        <a href="#">Michael Gough</a>
-                                    </h3>
-                                    <span class="text-gray-500 dark:text-gray-400">Senior Front-end Developer</span>
-                                    <a href="#" class="pt-2 text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="flex flex-col items-center rounded-lg shadow-lg">
-                                <img class="w-32 rounded-lg sm:rounded-none sm:rounded-l-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/sofia-mcguire.png" alt="Sofia Avatar">
-                                <div class="p-5 flex flex-col w-full items-center">
-                                    <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                        <a href="#">Lana Byrd</a>
-                                    </h3>
-                                    <span class="text-gray-500 dark:text-gray-400">Marketing & Sale</span>
-                                    <a href="#" class="pt-2 text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <a href="/program-kerja/akademis" class="block text-left hover:underline text-3xl font-semibold my-8">
-                            Akademis
-                        </a>
-                        <div class="grid gap-8 [grid-template-columns:repeat(auto-fit,minmax(125px,1fr))]">
-                            <div class="flex flex-col items-center rounded-lg shadow-lg">
-                                <img class="w-32 rounded-lg sm:rounded-none sm:rounded-l-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="Bonnie Avatar">
-                                <div class="p-5 flex flex-col w-full items-center">
-                                    <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                        <a href="#">Bonnie Green</a>
-                                    </h3>
-                                    <span class="text-gray-500 dark:text-gray-400">Ketua Umum OSIS</span>
-                                    <a href="#" class="pt-2 text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="flex flex-col items-center rounded-lg shadow-lg">
-                                <img class="w-32 rounded-lg sm:rounded-none sm:rounded-l-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="Jese Avatar">
-                                <div class="p-5 flex flex-col w-full items-center">
-                                    <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                        <a href="#">Jese Leos</a>
-                                    </h3>
-                                    <span class="text-gray-500 dark:text-gray-400">CTO</span>
-                                    <a href="#" class="pt-2 text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="flex flex-col items-center rounded-lg shadow-lg">
-                                <img class="w-32 rounded-lg sm:rounded-none sm:rounded-l-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="Michael Avatar">
-                                <div class="p-5 flex flex-col w-full items-center">
-                                    <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                        <a href="#">Michael Gough</a>
-                                    </h3>
-                                    <span class="text-gray-500 dark:text-gray-400">Senior Front-end Developer</span>
-                                    <a href="#" class="pt-2 text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="flex flex-col items-center rounded-lg shadow-lg">
-                                <img class="w-32 rounded-lg sm:rounded-none sm:rounded-l-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/sofia-mcguire.png" alt="Sofia Avatar">
-                                <div class="p-5 flex flex-col w-full items-center">
-                                    <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                        <a href="#">Lana Byrd</a>
-                                    </h3>
-                                    <span class="text-gray-500 dark:text-gray-400">Marketing & Sale</span>
-                                    <a href="#" class="pt-2 text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <x-seksi.kabinet name="Badan Pengurus Harian" group="BPH">                          
+                        <x-card link="osis/bph/ega" name="Ega Aryasatya" ig="saty4._" logoLink="osis/ketua" role="Ketua Umum OSIS"></x-card>
+                        <x-card link="osis/bph/bita" name="Queen Tabriz Tsabita" ig="queentabriz" logoLink="osis/kabid1" role="Ketua Bidang 1"></x-card>
+                        <x-card link="osis/bph/safira" name="Safira Chairunnisa Wiyono" ig="luvviestellaa" logoLink="osis/kabid2" role="Ketua Bidang 2"></x-card>
+                        <x-card link="osis/bph/adel" name="Adelia Nasywa Ramadhani" ig="adelianrd" logoLink="osis/sekre" role="Sekretaris 1"></x-card>
+                        <x-card link="osis/bph/nazwa" name="Nazwa Syafitri" ig="nazwasyaf_" logoLink="osis/sekre" role="Sekretaris 2"></x-card>
+                        <x-card link="osis/bph/safa" name="Safa Alzena Riszy" ig="safalzenaa" logoLink="osis/benda" role="Bendahara 1"></x-card>
+                        <x-card link="osis/bph/desvita" name="Desvita Putri Zulhijah" ig="dsvta.p" logoLink="osis/benda" role="Bendahara 2"></x-card>
+                        <x-card link="osis/bph/syifa" name="Nabila Asy-Syifa Taufik" ig="__syiffa" logoLink="osis/humas" role="Humas 1"></x-card>
+                        <x-card link="osis/bph/eddy" name="Eddy Husni Duki" ig="eddy.duki" logoLink="osis/humas" role="Humas 2"></x-card>
+                        <x-card link="osis/bph/ara" name="Azkya Zahra Putrilita" ig="azkyazahra.p" logoLink="osis/humas" role="Humas 3"></x-card>
+                    </x-seksi.kabinet>
+                    <x-seksi.kabinet name="Publikasi dan Dokumentasi" group="Bidang 1">                          
+                        <x-card link="osis/pudo/anin" name="Anindya Zilka Qisthi" ig="aninnzq" logoLink="osis/pudo" role="Ketua PUDO"></x-card>
+                        <x-card link="osis/pudo/erian" name="Erian Ahmad Feriansyah" ig="ryanweebs" logoLink="osis/pudo" role="Wakil Ketua PUDO"></x-card>
+                        <x-card link="osis/pudo/bintang" name="Bintang Parama Andra Dewanto" ig="bintang.dewanto" logoLink="osis/pudo" role="Anggota PUDO"></x-card>
+                        <x-card link="osis/pudo/izzah" name="Izzah Nayla Fathina" ig="izzahnyl" logoLink="osis/pudo" role="Anggota PUDO"></x-card>
+                        <x-card link="osis/pudo/aya" name="Junaya Sabti Legina" ig="nnayaww" logoLink="osis/pudo" role="Anggota PUDO"></x-card>
+                        <x-card link="osis/pudo/cua" name="Nasywa Kamilah Hakim" ig="nassywahakim" logoLink="osis/pudo" role="Anggota PUDO"></x-card>
+                        <x-card link="osis/pudo/khanza" name="Adebia Khanza Az-Zahra" ig="adebia.k" logoLink="osis/pudo" role="Anggota PUDO"></x-card>
+                        <x-card link="osis/pudo/izwa" name="Izwa Cahya Al Ainaa" ig="_izwa._.uwu._" logoLink="osis/pudo" role="Anggota PUDO"></x-card>
+                    </x-seksi.kabinet>
+                    <x-seksi.kabinet name="Kreativitas, Keterampilan, Kewirausahaan, dan Olahraga" group="Bidang 1">                          
+                        <x-card link="osis/k3or/arrow" name="Arrow Dunatos Pascha Kristian" ig="arroeow" logoLink="osis/k3or" role="Ketua K3OR"></x-card>
+                        <x-card link="osis/k3or/kim" name="Kimberly Ciputri" ig="kimberly.ciputri" logoLink="osis/k3or" role="Wakil Ketua K3OR"></x-card>
+                        <x-card link="osis/k3or/neila" name="Nathaneila Daniyah Rahma" ig="nathaneila_daniyah" logoLink="osis/k3or" role="Anggota K3OR"></x-card>
+                        <x-card link="osis/k3or/joyce" name="Joyce Eliana Aritonang" ig="joy3li" logoLink="osis/k3or" role="Anggota K3OR"></x-card>
+                        <x-card link="osis/k3or/kezia" name="Kezia Jovita Ghassani" ig="kezia.jovita" logoLink="osis/k3or" role="Anggota K3OR"></x-card>
+                        <x-card link="osis/k3or/zaidan" name="Muhammad Zaidan Alfatih Maimun" ig="zaidan_zmm" logoLink="osis/k3or" role="Anggota K3OR"></x-card>
+                        <x-card link="osis/k3or/toreno" name="Toreno Matthias Sianturi" ig="toreno.ms" logoLink="osis/k3or" role="Anggota K3OR"></x-card>
+                    </x-seksi.kabinet>
+                    <x-seksi.kabinet name="Sastra Budaya" group="Bidang 1">                          
+                        <x-card link="osis/sasbud/ilfa" name="Ilfariyani Nurfaizah Syahrial" ig="ffasollassid0w0" logoLink="osis/sasbud" role="Ketua Sasbud"></x-card>
+                        <x-card link="osis/sasbud/nevlin" name="Nevlin Fulvian Rohman" ig="grant_ies" logoLink="osis/sasbud" role="Wakil Ketua Sasbud"></x-card>
+                        <x-card link="osis/sasbud/muti" name="Mutiara Alya Putri" ig="mutiaaly__" logoLink="osis/sasbud" role="Anggota Sasbud"></x-card>
+                        <x-card link="osis/sasbud/fadel" name="Fadel Rayyan Fazlullah" ig="fryfzl_" logoLink="osis/sasbud" role="Anggota Sasbud"></x-card>
+                        <x-card link="osis/sasbud/bitha" name="Aisyahbitha Early Ramadhanty" ig="ckissed" logoLink="osis/sasbud" role="Anggota Sasbud"></x-card>
+                        <x-card link="osis/sasbud/balqisr" name="Balqis Ruehainah" ig="blqisrueee_" logoLink="osis/sasbud" role="Anggota Sasbud"></x-card>
+                    </x-seksi.kabinet>
+                    <x-seksi.kabinet name="Demokrasi, HAM, dan Lingkungan" group="Bidang 2">                          
+                        <x-card link="osis/dhl/ditha" name="Ditha Candra Ramadhani" ig="dithaacandra" logoLink="osis/dhl" role="Ketua DHL"></x-card>
+                        <x-card link="osis/dhl/fariq" name="Muhammad Fariq Hidayat" ig="hidayatfariq" logoLink="osis/dhl" role="Wakil Ketua DHL"></x-card>
+                        <x-card link="osis/dhl/balqis" name="Balqis Aqilla Nada" ig="balqissan" logoLink="osis/dhl" role="Anggota DHL"></x-card>
+                        <x-card link="osis/dhl/joshua" name="Joshua Arya Pandhita Sitorus" ig="joshuaaaaps" logoLink="osis/dhl" role="Anggota DHL"></x-card>
+                        <x-card link="osis/dhl/ghina" name="Santia Ghina Murtaja" ig="santiaghina" logoLink="osis/dhl" role="Anggota DHL"></x-card>
+                        <x-card link="osis/dhl/rafif" name="Rafif Shafy Safaraz Indratno" ig="apip1708" logoLink="osis/dhl" role="Anggota DHL"></x-card>
+                    </x-seksi.kabinet>
+                    <x-seksi.kabinet name="Akademis" group="Bidang 2">                          
+                        <x-card link="osis/akad/coki" name="Arfan Erzananda Dildar" ig="arfanerzananda" logoLink="osis/akad" role="Ketua Akademis"></x-card>
+                        <x-card link="osis/akad/azka" name="Muhammad Azka Ghulam Idrus" ig="azkaidrus" logoLink="osis/akad" role="Wakil Ketua Akademis"></x-card>
+                        <x-card link="osis/akad/airell" name="Airellrakha Ibnu Faiq" ig="airellrakha" logoLink="osis/akad" role="Anggota Akademis"></x-card>
+                        <x-card link="osis/akad/lyona" name="Lyona Caithlyn" ig="lyonacaithlyn" logoLink="osis/akad" role="Anggota Akademis"></x-card>
+                        <x-card link="osis/akad/syakira" name="Syakira Basalama" ig="syakirabasalama" logoLink="osis/akad" role="Anggota Akademis"></x-card>
+                        <x-card link="osis/akad/aurell" name="Aurellia Shafina" ig="aurelliashafina" logoLink="osis/akad" role="Anggota Akademis"></x-card>
+                        <x-card link="osis/akad/cello" name="Marcello Lienarta" ig="lacello.lien" logoLink="osis/akad" role="Anggota Akademis"></x-card>
+                    </x-seksi.kabinet>
+                    <x-seksi.kabinet name="Rohani" group="Bidang 2">                          
+                        <x-card link="osis/rohani/rasyid" name="Ryaas Rasyid Anwar" ig="rasyidwar" logoLink="osis/rohani" role="Ketua Rohani"></x-card>
+                        <x-card link="osis/rohani/daryl" name="Daryl Togap Winner Marpaung" ig="darylmarpaung_" logoLink="osis/rohani" role="Wakil Ketua Rohani"></x-card>
+                        <x-card link="osis/rohani/kemal" name="Muhammad Kemal Sakhi" ig="mks.oul_16" logoLink="osis/rohani" role="Anggota Rohani"></x-card>
+                        <x-card link="osis/rohani/yofi" name="Yofiana Freya Aprilia Siahaan" ig="yofiana_s" logoLink="osis/rohani" role="Anggota Rohani"></x-card>
+                    </x-seksi.kabinet>
                 </div>
             </div>
         </section>

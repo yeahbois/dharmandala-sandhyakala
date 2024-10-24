@@ -1,8 +1,4 @@
-<x-layout>
-    <x-slot:title>
-        Merch | Agradama Navaleksa
-    </x-slot:title>
-
+<x-layout title="MERCHANDISE">
     <main class="flex flex-col flex-grow w-full max-w-[1080px] h-full">
         <section class="py-8 w-full flex flex-col items-start space-y-12">
             <h1 class="py-4 font-bold text-6xl text-center w-full">

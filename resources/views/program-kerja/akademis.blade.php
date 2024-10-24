@@ -1,8 +1,4 @@
-<x-layout>
-    <x-slot:title>
-        Akademis | Agradama Navaleksa
-    </x-slot:title>
-
+<x-layout title="AKADEMIS">
     <main class="flex flex-col flex-grow w-full max-w-[1080px] h-full">
         <nav class="flex mt-4" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
@@ -25,9 +21,7 @@
             </ol>
         </nav>
         <section class="py-8 w-full flex flex-col items-start space-y-16">
-            <x-seksi title="akad">
-                <x-slot:name>Akademis</x-slot:name>
-            </x-seksi>
+            <x-seksi.hero title="akad" name="Akademis"></x-seksi.hero>
             <div>
                 <div class="flex flex-row justify-between pb-4 items-end">
                     <h3 class="text-2xl text-left">
