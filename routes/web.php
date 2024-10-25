@@ -45,3 +45,7 @@ Route::get('/kabinet/mpk', function() {
 Route::get('/thalation', function() {
     return view('thalation');
 });
+
+Route::get('/publikasi-prestasi', function() {
+    return view('pubpres');
+});
