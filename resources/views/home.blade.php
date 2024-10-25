@@ -1,4 +1,4 @@
-<x-layout title="OSIS MHT">
+<x-layout title="OSIS MPK MHT">
     <x-slot:opening>        
         <section class="w-full h-[100vh] flex flex-col justify-center items-center">
             <div class="flex flex-col items-center justify-center py-4">
@@ -132,7 +132,8 @@
                     </div>
                     <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="banner" role="tabpanel" aria-labelledby="banner-tab">
                         <p class="text-sm text-gray-500 dark:text-gray-400">
-                            Banner bertuliskan Agradama Navaleksa yang merupakan <strong class="font-medium text-gray-800 dark:text-white">nama kabinet</strong> kepengurusan OSIS MPK SMA Negeri Unggulan M.H. Thamrin masa bakti 2024/2025. Nama tersebut ditempatkan pada banner sebagai identitas kabinet yang akan menjalankan tugas dan tanggung jawab kepemimpinan pada periode tersebut.
+                            Banner bertuliskan Agradama Navaleksa yang merupakan <strong class="font-medium text-gray-800 dark:text-white">nama kabinet</strong> kepengurusan OSIS MPK SMA Negeri Unggulan M.H. Thamrin masa bakti 2024/2025. Nama tersebut ditempatkan pada banner sebagai identitas kabinet yang akan menjalankan tugas dan tanggung jawab kepemimpinan pada periode tersebut.<br><br>
+                            Adapun nama Agradama Navaleksa merupakan singkatan dari <strong class="font-medium text-gray-800 dark:text-white">Agranaya Mahadhama Navadhara Leksa</strong> yang berarti <strong class="font-medium text-gray-800 dark:text-white">elang muda tangguh membawa inovasi dengan ikatan yang kuat untuk perubahan masa depan</strong>.
                         </p>
                     </div>
                     <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="neraca" role="tabpanel" aria-labelledby="neraca-tab">

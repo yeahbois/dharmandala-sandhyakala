@@ -1,8 +1,4 @@
-<x-layout>
-    <x-slot:title>
-        Mamacu Kakacu | Agradama Navaleksa
-    </x-slot:title>
-
+<x-layout title="MAMACU KAKACU">
     <main class="flex flex-col flex-grow w-full max-w-[1080px] h-full">
         <nav class="flex mt-4" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
@@ -40,7 +36,7 @@
                 <h1 class="font-bold text-6xl text-center w-full">
                     Mamacu Kakacu
                 </h1>
-                <p class="py-2 max-w-[75ch]">
+                <p class="text-gray-500 py-2 max-w-[75ch]">
                     Program kerja ini dirancang oleh Seksi Akademis untuk menyediakan media bagi peserta didik SMA Negeri Unggulan M.H. Thamrin yang ingin secara sukarela mengajar anak-anak di tingkat SD/MI, SMP/MTs, dan di asrama panti asuhan sekaligus membantu memberikan materi tambahan kepada peserta didik SD/MI sederajat, SMP/MTs sederajat di sekitar Jakarta maupun anak-anak di panti asuhan. <br><br> <span class="font-medium">Tertarik untuk belajar bersama?</span> Yuk daftar <a href="https://bit.ly/mamacukakacu" target="_blank" class="underline text-blue-500 hover:text-blue-400">di sini!</a>
                 </p>
             </div>

@@ -41,3 +41,7 @@ Route::get('/kabinet/osis', function() {
 Route::get('/kabinet/mpk', function() {
     return view('kabinet.mpk');
 });
+
+Route::get('/thalation', function() {
+    return view('thalation');
+});
