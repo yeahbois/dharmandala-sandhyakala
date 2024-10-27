@@ -26,8 +26,12 @@ Route::get('/program-kerja/akademis/mamacu-kakacu', function() {
     return view('program-kerja.akademis.mamacu-kakacu');
 });
 
-Route::get('/program-kerja/k3or/thamfam', function() {
+Route::get('/program-kerja/k3or/thamrin-family-gathering', function() {
     return view('program-kerja.k3or.thamfam');
+});
+
+Route::get('/program-kerja/sastra-budaya/thamrin-sastra-fair', function() {
+    return view('program-kerja.sasbud.tsf');
 });
 
 Route::get('/merchandise', function() {

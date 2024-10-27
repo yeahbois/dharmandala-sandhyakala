@@ -1,8 +1,4 @@
-<x-layout>
-    <x-slot:title>
-        Akademis | Agradama Navaleksa
-    </x-slot:title>
-
+<x-layout title="K3OR">
     <main class="flex flex-col flex-grow w-full max-w-[1080px] h-full">
         <nav class="flex mt-4" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">

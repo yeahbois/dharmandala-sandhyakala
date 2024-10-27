@@ -1,9 +1,5 @@
-<x-layout>
-    <x-slot:title>
-        Thamfam | Agradama Navaleksa
-    </x-slot:title>
-
-    <main class="flex flex-col flex-grow w-full max-w-[1080px] h-full">
+<x-layout title="THAMFAM">
+    <main class="flex flex-col px-4 flex-grow w-full max-w-[1080px] h-full">
         <nav class="flex mt-4" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                 <li class="inline-flex items-center">
@@ -19,7 +15,7 @@
                         <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                         </svg>
-                        <a href="/program-kerja/k3or" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">
+                        <a href="#" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">
                             K3OR
                         </a>
                     </div>
@@ -29,110 +25,59 @@
                         <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                         </svg>
-                        <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">Thamrin Family Gathering</span>
+                        <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">
+                            Thamrin Family Gathering
+                        </span>
                     </div>
                 </li>
             </ol>
         </nav>
         <section class="py-8 w-full flex flex-col items-start space-y-16">
             <div class="py-4 flex flex-col w-full items-center">
-                <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">K3OR</span>
+                <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">
+                    K3OR
+                </span>
                 <h1 class="font-bold text-6xl text-center w-full">
                     Thamrin Family Gathering
                 </h1>
-                <p class="py-2 max-w-[75ch]">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo obcaecati sit culpa nesciunt quo fuga sint numquam, nisi a perspiciatis soluta saepe, hic magnam? Provident dignissimos temporibus assumenda eligendi obcaecati.
+                <p class="text-gray-500 py-2 max-w-[75ch]">
+                    Perayaan HUT RI dipenuhi lomba dan acara seru
+                    yang menjadi kesempatan bagi seluruh warga sekolah untuk bersilaturahmi, terutama antara peserta didik dan orang tua murid lintas angkatan. 
                 </p>
             </div>
-
             <div>
                 <div class="flex flex-row justify-between pb-4 items-end">
                     <h3 class="text-2xl text-left">
                         Highlights
                     </h3>
                 </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="grid gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex flex-col space-y-4">
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img class="h-auto max-w-full rounded-lg" src="{{ asset('images/program-kerja/k3or/thamfam/img_0942.jpg') }}" alt="">
-                            <div class="p-4">
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                            </div>
+                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/0AF2293E-690A-408D-9549-3E386272ACD4-1277-000000162E060A1B.webp') }} alt="">
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <video class="w-full" controls>
-                                <source src="{{ asset('videos/MVI_7285.MOV') }}" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <div class="p-4">
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                            </div>
+                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/0CDA2DDA-4CF2-44F0-8FE4-A9F3179EBDC9-1277-000000164A1E724C.webp') }} alt="">
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img class="h-auto max-w-full rounded-lg" src="{{ asset('images/program-kerja/k3or/thamfam/img_20240817_113057.jpg') }}" alt="">
-                            <div class="p-4">
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                            </div>
+                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/1B52A98D-6790-456C-85EB-91AF1D80E479-1277-00000027FDF19FA6.webp') }} alt="">
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/IMG_0942.webp') }} alt="">
                         </div>
                     </div>
-                    <div class="grid gap-4">
+                    <div class="flex flex-col space-y-4">
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img class="h-auto max-w-full rounded-lg" src="{{ asset('images/program-kerja/k3or/thamfam/img_20240817_113235.jpg') }}" alt="">
-                            <div class="p-4">
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                            </div>
+                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/F6FA399B-1AA4-4E30-B64A-EC6FA098A899-1277-0000001F780171DB.webp') }} alt="">
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img class="h-auto max-w-full rounded-lg" src="{{ asset('images/program-kerja/k3or/thamfam/img_20240817_104305.jpg') }}" alt="">
-                            <div class="p-4">
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                            </div>
+                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/IMG_0750.webp') }} alt="">
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img class="h-auto max-w-full rounded-lg" src="{{ asset('images/program-kerja/k3or/thamfam/img_0783.jpg') }}" alt="">
-                            <div class="p-4">
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid gap-4">
-                        <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="">
-                            <div class="p-4">
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                            </div>
+                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/IMG_0783.webp') }} alt="">
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="">
-                            <div class="p-4">
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                            </div>
-                        </div>
-                        <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="">
-                            <div class="p-4">
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid gap-4">
-                        <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="">
-                            <div class="p-4">
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                            </div>
-                        </div>
-                        <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt="">
-                            <div class="p-4">
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                            </div>
-                        </div>
-                        <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="">
-                            <div class="p-4">
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                            </div>
+                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/IMG_20240817_113057.webp') }} alt="">
                         </div>
                     </div>
                 </div>
