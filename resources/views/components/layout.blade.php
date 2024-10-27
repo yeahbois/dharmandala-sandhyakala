@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        {{ $metadesc ?? null }}
 
         <title>{{ $title.' | AGRADAMA NAVALEKSA 2024/2025' ?? 'AGRADAMA NAVALEKSA 2024/2025' }}</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('/images/favicon.ico') }}">
@@ -19,7 +20,7 @@
             <nav class="w-full">
                 <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                     <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                        <img src={{ asset('/images/logo/general/ospk.webp') }} class="h-8" alt="Logo OSPK" />
+                        <img src={{ asset('/images/logo/general/ospk32.webp') }} alt="Logo OSPK" />
                         <span class="self-center text-2xl font-medium whitespace-nowrap dark:text-white">Agradama Navaleksa</span>
                     </a>
                     <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-dropdown" aria-expanded="false">
@@ -85,7 +86,7 @@
             <nav class="absolute top-0 w-full">
                 <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                     <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                        <img src={{ asset('/images/logo/general/ospk.webp') }} class="h-8" alt="Logo OSPK" />
+                        <img src={{ asset('/images/logo/general/ospk32.webp') }} alt="Logo OSPK" />
                         <span class="self-center text-2xl font-medium whitespace-nowrap dark:text-white">Agradama Navaleksa</span>
                     </a>
                     <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-dropdown" aria-expanded="false">

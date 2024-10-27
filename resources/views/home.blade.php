@@ -1,8 +1,13 @@
 <x-layout title="OSIS MPK MHT">
+    <x-slot:metadesc>
+        <meta name="Beranda OSIS MPK SMA Unggulan M. H. Thamrin" content="
+            
+        ">
+    </x-slot:metadesc>
     <x-slot:opening>        
         <section class="w-full h-[100vh] flex flex-col justify-center items-center">
             <div class="flex flex-col items-center justify-center py-4">
-                <img src={{ asset('images/logo/general/ospk.webp') }} class="w-96">
+                <img src={{ asset('images/logo/general/ospk384.webp') }}>
                 <h1 class="font-bold text-6xl">
                     Agradama Navaleksa
                 </h1>
@@ -76,9 +81,7 @@
         </div> --}}
         <!-- Logo Meaning -->
         <section class="flex flex-col sm:flex-row sm:space-x-3 justify-center items-center">
-            <div class="w-[250px]">
-                <img src="{{ asset('images/logo/general/ospk.webp') }}">
-            </div>
+            <img src="{{ asset('images/logo/general/ospk228.webp') }}">
             <div class="w-full sm:w-5/6 text-center sm:text-left">
                 <h2 class="font-semibold text-4xl mb-3 text-black">
                     Our Logo
