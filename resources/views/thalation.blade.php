@@ -3,7 +3,7 @@
         <section class="w-full min-h-[100vh] mt-[10vh] md:mt-0 flex flex-col md:flex-row justify-center items-center">
             <div class="flex flex-col flex-1 h-full items-center justify-center px-6">
                 <div class="flex flex-col items-center justify-center py-2">
-                    <img src={{ asset('images/logo/general/mpk.webp') }} class="w-96">
+                    <img src={{ asset('images/logo/general/mpk380.webp') }} class="w-96">
                     <h1 class="font-bold text-6xl">
                         Thalation
                     </h1>
@@ -57,7 +57,7 @@
                         OA Line
                     </h2>
                     <a class="block max-w-[100px] text-slate-900 hover:text-blue-500" href="https://linevoom.line.me/user/_dXN731XnZF7XszfAy8omILGBZ7zWxk3-gbubMJs" target="_blank">
-                        <img src={{ asset('/icons/line.webp') }} alt="" class="m-auto my-2 aspect-auto rounded-md max-w-[100px]">
+                        <img src={{ asset('/icons/line98.webp') }} alt="" class="m-auto my-2 aspect-auto rounded-md max-w-[100px]">
                         <h3 class="m-auto text-center font-bold text-xl">
                             @oyw9031z
                         </h3>

@@ -165,19 +165,19 @@
                         <span class="sr-only">Email account</span>
                     </a> --}}
                     <a href="https://wa.me/+6281310370022" target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                        <img src={{ asset('icons/whatsapp.png') }} class="h-5 grayscale duration-150 hover:grayscale-0 focus:grayscale-0">
+                        <img src={{ asset('icons/whatsapp.webp') }} class="h-5 grayscale duration-150 hover:grayscale-0 focus:grayscale-0">
                         <span class="sr-only">WhatsApp number</span>
                     </a>
                     <a href="https://x.com/osismpkthamrin" target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                        <img src={{ asset('icons/x.png') }} class="h-4 grayscale duration-150 hover:grayscale-0 focus:grayscale-0">
+                        <img src={{ asset('icons/x.webp') }} class="h-4 grayscale duration-150 hover:grayscale-0 focus:grayscale-0">
                         <span class="sr-only">Twitter page</span>
                     </a>
                     <a href="https://instagram.com/osismpkthamrin" target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                        <img src={{ asset('icons/instagram.png') }} class="h-5 grayscale duration-150 hover:grayscale-0 focus:grayscale-0">
+                        <img src={{ asset('icons/instagram.webp') }} class="h-5 grayscale duration-150 hover:grayscale-0 focus:grayscale-0">
                         <span class="sr-only">Instagram account</span>
                     </a>
                     <a href="https://www.youtube.com/@OSISMPKSMANUMHTHAMRIN" target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                        <img src={{ asset('icons/youtube.png') }} class="h-4 grayscale duration-150 hover:grayscale-0 focus:grayscale-0">
+                        <img src={{ asset('icons/youtube.webp') }} class="h-4 grayscale duration-150 hover:grayscale-0 focus:grayscale-0">
                         <span class="sr-only">YouTube account</span>
                     </a>
                 </div>

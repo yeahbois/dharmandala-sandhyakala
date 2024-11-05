@@ -53,24 +53,24 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="flex flex-col space-y-4">
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/sasbud/tsf/2016_1103_11100600.webp') }} alt="">
+                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/sasbud/tsf/2016_1103_11100600514600.webp') }} alt="">
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/sasbud/tsf/2016_1103_11304700.webp') }} alt="">
+                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/sasbud/tsf/2016_1103_11304700514600.webp') }} alt="">
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/sasbud/tsf/2016_1103_11481900.webp') }} alt="">
+                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/sasbud/tsf/2016_1103_11481900514600.webp') }} alt="">
                         </div>
                     </div>
                     <div class="flex flex-col space-y-4">
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/sasbud/tsf/2016_1103_13301800.webp') }} alt="">
+                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/sasbud/tsf/2016_1103_13301800514600.webp') }} alt="">
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/sasbud/tsf/2016_1103_13341100.webp') }} alt="">
+                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/sasbud/tsf/2016_1103_13341100514600.webp') }} alt="">
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/sasbud/tsf/2016_1103_13444600.webp') }} alt="">
+                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/sasbud/tsf/2016_1103_13444600514600.webp') }} alt="">
                         </div>
                     </div>
                 </div>

@@ -65,27 +65,27 @@
                     <div class="relative w-[350px] md:w-[600px] h-64 overflow-hidden rounded-lg md:h-96">
                         <!-- Item 1 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={{ asset('/images/prestasi/19agu/IMG_1077.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src={{ asset('/images/prestasi/19agu/IMG_1077600.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
                         <!-- Item 2 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={{ asset('/images/prestasi/19agu/IMG_1057.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src={{ asset('/images/prestasi/19agu/IMG_1057600.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
                         <!-- Item 3 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={{ asset('/images/prestasi/19agu/IMG_1064.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src={{ asset('/images/prestasi/19agu/IMG_1064600.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
                         <!-- Item 4 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
                         </div>
-                            <img src={{ asset('/images/prestasi/19agu/IMG_1071.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src={{ asset('/images/prestasi/19agu/IMG_1071600.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         <!-- Item 5 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={{ asset('/images/prestasi/19agu/IMG_1059.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src={{ asset('/images/prestasi/19agu/IMG_1059600.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
                         <!-- Item 6 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={{ asset('/images/prestasi/19agu/IMG_1061.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src={{ asset('/images/prestasi/19agu/IMG_1061600.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
                     </div>
                     <!-- Slider indicators -->
@@ -125,39 +125,39 @@
                     <div class="relative w-[350px] md:w-[600px] h-64 overflow-hidden rounded-lg md:h-96">
                         <!-- Item 1 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={{ asset('/images/prestasi/2sep/4E7CFC0B-7B7A-496E-AB12-DCDC1F8100ED-389-0000000597BFF340.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src={{ asset('/images/prestasi/2sep/4E7CFC0B-7B7A-496E-AB12-DCDC1F8100ED-389-0000000597BFF340600.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
                         <!-- Item 2 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={{ asset('/images/prestasi/2sep/1D32D1B5-7C2C-4B41-A633-F05F89AA2526-389-0000000594D1D9B2.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src={{ asset('/images/prestasi/2sep/1D32D1B5-7C2C-4B41-A633-F05F89AA2526-389-0000000594D1D9B2600.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
                         <!-- Item 3 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={{ asset('/images/prestasi/2sep/5ACFBCBA-F096-481E-92B1-158C40683E71-389-0000000663A1CE77.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src={{ asset('/images/prestasi/2sep/5ACFBCBA-F096-481E-92B1-158C40683E71-389-0000000663A1CE77600.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
                         <!-- Item 4 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={{ asset('/images/prestasi/2sep/6C9BBEF5-47C3-4DCC-8C14-89050E332E09-389-000000059D6A03D5.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src={{ asset('/images/prestasi/2sep/6C9BBEF5-47C3-4DCC-8C14-89050E332E09-389-000000059D6A03D5600.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
                         <!-- Item 5 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={{ asset('/images/prestasi/2sep/74AE2598-05D9-45EF-83F0-151AE3FC28E7-389-000000066C38CF3F.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src={{ asset('/images/prestasi/2sep/74AE2598-05D9-45EF-83F0-151AE3FC28E7-389-000000066C38CF3F600.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
                         <!-- Item 6 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={{ asset('/images/prestasi/2sep/83E080F0-DB5E-4DE1-AAE4-3568526A0609-389-0000000561F9A313.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src={{ asset('/images/prestasi/2sep/83E080F0-DB5E-4DE1-AAE4-3568526A0609-389-0000000561F9A313600.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
                         <!-- Item 7 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={{ asset('/images/prestasi/2sep/327C6C3C-541A-40D0-8702-FA738A57DD2C-389-00000006578BF85F.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src={{ asset('/images/prestasi/2sep/327C6C3C-541A-40D0-8702-FA738A57DD2C-389-00000006578BF85F600.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
                         <!-- Item 8 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={{ asset('/images/prestasi/2sep/558227E6-5892-494D-BCA0-036C68D69525-389-000000065D249B09.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src={{ asset('/images/prestasi/2sep/558227E6-5892-494D-BCA0-036C68D69525-389-000000065D249B09600.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
                         <!-- Item 9 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={{ asset('/images/prestasi/2sep/BDD8BCF6-58D2-4C5D-9592-6DFEDAB27A6B-389-0000000660D97908.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src={{ asset('/images/prestasi/2sep/BDD8BCF6-58D2-4C5D-9592-6DFEDAB27A6B-389-0000000660D97908600.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
                     </div>
                     <!-- Slider indicators -->
