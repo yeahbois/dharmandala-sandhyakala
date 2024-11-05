@@ -9,8 +9,8 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('/images/favicon.ico') }}">
 
         <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+        <link rel="preload" href="https://fonts.bunny.net" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" /></noscript>
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>

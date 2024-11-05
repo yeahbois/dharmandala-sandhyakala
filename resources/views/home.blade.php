@@ -1,9 +1,9 @@
 <x-layout title="OSIS MPK MHT">
-    <x-slot:metadesc>
+    {{-- <x-slot:metadesc>
         <meta name="Beranda OSIS MPK SMA Unggulan M. H. Thamrin" content="
-            
+
         ">
-    </x-slot:metadesc>
+    </x-slot:metadesc> --}}
     <x-slot:opening>        
         <section class="w-full h-[100vh] flex flex-col justify-center items-center">
             <div class="flex flex-col items-center justify-center py-4">
