@@ -70,8 +70,8 @@
                     </h3>
                 </div>
                 <div class="flex flex-row space-x-8">
-                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                        <a href="/program-kerja/mamacu-kakacu">
+                    <div class="flex flex-col flex-1 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <a href="#">
                             <img class="h-56 w-full object-cover object-center rounded-t-lg" src="{{ asset('images/proker/akad/mamacu/IMG_9462.webp') }}" alt="" />
                         </a>
                         <div class="p-5">
@@ -84,7 +84,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <div class="flex flex-col flex-1 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
                             <img class="h-56 w-full object-cover object-center rounded-t-lg" src="{{ asset('images/proker/sasbud/tsf/2016_1103_13301800.webp') }}" alt="" />
                         </a>
@@ -102,7 +102,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <div class="flex flex-col flex-1 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
                             <img class="h-56 w-full object-cover object-center rounded-t-lg" src="{{ asset('images/proker/k3or/thamfam/IMG_0750.webp') }}" alt="" />
                         </a>

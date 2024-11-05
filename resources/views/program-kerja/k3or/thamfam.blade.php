@@ -54,30 +54,30 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="flex flex-col space-y-4">
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/0AF2293E-690A-408D-9549-3E386272ACD4-1277-000000162E060A1B514600.webp') }} alt="">
+                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/0AF2293E-690A-408D-9549-3E386272ACD4-1277-000000162E060A1B514.webp') }} alt="">
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/0CDA2DDA-4CF2-44F0-8FE4-A9F3179EBDC9-1277-000000164A1E724C514600.webp') }} alt="">
+                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/0CDA2DDA-4CF2-44F0-8FE4-A9F3179EBDC9-1277-000000164A1E724C514.webp') }} alt="">
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/1B52A98D-6790-456C-85EB-91AF1D80E479-1277-00000027FDF19FA6514600.webp') }} alt="">
+                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/1B52A98D-6790-456C-85EB-91AF1D80E479-1277-00000027FDF19FA6514.webp') }} alt="">
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/IMG_0942514600.webp') }} alt="">
+                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/IMG_0942514.webp') }} alt="">
                         </div>
                     </div>
                     <div class="flex flex-col space-y-4">
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/F6FA399B-1AA4-4E30-B64A-EC6FA098A899-1277-0000001F780171DB514600.webp') }} alt="">
+                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/F6FA399B-1AA4-4E30-B64A-EC6FA098A899-1277-0000001F780171DB514.webp') }} alt="">
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/IMG_0750514600.webp') }} alt="">
+                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/IMG_0750514.webp') }} alt="">
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/IMG_0783514600.webp') }} alt="">
+                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/IMG_0783514.webp') }} alt="">
                         </div>
                         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/IMG_20240817_113057514600.webp') }} alt="">
+                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/IMG_20240817_113057514.webp') }} alt="">
                         </div>
                     </div>
                 </div>
