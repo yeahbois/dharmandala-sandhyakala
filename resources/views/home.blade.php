@@ -4,31 +4,29 @@
 
         ">
     </x-slot:metadesc> --}}
-    <x-slot:opening>        
-        <section class="w-full h-[100vh] flex flex-col justify-center items-center">
-            <div class="flex flex-col items-center justify-center py-4">
-                <img src={{ asset('images/logo/general/ospk384.webp') }}>
-                <h1 class="font-bold text-6xl">
-                    Agradama Navaleksa
-                </h1>
-                <p class="mt-1 text-gray-500">
-                    Selamat datang di beranda OSIS SMA Negeri Unggulan M. H. Thamrin, 2024/2025.
-                </p>
-            </div>
-            {{-- <div class="space-x-4">
-                <button class="p-3 rounded-lg bg-blue-600 border-blue-600 hover:bg-blue-700 focus:bg-blue-700 hover:border-blue-700 focus:border-blue-700 text-white border-2 font-semibold">
-                    <a href="#featured">
-                        Featured
-                    </a>
-                </button>
-                <button class="p-3 rounded-lg border-black hover:bg-slate-100 focus:bg-slate-100 border-2 font-semibold">
-                    <a href="/program-kerja">
-                        Program Kerja
-                    </a>
-                </button>
-            </div> --}}
-        </section>
-    </x-slot:opening>
+    <section class="-mt-[72px] w-full h-[100vh] flex flex-col justify-center items-center">
+        <div class="flex flex-col items-center justify-center py-4">
+            <img src={{ asset('images/logo/general/ospk384.webp') }}>
+            <h1 class="font-bold text-6xl">
+                Agradama Navaleksa
+            </h1>
+            <p class="mt-1 text-gray-500">
+                Selamat datang di beranda OSIS SMA Negeri Unggulan M. H. Thamrin, 2024/2025.
+            </p>
+        </div>
+        {{-- <div class="space-x-4">
+            <button class="p-3 rounded-lg bg-blue-600 border-blue-600 hover:bg-blue-700 focus:bg-blue-700 hover:border-blue-700 focus:border-blue-700 text-white border-2 font-semibold">
+                <a href="#featured">
+                    Featured
+                </a>
+            </button>
+            <button class="p-3 rounded-lg border-black hover:bg-slate-100 focus:bg-slate-100 border-2 font-semibold">
+                <a href="/program-kerja">
+                    Program Kerja
+                </a>
+            </button>
+        </div> --}}
+    </section>
     <main id="featured" class="flex flex-col flex-grow max-w-[1080px] w-full items-center h-full py-12 space-y-24">
         {{-- <div id="default-carousel" class="relative w-full" data-carousel="static">
             <!-- Carousel wrapper -->
