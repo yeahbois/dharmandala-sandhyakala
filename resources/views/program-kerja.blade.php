@@ -10,10 +10,10 @@
                         Featured
                     </h3>
                 </div>
-                <div class="flex space-y-4 flex-col sm:flex-row sm:space-x-8">
+                <div class="flex space-y-4 flex-col sm:space-y-0 sm:flex-row sm:space-x-8">
                     <div class="flex flex-col flex-1 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
-                            <img class="h-56 w-full object-cover object-center rounded-t-lg" src="{{ asset('images/proker/akad/mamacu/IMG_9462.webp') }}" alt="" />
+                            <img class="h-56 w-full object-cover object-center rounded-t-lg" src="{{ asset('images/proker/akad/mamacu/IMG_9462514.webp') }}" alt="" />
                         </a>
                         <div class="p-5">
                             <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">Akademis</span>
@@ -27,7 +27,7 @@
                     </div>
                     <div class="flex flex-col flex-1 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
-                            <img class="h-56 w-full object-cover object-center rounded-t-lg" src="{{ asset('images/proker/sasbud/tsf/2016_1103_13301800.webp') }}" alt="" />
+                            <img class="h-56 w-full object-cover object-center rounded-t-lg" src="{{ asset('images/proker/sasbud/tsf/2016_1103_13301800514.webp') }}" alt="" />
                         </a>
                         <div class="p-5">
                             <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">
@@ -45,7 +45,7 @@
                     </div>
                     <div class="flex flex-col flex-1 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
-                            <img class="h-56 w-full object-cover object-center rounded-t-lg" src="{{ asset('images/proker/k3or/thamfam/IMG_0750.webp') }}" alt="" />
+                            <img class="h-56 w-full object-cover object-center rounded-t-lg" src="{{ asset('images/proker/k3or/thamfam/IMG_0750514.webp') }}" alt="" />
                         </a>
                         <div class="p-5">
                             <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">
@@ -69,10 +69,10 @@
                         Recent
                     </h3>
                 </div>
-                <div class="flex flex-row space-x-8">
-                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                        <a href="/program-kerja/mamacu-kakacu">
-                            <img class="h-56 w-full object-cover object-center rounded-t-lg" src="{{ asset('images/proker/akad/mamacu/IMG_9462.webp') }}" alt="" />
+                <div class="flex space-y-4 flex-col sm:space-y-0 sm:flex-row sm:space-x-8">
+                    <div class="flex flex-col flex-1 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <a href="#">
+                            <img class="h-56 w-full object-cover object-center rounded-t-lg" src="{{ asset('images/proker/akad/mamacu/IMG_9462514.webp') }}" alt="" />
                         </a>
                         <div class="p-5">
                             <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">Akademis</span>
@@ -84,9 +84,9 @@
                             </p>
                         </div>
                     </div>
-                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <div class="flex flex-col flex-1 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
-                            <img class="h-56 w-full object-cover object-center rounded-t-lg" src="{{ asset('images/proker/sasbud/tsf/2016_1103_13301800.webp') }}" alt="" />
+                            <img class="h-56 w-full object-cover object-center rounded-t-lg" src="{{ asset('images/proker/sasbud/tsf/2016_1103_13301800514.webp') }}" alt="" />
                         </a>
                         <div class="p-5">
                             <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">
@@ -102,9 +102,9 @@
                             </p>
                         </div>
                     </div>
-                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <div class="flex flex-col flex-1 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
-                            <img class="h-56 w-full object-cover object-center rounded-t-lg" src="{{ asset('images/proker/k3or/thamfam/IMG_0750.webp') }}" alt="" />
+                            <img class="h-56 w-full object-cover object-center rounded-t-lg" src="{{ asset('images/proker/k3or/thamfam/IMG_0750514.webp') }}" alt="" />
                         </a>
                         <div class="p-5">
                             <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">
