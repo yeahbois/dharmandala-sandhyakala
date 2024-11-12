@@ -4,7 +4,7 @@
             <h1 class="py-4 font-bold text-6xl text-center w-full">
                 Program Kerja
             </h1>
-            <div>
+            <div class="flex flex-col items-center sm:items-start w-full">
                 <div class="flex flex-row justify-between pb-4 items-end">
                     <h3 class="text-2xl text-left">
                         Featured
@@ -63,7 +63,7 @@
                     </div>
                 </div>
             </div>
-            <div>
+            <div class="flex flex-col items-center sm:items-start w-full">
                 <div class="flex flex-row justify-between pb-4 items-end">
                     <h3 class="text-2xl text-left">
                         Recent
