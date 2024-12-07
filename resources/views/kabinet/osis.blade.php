@@ -12,9 +12,9 @@
                 </div>
                 <div class="space-y-32">
                     <x-kabinet.bidang name="Badan Pengurus Harian" group="BPH">                          
-                        <x-kabinet.potrait link="osis/bph/ega128" name="Ega Aryasatya" ig="saty4._" logoLink="osis/ketua72" role="Ketua Umum OSIS"></x-kabinet.potrait>
+                        <x-kabinet.potrait link="osis/bph/ega128" name="Ega Aryasatya" ig="egaryasatya" logoLink="osis/ketua72" role="Ketua Umum OSIS"></x-kabinet.potrait>
                         <x-kabinet.potrait link="osis/bph/bita128" name="Queen Tabriz Tsabita" ig="queentabriz" logoLink="osis/kabid172" role="Ketua Bidang 1"></x-kabinet.potrait>
-                        <x-kabinet.potrait link="osis/bph/safira128" name="Safira Chairunnisa Wiyono" ig="luvviestellaa" logoLink="osis/kabid272" role="Ketua Bidang 2"></x-kabinet.potrait>
+                        <x-kabinet.potrait link="osis/bph/safira128" name="Safira Chairunnisa Wiyono" ig="chaifiraa" logoLink="osis/kabid272" role="Ketua Bidang 2"></x-kabinet.potrait>
                         <x-kabinet.potrait link="osis/bph/adel128" name="Adelia Nasywa Ramadhani" ig="adelianrd" logoLink="osis/sekre72" role="Sekretaris 1"></x-kabinet.potrait>
                         <x-kabinet.potrait link="osis/bph/nazwa128" name="Nazwa Syafitri" ig="nazwasyaf_" logoLink="osis/sekre72" role="Sekretaris 2"></x-kabinet.potrait>
                         <x-kabinet.potrait link="osis/bph/safa128" name="Safa Alzena Riszy" ig="safalzenaa" logoLink="osis/benda72" role="Bendahara 1"></x-kabinet.potrait>
