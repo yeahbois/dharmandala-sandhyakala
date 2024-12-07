@@ -5,7 +5,7 @@
                 Program Kerja
             </h1>
             <div class="flex flex-col items-center sm:items-start w-full">
-                <div class="flex flex-row justify-between pb-4 items-end">
+                <div class="flex mb-4 flex-row w-full justify-center sm:justify-start">
                     <h3 class="text-2xl text-left">
                         Featured
                     </h3>
