@@ -1,7 +1,7 @@
 <x-layout title="PUBLIKASI PRESTASI">
     <main class="flex flex-col flex-1 w-full items-center justify-center">
         <section class="flex flex-col flex-1 py-8">
-            {{-- <section class="w-full">
+            <section class="w-full">
                 <h2 class="my-4 text-3xl font-semibold">
                     14 Oktober 2024
                 </h2>
@@ -10,32 +10,112 @@
                     <div class="relative h-64 overflow-hidden rounded-lg md:h-96">
                         <!-- Item 1 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={{ asset('/images/prestasi/14okt/') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src={{ asset('/images/prestasi/14okt/637A5026.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
                         <!-- Item 2 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={{ asset('/images/prestasi/14okt/') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src={{ asset('/images/prestasi/14okt/637A5029.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
                         <!-- Item 3 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={{ asset('/images/prestasi/14okt/') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src={{ asset('/images/prestasi/14okt/637A5031.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
                         <!-- Item 4 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={{ asset('/images/prestasi/14okt/') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src={{ asset('/images/prestasi/14okt/637A5034.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
                         <!-- Item 5 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src={{ asset('/images/prestasi/14okt/') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src={{ asset('/images/prestasi/14okt/637A5035.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
-                    </div>
-                    <!-- Slider indicators -->
-                    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+                        <!-- Item 6 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{ asset('/images/prestasi/14okt/637A50357.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 7 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{ asset('/images/prestasi/14okt/637A5040.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 8 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{ asset('/images/prestasi/14okt/637A5042.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 9 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{ asset('/images/prestasi/14okt/637A5043.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 10 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{ asset('/images/prestasi/14okt/637A5046.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 11 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{ asset('/images/prestasi/14okt/637A5050.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 12 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{ asset('/images/prestasi/14okt/637A5052.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 13 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{ asset('/images/prestasi/14okt/637A5054.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 14 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{ asset('/images/prestasi/14okt/637A5057.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 15 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{ asset('/images/prestasi/14okt/637A5066.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 16 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{ asset('/images/prestasi/14okt/637A5068.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 17 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{ asset('/images/prestasi/14okt/637A5070.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 18 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{ asset('/images/prestasi/14okt/637A5073.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 19 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{ asset('/images/prestasi/14okt/637A5077.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 20 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{ asset('/images/prestasi/14okt/637A5080.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 21 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{ asset('/images/prestasi/14okt/637A5084.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 22 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{ asset('/images/prestasi/14okt/637A5088.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 23 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{ asset('/images/prestasi/14okt/637A5092.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 24 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{ asset('/images/prestasi/14okt/637A5094.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 25 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{ asset('/images/prestasi/14okt/637A5095.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 26 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{ asset('/images/prestasi/14okt/637A5096.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 27 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src={{ asset('/images/prestasi/14okt/637A5102.jpg') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
                     </div>
                     <!-- Slider controls -->
                     <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
@@ -55,7 +135,7 @@
                         </span>
                     </button>
                 </div>
-            </section> --}}
+            </section>
             <section class="w-full">
                 <h2 class="my-4 text-3xl font-semibold">
                     19 Agustus 2024
@@ -87,15 +167,6 @@
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <img src={{ asset('/images/prestasi/19agu/IMG_1061600.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
-                    </div>
-                    <!-- Slider indicators -->
-                    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6" data-carousel-slide-to="5"></button>
                     </div>
                     <!-- Slider controls -->
                     <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
@@ -159,18 +230,6 @@
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <img src={{ asset('/images/prestasi/2sep/BDD8BCF6-58D2-4C5D-9592-6DFEDAB27A6B-389-0000000660D97908600.webp') }} class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
-                    </div>
-                    <!-- Slider indicators -->
-                    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6" data-carousel-slide-to="5"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 7" data-carousel-slide-to="6"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 8" data-carousel-slide-to="7"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 9" data-carousel-slide-to="8"></button>
                     </div>
                     <!-- Slider controls -->
                     <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
