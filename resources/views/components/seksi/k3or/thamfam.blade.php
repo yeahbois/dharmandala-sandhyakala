@@ -1,0 +1,1 @@
+<x-proker.card href="/program-kerja/k3or/thamrin-family-gathering" seksi="K3OR" proker="Thamrin Family Gathering" desc="Perayaan Hari Kemerdekaan Indonesia di SMA Negeri Unggulan diisi silaturahmi, terutama antara peserta didik dan orang tua murid lintas angkatan." imglink="\images\proker\k3or\thamfam\IMG_0750514.webp"/>

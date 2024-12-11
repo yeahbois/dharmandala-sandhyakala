@@ -1,0 +1,1 @@
+<x-proker.card href="/program-kerja/sastra-budaya/thamrin-sastra-fair" seksi="Sastra Budaya" proker="Thamrin Sastra Fair" desc="Festival budaya dalam rangka memperingati Hari Batik Nasional, Bulan Bahasa, dan Hari Sumpah Pemuda." imglink="images/proker/sasbud/tsf/2016_1103_13301800514.webp"/>

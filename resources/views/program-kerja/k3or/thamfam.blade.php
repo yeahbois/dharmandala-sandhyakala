@@ -1,87 +1,17 @@
-<x-layout title="THAMFAM">
-    <main class="flex flex-col px-4 flex-grow w-full max-w-[1080px] h-full">
-        <nav class="flex mt-4" aria-label="Breadcrumb">
-            <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
-                <li class="inline-flex items-center">
-                    <a href="/program-kerja" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
-                        <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
-                        </svg>
-                        Program Kerja
-                    </a>
-                </li>
-                <li>
-                    <div class="flex items-center">
-                        <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                        </svg>
-                        <a href="#" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">
-                            K3OR
-                        </a>
-                    </div>
-                </li>
-                <li aria-current="page">
-                    <div class="flex items-center">
-                        <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                        </svg>
-                        <span class="ms-1 text-sm font-medium text-gray-500 md:ms-2 dark:text-gray-400">
-                            Thamrin Family Gathering
-                        </span>
-                    </div>
-                </li>
-            </ol>
-        </nav>
-        <section class="py-8 w-full flex flex-col items-start space-y-16">
-            <div class="py-4 flex flex-col w-full items-center">
-                <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">
-                    K3OR
-                </span>
-                <h1 class="font-bold text-6xl text-center w-full">
-                    Thamrin Family Gathering
-                </h1>
-                <p class="text-gray-500 py-2 max-w-[75ch]">
-                    Perayaan HUT RI dipenuhi lomba dan acara seru
-                    yang menjadi kesempatan bagi seluruh warga sekolah untuk bersilaturahmi, terutama antara peserta didik dan orang tua murid lintas angkatan. 
-                </p>
-            </div>
-            <div>
-                <div class="flex flex-row justify-between pb-4 items-end">
-                    <h3 class="text-2xl text-left">
-                        Highlights
-                    </h3>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="flex flex-col space-y-4">
-                        <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/0AF2293E-690A-408D-9549-3E386272ACD4-1277-000000162E060A1B514.webp') }} alt="">
-                        </div>
-                        <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/0CDA2DDA-4CF2-44F0-8FE4-A9F3179EBDC9-1277-000000164A1E724C514.webp') }} alt="">
-                        </div>
-                        <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/1B52A98D-6790-456C-85EB-91AF1D80E479-1277-00000027FDF19FA6514.webp') }} alt="">
-                        </div>
-                        <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/IMG_0942514.webp') }} alt="">
-                        </div>
-                    </div>
-                    <div class="flex flex-col space-y-4">
-                        <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/F6FA399B-1AA4-4E30-B64A-EC6FA098A899-1277-0000001F780171DB514.webp') }} alt="">
-                        </div>
-                        <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/IMG_0750514.webp') }} alt="">
-                        </div>
-                        <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/IMG_0783514.webp') }} alt="">
-                        </div>
-                        <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                            <img loading="lazy" class="h-auto max-w-full rounded-lg" src={{ asset('/images/proker/k3or/thamfam/IMG_20240817_113057514.webp') }} alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-</x-layout>
+<x-proker.main title="THAMFAM" seksi="K3OR" proker="Thamrin Family Gathering">
+    <x-slot:desc>
+        Perayaan HUT RI dipenuhi lomba dan acara seru yang menjadi kesempatan bagi seluruh warga sekolah untuk bersilaturahmi, terutama antara peserta didik dan orang tua murid lintas angkatan.     
+    </x-slot>
+        <x-slot:imgcol1>
+            <x-proker.image imglink='/images/proker/k3or/thamfam/0AF2293E-690A-408D-9549-3E386272ACD4-1277-000000162E060A1B.webp'/>
+            <x-proker.image imglink='/images/proker/k3or/thamfam/0CDA2DDA-4CF2-44F0-8FE4-A9F3179EBDC9-1277-000000164A1E724C.webp'/>
+            <x-proker.image imglink='/images/proker/k3or/thamfam/1B52A98D-6790-456C-85EB-91AF1D80E479-1277-00000027FDF19FA6.webp'/>
+            <x-proker.image imglink='/images/proker/k3or/thamfam/IMG_0942.webp'/>
+        </x-slot>
+        <x-slot:imgcol2>
+            <x-proker.image imglink='/images/proker/k3or/thamfam/F6FA399B-1AA4-4E30-B64A-EC6FA098A899-1277-0000001F780171DB.webp'/>
+            <x-proker.image imglink='/images/proker/k3or/thamfam/IMG_0750.webp'/>
+            <x-proker.image imglink='/images/proker/k3or/thamfam/IMG_0783.webp'/>
+            <x-proker.image imglink='/images/proker/k3or/thamfam/IMG_20240817_113057.webp'/>
+        </x-slot>
+</x-proker.main>

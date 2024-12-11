@@ -4,7 +4,7 @@
 
         ">
     </x-slot:metadesc> --}}
-    <section class="-mt-[72px] w-full h-[100vh] flex flex-col justify-center items-center">
+    <section class="-mt-[64px] w-full h-[100vh] flex flex-col justify-center items-center">
         <div class="flex flex-col items-center justify-center py-4">
             <img src={{ asset('images/logo/general/ospk384.webp') }}>
             <h1 class="font-bold text-6xl">

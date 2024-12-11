@@ -1,0 +1,1 @@
+<x-proker.card href="/program-kerja/akademis/mamacu-kakacu" seksi="Akademis" proker="Mamacu Kakacu" desc="Kegiatan belajar mengajar secara sukarela terhadap anak-anak di tingkat SD/MI, SMP/MTs, dan di asrama panti asuhan." imglink="images/proker/akad/mamacu/IMG_9462514.webp"/>

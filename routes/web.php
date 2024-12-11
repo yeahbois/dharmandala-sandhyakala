@@ -23,7 +23,7 @@ Route::get('/program-kerja/akademis', function() {
     return view('program-kerja.akademis');
 });
 Route::get('/program-kerja/akademis/mamacu-kakacu', function() {
-    return view('program-kerja.akademis.mamacu-kakacu');
+    return view('program-kerja.akademis.mamacu');
 });
 Route::get('/program-kerja/akademis/thamrin-homecoming', function() {
     return view('program-kerja.akademis.thc');
@@ -79,7 +79,7 @@ Route::get('/kabinet/mpk', function() {
 Route::get('/merchandise', function() {
     return view('merchandise');
 });
-Route::get('/thalation', function() {
+Route::get('/thamrin-wall-of-aspiration', function() {
     return view('thalation');
 });
 

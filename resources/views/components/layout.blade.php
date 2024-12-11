@@ -12,6 +12,7 @@
         <link rel="preload" href="https://fonts.bunny.net" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" /></noscript>
 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap">
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="bg-white text-black flex flex-col items-center w-full min-h-screen text-center">
@@ -36,7 +37,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/thalation" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent">
+                            <a href="/thamrin-wall-of-aspiration" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent">
                                 Thalation
                             </a>
                         </li>
