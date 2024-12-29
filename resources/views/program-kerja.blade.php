@@ -19,7 +19,7 @@
             <div class="flex flex-col items-center sm:items-start w-full">
                 <div class="flex flex-row w-full justify-between pb-4 items-end">
                     <h3 class="text-2xl text-left">
-                        Recent
+                        Recent  
                     </h3>
                     <h3 class="text-xl text-blue-500 underline hover:text-blue-600 focus:text-blue-600">
                         <a href="/program-kerja/recent">

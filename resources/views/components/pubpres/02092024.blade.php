@@ -1,0 +1,1 @@
+<x-proker.card href="/publikasi-prestasi/2-september-2024" badge="false" proker="2 September 2024" desc="OSN 2024" imglink="\images\prestasi\2sep\74AE2598-05D9-45EF-83F0-151AE3FC28E7-389-000000066C38CF3F600.webp"/>

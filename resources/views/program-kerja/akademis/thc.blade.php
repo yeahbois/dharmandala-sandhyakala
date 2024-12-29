@@ -1,6 +1,6 @@
 <x-proker.main title="THC" seksi="Akademis" proker="Thamrin Homecoming">
     <x-slot:desc>
-        Program yang memberikan informasi tentang universitas lanjutan kepada alumni SMA Negeri Unggulan M.H. Thamrin. 
+        [11/24] Program yang memberikan informasi tentang universitas lanjutan kepada alumni SMA Negeri Unggulan M.H. Thamrin. 
         Program ini terdiri dari acara internal yang menyajikan informasi tentang universitas di dalam negeri secara offline dan acara eksternal yang menyajikan informasi tentang universitas di luar negeri secara online.
     </x-slot>
         <x-slot:imgcol1>

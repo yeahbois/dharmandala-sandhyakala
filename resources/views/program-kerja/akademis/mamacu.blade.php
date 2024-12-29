@@ -1,6 +1,6 @@
 <x-proker.main title="MAMACU KAKACU" seksi="Akademis" proker="Mamacu Kakacu">
     <x-slot:desc>
-        Program kerja ini dirancang oleh Seksi Akademis untuk menyediakan media bagi peserta didik SMA Negeri Unggulan M.H. Thamrin yang ingin secara sukarela mengajar anak-anak di tingkat SD/MI, SMP/MTs, dan di asrama panti asuhan sekaligus membantu memberikan materi tambahan kepada peserta didik SD/MI sederajat, SMP/MTs sederajat di sekitar Jakarta maupun anak-anak di panti asuhan. <br><br> <span class="font-medium">Tertarik untuk belajar bersama?</span> Yuk daftar <a href="https://bit.ly/mamacukakacu" target="_blank" class="underline text-blue-500 hover:text-blue-400">di sini!</a>
+        [11/24] Program kerja ini dirancang oleh Seksi Akademis untuk menyediakan media bagi peserta didik SMA Negeri Unggulan M.H. Thamrin yang ingin secara sukarela mengajar anak-anak di tingkat SD/MI, SMP/MTs, dan di asrama panti asuhan sekaligus membantu memberikan materi tambahan kepada peserta didik SD/MI sederajat, SMP/MTs sederajat di sekitar Jakarta maupun anak-anak di panti asuhan. <br><br> <span class="font-medium">Tertarik untuk belajar bersama?</span> Yuk daftar <a href="https://bit.ly/mamacukakacu" target="_blank" class="underline text-blue-500 hover:text-blue-400">di sini!</a>
     </x-slot>
         <x-slot:imgcol1>
             <x-proker.image imglink='/images/proker/akad/mamacu/IMG_9462.webp'/>

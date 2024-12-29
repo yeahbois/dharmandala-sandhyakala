@@ -1,6 +1,6 @@
 <x-proker.main title="HARI GURU" seksi="K3OR" proker="Perayaan Hari Guru">
     <x-slot:desc>
-        Peringatan Hari Guru Nasional sebagai bentuk rasa terima kasih kepada bapak dan ibu guru, staf, dan karyawan SMA Negeri Unggulan M.H. Thamrin.
+        [11/24] Peringatan Hari Guru Nasional sebagai bentuk rasa terima kasih kepada bapak dan ibu guru, staf, dan karyawan SMA Negeri Unggulan M.H. Thamrin.
     </x-slot>
         <x-slot:imgcol1>
             <x-proker.image imglink='\images\proker\k3or\hari-guru\2016_1208_19031900(2).webp'/>

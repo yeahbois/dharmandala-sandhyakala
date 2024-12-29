@@ -1,6 +1,6 @@
 <x-proker.main title="MAULID NABI" seksi="Rohani" proker="Perayaan Maulid Nabi">
     <x-slot:desc>
-        Perayaan Maulid Nabi Muhammad SAW dengan diisi dengan materi bermanfaat, games, dan perlombaan.
+        [09/24] Perayaan Maulid Nabi Muhammad SAW dengan diisi dengan materi bermanfaat, games, dan perlombaan.
     </x-slot>
         <x-slot:imgcol1>
             <x-proker.image imglink='\images\proker\rohani\maulid-nabi\20240920_081027.webp'/>

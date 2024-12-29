@@ -3,14 +3,14 @@
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Route::get('/', function () {
-    return view('home');
-});
-Route::get('/program-kerja', function() {
-    return view('program-kerja');
+    //     return view('welcome');
+    // });
+    
+    Route::get('/', function () {
+        return view('home');
+    });
+    Route::get('/program-kerja', function() {
+        return view('program-kerja');
 });
 Route::get('/program-kerja/recent', function() {
     return view('recent');
@@ -27,6 +27,20 @@ Route::get('/program-kerja/akademis/mamacu-kakacu', function() {
 });
 Route::get('/program-kerja/akademis/thamrin-homecoming', function() {
     return view('program-kerja.akademis.thc');
+});
+
+// AKADEMIS - PUBLIKASI PRESTASI
+Route::get('/publikasi-prestasi', function() {
+    return view('program-kerja.akademis.pubpres');
+});
+Route::get('/publikasi-prestasi/19-agustus-2024', function() {
+    return view('program-kerja.akademis.pubpres.19082024');
+});
+Route::get('/publikasi-prestasi/2-september-2024', function() {
+    return view('program-kerja.akademis.pubpres.02092024');
+});
+Route::get('/publikasi-prestasi/14-oktober-2024', function() {
+    return view('program-kerja.akademis.pubpres.14102024');
 });
 
 
@@ -81,8 +95,4 @@ Route::get('/merchandise', function() {
 });
 Route::get('/thamrin-wall-of-aspiration', function() {
     return view('thalation');
-});
-
-Route::get('/publikasi-prestasi', function() {
-    return view('pubpres');
 });

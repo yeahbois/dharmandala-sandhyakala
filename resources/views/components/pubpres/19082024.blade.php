@@ -1,0 +1,1 @@
+<x-proker.card href="/publikasi-prestasi/19-agustus-2024" badge="false" proker="19 Agustus 2024" desc="180DC Case Competition 2024, IABO 2024, IAPhO 2024, KMC 2024, & IYSC 2024" imglink="\images\prestasi\19agu\IMG_1077600.webp"/>

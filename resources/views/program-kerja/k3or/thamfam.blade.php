@@ -1,6 +1,6 @@
 <x-proker.main title="THAMFAM" seksi="K3OR" proker="Thamrin Family Gathering">
     <x-slot:desc>
-        Perayaan HUT RI dipenuhi lomba dan acara seru yang menjadi kesempatan bagi seluruh warga sekolah untuk bersilaturahmi, terutama antara peserta didik dan orang tua murid lintas angkatan.     
+        [08/24] Perayaan HUT RI dipenuhi lomba dan acara seru yang menjadi kesempatan bagi seluruh warga sekolah untuk bersilaturahmi, terutama antara peserta didik dan orang tua murid lintas angkatan.     
     </x-slot>
         <x-slot:imgcol1>
             <x-proker.image imglink='/images/proker/k3or/thamfam/0AF2293E-690A-408D-9549-3E386272ACD4-1277-000000162E060A1B.webp'/>
