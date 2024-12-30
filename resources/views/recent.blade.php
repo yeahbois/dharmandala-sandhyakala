@@ -11,6 +11,11 @@
                     </h3>
                 </div>
                 <div class="flex mb-8 space-y-4 flex-col sm:space-y-0 sm:flex-row sm:space-x-8">
+                    <x-seksi.sasbud.yes/>
+                    <x-seksi.k3or.tsc/>
+                    <x-seksi.dhl.donuts/>
+                </div>
+                <div class="flex mb-8 space-y-4 flex-col sm:space-y-0 sm:flex-row sm:space-x-8">
                     <x-seksi.k3or.hari-guru/>
                     <x-seksi.akad.mamacu/>
                     <x-seksi.akad.thc/>

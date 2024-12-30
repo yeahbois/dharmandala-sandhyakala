@@ -1,0 +1,1 @@
+<x-proker.card href="/program-kerja/sastra-budaya/young-eagle-showcase" seksi="Sastra Budaya" proker="Young Eagle Showcase" desc="[12/24] Kegiatan pameran seluruh karya yang telah dibuat oleh peserta didik SMA Negeri Unggulan M.H. Thamrin selama satu semester." imglink="\images\proker\sasbud\yes\IMG_1127.JPG"/>

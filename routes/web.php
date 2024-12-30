@@ -45,6 +45,13 @@ Route::get('/publikasi-prestasi/14-oktober-2024', function() {
 
 
 
+// DHL
+Route::get('/program-kerja/dhl/a-day-of-environment-and-human-rights', function() {
+    return view('program-kerja.dhl.donuts');
+});
+
+
+
 // K3OR
 Route::get('/program-kerja/k3or', function() {
     return view('program-kerja.k3or');
@@ -55,6 +62,9 @@ Route::get('/program-kerja/k3or/thamrin-family-gathering', function() {
 Route::get('/program-kerja/k3or/perayaan-hari-guru', function() {
     return view('program-kerja.k3or.hari-guru');
 });
+Route::get('/program-kerja/k3or/thamrin-sport-and-creativity-week', function() {
+    return view('program-kerja.k3or.tsc');
+});
 
 
 
@@ -64,6 +74,9 @@ Route::get('/program-kerja/sastra-budaya', function() {
 });
 Route::get('/program-kerja/sastra-budaya/thamrin-sastra-fair', function() {
     return view('program-kerja.sasbud.tsf');
+});
+Route::get('/program-kerja/sastra-budaya/young-eagle-showcase', function() {
+    return view('program-kerja.sasbud.yes');
 });
 
 

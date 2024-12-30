@@ -1,16 +1,19 @@
-<x-proker.main title="DONUTS" seksi="Sastra Budaya" proker="Thamrin Sastra Fair">
+<x-proker.main title="DONUTS" seksi="DHL" proker="DONUTS (A Day of Environment and Human Rights)">
     <x-slot:desc>
-        Festival budaya dalam rangka memperingati Hari Batik Nasional, Bulan Bahasa, dan Hari Sumpah Pemuda yang dilaksanakan oleh SMA Negeri Unggulan M.H. Thamrin dengan mengundang pembicara literasi, serta diadakannya perlombaan-perlombaan menarik seputar sastra dan bahasa untuk meningkatkan minat literasi peserta didik.
+        [12/24] Memperingati Hari Bumi dan Hari Hak Asasi Manusia (HAM) yang diisi dengan seminar dan perlombaan (lomba membuat mading serta lomba debat).
     </x-slot>
         <x-slot:imgcol1>
-            <x-proker.image imglink='/images/proker/sasbud/tsf/2016_1103_11100600.webp'/>
-            <x-proker.image imglink='/images/proker/sasbud/tsf/2016_1103_11304700.webp'/>
-            <x-proker.image imglink='/images/proker/sasbud/tsf/2016_1103_11481900.webp'/>
+            <x-proker.image imglink='/images/proker/dhl/donuts/637A8750.jpg'/>
+            <x-proker.image imglink='/images/proker/dhl/donuts/637A8774.jpg'/>
+            <x-proker.image imglink='/images/proker/dhl/donuts/637A8778.jpg'/>
+            <x-proker.image imglink='/images/proker/dhl/donuts/637A8850.jpg'/>
+            <x-proker.image imglink='/images/proker/dhl/donuts/637A8891.jpg'/>
         </x-slot>
         <x-slot:imgcol2>
-            <x-proker.image imglink='/images/proker/sasbud/tsf/2016_1103_13301800.webp'/>
-            <x-proker.image imglink='/images/proker/sasbud/tsf/2016_1103_13341100.webp'/>
-            <x-proker.image imglink='/images/proker/sasbud/tsf/2016_1103_13444600.webp'/>
-            <x-proker.image imglink='/images/proker/sasbud/tsf/2016_1103_13444600.webp'/>
+            <x-proker.image imglink='/images/proker/dhl/donuts/637A8945.jpg'/>
+            <x-proker.image imglink='/images/proker/dhl/donuts/IMG_8718.jpg'/>
+            <x-proker.image imglink='/images/proker/dhl/donuts/IMG_8749.jpg'/>
+            <x-proker.image imglink='/images/proker/dhl/donuts/IMG_8797.jpg'/>
+            <x-proker.image imglink='/images/proker/dhl/donuts/IMG_8809.jpg'/>
         </x-slot>
 </x-proker.main>
