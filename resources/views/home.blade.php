@@ -5,7 +5,7 @@
         ">
     </x-slot:metadesc> --}}
     <section style="background-image:url('{{ asset('images/potrait/ospkfull.jpg')}}')" class="relative -mt-[64px] w-full h-[100vh] flex flex-col justify-center items-center bg-center bg-cover">
-        <div class="absolute inset-0 before:content-[''] w-full h-full bg-black/75"></div>
+        <div class="absolute inset-0 w-full h-full bg-black/75"></div>
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full h-full flex flex-col items-center justify-center">
             <img src="{{ asset('images/logo/general/ospk384.webp') }}" alt="Agradama Navaleksa Logo">
             <h1 class="font-bold text-6xl text-white">
