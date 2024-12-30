@@ -5,16 +5,15 @@
         ">
     </x-slot:metadesc> --}}
     <section style="background-image:url('{{ asset('images/potrait/ospkfull.jpg')}}')" class="relative -mt-[64px] w-full h-[100vh] flex flex-col justify-center items-center bg-center bg-cover">
-        <div class="absolute inset-0 before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-opacity-75 before:bg-black">
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full h-full flex flex-col items-center justify-center">
-                <img src="{{ asset('images/logo/general/ospk384.webp') }}" alt="Agradama Navaleksa Logo">
-                <h1 class="font-bold text-6xl text-white">
-                    Agradama Navaleksa
-                </h1>
-                <p class="mt-1 text-gray-300">
-                    Selamat datang di beranda OSIS SMA Negeri Unggulan M. H. Thamrin, 2024/2025.
-                </p>
-            </div>
+        <div class="absolute inset-0 before:content-[''] w-full h-full bg-black/75"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full h-full flex flex-col items-center justify-center">
+            <img src="{{ asset('images/logo/general/ospk384.webp') }}" alt="Agradama Navaleksa Logo">
+            <h1 class="font-bold text-6xl text-white">
+                Agradama Navaleksa
+            </h1>
+            <p class="mt-1 text-gray-300">
+                Selamat datang di beranda OSIS SMA Negeri Unggulan M. H. Thamrin, 2024/2025.
+            </p>
         </div>
         {{-- <div class="space-x-4">
             <button class="p-3 rounded-lg bg-blue-600 border-blue-600 hover:bg-blue-700 focus:bg-blue-700 hover:border-blue-700 focus:border-blue-700 text-white border-2 font-semibold">
