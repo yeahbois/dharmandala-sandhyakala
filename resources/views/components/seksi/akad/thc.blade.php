@@ -1,1 +1,1 @@
-<x-proker.card href="/program-kerja/akademis/thamrin-homecoming" seksi="Akademis" proker="Thamrin Homecoming" desc="[11/24] Program yang memberikan informasi tentang universitas lanjutan kepada alumni SMA Negeri Unggulan M.H. Thamrin." imglink="\images\proker\akad\thc\637A7804514.webp"/>
+<x-proker.card href="/program-kerja/akademis/thamrin-homecoming" seksi="Akademis" proker="Thamrin Homecoming" desc="[11/24] Program yang memberikan informasi tentang universitas lanjutan kepada alumni SMA Negeri Unggulan M.H. Thamrin." imglink="\images\proker\akad\thc\IMG_2702.webp"/>
