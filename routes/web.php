@@ -109,3 +109,16 @@ Route::get('/merchandise', function() {
 Route::get('/thamrin-wall-of-aspiration', function() {
     return view('thalation');
 });
+
+// THAMNET
+Route::get('/thamnet', function() {
+    return view('thamnet.home');
+});
+
+Route::get('/thamnet/blog/hall-of-fame', function() {
+    return view('thamnet.blog.halloffame');
+});
+
+Route::get('/thamnet/blog/openhouse2025', function() {
+    return view('thamnet.blog.openhouse2025');
+});
