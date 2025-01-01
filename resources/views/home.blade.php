@@ -4,30 +4,66 @@
 
         ">
     </x-slot:metadesc> --}}
-    <section style="background-image:url('{{ asset('images/potrait/ospkfull.jpg')}}')" class="relative -mt-[64px] w-full h-[100vh] flex flex-col justify-center items-center bg-center bg-cover">
-        <div class="absolute inset-0 w-full h-full bg-black/75"></div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full h-full flex flex-col items-center justify-center">
-            <img src="{{ asset('images/logo/general/ospk384.webp') }}" alt="Agradama Navaleksa Logo">
-            <h1 class="font-bold text-6xl text-white">
+    {{-- <div id="toast-default" class="z-10 absolute top-[96px] flex items-center p-4 w-fit text-gray-500 bg-white rounded-lg shadow-lg dark:text-gray-400 dark:bg-gray-800" role="alert">
+        <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-orange-500 bg-orange-200 rounded-lg dark:bg-blue-800 dark:text-blue-200">
+            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.147 15.085a7.159 7.159 0 0 1-6.189 3.307A6.713 6.713 0 0 1 3.1 15.444c-2.679-4.513.287-8.737.888-9.548A4.373 4.373 0 0 0 5 1.608c1.287.953 6.445 3.218 5.537 10.5 1.5-1.122 2.706-3.01 2.853-6.14 1.433 1.049 3.993 5.395 1.757 9.117Z"/>
+            </svg>
+            <span class="sr-only">Fire icon</span>
+        </div>
+        <div class="ms-3 text-sm font-normal mr-2">
+            Open House 2025 sudah membuka pendaftaran! <a href="#open_house" class="inline underline text-blue-500 hover:text-blue-600">Pelajari lebih lanjut</a>
+        </div>
+        <button type="button" class="ms-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-default" aria-label="Close">
+            <span class="sr-only">Close</span>
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+            </svg>
+        </button>
+    </div> --}}
+    <section style="background-image:url('{{ asset('images/potrait/darkened_ospkfull.jpg') }}')" class="-mt-[64px] w-full h-[100vh] flex flex-col justify-center items-center bg-center bg-cover">
+        <div class="flex flex-col items-center justify-center px-8">
+            <img src={{ asset('images/logo/general/ospk384.webp') }}>
+            <h1 class="mb-2 font-bold text-6xl text-white">
                 Agradama Navaleksa
             </h1>
-            <p class="mt-1 text-gray-300">
+            <p class="mb-4 text-gray-300">
                 Selamat datang di beranda OSIS SMA Negeri Unggulan M. H. Thamrin, 2024/2025.
             </p>
+            <button onclick="document.getElementById('hamburger').click();" class="lg:hidden py-4 px-4 rounded-lg bg-transparent border-yellow-400 hover:bg-yellow-400/75 focus:bg-yellow-400/75 hover:border-transparent focus:border-yellow-400/75 text-white border-2 text-xl font-semibold">
+                Get to know us!
+            </button>
         </div>
-        {{-- <div class="space-x-4">
-            <button class="p-3 rounded-lg bg-blue-600 border-blue-600 hover:bg-blue-700 focus:bg-blue-700 hover:border-blue-700 focus:border-blue-700 text-white border-2 font-semibold">
-                <a href="#featured">
-                    Featured
-                </a>
-            </button>
-            <button class="p-3 rounded-lg border-black hover:bg-slate-100 focus:bg-slate-100 border-2 font-semibold">
-                <a href="/program-kerja">
-                    Program Kerja
-                </a>
-            </button>
-        </div> --}}
     </section>
+    {{-- <section id="open_house" style="background-image:url('{{ asset('images/proker/akad/oh/darkened_PXL_20240217_071314378.jpg') }}')" class="w-full h-[100vh] flex flex-col justify-center items-center bg-center bg-cover">
+        <div class="flex flex-col items-start justify-center self-start text-left text-justify px-8 sm:px-16 space-y-4">
+            <div class="flex flex-row items-center bg-red-900 text-red-300 text-md font-medium me-2 px-2.5 pb-0.5 pt-1 rounded italic">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+                    <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495ZM10 5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 10 5Zm0 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd" />
+                </svg>
+                <p class="ml-1 mb-0.5">OPEN REGISTRATION NOW!</p>
+            </div>
+            <h1 class="font-bold text-6xl text-white">
+                {{-- use star wars font --}}
+                Open House
+            </h1>
+            <p class="text-gray-300 max-w-[60ch]">
+                Open House MHT menawarkan tour sekolah, simulasi kelas di MHT, sesi tanya jawab dengan kakak-kakak berprestasi, dan masih banyak lagi.
+            </p>
+            <p class="text-gray-300 max-w-[60ch]">
+                Matangkan persiapan memasuki SMA-mu dengan wawasan dan informasi yang kami sediakan di sini!
+            </p>
+            <p class="text-gray-300 max-w-[60ch] font-bold">
+                Open House akan dilaksanakan pada tanggal 8 dan 9 Februari 2025.
+            </p>
+            <button class="py-4 px-4 rounded-lg bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 text-white text-xl font-semibold">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 inline -mt-1">
+                    <path fill-rule="evenodd" d="M12 1.5a.75.75 0 0 1 .75.75V4.5a.75.75 0 0 1-1.5 0V2.25A.75.75 0 0 1 12 1.5ZM5.636 4.136a.75.75 0 0 1 1.06 0l1.592 1.591a.75.75 0 0 1-1.061 1.06l-1.591-1.59a.75.75 0 0 1 0-1.061Zm12.728 0a.75.75 0 0 1 0 1.06l-1.591 1.592a.75.75 0 0 1-1.06-1.061l1.59-1.591a.75.75 0 0 1 1.061 0Zm-6.816 4.496a.75.75 0 0 1 .82.311l5.228 7.917a.75.75 0 0 1-.777 1.148l-2.097-.43 1.045 3.9a.75.75 0 0 1-1.45.388l-1.044-3.899-1.601 1.42a.75.75 0 0 1-1.247-.606l.569-9.47a.75.75 0 0 1 .554-.68ZM3 10.5a.75.75 0 0 1 .75-.75H6a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 10.5Zm14.25 0a.75.75 0 0 1 .75-.75h2.25a.75.75 0 0 1 0 1.5H18a.75.75 0 0 1-.75-.75Zm-8.962 3.712a.75.75 0 0 1 0 1.061l-1.591 1.591a.75.75 0 1 1-1.061-1.06l1.591-1.592a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+                </svg>                  
+                <a href="#">Daftar sekarang!</a>             
+            </button>
+        </div>
+    </section> --}}
     <main id="featured" class="flex flex-col flex-grow max-w-[1080px] w-full items-center h-full py-12 space-y-24">
         {{-- <div id="default-carousel" class="relative w-full" data-carousel="static">
             <!-- Carousel wrapper -->

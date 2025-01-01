@@ -3,14 +3,14 @@
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
-    //     return view('welcome');
-    // });
-    
-    Route::get('/', function () {
-        return view('home');
-    });
-    Route::get('/program-kerja', function() {
-        return view('program-kerja');
+//     return view('welcome');
+// });
+
+Route::get('/', function () {
+    return view('home');
+});
+Route::get('/program-kerja', function() {
+    return view('program-kerja');
 });
 Route::get('/program-kerja/recent', function() {
     return view('recent');
