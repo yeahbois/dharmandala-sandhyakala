@@ -91,7 +91,7 @@
         <!-- Footer -->
         <footer class="bg-white max-w-[1080px] w-full rounded-lg shadow-lg m-4 p-6 dark:bg-gray-800">
             <div class="sm:flex sm:items-center sm:justify-between">
-                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 Agradama Navaleksa.
+                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 Agradama Navaleksa.
                 </span>
                 <div class="flex mt-4 space-x-5 items-center justify-center sm:mt-0">
                     {{-- <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
