@@ -1,1 +1,1 @@
-<x-proker.card href="/publikasi-prestasi/14-oktober-2024" badge="false" proker="14 Oktober 2024" desc="IAChO 2024 & IAMO 2024" imglink="\images\prestasi\14okt\637A5102.JPG"/>
+<x-proker.card href="/publikasi-prestasi/14-oktober-2024" badge="false" proker="14 Oktober 2024" desc="IAChO 2024 & IAMO 2024" imglink="\images\prestasi\14okt\637A5102600.webp"/>

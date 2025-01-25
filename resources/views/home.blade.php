@@ -24,7 +24,7 @@
     <section style="background-image:url('{{ asset('images/potrait/darkened_ospkfull.jpg') }}')" class="-mt-[64px] w-full h-[100vh] flex flex-col justify-center items-center bg-center bg-cover">
         <div class="flex flex-col items-center justify-center px-8">
             <img src={{ asset('images/logo/general/ospk384.webp') }}>
-            <h1 class="mb-2 font-bold text-6xl text-white">
+            <h1 class="mb-2 font-bold text-4xl md:text-6xl text-white">
                 OSIS SMA Negeri Unggulan M. H. Thamrin
             </h1>
             <p class="mb-4 text-gray-300">

@@ -4,14 +4,14 @@
         Program ini terdiri dari acara internal yang menyajikan informasi tentang universitas di dalam negeri secara offline dan acara eksternal yang menyajikan informasi tentang universitas di luar negeri secara online.
     </x-slot>
         <x-slot:imgcol1>
-            <x-proker.image imglink='\images\proker\akad\thc\637A7804.webp'/>
-            <x-proker.image imglink='\images\proker\akad\thc\637A7880.webp'/>
-            <x-proker.image imglink='\images\proker\akad\thc\637A7931.webp'/>
-            <x-proker.image imglink='\images\proker\akad\thc\IMG_2856.webp'/>
+            <x-proker.image imglink='\images\proker\akad\thc\637A7804514.webp'/>
+            <x-proker.image imglink='\images\proker\akad\thc\637A7880514.webp'/>
+            <x-proker.image imglink='\images\proker\akad\thc\637A7931514.webp'/>
+            <x-proker.image imglink='\images\proker\akad\thc\IMG_2856514.webp'/>
         </x-slot>
         <x-slot:imgcol2>
-            <x-proker.image imglink='\images\proker\akad\thc\IMG_2675.webp'/>
-            <x-proker.image imglink='\images\proker\akad\thc\IMG_2702.webp'/>
-            <x-proker.image imglink='\images\proker\akad\thc\IMG_2739.webp'/>
+            <x-proker.image imglink='\images\proker\akad\thc\IMG_2675514.webp'/>
+            <x-proker.image imglink='\images\proker\akad\thc\IMG_2702514.webp'/>
+            <x-proker.image imglink='\images\proker\akad\thc\IMG_2739514.webp'/>
         </x-slot>
 </x-proker.main>

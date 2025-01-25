@@ -2,7 +2,7 @@
     <section class="-mt-[64px] w-full min-h-[100vh] flex flex-col md:flex-row justify-center items-center">
         <div class="flex flex-col flex-1 h-full items-center justify-center px-6">
             <div class="flex flex-col items-center justify-center py-2">
-                <img src={{ asset('images/logo/general/mpk.webp') }} class="w-96">
+                <img src={{ asset('images/logo/general/mpk380.webp') }} class="w-96">
                 <h1 class="font-bold text-6xl">
                     Thalation
                 </h1>
