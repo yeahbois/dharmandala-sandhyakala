@@ -1,1 +1,1 @@
-<x-proker.card href="/program-kerja/rohani/perayaan-maulid-nabi" seksi="Rohani" proker="Perayaan Maulid Nabi" desc="[09/24] Perayaan Maulid Nabi Muhammad SAW dengan diisi dengan materi bermanfaat, games, dan perlombaan." imglink="\images\proker\rohani\maulid-nabi\IMG20240920102233.jpg"/>
+<x-proker.card href="/program-kerja/rohani/perayaan-maulid-nabi" seksi="Rohani" proker="Perayaan Maulid Nabi" desc="[09/24] Perayaan Maulid Nabi Muhammad SAW dengan diisi dengan materi bermanfaat, games, dan perlombaan." imglink="\images\proker\rohani\maulid-nabi\IMG20240920102233514.webp"/>

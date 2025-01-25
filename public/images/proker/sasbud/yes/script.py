@@ -98,7 +98,7 @@ def resize_images(input_folder, output_folder, new_width):
             print(f"Resized and saved: {new_filename}")
 
 # Example usage
-# convert_images_to_webp('./', './')
+convert_images_to_webp('./', './')
 
 # Example usage
-resize_images('./', './', 400)
+resize_images('./', './', 514)
