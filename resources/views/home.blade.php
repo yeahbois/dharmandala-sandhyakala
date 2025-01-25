@@ -25,10 +25,10 @@
         <div class="flex flex-col items-center justify-center px-8">
             <img src={{ asset('images/logo/general/ospk384.webp') }}>
             <h1 class="mb-2 font-bold text-6xl text-white">
-                Agradama Navaleksa
+                OSIS SMA Negeri Unggulan M. H. Thamrin
             </h1>
             <p class="mb-4 text-gray-300">
-                Selamat datang di beranda OSIS SMA Negeri Unggulan M. H. Thamrin, 2024/2025.
+                Selamat datang di beranda Agradama Navaleksa, 2024/2025.
             </p>
             {{-- <button onclick="document.getElementById('hamburger').click();" class="lg:hidden py-4 px-4 rounded-lg bg-transparent border-yellow-400 hover:bg-yellow-400/75 focus:bg-yellow-400/75 hover:border-transparent focus:border-yellow-400/75 text-white border-2 text-xl font-semibold">
                 Get to know us!
