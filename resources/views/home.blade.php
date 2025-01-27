@@ -4,7 +4,7 @@
 
         ">
     </x-slot:metadesc> --}}
-    <div id="toast-default" class="z-10 absolute top-[96px] flex items-center p-4 w-fit text-gray-500 bg-white rounded-lg shadow-lg dark:text-gray-400 dark:bg-gray-800" role="alert">
+    {{-- <div id="toast-default" class="z-10 absolute top-[96px] flex items-center p-4 w-fit text-gray-500 bg-white rounded-lg shadow-lg dark:text-gray-400 dark:bg-gray-800" role="alert">
         <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-orange-500 bg-orange-200 rounded-lg dark:bg-blue-800 dark:text-blue-200">
             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.147 15.085a7.159 7.159 0 0 1-6.189 3.307A6.713 6.713 0 0 1 3.1 15.444c-2.679-4.513.287-8.737.888-9.548A4.373 4.373 0 0 0 5 1.608c1.287.953 6.445 3.218 5.537 10.5 1.5-1.122 2.706-3.01 2.853-6.14 1.433 1.049 3.993 5.395 1.757 9.117Z"/>
@@ -20,7 +20,7 @@
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
             </svg>
         </button>
-    </div>
+    </div> --}}
     <section style="background-image:url('{{ asset('images/potrait/darkened_ospkfull.jpg') }}')" class="-mt-[64px] w-full h-[100vh] flex flex-col justify-center items-center bg-center bg-cover">
         <div class="flex flex-col items-center justify-center px-8">
             <img src={{ asset('images/logo/general/ospk384.webp') }}>
@@ -35,7 +35,7 @@
             </button> --}}
         </div>
     </section>
-    <section id="open_house" style="background-image:url('{{ asset('images/proker/akad/oh/darkened_PXL_20240217_071314378.jpg') }}')" class="w-full h-[100vh] flex flex-col justify-center items-center bg-center bg-cover">
+    {{-- <section id="open_house" style="background-image:url('{{ asset('images/proker/akad/oh/darkened_PXL_20240217_071314378.jpg') }}')" class="w-full h-[100vh] flex flex-col justify-center items-center bg-center bg-cover">
         <div class="flex flex-col items-center sm:items-start justify-center self-start text-center sm:text-justify px-8 sm:px-16 space-y-4">
             <div class="flex flex-row items-center bg-red-900 text-red-300 text-md font-medium me-2 px-2.5 pb-0.5 pt-1 rounded italic">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
@@ -67,7 +67,7 @@
                 </button>
             </div>
         </div>
-    </section>
+    </section> --}}
     <main id="featured" class="flex flex-col flex-grow max-w-[1080px] w-full items-center h-full py-12 space-y-24">
         {{-- <div id="default-carousel" class="relative w-full" data-carousel="static">
             <!-- Carousel wrapper -->
