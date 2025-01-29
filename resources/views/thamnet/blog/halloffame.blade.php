@@ -6,7 +6,7 @@
     </x-slot:metadesc> --}}
 
     {{-- Hero Section --}}
-    <section class="relative w-full h-[50vh] flex flex-col justify-center items-center bg-center bg-cover" style="background-image: url('{{ asset('/images/blog/open-house-2025.jpg') }}');">
+    <section class="relative w-full h-[50vh] flex flex-col justify-center items-center bg-center bg-cover" style="background-image:url('{{ asset('images/potrait/darkened_ospkfull.jpg') }}')">
         <div class="absolute inset-0 w-full h-full bg-black opacity-30"></div>
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
             <h1 class="font-bold text-5xl text-white">Hall of Fame Prestasi</h1>

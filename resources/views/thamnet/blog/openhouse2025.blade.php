@@ -8,7 +8,7 @@
     </x-slot:metadesc>
 
     {{-- Hero Section --}}
-    <section class="relative w-full h-[60vh] flex flex-col justify-center items-center bg-center bg-cover">
+    <section class="relative w-full h-[60vh] flex flex-col justify-center items-center bg-center bg-cover" style="background-image:url('{{ asset('images/potrait/darkened_ospkfull.jpg') }}')">
         <div class="absolute inset-0 w-full h-full bg-black opacity-30"></div>
         <div class="relative text-center text-white">
             <h1 class="font-bold text-5xl">Open House SMAN Unggulan M.H. Thamrin 2025</h1>
