@@ -1,42 +1,40 @@
-<x-layout title="THANOS">
+<x-layout title="THANOS" extra="bg-gradient-to-r from-blue-500 to-teal-500">
     {{-- <x-slot:metadesc>
         <meta name="THANOS - Beranda" content="">
     </x-slot:metadesc> --}}
-
-    <section class="w-full h-screen flex justify-center items-center bg-gradient-to-r from-blue-500 to-teal-500">
-        <div class="bg-white p-8 rounded-lg shadow-xl w-full max-w-4xl">
+    <section class="w-full flex justify-center items-center">
+        <div class="bg-white mt-8 p-8 rounded-lg shadow-xl w-full max-w-4xl">
             <h2 class="text-4xl font-semibold text-center text-gray-800 mb-8">Formulir Jawaban THANOS</h2>
             
             <form action="/submit-form" method="POST">
                 @csrf
-                
                 <!-- Question with Image -->
                 <div class="mb-6 flex flex-col items-center">
                     <label class="block text-gray-700 text-lg font-semibold mb-4">Pilih jawaban yang benar:</label>
-                    <div class="flex justify-center mb-6">
-                        <img src="{{ asset('/images/etc/pertanyaan-thanos-online.png') }}" alt="Question Image" class="w-96 h-96 object-cover rounded-lg shadow-md">
-                    </div>
-                    <div class="flex flex-col items-center space-y-4 w-full max-w-md mx-auto">
-                        <label class="inline-flex items-center text-gray-700 text-lg">
-                            <input type="radio" name="question" value="a" class="form-radio text-blue-500" required>
-                            <span class="ml-2">A. Jawaban A</span>
-                        </label>
-                        <label class="inline-flex items-center text-gray-700 text-lg">
-                            <input type="radio" name="question" value="b" class="form-radio text-blue-500">
-                            <span class="ml-2">B. Jawaban B</span>
-                        </label>
-                        <label class="inline-flex items-center text-gray-700 text-lg">
-                            <input type="radio" name="question" value="c" class="form-radio text-blue-500">
-                            <span class="ml-2">C. Jawaban C</span>
-                        </label>
-                        <label class="inline-flex items-center text-gray-700 text-lg">
-                            <input type="radio" name="question" value="d" class="form-radio text-blue-500">
-                            <span class="ml-2">D. Jawaban D</span>
-                        </label>
-                        <label class="inline-flex items-center text-gray-700 text-lg">
-                            <input type="radio" name="question" value="e" class="form-radio text-blue-500">
-                            <span class="ml-2">E. Jawaban E</span>
-                        </label>
+                    <div class="flex justify-center items-center mb-6 rounded-lg shadow-md">
+                        <img src="{{ asset('/images/thamnet/thanos/05.02.2025/quiz.jpg') }}" alt="Question Image" class="w-96 rounded-l-lg">
+                        <div class="flex flex-col pr-6 items-center space-y-4 w-full max-w-md mx-auto">
+                            <label class="inline-flex items-center text-gray-700 text-lg">
+                                <input type="radio" name="question" value="a" class="form-radio text-blue-500" required>
+                                <span class="ml-2">A. Jawaban A</span>
+                            </label>
+                            <label class="inline-flex items-center text-gray-700 text-lg">
+                                <input type="radio" name="question" value="b" class="form-radio text-blue-500">
+                                <span class="ml-2">B. Jawaban B</span>
+                            </label>
+                            <label class="inline-flex items-center text-gray-700 text-lg">
+                                <input type="radio" name="question" value="c" class="form-radio text-blue-500">
+                                <span class="ml-2">C. Jawaban C</span>
+                            </label>
+                            <label class="inline-flex items-center text-gray-700 text-lg">
+                                <input type="radio" name="question" value="d" class="form-radio text-blue-500">
+                                <span class="ml-2">D. Jawaban D</span>
+                            </label>
+                            <label class="inline-flex items-center text-gray-700 text-lg">
+                                <input type="radio" name="question" value="e" class="form-radio text-blue-500">
+                                <span class="ml-2">E. Jawaban E</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
 
@@ -48,7 +46,7 @@
 
                 <!-- Ticket Purchase -->
                 <div class="mb-6">
-                    <label class="block text-gray-700 text-lg font-semibold mb-2">Sudah membeli tiket?</label>
+                    <label class="block text-gray-700 text-lg font-semibold mb-2">Sudah membeli tiket Open House?</label>
                     <div class="flex justify-center space-x-6">
                         <label class="inline-flex items-center text-gray-700 text-lg">
                             <input type="radio" name="ticket" value="yes" class="form-radio text-blue-500" id="ticketYes" required>
