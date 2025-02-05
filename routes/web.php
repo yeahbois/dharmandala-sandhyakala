@@ -127,9 +127,10 @@ Route::get('/thamnet/blog/openhouse2025', function() {
 
 // THANOS
 
-Route::get('/thanos', function () {
-    return view('thanos');
-});
+// Route::get('/thanos', function () {
+    // return view('thanos');
+    // return view('thanos_wait');
+// });
 
 Route::post('/submit-form', function () {
     $datetime = date('Y-m-d H:i:s');
