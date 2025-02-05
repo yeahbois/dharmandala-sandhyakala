@@ -20,6 +20,11 @@
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
             </svg>
         </button>
+        @if(session('success'))
+        <div class="fixed top-5 right-5 bg-white text-green-600 border border-green-300 shadow-lg px-6 py-4 rounded-lg">
+            <strong>Success!</strong> {{ session('success') }}
+        </div>
+        @endif
     </div>
     <section style="background-image:url('{{ asset('images/potrait/darkened_ospkfull.jpg') }}')" class="-mt-[64px] w-full h-[100vh] flex flex-col justify-center items-center bg-center bg-cover">
         <div class="flex flex-col items-center justify-center px-8">

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FormController;
+use App\Services\GoogleSheetService;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -121,4 +123,36 @@ Route::get('/thamnet/blog/hall-of-fame', function() {
 
 Route::get('/thamnet/blog/openhouse2025', function() {
     return view('thamnet.blog.openhouse2025');
+});
+
+// THANOS
+
+Route::get('/thanos', function () {
+    return view('thanos');
+});
+
+Route::post('/submit-form', function () {
+    $datetime = date('Y-m-d H:i:s');
+    $name = request('name');
+    $answer = request('question');
+    $ticket = request('ticket');
+    $day = request('day');
+    $payment = request('payment');
+    $paymentNumber = request('paymentNumber');
+    $phone = request('phone');
+
+    $request = new \Illuminate\Http\Request([
+        'datetime' => $datetime,
+        'name' => $name,
+        'question' => $answer,
+        'ticket' => $ticket,
+        'day' => $day,
+        'payment' => $payment,
+        'paymentNumber' => $paymentNumber,
+        'phone' => $phone,
+    ]);
+
+    $googleSheetService = app(GoogleSheetService::class);
+    $formController = new FormController($googleSheetService);
+    return $formController->submitForm($request);
 });
