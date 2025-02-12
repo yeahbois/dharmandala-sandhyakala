@@ -4,76 +4,21 @@
 
         ">
     </x-slot:metadesc> --}}
-    <div id="toast-default" class="z-10 absolute top-[96px] flex items-center p-4 w-fit text-gray-500 bg-white rounded-lg shadow-lg dark:text-gray-400 dark:bg-gray-800" role="alert">
-        <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-orange-500 bg-orange-200 rounded-lg dark:bg-blue-800 dark:text-blue-200">
-            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.147 15.085a7.159 7.159 0 0 1-6.189 3.307A6.713 6.713 0 0 1 3.1 15.444c-2.679-4.513.287-8.737.888-9.548A4.373 4.373 0 0 0 5 1.608c1.287.953 6.445 3.218 5.537 10.5 1.5-1.122 2.706-3.01 2.853-6.14 1.433 1.049 3.993 5.395 1.757 9.117Z"/>
-            </svg>
-            <span class="sr-only">Fire icon</span>
-        </div>
-        <div class="ms-3 text-sm font-normal mr-2">
-            Open House 2025 sudah membuka pendaftaran! <a href="#open_house" class="inline underline text-blue-500 hover:text-blue-600">Pelajari lebih lanjut</a>
-        </div>
-        <button type="button" class="ms-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-default" aria-label="Close">
-            <span class="sr-only">Close</span>
-            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-            </svg>
-        </button>
-        @if(session('success'))
-        <div class="fixed top-5 right-5 bg-white text-green-600 border border-green-300 shadow-lg px-6 py-4 rounded-lg">
-            <strong>Success!</strong> {{ session('success') }}
-        </div>
-        @endif
-    </div>
-    <section style="background-image:url('{{ asset('images/potrait/darkened_ospkfull.jpg') }}')" class="-mt-[64px] w-full h-[100vh] flex flex-col justify-center items-center bg-center bg-cover">
+    <section style="background-image:url('{{ asset('images/potrait/darkened_ospkfull.jpg') }}')" class="-mt-[64px] w-full min-h-screen p-16 flex flex-col justify-center items-center bg-center bg-cover">
         <div class="flex flex-col items-center justify-center px-8">
-            <img src={{ asset('images/logo/general/ospk384.webp') }}>
-            <h1 class="mb-2 font-bold text-4xl md:text-6xl text-white">
+            <img src={{ asset('images/logo/general/ospk514.webp') }}>
+            <h1 class="mb-4 font-bold text-4xl sm:text-6xl md:text-8xl text-white">
                 OSIS SMA Negeri Unggulan M. H. Thamrin
             </h1>
-            <p class="mb-4 text-gray-300">
+            <p class="mb-4 text-xl md:text-4xl text-gray-300">
                 Selamat datang di beranda Agradama Navaleksa, 2024/2025.
             </p>
-            {{-- <button onclick="document.getElementById('hamburger').click();" class="lg:hidden py-4 px-4 rounded-lg bg-transparent border-yellow-400 hover:bg-yellow-400/75 focus:bg-yellow-400/75 hover:border-transparent focus:border-yellow-400/75 text-white border-2 text-xl font-semibold">
+            <button onclick="document.getElementById('hamburger').click();" class="lg:hidden py-4 px-4 mb-16 rounded-lg bg-transparent border-yellow-400 hover:bg-yellow-400/75 focus:bg-yellow-400/75 hover:border-transparent focus:border-yellow-400/75 text-white border-2 text-xl font-semibold">
                 Get to know us!
-            </button> --}}
+            </button>
         </div>
     </section>
-    <section id="open_house" style="background-image:url('{{ asset('images/proker/akad/oh/darkened_PXL_20240217_071314378.jpg') }}')" class="w-full h-[100vh] flex flex-col justify-center items-center bg-center bg-cover">
-        <div class="flex flex-col items-center sm:items-start justify-center self-start text-center sm:text-justify px-8 sm:px-16 space-y-4">
-            <div class="flex flex-row items-center bg-red-900 text-red-300 text-md font-medium me-2 px-2.5 pb-0.5 pt-1 rounded italic">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
-                    <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495ZM10 5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 10 5Zm0 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd" />
-                </svg>
-                <p class="ml-1 mb-0.5">OPEN REGISTRATION NOW!</p>
-            </div>
-            <h1 class="font-bold text-6xl text-white">
-                Open House
-            </h1>
-            <p class="text-gray-300 max-w-[60ch]">
-                Open House MHT menawarkan tour sekolah, simulasi kelas di MHT, sesi tanya jawab dengan kakak-kakak berprestasi, dan masih banyak lagi.
-            </p>
-            <p class="text-gray-300 max-w-[60ch]">
-                Matangkan persiapan memasuki SMA-mu dengan wawasan dan informasi yang kami sediakan di sini!
-            </p>
-            <p class="text-gray-300 max-w-[60ch] font-bold">
-                Open House akan dilaksanakan pada tanggal 8 dan 9 Februari 2025.
-            </p>
-            <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
-                <button class="py-4 px-4 rounded-lg bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 text-white text-xl font-semibold">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 inline -mt-1">
-                        <path fill-rule="evenodd" d="M12 1.5a.75.75 0 0 1 .75.75V4.5a.75.75 0 0 1-1.5 0V2.25A.75.75 0 0 1 12 1.5ZM5.636 4.136a.75.75 0 0 1 1.06 0l1.592 1.591a.75.75 0 0 1-1.061 1.06l-1.591-1.59a.75.75 0 0 1 0-1.061Zm12.728 0a.75.75 0 0 1 0 1.06l-1.591 1.592a.75.75 0 0 1-1.06-1.061l1.59-1.591a.75.75 0 0 1 1.061 0Zm-6.816 4.496a.75.75 0 0 1 .82.311l5.228 7.917a.75.75 0 0 1-.777 1.148l-2.097-.43 1.045 3.9a.75.75 0 0 1-1.45.388l-1.044-3.899-1.601 1.42a.75.75 0 0 1-1.247-.606l.569-9.47a.75.75 0 0 1 .554-.68ZM3 10.5a.75.75 0 0 1 .75-.75H6a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 10.5Zm14.25 0a.75.75 0 0 1 .75-.75h2.25a.75.75 0 0 1 0 1.5H18a.75.75 0 0 1-.75-.75Zm-8.962 3.712a.75.75 0 0 1 0 1.061l-1.591 1.591a.75.75 0 1 1-1.061-1.06l1.591-1.592a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
-                    </svg>
-                    <a href="https://bit.ly/OpenHouseMHT2025">Daftar sekarang!</a>
-                </button>
-                <button class="py-4 px-4 rounded-lg border-white border-md border text-white hover:border-yellow-300 hover:text-yellow-300 focus:border-yellow-300 focus:text-yellow-300 text-xl">
-                    <a href="/thamnet/blog/openhouse2025">Lihat selengkapnya</a>
-                </button>
-            </div>
-        </div>
-    </section>
-    <main id="featured" class="flex flex-col flex-grow max-w-[1080px] w-full items-center h-full py-12 space-y-24">
+    <main id="featured" class="flex flex-col flex-grow w-full items-center">
         {{-- <div id="default-carousel" class="relative w-full" data-carousel="static">
             <!-- Carousel wrapper -->
             <div class="relative h-120 overflow-hidden rounded-lg md:h-96">
@@ -124,97 +69,141 @@
             </button>
         </div> --}}
         <!-- Logo Meaning -->
-        <section class="flex flex-col sm:flex-row sm:space-x-3 justify-center items-center">
-            <img src="{{ asset('images/logo/general/ospk228.webp') }}">
+        
+        <section style="background-image:url('{{ asset('images/proker/bph/stuban_smkn8/darkened_IMG_0122.webp') }}')" class="bg-cover bg-bottom min-h-screen w-full flex flex-col sm:space-x-3 pb-16 justify-center items-center">
+            <div class="flex flex-row px-8">
+                <div>
+                    <img src="{{ asset('images/logo/general/osis514.webp') }}">
+                </div>
+                <div>
+                    <img src="{{ asset('images/logo/general/mpk514.webp') }}">
+                </div>
+            </div>
+            <h2 class="font-semibold text-6xl sm:text-8xl mb-3 text-white">
+                Our Logo
+            </h2>
             <div class="w-full sm:w-5/6 text-center sm:text-left">
-                <h2 class="font-semibold text-4xl mb-3 text-black">
-                    Our Logo
-                </h2>
-                <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
-                    <ul class="px-2 sm:p-0 flex flex-wrap justify-center sm:justify-start -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
-                        <li class="me-2" role="presentation">
-                            <button class="inline-block p-4 border-b-2 rounded-t-lg" id="sayap-tab" data-tabs-target="#sayap" type="button" role="tab" aria-controls="sayap" aria-selected="false">Sayap</button>
-                        </li>
-                        <li class="me-2" role="presentation">
-                            <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="perisai-tab" data-tabs-target="#perisai" type="button" role="tab" aria-controls="perisai" aria-selected="false">Perisai</button>
-                        </li>
-                        <li class="me-2" role="presentation">
-                            <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="mahkota-tab" data-tabs-target="#mahkota" type="button" role="tab" aria-controls="mahkota" aria-selected="false">Mahkota</button>
+                <div>
+                    <ul class="px-4 flex flex-wrap justify-center -mb-px text-xl font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
+                        <li role="presentation">
+                            <button class="inline-block p-4 border-b-2 rounded-t-lg text-slate-300 border-slate-300 hover:text-slate-100 hover:border-slate-100 aria-selected:text-blue-500 aria-selected:border-blue-500" id="sayap-tab" data-tabs-target="#sayap" type="button" role="tab" aria-controls="sayap" aria-selected="true">Sayap</button>
                         </li>
                         <li role="presentation">
-                            <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="banner-tab" data-tabs-target="#banner" type="button" role="tab" aria-controls="banner" aria-selected="false">Banner</button>
+                            <button class="inline-block p-4 border-b-2 rounded-t-lg text-slate-300 border-slate-300 hover:text-slate-100 hover:border-slate-100 aria-selected:text-blue-500 aria-selected:border-blue-500" id="perisai-tab" data-tabs-target="#perisai" type="button" role="tab" aria-controls="perisai" aria-selected="false">Perisai</button>
                         </li>
                         <li role="presentation">
-                            <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="neraca-tab" data-tabs-target="#neraca" type="button" role="tab" aria-controls="neraca" aria-selected="false">Neraca</button>
+                            <button class="inline-block p-4 border-b-2 rounded-t-lg text-slate-300 border-slate-300 hover:text-slate-100 hover:border-slate-100 aria-selected:text-blue-500 aria-selected:border-blue-500" id="mahkota-tab" data-tabs-target="#mahkota" type="button" role="tab" aria-controls="mahkota" aria-selected="false">Mahkota</button>
                         </li>
                         <li role="presentation">
-                            <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="bintang-tab" data-tabs-target="#bintang" type="button" role="tab" aria-controls="bintang" aria-selected="false">Bintang</button>
+                            <button class="inline-block p-4 border-b-2 rounded-t-lg text-slate-300 border-slate-300 hover:text-slate-100 hover:border-slate-100 aria-selected:text-blue-500 aria-selected:border-blue-500" id="banner-tab" data-tabs-target="#banner" type="button" role="tab" aria-controls="banner" aria-selected="false">Banner</button>
                         </li>
                         <li role="presentation">
-                            <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="anakpanah-tab" data-tabs-target="#anakpanah" type="button" role="tab" aria-controls="anakpanah" aria-selected="false">Anak Panah</button>
+                            <button class="inline-block p-4 border-b-2 rounded-t-lg text-slate-300 border-slate-300 hover:text-slate-100 hover:border-slate-100 aria-selected:text-blue-500 aria-selected:border-blue-500" id="neraca-tab" data-tabs-target="#neraca" type="button" role="tab" aria-controls="neraca" aria-selected="false">Neraca</button>
                         </li>
                         <li role="presentation">
-                            <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="pedang-tab" data-tabs-target="#pedang" type="button" role="tab" aria-controls="pedang" aria-selected="false">Pedang</button>
+                            <button class="inline-block p-4 border-b-2 rounded-t-lg text-slate-300 border-slate-300 hover:text-slate-100 hover:border-slate-100 aria-selected:text-blue-500 aria-selected:border-blue-500" id="bintang-tab" data-tabs-target="#bintang" type="button" role="tab" aria-controls="bintang" aria-selected="false">Bintang</button>
                         </li>
                         <li role="presentation">
-                            <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="warna-tab" data-tabs-target="#warna" type="button" role="tab" aria-controls="warna" aria-selected="false">Warna</button>
+                            <button class="inline-block p-4 border-b-2 rounded-t-lg text-slate-300 border-slate-300 hover:text-slate-100 hover:border-slate-100 aria-selected:text-blue-500 aria-selected:border-blue-500" id="anakpanah-tab" data-tabs-target="#anakpanah" type="button" role="tab" aria-controls="anakpanah" aria-selected="false">Anak Panah</button>
+                        </li>
+                        <li role="presentation">
+                            <button class="inline-block p-4 border-b-2 rounded-t-lg text-slate-300 border-slate-300 hover:text-slate-100 hover:border-slate-100 aria-selected:text-blue-500 aria-selected:border-blue-500" id="pedang-tab" data-tabs-target="#pedang" type="button" role="tab" aria-controls="pedang" aria-selected="false">Pedang</button>
+                        </li>
+                        <li role="presentation">
+                            <button class="inline-block p-4 border-b-2 rounded-t-lg text-slate-300 border-slate-300 hover:text-slate-100 hover:border-slate-100 aria-selected:text-blue-500 aria-selected:border-blue-500" id="warna-tab" data-tabs-target="#warna" type="button" role="tab" aria-controls="warna" aria-selected="false">Warna</button>
                         </li>
                     </ul>
                 </div>
-                <div id="default-tab-content">
-                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="sayap" role="tabpanel" aria-labelledby="sayap-tab">
-                        <p class="text-sm text-gray-500 dark:text-gray-400">
-                            Elang dengan sayap dan ekor yang jumlah seluruhnya mencapai 69, melambangkan <strong class="font-medium text-gray-800 dark:text-white">jumlah anggota OSIS dan MPK kabinet Agradama Navaleksa</strong>. Setiap sayap mewakili ambisi dan kekuatan, sedangkan ekor menggambarkan keseimbangan dan arah. Gabungan elemen-elemen ini mencerminkan sinergi serta kontribusi unik dari setiap individu dalam kabinet, yang bersama-sama menciptakan sebuah kekuatan kolektif yang tangguh dan visioner.
+                <div id="default-tab-content" class="mb-8">
+                    <div class="hidden p-4 rounded-lg" id="sayap" role="tabpanel" aria-labelledby="sayap-tab">
+                        <p class="text-lg text-slate-300">
+                            Elang dengan sayap dan ekor yang jumlah seluruhnya mencapai 69, melambangkan <strong class="font-semibold">jumlah anggota OSIS dan MPK kabinet Agradama Navaleksa</strong>. Setiap sayap mewakili ambisi dan kekuatan, sedangkan ekor menggambarkan keseimbangan dan arah. Gabungan elemen-elemen ini mencerminkan sinergi serta kontribusi unik dari setiap individu dalam kabinet, yang bersama-sama menciptakan sebuah kekuatan kolektif yang tangguh dan visioner.
                         </p>
                     </div>
-                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="perisai" role="tabpanel" aria-labelledby="perisai-tab">
-                        <p class="text-sm text-gray-500 dark:text-gray-400">
-                            Perisai melambangkan <strong class="font-medium text-gray-800 dark:text-white">perlindungan dan kekuatan</strong>, mencerminkan <strong class="font-medium text-gray-800 dark:text-white">stabilitas dan ketahanan</strong>, serta menandakan <strong class="font-medium text-gray-800 dark:text-white">komitmen terhadap keamanan dan tanggung jawab</strong> dalam menghadapi tantangan yang akan datang pada masa mendatang.
+                    <div class="hidden p-4 rounded-lg" id="perisai" role="tabpanel" aria-labelledby="perisai-tab">
+                        <p class="text-lg text-slate-300">
+                            Perisai melambangkan <strong class="font-semibold">perlindungan dan kekuatan</strong>, mencerminkan <strong class="font-semibold">stabilitas dan ketahanan</strong>, serta menandakan <strong class="font-semibold">komitmen terhadap keamanan dan tanggung jawab</strong> dalam menghadapi tantangan yang akan datang pada masa mendatang.
                         </p>
                     </div>
-                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="mahkota" role="tabpanel" aria-labelledby="mahkota-tab">
-                        <p class="text-sm text-gray-500 dark:text-gray-400">
-                            Mahkota merepresentasikan <strong class="font-medium text-gray-800 dark:text-white">keagungan</strong>, serta <strong class="font-medium text-gray-800 dark:text-white">kemewahan</strong>, sekaligus menjadi simbol <strong class="font-medium text-gray-800 dark:text-white">kehormatan, kebijaksanaan, dan kejayaan</strong> dalam berbagai sektor.
+                    <div class="hidden p-4 rounded-lg" id="mahkota" role="tabpanel" aria-labelledby="mahkota-tab">
+                        <p class="text-lg text-slate-300">
+                            Mahkota merepresentasikan <strong class="font-semibold">keagungan</strong>, serta <strong class="font-semibold">kemewahan</strong>, sekaligus menjadi simbol <strong class="font-semibold">kehormatan, kebijaksanaan, dan kejayaan</strong> dalam berbagai sektor.
                         </p>
                     </div>
-                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="banner" role="tabpanel" aria-labelledby="banner-tab">
-                        <p class="text-sm text-gray-500 dark:text-gray-400">
-                            Banner bertuliskan Agradama Navaleksa yang merupakan <strong class="font-medium text-gray-800 dark:text-white">nama kabinet</strong> kepengurusan OSIS MPK SMA Negeri Unggulan M.H. Thamrin masa bakti 2024/2025. Nama tersebut ditempatkan pada banner sebagai identitas kabinet yang akan menjalankan tugas dan tanggung jawab kepemimpinan pada periode tersebut.<br><br>
-                            Adapun nama Agradama Navaleksa merupakan singkatan dari <strong class="font-medium text-gray-800 dark:text-white">Agranaya Mahadhama Navadhara Leksa</strong> yang berarti <strong class="font-medium text-gray-800 dark:text-white">elang muda tangguh membawa inovasi dengan ikatan yang kuat untuk perubahan masa depan</strong>.
+                    <div class="hidden p-4 rounded-lg" id="banner" role="tabpanel" aria-labelledby="banner-tab">
+                        <p class="text-lg text-slate-300">
+                            Banner bertuliskan Agradama Navaleksa yang merupakan <strong class="font-semibold">nama kabinet</strong> kepengurusan OSIS MPK SMA Negeri Unggulan M.H. Thamrin masa bakti 2024/2025. Nama tersebut ditempatkan pada banner sebagai identitas kabinet yang akan menjalankan tugas dan tanggung jawab kepemimpinan pada periode tersebut.<br><br>
+                            Adapun nama Agradama Navaleksa merupakan singkatan dari <strong class="font-semibold">Agranaya Mahadhama Navadhara Leksa</strong> yang berarti <strong class="font-semibold">elang muda tangguh membawa inovasi dengan ikatan yang kuat untuk perubahan masa depan</strong>.
                         </p>
                     </div>
-                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="neraca" role="tabpanel" aria-labelledby="neraca-tab">
-                        <p class="text-sm text-gray-500 dark:text-gray-400">
-                            Neraca bermakna <strong class="font-medium text-gray-800 dark:text-white">keadilan sosial</strong> sebagai salah satu dasar MPK dalam mengambil keputusan, tidak berat sebelah, dan tidak pandang bulu dalam menciptakan keadilan.
+                    <div class="hidden p-4 rounded-lg" id="neraca" role="tabpanel" aria-labelledby="neraca-tab">
+                        <p class="text-lg text-slate-300">
+                            Neraca bermakna <strong class="font-semibold">keadilan sosial</strong> sebagai salah satu dasar MPK dalam mengambil keputusan, tidak berat sebelah, dan tidak pandang bulu dalam menciptakan keadilan.
                         </p>
                     </div>
-                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="bintang" role="tabpanel" aria-labelledby="bintang-tab">
-                        <p class="text-sm text-gray-500 dark:text-gray-400">
-                            Bintang dengan jumlah 5 berarti <strong class="font-medium text-gray-800 dark:text-white">MPK melihat dari sudut pandang yang berbeda</strong> tidak terfokuskan terhadap 1 masalah saja, serta 5 bintang pelambang Pancasila sebagai falsafah bangsa Indonesia dan pedoman MPK dalam berorganisasi.
+                    <div class="hidden p-4 rounded-lg" id="bintang" role="tabpanel" aria-labelledby="bintang-tab">
+                        <p class="text-lg text-slate-300">
+                            Bintang dengan jumlah 5 berarti <strong class="font-semibold">MPK melihat dari sudut pandang yang berbeda</strong> tidak terfokuskan terhadap 1 masalah saja, serta 5 bintang pelambang Pancasila sebagai falsafah bangsa Indonesia dan pedoman MPK dalam berorganisasi.
                         </p>
                     </div>
-                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="anakpanah" role="tabpanel" aria-labelledby="anakpanah-tab">
-                        <p class="text-sm text-gray-500 dark:text-gray-400">
-                            Simbol anak panah yang dikelilingi oleh api merepresentasikan OSIS sebagai <strong class="font-medium text-gray-800 dark:text-white">organisasi yang penuh semangat dan berdedikasi tinggi</strong>. Anak panah melambangkan <strong class="font-medium text-gray-800 dark:text-white">arah yang jelas dan ketepatan</strong> 
-                            dalam setiap tindakan OSIS, sementara api mencerminkan <strong class="font-medium text-gray-800 dark:text-white">semangat yang menyala, kekuatan, dan kemampuan untuk menghadapi tantangan</strong> dengan energi yang tak terhentikan. Kombinasi ini menggambarkan OSIS sebagai penggerak perubahan yang terus maju tanpa henti, menghadapi rintangan dengan tekad kuat dan selalu berusaha membawa dampak positif bagi seluruh siswa.
+                    <div class="hidden p-4 rounded-lg" id="anakpanah" role="tabpanel" aria-labelledby="anakpanah-tab">
+                        <p class="text-lg text-slate-300">
+                            Simbol anak panah yang dikelilingi oleh api merepresentasikan OSIS sebagai <strong class="font-semibold">organisasi yang penuh semangat dan berdedikasi tinggi</strong>. Anak panah melambangkan <strong class="font-semibold">arah yang jelas dan ketepatan</strong> 
+                            dalam setiap tindakan OSIS, sementara api mencerminkan <strong class="font-semibold">semangat yang menyala, kekuatan, dan kemampuan untuk menghadapi tantangan</strong> dengan energi yang tak terhentikan. Kombinasi ini menggambarkan OSIS sebagai penggerak perubahan yang terus maju tanpa henti, menghadapi rintangan dengan tekad kuat dan selalu berusaha membawa dampak positif bagi seluruh siswa.
                         </p>
                     </div>
-                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="pedang" role="tabpanel" aria-labelledby="pedang-tab">
-                        <p class="text-sm text-gray-500 dark:text-gray-400">
-                            Tiga pedang utama mencerminkan <strong class="font-medium text-gray-800 dark:text-white">ketua umum dan kedua ketua bidangnya dalam OSIS</strong>, melambangkan kepemimpinan yang kuat dan kesatuan visi yang menginspirasi. Setiap pedang mewakili dedikasi dan peran vital dalam membimbing serta mendukung organisasi, menggambarkan kerja sama yang harmonis, keberanian dalam menghadapi tantangan, dan komitmen yang tak tergoyahkan untuk mencapai tujuan bersama.
+                    <div class="hidden p-4 rounded-lg" id="pedang" role="tabpanel" aria-labelledby="pedang-tab">
+                        <p class="text-lg text-slate-300">
+                            Tiga pedang utama mencerminkan <strong class="font-semibold">ketua umum dan kedua ketua bidangnya dalam OSIS</strong>, melambangkan kepemimpinan yang kuat dan kesatuan visi yang menginspirasi. Setiap pedang mewakili dedikasi dan peran vital dalam membimbing serta mendukung organisasi, menggambarkan kerja sama yang harmonis, keberanian dalam menghadapi tantangan, dan komitmen yang tak tergoyahkan untuk mencapai tujuan bersama.
                         </p>
                     </div>
-                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="warna" role="tabpanel" aria-labelledby="warna-tab">
-                        <p class="text-sm text-gray-500 dark:text-gray-400">
-                            <strong class="font-medium text-gray-800 dark:text-white">Warna biru</strong> diartikan sebagai warna alam semesta, yang melambangkan <strong class="font-medium text-gray-800 dark:text-white">cinta, bijaksana, hebat, besar, dan kokoh</strong>.<br>
-                            <strong class="font-medium text-gray-800 dark:text-white">Warna emas</strong> melambangkan <strong class="font-medium text-gray-800 dark:text-white">kehormatan, kejayaan, dan nilai-nilai yang berharga</strong>. Dalam konteks ini, warna emas mencerminkan prestasi tinggi dan tanggung jawab yang mulia dari kepengurusan. Ini menunjukkan cita-cita kabinet untuk mencapai kesuksesan dan memberikan kontribusi terbaik bagi sekolah.<br>
-                            <strong class="font-medium text-gray-800 dark:text-white">Warna putih</strong> merepresentasikan <strong class="font-medium text-gray-800 dark:text-white">kemurnian, kejujuran, dan transparansi</strong>. Ini mencerminkan niat tulus dari kepengurusan untuk menjalankan tugas mereka dengan penuh integritas dan tanpa kepentingan pribadi.<br>
-                            <strong class="font-medium text-gray-800 dark:text-white">Warna merah</strong> pada logo merepresentasikan <strong class="font-medium text-gray-800 dark:text-white">semangat, keberanian, dan kekuatan dalam menjalankan tanggung jawab</strong>. Warna ini melambangkan energi dinamis dan komitmen kuat OSIS dalam menghadapi tantangan serta mengambil keputusan tegas untuk kemajuan bersama. Selain itu, merah mencerminkan sikap penuh tanggung jawab OSIS dalam memajukan kegiatan siswa dan mendorong perubahan positif di lingkungan sekolah.
+                    <div class="hidden p-4 rounded-lg" id="warna" role="tabpanel" aria-labelledby="warna-tab">
+                        <p class="text-lg text-slate-300">
+                            <strong class="font-semibold">Warna biru</strong> diartikan sebagai warna alam semesta, yang melambangkan <strong class="font-semibold">cinta, bijaksana, hebat, besar, dan kokoh</strong>.<br><br>
+                            <strong class="font-semibold">Warna emas</strong> melambangkan <strong class="font-semibold">kehormatan, kejayaan, dan nilai-nilai yang berharga</strong>. Dalam konteks ini, warna emas mencerminkan prestasi tinggi dan tanggung jawab yang mulia dari kepengurusan. Ini menunjukkan cita-cita kabinet untuk mencapai kesuksesan dan memberikan kontribusi terbaik bagi sekolah.<br><br>
+                            <strong class="font-semibold">Warna putih</strong> merepresentasikan <strong class="font-semibold">kemurnian, kejujuran, dan transparansi</strong>. Ini mencerminkan niat tulus dari kepengurusan untuk menjalankan tugas mereka dengan penuh integritas dan tanpa kepentingan pribadi.<br><br>
+                            <strong class="font-semibold">Warna merah</strong> pada logo merepresentasikan <strong class="font-semibold">semangat, keberanian, dan kekuatan dalam menjalankan tanggung jawab</strong>. Warna ini melambangkan energi dinamis dan komitmen kuat OSIS dalam menghadapi tantangan serta mengambil keputusan tegas untuk kemajuan bersama.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section style="background-image:url('{{ asset('images/proker/pudo/velda/darkened_backdrop.webp') }}')" class="w-full min-h-screen p-16 flex flex-col justify-center items-center bg-center bg-cover">
+            <div class="flex flex-col items-center justify-center px-8">
+                <h1 class="mb-4 font-bold text-4xl sm:text-6xl md:text-8xl text-white">
+                    Vlog Elang Muda
+                </h1>
+                <p class="mb-4 text-xl md:text-4xl text-gray-300">
+                    Saksikan kehidupan OSIS MPK MHT dari sudut pandang kami!
+                </p>
+            </div>
+            <div class="w-full flex flex-col md:flex-row space-y-8 md:space-y-0 space-x-0 md:space-x-8 mt-8">
+                <iframe class="flex flex-1 aspect-[16/9]" src="https://www.youtube.com/embed/wCqFYdHKIdo?si=-tUerVVdf0J1jRV-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe class="flex flex-1 aspect-[16/9]" src="https://www.youtube.com/embed/2YAq2VOHsFY?si=mFzNXn0lncqYKZQK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section style="background-image:url('{{ asset('images/proker/dhl/donuts/darkened_637A8750.webp') }}')" class="w-full min-h-screen p-16 flex flex-col justify-center items-center bg-center bg-cover">
+            <div class="flex flex-col items-center justify-center px-8">
+                <h1 class="mb-4 font-bold text-4xl sm:text-6xl md:text-8xl text-white">
+                    DHE Campaign
+                </h1>
+                <p class="mb-4 text-xl md:text-4xl text-gray-300">
+                    Untuk demokrasi, HAM, dan lingkungan.
+                </p>
+            </div>
+            <div class="flex flex-row mt-8">
+                <div class="hidden md:block mr-8">
+                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DBZ7jQ_Af-H/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DBZ7jQ_Af-H/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DBZ7jQ_Af-H/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by 𝗔𝗚𝗥𝗔𝗗𝗔𝗠𝗔 𝗡𝗔𝗩𝗔𝗟𝗘𝗞𝗦𝗔 (@osismpkthamrin)</a></p></div></blockquote>
+                </div>
+                <div>
+                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DD3tKDiyf5c/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DD3tKDiyf5c/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DD3tKDiyf5c/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by 𝗔𝗚𝗥𝗔𝗗𝗔𝗠𝗔 𝗡𝗔𝗩𝗔𝗟𝗘𝗞𝗦𝗔 (@osismpkthamrin)</a></p></div></blockquote>
+                </div>
+                <script async src="//www.instagram.com/embed.js"></script>
+            </div>
+        </section>
+
         <!-- Link to /merchandise -->
         {{-- <section class="bg-white dark:bg-gray-900">
             <h3 class="text-6xl font-semibold">
