@@ -4,7 +4,7 @@
 
         ">
     </x-slot:metadesc> --}}
-    <section style="background-image:url('{{ asset('images/potrait/darkened_ospkfull.jpg') }}')" class="-mt-[64px] w-full min-h-screen p-16 flex flex-col justify-center items-center bg-center bg-cover">
+    <section style="background-image:url('{{ asset('images/potrait/darkened_ospkfull.jpg') }}')" class="-mt-[95px] w-full min-h-screen p-4 sm:p-16 flex flex-col justify-center items-center bg-center bg-cover">
         <div class="flex flex-col items-center justify-center px-8">
             <img src={{ asset('images/logo/general/ospk514.webp') }}>
             <h1 class="mb-4 font-bold text-4xl sm:text-6xl md:text-8xl text-white">

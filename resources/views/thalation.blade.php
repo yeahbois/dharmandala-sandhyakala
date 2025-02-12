@@ -2,24 +2,24 @@
     <section class="-mt-[64px] w-full min-h-[100vh] flex flex-col md:flex-row justify-center items-center">
         <div class="flex flex-col flex-1 h-full items-center justify-center px-6">
             <div class="flex flex-col items-center justify-center py-2">
-                <img src={{ asset('images/logo/general/mpk380.webp') }} class="w-96">
-                <h1 class="font-bold text-6xl">
+                <img src={{ asset('images/logo/general/mpk514.webp') }}>
+                <h1 class="font-bold text-6xl sm:text-8xl">
                     Thalation
                 </h1>
-                <p class="mt-2 text-md sm:text-xl text-gray-600 max-w-[120ch]">
+                <p class="mt-4 text-xl sm:text-4xl text-gray-600 max-w-[120ch]">
                     Welcome to MPK's Thamrin Wall of Aspiration!
                 </p>
             </div>
         </div>
     </section>
-    <div class="flex flex-col items-center justify-center space-y-32 px-8">
+    <div class="flex flex-col items-center justify-center space-y-48 px-8">
         <div class="text-start bg-white dark:bg-gray-900">
             <div class="mx-auto max-w-screen-xl">
-                <div class="max-w-screen-md mb-4 lg:mb-12">
-                    <h2 class="mb-2 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
+                <div class="max-w-screen-md mb-12 lg:mb-16">
+                    <h2 class="mb-2 sm:mb-4 text-4xl sm:text-6xl tracking-tight font-bold text-gray-900 dark:text-white">
                         Apa fungsi MPK?
                     </h2>
-                    <p class="text-gray-500 sm:text-xl dark:text-gray-400">
+                    <p class="text-gray-500 text-xl sm:text-2xl dark:text-gray-400">
                         MPK atau Majelis Perwakilan Kelas hadir untuk:
                     </p>
                 </div>
@@ -30,7 +30,7 @@
                                 <path d="M10.5 1.875a1.125 1.125 0 0 1 2.25 0v8.219c.517.162 1.02.382 1.5.659V3.375a1.125 1.125 0 0 1 2.25 0v10.937a4.505 4.505 0 0 0-3.25 2.373 8.963 8.963 0 0 1 4-.935A.75.75 0 0 0 18 15v-2.266a3.368 3.368 0 0 1 .988-2.37 1.125 1.125 0 0 1 1.591 1.59 1.118 1.118 0 0 0-.329.79v3.006h-.005a6 6 0 0 1-1.752 4.007l-1.736 1.736a6 6 0 0 1-4.242 1.757H10.5a7.5 7.5 0 0 1-7.5-7.5V6.375a1.125 1.125 0 0 1 2.25 0v5.519c.46-.452.965-.832 1.5-1.141V3.375a1.125 1.125 0 0 1 2.25 0v6.526c.495-.1.997-.151 1.5-.151V1.875Z" />
                             </svg>
                         </div>
-                        <h3 class="mb-2 text-xl font-bold dark:text-white">Aspirasi</h3>
+                        <h3 class="mb-2 text-2xl font-bold dark:text-white">Aspirasi</h3>
                         <p class="text-gray-500 dark:text-gray-400">
                             Menjadi wadah penyalur aspirasi antar seluruh komponen SMA Negeri Unggulan M. H. Thamrin.
                         </p>
@@ -41,7 +41,7 @@
                                 <path fill-rule="evenodd" d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
                             </svg>
                         </div>
-                        <h3 class="mb-2 text-xl font-bold dark:text-white">Legislasi</h3>
+                        <h3 class="mb-2 text-2xl font-bold dark:text-white">Legislasi</h3>
                         <p class="text-gray-500 dark:text-gray-400">
                             Merancang, mengubah, dan menetapkan AD/ART OSIS MPK dalam Sidang Paripurna di awal masa jabatan.
                         </p>
@@ -52,7 +52,7 @@
                                 <path fill-rule="evenodd" d="M12.516 2.17a.75.75 0 0 0-1.032 0 11.209 11.209 0 0 1-7.877 3.08.75.75 0 0 0-.722.515A12.74 12.74 0 0 0 2.25 9.75c0 5.942 4.064 10.933 9.563 12.348a.749.749 0 0 0 .374 0c5.499-1.415 9.563-6.406 9.563-12.348 0-1.39-.223-2.73-.635-3.985a.75.75 0 0 0-.722-.516l-.143.001c-2.996 0-5.717-1.17-7.734-3.08Zm3.094 8.016a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
                             </svg>
                         </div>
-                        <h3 class="mb-2 text-xl font-bold dark:text-white">Koreksi</h3>
+                        <h3 class="mb-2 text-2xl font-bold dark:text-white">Koreksi</h3>
                         <p class="text-gray-500 dark:text-gray-400">
                             Mengevaluasi atau memberikan penilaian terhadap program kerja OSIS.
                         </p>
@@ -64,7 +64,7 @@
                                 <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z" clip-rule="evenodd" />
                               </svg>
                         </div>
-                        <h3 class="mb-2 text-xl font-bold dark:text-white">Supervisi</h3>
+                        <h3 class="mb-2 text-2xl font-bold dark:text-white">Supervisi</h3>
                         <p class="text-gray-500 dark:text-gray-400">
                             Mengawasi jalannya AD/ART OSIS MPK serta program kerja pengurus OSIS.
                         </p>
@@ -75,7 +75,7 @@
                                 <path fill-rule="evenodd" d="M12 2.25c-2.429 0-4.817.178-7.152.521C2.87 3.061 1.5 4.795 1.5 6.741v6.018c0 1.946 1.37 3.68 3.348 3.97.877.129 1.761.234 2.652.316V21a.75.75 0 0 0 1.28.53l4.184-4.183a.39.39 0 0 1 .266-.112c2.006-.05 3.982-.22 5.922-.506 1.978-.29 3.348-2.023 3.348-3.97V6.741c0-1.947-1.37-3.68-3.348-3.97A49.145 49.145 0 0 0 12 2.25ZM8.25 8.625a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Zm2.625 1.125a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875-1.125a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Z" clip-rule="evenodd" />
                             </svg>
                         </div>
-                        <h3 class="mb-2 text-xl font-bold dark:text-white">Advisi</h3>
+                        <h3 class="mb-2 text-2xl font-bold dark:text-white">Advisi</h3>
                         <p class="text-gray-500 dark:text-gray-400">
                             Memberi saran selama perancangan dan perencanaan program kerja OSIS serta apabila terjadi kendala pada pelaksanaannya.
                         </p>
@@ -85,11 +85,11 @@
         </div>
         <div class="text-start bg-white dark:bg-gray-900">
             <div class="mx-auto max-w-screen-xl">
-                <div class="max-w-screen-md mb-4 lg:mb-12">
-                    <h2 class="mb-2 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
+                <div class="max-w-screen-md mb-12 lg:mb-16">
+                    <h2 class="mb-2 sm:mb-4 text-4xl sm:text-6xl tracking-tight font-bold text-gray-900 dark:text-white">
                         Bagaimana cara MPK mengeksekusi perannya?
                     </h2>
-                    <p class="text-gray-500 sm:text-xl dark:text-gray-400">
+                    <p class="text-gray-500 text-xl sm:text-2xl dark:text-gray-400">
                         MPK atau Majelis Perwakilan Kelas memiliki program kerja guna menegakkan fungsinya:
                     </p>
                 </div>
@@ -103,7 +103,7 @@
                                 <path d="M2.02208 22C3.17173 21.3295 5.1082 19.8144 7.71127 20.008C8.37081 20.057 8.70094 20.0816 9.00245 20.0584C9.304 20.0353 9.31246 20.0333 9.32938 20.0294C10.861 19.6746 12 18.3357 12 16.7382V3.19664C12 2.53575 11.4642 2 10.8034 2C10.3175 2 9.8798 2.29382 9.69582 2.74355L6.97762 9.38804C5.91195 11.993 5.37912 13.2955 4.45028 13.9654C4.39315 14.0066 4.28717 14.0777 4.22741 14.115C3.25573 14.721 2.83715 14.721 2 14.721" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </div>
-                        <h3 class="mb-2 text-xl font-bold dark:text-white">Mantra MPK</h3>
+                        <h3 class="mb-2 text-2xl font-bold dark:text-white">Mantra MPK</h3>
                         <p class="text-gray-500 dark:text-gray-400">
                             MANTRA MPK (Masukan, Kritik, Saran, Evaluasi, dan Aspirasi) adalah wadah bagi siswa/i SMAN Unggulan M.H. Thamrin untuk menyalurkan aspirasinya dimanapun dan kapanpun melalui Thamrin Wall of Aspiration!
                         </p>
@@ -121,7 +121,7 @@
                                 <path d="M12 16.5H12.009" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </div>
-                        <h3 class="mb-2 text-xl font-bold dark:text-white">Tanya MPK</h3>
+                        <h3 class="mb-2 text-2xl font-bold dark:text-white">Tanya MPK</h3>
                         <p class="text-gray-500 dark:text-gray-400">
                             Tanya MPK merupakan program kerja dimana semua warga sekolah dapat bertanya kepada MPK sebagai perantara dengan pihak sekolah. Pertanyaan akan dijawab oleh pihak sekolah agar aspirasi melalui wadah MPK lebih terdengar.
                         </p>
@@ -136,7 +136,7 @@
                                 <circle cx="7" cy="4.5" r="3" stroke="currentColor" stroke-width="1.5" />
                             </svg>
                         </div>
-                        <h3 class="mb-2 text-xl font-bold dark:text-white">#MPKepo</h3>
+                        <h3 class="mb-2 text-2xl font-bold dark:text-white">#MPKepo</h3>
                         <p class="text-gray-500 dark:text-gray-400">
                             Kegiatan membuat konten di media sosial bertanya kepada warga SMAN Unggulan M. H. Thamrin mengenai situasi dan kondisi saat ini atau kegiatan yang berlangsung.
                         </p>
@@ -145,7 +145,7 @@
                         <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-[#dbeafe] lg:h-12 lg:w-12 dark:bg-[#1e3a8a]">
                             <svg class="w-5 h-5 text-[#2563eb] lg:w-6 lg:h-6 dark:text-[#93c5fd]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                         </div>
-                        <h3 class="mb-2 text-xl font-bold dark:text-white">MPK Legislasi</h3>
+                        <h3 class="mb-2 text-2xl font-bold dark:text-white">MPK Legislasi</h3>
                         <p class="text-gray-500 dark:text-gray-400">
                             MPK Legislasi merupakan program kerja MPK dimana seluruh anggota OSIS dan MPK SMAN Unggulan M. H. Thamrin berkesempatan untuk menerima materi dan pengalaman dalam bidang legislatif secara langsung oleh lembaga pemerintahan.
                         </p>
@@ -160,7 +160,7 @@
                                 <path d="M18.0952 7.753C18.0952 6.7328 17.2682 5.90578 16.248 5.90578C15.2278 5.90578 14.4008 6.7328 14.4008 7.753C14.4008 8.77319 15.2278 9.60022 16.248 9.60022C17.2682 9.60022 18.0952 8.77319 18.0952 7.753Z" stroke="currentColor" stroke-width="1.5" />
                             </svg>
                         </div>
-                        <h3 class="mb-2 text-xl font-bold dark:text-white">Malam Chat Aspirasi</h3>
+                        <h3 class="mb-2 text-2xl font-bold dark:text-white">Malam Chat Aspirasi</h3>
                         <p class="text-gray-500 dark:text-gray-400">
                             MACAPI atau Malam Chat Aspirasi dilakukan melalui OA Line MPK yang dikelola oleh BPH MPK. Pada MACAPI siswa/i bercengkrama melalui OA Line MPK dan akan dibalas oleh BPH MPK.
                         </p>
@@ -175,10 +175,10 @@
         </div>
         <div id="mantra" class="flex flex-col w-full p-8 rounded-xl shadow-md bg-blue-900">
             <div class="flex flex-col items-center mt-4 md:mt-0 text-center">
-                <h1 class="mb-1 text-4xl tracking-tight font-bold text-blue-100 dark:text-white">
+                <h1 class="mb-2 text-4xl sm:text-6xl tracking-tight font-bold text-blue-100 dark:text-white">
                     Mantra MPK: Apa kabar aspirasiku?
                 </h1>
-                <p class="text-gray-300">
+                <p class="mb-2 text-xl text-gray-300">
                     Berikut adalah status dari semua aspirasi yang sudah tersampaikan.
                 </p>
                 <div class="flex flex-row space-x-2 items-center w-fit mt-2 mb-4 py-2 px-4 rounded-lg text-lg font-medium bg-yellow-900 text-yellow-300 hover:bg-yellow-800 hover:cursor-pointer">
@@ -196,7 +196,7 @@
             <div class="gap-8 items-center mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2">
                 <img class="w-full dark:hidden" src={{ asset('\images\oa_line.webp') }} alt="dashboard image">
                 <div class="flex flex-col items-center sm:items-start mt-4 md:mt-0 text-center sm:text-left">
-                    <h2 class="my-2 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
+                    <h2 class="my-2 text-xl sm:text-6xl tracking-tight font-bold text-gray-900 dark:text-white">
                         Malam Chat Aspirasi
                     </h2>
                     <p class="mb-4 text-gray-500 dark:text-gray-400 max-w-[45ch]">
