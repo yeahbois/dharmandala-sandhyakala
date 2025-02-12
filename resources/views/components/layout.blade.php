@@ -90,7 +90,7 @@
         {{ $slot }}
         <!-- Footer -->
         <footer class="bg-white w-full flex flex-col-reverse justify-center lg:flex-row items-center lg:justify-end min-h-screen p-4 dark:bg-gray-800">
-            <div>
+            <div class="lg:mr-4">
                 <h1 class="text-black/75 text-6xl sm:text-8xl font-light italic mb-8 sm:mb-12">
                     CONTACT US
                 </h1>
