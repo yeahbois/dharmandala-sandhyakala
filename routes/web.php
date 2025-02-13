@@ -31,6 +31,9 @@ Route::get('/program-kerja/akademis/mamacu-kakacu', function() {
 Route::get('/program-kerja/akademis/thamrin-homecoming', function() {
     return view('program-kerja.akademis.thc');
 });
+Route::get('/program-kerja/akademis/open-house', function() {
+    return view('program-kerja.akademis.openhouse');
+});
 
 // AKADEMIS - PUBLIKASI PRESTASI
 Route::get('/publikasi-prestasi', function() {
@@ -45,12 +48,18 @@ Route::get('/publikasi-prestasi/2-september-2024', function() {
 Route::get('/publikasi-prestasi/14-oktober-2024', function() {
     return view('program-kerja.akademis.pubpres.14102024');
 });
+Route::get('/publikasi-prestasi/3-februari-2025', function() {
+    return view('program-kerja.akademis.pubpres.03022025');
+});
 
 
 
 // DHL
 Route::get('/program-kerja/dhl/a-day-of-environment-and-human-rights', function() {
     return view('program-kerja.dhl.donuts');
+});
+Route::get('/program-kerja/dhl/student-council-conference', function() {
+    return view('program-kerja.dhl.scorence');
 });
 
 
@@ -81,6 +90,9 @@ Route::get('/program-kerja/sastra-budaya/thamrin-sastra-fair', function() {
 Route::get('/program-kerja/sastra-budaya/young-eagle-showcase', function() {
     return view('program-kerja.sasbud.yes');
 });
+Route::get('/program-kerja/sastra-budaya/thamrin-got-talent', function() {
+    return view('program-kerja.sasbud.tgt');
+});
 
 
 
@@ -90,6 +102,9 @@ Route::get('/program-kerja/rohani', function() {
 });
 Route::get('/program-kerja/rohani/perayaan-maulid-nabi', function() {
     return view('program-kerja.rohani.maulid-nabi');
+});
+Route::get('/program-kerja/rohani/perayaan-isra-miraj', function() {
+    return view('program-kerja.rohani.isra-miraj');
 });
 
 

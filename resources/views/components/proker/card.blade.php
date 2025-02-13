@@ -1,6 +1,6 @@
 <div class="flex flex-col flex-1 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     <a href={{ $href }}>
-        <img class="h-56 w-full object-cover object-center rounded-t-lg" src="{{ asset($imglink) }}" alt="" />
+        <img class="h-auto sm:h-56 w-full object-cover object-center rounded-t-lg" src="{{ asset($imglink) }}" alt="" />
     </a>
     <div class="p-5">
         @empty($badge)

@@ -1,0 +1,1 @@
+<x-proker.card href="/publikasi-prestasi/3-februari-2025" badge="false" proker="3 Februari 2025" desc="SGU WTD 2024, INAO 2024, IMC 2024, RDO 2024, WISPO 2024" imglink="\images\prestasi\3feb25\637A9657600.webp"/>

@@ -10,20 +10,30 @@
                         Recent
                     </h3>
                 </div>
-                <div class="flex mb-8 space-y-4 flex-col sm:space-y-0 sm:flex-row sm:space-x-8">
+                <div class="flex mb-8 space-y-4 flex-col w-full sm:space-y-0 sm:flex-row sm:space-x-8">
+                    <x-seksi.akad.openhouse/>
+                    <x-seksi.dhl.scorence/>
+                    <x-seksi.rohani.isra-miraj/>
+                </div>
+                <div class="flex mb-8 space-y-4 flex-col w-full sm:space-y-0 sm:flex-row sm:space-x-8">
+                    <x-seksi.sasbud.tgt/>
                     <x-seksi.sasbud.yes/>
                     <x-seksi.k3or.tsc/>
-                    <x-seksi.dhl.donuts/>
                 </div>
-                <div class="flex mb-8 space-y-4 flex-col sm:space-y-0 sm:flex-row sm:space-x-8">
+                <div class="flex mb-8 space-y-4 flex-col w-full sm:space-y-0 sm:flex-row sm:space-x-8">
+                    <x-seksi.dhl.donuts/>
                     <x-seksi.k3or.hari-guru/>
                     <x-seksi.akad.mamacu/>
-                    <x-seksi.akad.thc/>
                 </div>
-                <div class="flex mb-8 space-y-4 flex-col sm:space-y-0 sm:flex-row sm:space-x-8">
+                <div class="flex mb-8 space-y-4 flex-col w-full sm:space-y-0 sm:flex-row sm:space-x-8">
+                    <x-seksi.akad.thc/>
                     <x-seksi.sasbud.tsf/>
                     <x-seksi.rohani.maulid-nabi/>
+                </div>
+                <div class="flex mb-8 space-y-4 flex-col w-full sm:space-y-0 sm:flex-row sm:space-x-8">
                     <x-seksi.k3or.thamfam/>
+                    <div class="flex flex-1"></div>
+                    <div class="flex flex-1"></div>
                 </div>
             </div>
         </section>
