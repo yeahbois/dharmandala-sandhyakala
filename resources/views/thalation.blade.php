@@ -1,5 +1,5 @@
 <x-layout title="THALATION">     
-    <section class="-mt-[64px] w-full min-h-[100vh] flex flex-col md:flex-row justify-center items-center">
+    <section class="-mt-[95px] w-full min-h-[100vh] flex flex-col md:flex-row justify-center items-center">
         <div class="flex flex-col flex-1 h-full items-center justify-center px-6">
             <div class="flex flex-col items-center justify-center py-2">
                 <img src={{ asset('images/logo/general/mpk514.webp') }}>

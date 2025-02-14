@@ -1,4 +1,4 @@
-<x-proker.main title="SCOREnCE" seksi="DHL" proker="Student Council Conference (SCORENCE)">
+<x-proker.main title="SCORENCE" seksi="DHL" proker="Student Council Conference (SCORENCE)">
     <x-slot:desc>
         [02/25] Student Council Conference atau SCORENCE adalah acara yang diadakan selama dua hari yang diisi pertunjukan maupun seminar terkait keterampilan teknis dan nonteknis yang dibuka untuk umum untuk berbagi pengalaman dan menjalin silaturahmi.
     </x-slot>

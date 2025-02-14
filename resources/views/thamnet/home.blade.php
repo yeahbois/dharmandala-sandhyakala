@@ -3,14 +3,14 @@
         <meta name="Thamnet - Beranda" content="">
     </x-slot:metadesc> --}}
 
-    <section class="-mt-[64px] w-full h-[100vh] flex flex-col justify-center items-center bg-center bg-cover">
+    <section class="w-full h-[100vh] flex flex-col justify-center items-center bg-center bg-cover">
         <div class="flex flex-col items-center justify-center px-8">
-            <div class="image-container">
+            <div class="flex flex-row justify-center space-x-4">
                 <!-- OSIS -->
-                <img src="{{ asset('/images/logo/general/osis.webp') }}" class="image" alt="Logo 1">
+                <img src="{{ asset('/images/logo/general/osis.webp') }}" class="w-[250px] object-cover" alt="Logo 1">
                 
                 <!-- AKAD -->
-                <img src="{{ asset('/images/logo/osis/akad.webp') }}" class="image" alt="Logo 2">
+                <img src="{{ asset('/images/logo/osis/akad.webp') }}" class="w-[250px] object-cover" alt="Logo 2">
             </div>
             <h1 class="mb-2 font-bold text-6xl text-black mt-8">
                 Selamat datang di Thamnet
@@ -49,20 +49,24 @@
 
 <style>
     /* Gaya untuk container gambar */
-.image-container {
+/* .image-container {
     display: flex;
     justify-content: center;
-    gap: 10px; /* Jarak antar gambar */
-    flex-wrap: nowrap; /* Mencegah gambar membungkus ke bawah */
-    padding: 0 20px; /* Memberikan padding kiri dan kanan */
-}
+    gap: 10px;  */
+    /* Jarak antar gambar */
+    /* flex-wrap: nowrap;  */
+    /* Mencegah gambar membungkus ke bawah */
+    /* padding: 0 20px;  */
+    /* Memberikan padding kiri dan kanan */
+/* } */
 
 /* Gaya untuk gambar */
-.image {
+/* .image {
     width: 284px;
     height: 284px;
-    object-fit: cover; /* Menjaga gambar tetap proporsional */
-}
+    object-fit: cover;  */
+    /* Menjaga gambar tetap proporsional */
+/* } */
 
 /* Responsif: Gambar akan lebih kecil pada layar lebih kecil */
 @media (max-width: 768px) {
