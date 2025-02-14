@@ -6,12 +6,12 @@
     <div class="flex flex-1 flex-col justify-center items-center">
         <section class="w-full h-screen flex flex-col justify-center items-center bg-center bg-cover">
             <div class="flex flex-col min-h-[calc(100vh-95px)] items-center justify-center px-8">
-                <div class="flex flex-row justify-center space-x-4">
+                <div class="flex flex-col sm:flex-row justify-center space-x-4 max-w-full">
                     <!-- OSIS -->
-                    <img src="{{ asset('/images/logo/general/osis.webp') }}" class="w-[250px] object-cover" alt="Logo 1">
+                    <img src="{{ asset('/images/logo/general/osis514.webp') }}" width="250" alt="Logo 1">
         
                     <!-- AKAD -->
-                    <img src="{{ asset('/images/logo/osis/akad.webp') }}" class="w-[250px] object-cover" alt="Logo 2">
+                    <img src="{{ asset('/images/logo/osis/akad514.webp') }}" width="250" alt="Logo 2">
                 </div>
                 <h1 class="mb-2 font-bold text-6xl text-black mt-8">
                     Selamat datang di Thamnet

@@ -75,7 +75,7 @@ def resize_images(input_folder, output_folder, new_width):
     # Loop through all files in the input folder
     for filename in os.listdir(input_folder):
         # Check if the file is an image
-        if filename.endswith(".webp"):
+        if filename.endswith("akad.webp"):
             # if filename == "ospk.webp":
             # Open the image
             image_path = os.path.join(input_folder, filename)
@@ -99,7 +99,7 @@ def resize_images(input_folder, output_folder, new_width):
             print(f"Resized and saved: {new_filename}")
 
 # Example usage
-convert_images_to_webp('./', './')
+# convert_images_to_webp('./', './')
 
 # Example usage
-resize_images('./', './', 600)
+resize_images('./', './', 514)
