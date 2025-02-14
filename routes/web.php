@@ -176,3 +176,9 @@ Route::post('/submit-form', function () {
     $formController = new FormController($googleSheetService);
     return $formController->submitForm($request);
 });
+
+Route::get('/sitemap.xml', function () {
+    return response()->file(resource_path('views/sitemap.xml'), [
+        'Content-Type' => 'application/xml'
+    ]);
+});
