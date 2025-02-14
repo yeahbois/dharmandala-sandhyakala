@@ -1,7 +1,10 @@
 <x-layout title="PROGRAM KERJA">
+    <x-slot:metadesc>
+        <meta name="description" content="Apa saja program OSIS yang baru saja dilaksanakan? Jangan ketinggalan update terbaru dan temukan inspirasinya di sini!">
+    </x-slot:metadesc>
     <main class="flex flex-col flex-grow w-full max-w-[1080px] h-full">
         <section class="py-8 w-full flex flex-col items-start space-y-16">
-            <h1 class="py-4 font-bold text-6xl text-center w-full">
+            <h1 class="py-4 font-bold text-6xl sm:text-8xl text-center w-full">
                 Program Kerja
             </h1>
             <div class="flex flex-col items-center sm:items-start w-full">

@@ -1,4 +1,9 @@
 <x-layout title="PROGRAM KERJA">
+    <x-slot:metadesc>
+        <meta name="Beranda OSIS MPK SMA Unggulan M. H. Thamrin" content="
+            Kenali program kerja utama OSIS MHT! Dari event seru hingga proyek inspiratif, lihat bagaimana kami membawa perubahan!
+        ">
+    </x-slot:metadesc>
     <main class="flex flex-col flex-grow w-full max-w-[1080px] h-full">
         <section class="py-8 w-full flex flex-col items-start space-y-16">
             <h1 class="py-4 font-bold text-6xl sm:text-8xl text-center w-full">

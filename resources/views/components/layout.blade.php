@@ -3,7 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
         {{ $metadesc ?? null }}
+        <meta name="copyright" content="© 2025 OSIS MPK SMA Unggulan M. H. Thamrin">
+        <meta name="author" content="OSIS MPK SMA Unggulan M. H. Thamrin 2024/2025">
 
         <title>{{ $title.' | AGRADAMA NAVALEKSA 2024/2025' ?? 'AGRADAMA NAVALEKSA 2024/2025' }}</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('/images/favicon.ico') }}">
@@ -13,9 +16,9 @@
     </head>
     <body data-barba="wrapper" class="relative page-transition flex flex-1 w-full">
         <main id="main" data-barba="container" class="relative bg-white text-black flex flex-col items-center w-full min-h-screen text-center {{ $extra ?? null }}">
-            <div id="nav_prestasi_circle" class="opacity-0 absolute top-0 left-0 w-[10px] h-[10px] rounded-full bg-white"></div>
+            <div id="nav_prestasi_circle" class="opacity-0 absolute z-10 top-0 left-0 w-[10px] h-[10px] rounded-full bg-white"></div>
             <!-- Header -->
-            <div class="flex justify-center z-10 w-full bg-white">
+            <div class="flex justify-center z-20 w-full bg-white">
                 <nav class="w-full max-w-[1080px] p-4">
                     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
                         <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
