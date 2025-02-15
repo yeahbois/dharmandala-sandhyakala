@@ -1,4 +1,10 @@
-<x-proker.main title="OPEN HOUSE" seksi="Akademis" proker="Open House">
+<x-proker.main title="OPEN HOUSE" seksi="Akademis" proker="Open House" keywords="open house, open house mht, open house 2025, open house mht 2025">
+    <x-slot:metadesc>
+        <meta name="description" content="Temukan Open House SMAN Unggulan M.H. Thamrin 2025, dengan berbagai acara, sorotan, dan informasi pendaftaran!" />
+        <meta property="og:title" content="Open House SMA Unggulan M. H. Thamrin 2024/2025">
+        <meta property="og:description" content="Jangan lewatkan Open House MHT tahun ini! Temukan program menarik, kenali MHT lebih dekat, dan siapkan dirimu untuk pengalaman seru!">
+        <meta property="og:image" content="https://ospkmhthamrin.com/images/proker/akad/oh/IMG_1230600.webp">
+    </x-slot:metadesc>
     <x-slot:desc>
         [02/25] Program kerja yang memberikan informasi tentang SMA Negeri Unggulan M.H. Thamrin secara langsung kepada calon peserta didik, baik melalui seminar yang disampaikan oleh warga sekolah SMA Negeri Unggulan M.H. Thamrin maupun melalui rangkaian acara Open House.        
     </x-slot>

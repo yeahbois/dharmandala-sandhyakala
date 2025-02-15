@@ -1,4 +1,10 @@
-<x-proker.main title="Publikasi Prestasi" seksi="Akademis" proker="Publikasi Prestasi">
+<x-proker.main title="Publikasi Prestasi" seksi="Akademis" proker="Publikasi Prestasi" keywords="publikasi prestasi, publikasi, prestasi">
+    <x-slot:metadesc>
+        <meta name="description" content="Lihat deretan prestasi luar biasa dari SMA Negeri Unggulan M.H. Thamrin! Inovasi, akademik, dan kompetisi—semuanya ada di sini!" />
+        <meta property="og:title" content="Publikasi Prestasi - OSIS MPK SMA Negeri Unggulan M. H. Thamrin 2024/2025">
+        <meta property="og:description" content="Program kerja Seksi Akademis untuk meningkatkan akses informasi dan kesadaran publik mengenai prestasi SMA Negeri Unggulan M.H. Thamrin.">
+        <meta property="og:image" content="https://ospkmhthamrin.com/images/prestasi/14okt/637A5102600.webp">
+    </x-slot:metadesc>
     <x-slot:desc>
         Program kerja ini dirancang oleh Seksi Akademis untuk meningkatkan akses informasi dan kesadaran masyarakat mengenai prestasi SMA Negeri Unggulan M.H. Thamrin.</a>
     </x-slot>

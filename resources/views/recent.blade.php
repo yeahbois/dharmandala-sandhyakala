@@ -1,6 +1,9 @@
 <x-layout title="PROGRAM KERJA">
     <x-slot:metadesc>
         <meta name="description" content="Apa saja program OSIS yang baru saja dilaksanakan? Jangan ketinggalan update terbaru dan temukan inspirasinya di sini!">
+        <meta property="og:title" content="Program Kerja Terbaru OSIS MPK SMA Negeri Unggulan M. H. Thamrin 2024/2025">
+        <meta property="og:description" content="Cari tahu program kerja terbaru OSIS MPK MHT dan temukan inspirasinya!">
+        <meta property="og:image" content="https://ospkmhthamrin.com/images/potrait/ospkfull.jpg">
     </x-slot:metadesc>
     <main class="flex flex-col flex-grow w-full max-w-[1080px] h-full">
         <section class="py-8 w-full flex flex-col items-start space-y-16">

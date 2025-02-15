@@ -1,4 +1,10 @@
-<x-proker.main title="MAMACU KAKACU" seksi="Akademis" proker="Mamacu Kakacu">
+<x-proker.main title="MAMACU KAKACU" seksi="Akademis" proker="Mamacu Kakacu" keywords="mamacu kakacu, mengajar anak, gratis mengajar anak, mengajar anak gratis">
+    <x-slot:metadesc>
+        <meta name="description" content="Dedikasi untuk pendidikan! Program sukarela mengajar anak-anak SD, SMP, dan di panti asuhan. Yuk, ikut berbagi ilmu!" />
+        <meta property="og:title" content="Mamacu Kakacu - OSIS MPK SMA Negeri Unggulan M. H. Thamrin 2024/2025">
+        <meta property="og:description" content="Pendidikan untuk semua! Mamacu Kakacu hadir untuk membantu anak-anak belajar dengan semangat gotong royong dan kepedulian.">
+        <meta property="og:image" content="https://ospkmhthamrin.com/images/proker/akad/mamacu/DE7F474B-C06C-44E4-9D96-A8AB752E5292-14995-00000172BB640131514.webp">
+    </x-slot:metadesc>
     <x-slot:desc>
         [11/24] Program kerja ini dirancang oleh Seksi Akademis untuk menyediakan media bagi peserta didik SMA Negeri Unggulan M.H. Thamrin yang ingin secara sukarela mengajar anak-anak di tingkat SD/MI, SMP/MTs, dan di asrama panti asuhan sekaligus membantu memberikan materi tambahan kepada peserta didik SD/MI sederajat, SMP/MTs sederajat di sekitar Jakarta maupun anak-anak di panti asuhan. <br><br> <span class="font-medium">Tertarik untuk belajar bersama?</span> Yuk daftar <a href="https://bit.ly/mamacukakacu" target="_blank" class="underline text-blue-500 hover:text-blue-400">di sini!</a>
     </x-slot>

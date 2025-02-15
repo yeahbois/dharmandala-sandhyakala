@@ -7,6 +7,7 @@
         {{ $metadesc ?? null }}
         <meta name="copyright" content="© 2025 OSIS MPK SMA Unggulan M. H. Thamrin">
         <meta name="author" content="OSIS MPK SMA Unggulan M. H. Thamrin 2024/2025">
+        <meta name="keywords" content="OSIS, MPK, MHT, sma, mht, thamrin, smanu, smanu mht, sma unggulan, mht m h thamrin, smanu mh thamrin, program kerja, event sekolah, kegiatan siswa {{ $keywords ?? '' }}">
 
         <title>{{ $title.' | AGRADAMA NAVALEKSA 2024/2025' ?? 'AGRADAMA NAVALEKSA 2024/2025' }}</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('/images/favicon.ico') }}">
@@ -93,7 +94,7 @@
             {{-- INSERT CUSTOM TEMPLATE HERE --}}
             {{ $slot }}
             <!-- Footer -->
-            <footer class="bg-white w-full flex flex-col-reverse justify-center lg:flex-row items-center lg:justify-end min-h-screen p-4 dark:bg-gray-800">
+            <footer class="bg-white w-full relative flex flex-col-reverse justify-center lg:flex-row items-center lg:justify-end min-h-screen p-4 dark:bg-gray-800">
                 <div class="lg:mr-4">
                     <h1 class="text-black/75 text-6xl sm:text-8xl font-light italic mb-8 sm:mb-12">
                         CONTACT US
@@ -119,6 +120,9 @@
                 </div>
                 <div class="w-full lg:w-2/3 mb-16">
                     <image src="{{ asset('/images/logo/general/eagle_ascii1.png') }}"></image>
+                </div>
+                <div class="absolute bottom-4 right-4 text-gray-700">
+                    <p>Last updated: 15 Feb 2025</p>
                 </div>
             </footer>
         </main>

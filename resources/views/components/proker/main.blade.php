@@ -66,9 +66,9 @@
                         {{ $proker }}
                     </h1>
                     @isset($desc)
-                        <p class="text-gray-500 py-2 max-w-[75ch]">
+                        <h2 class="text-gray-500 py-2 max-w-[75ch]">
                             {{ $desc }}
-                        </p>
+                        </h2>
                     @endisset
                 </div>
                 <div>
@@ -97,9 +97,9 @@
                         {{ $proker }}
                     </h1>
                     @isset($desc)
-                        <p class="text-gray-500 py-2 max-w-[75ch]">
+                        <h2 class="text-gray-500 py-2 max-w-[75ch]">
                             {{ $desc }}
-                        </p>
+                        </h2>
                     @endisset
                 </div>
                 {{ $custom }}

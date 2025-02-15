@@ -1,9 +1,10 @@
 <x-layout title="Thamnet - Hall of Fame">
-    {{-- <x-slot:metadesc>
-        <meta name="Thamnet - Hall of Fame" content="
-        
-        ">
-    </x-slot:metadesc> --}}
+    <x-slot:metadesc>
+        <meta name="description" content="Kenali para siswa berprestasi di Hall of Fame MHT! Mereka adalah inspirasi bagi kita semua. Apakah namamu yang berikutnya?" />
+        <meta property="og:title" content="Hall of Fame - SMA Negeri Unggulan M. H. Thamrin 2024/2025">
+        <meta property="og:description" content="Hall of Fame MHT kami menampilkan siswa/i berprestasi dalam akademik, olahraga, seni, dan banyak lagi! Lihat daftar lengkapnya di sini.">
+        <meta property="og:image" content="https://ospkmhthamrin.com/images/prestasi/2sep/4E7CFC0B-7B7A-496E-AB12-DCDC1F8100ED-389-0000000597BFF340.webp">
+    </x-slot:metadesc>
 
     {{-- Hero Section --}}
     <section class="relative w-full h-[50vh] flex flex-col justify-center items-center bg-center bg-cover" style="background-image:url('{{ asset('images/potrait/darkened_ospkfull.jpg') }}')">

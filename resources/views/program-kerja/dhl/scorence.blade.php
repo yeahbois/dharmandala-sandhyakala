@@ -1,4 +1,10 @@
-<x-proker.main title="SCORENCE" seksi="DHL" proker="Student Council Conference (SCORENCE)">
+<x-proker.main title="SCORENCE" seksi="DHL" proker="Student Council Conference (SCORENCE)" keywords="student council conference, scorence">
+    <x-slot:metadesc>
+        <meta name="description" content="SCORENCE: Konferensi OSIS yang mengasah keterampilan teknis & nonteknis! Siapkan dirimu untuk jadi pemimpin yang lebih hebat!" />
+        <meta property="og:title" content="Student Council Conference - OSIS MPK SMA Negeri Unggulan M. H. Thamrin 2024/2025">
+        <meta property="og:description" content="Mau jadi pemimpin yang lebih kompeten? SCORENCE adalah konferensi yang membekali peserta dengan keterampilan kepemimpinan, komunikasi, dan manajemen organisasi!">
+        <meta property="og:image" content="https://ospkmhthamrin.com/images/proker/dhl/scorence/IMG_0503600.webp">
+    </x-slot:metadesc>
     <x-slot:desc>
         [02/25] Student Council Conference atau SCORENCE adalah acara yang diadakan selama dua hari yang diisi pertunjukan maupun seminar terkait keterampilan teknis dan nonteknis yang dibuka untuk umum untuk berbagi pengalaman dan menjalin silaturahmi.
     </x-slot>

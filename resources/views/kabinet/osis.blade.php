@@ -1,4 +1,10 @@
-<x-layout title="OSIS">
+<x-layout title="OSIS" keywords="osis mht, pengurus osis mht 2025, osis mh thamrin, osis smanu mh thamrin 2025, osis mht agradama navaleksa, osis mht agradama navaleksa 2025">
+    <x-slot:metadesc>
+        <meta name="description" content="Kenali Pengurus OSIS MHT Agradama Navaleksa 2024/2025! Pemimpin muda yang siap menggerakkan perubahan dan inovasi di sekolah." />
+        <meta property="og:title" content="Pengurus OSIS SMA Negeri Unggulan M. H. Thamrin 2024/2025">
+        <meta property="og:description" content="Kenali Pengurus OSIS MHT Agradama Navaleksa 2024/2025! Pemimpin muda yang siap menggerakkan perubahan dan inovasi di sekolah.">
+        <meta property="og:image" content="https://ospkmhthamrin.com/images/potrait/ospkfull.jpg">
+    </x-slot:metadesc>
     <main class="flex flex-col flex-grow w-full h-full">
         <section class="bg-white dark:bg-gray-900">
             <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">

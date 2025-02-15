@@ -1,4 +1,10 @@
-<x-layout title="THALATION">     
+<x-layout title="THALATION">
+    <x-slot:metadesc>
+        <meta name="description" content="Thalation – Thamrin Wall of Aspiration: Wadah aspirasi siswa yang dikelola oleh MPK untuk mendukung perubahan dan inovasi di SMA Negeri Unggulan M.H. Thamrin." />
+        <meta property="og:title" content="Thamrin Wall of Aspiration - Pengurus MPK SMA Negeri Unggulan M. H. Thamrin 2024/2025">
+        <meta property="og:description" content="Punya ide atau masukan untuk sekolah? Jangan diam saja! Tulis aspirasimu di Thalation - tempat di mana suara siswa didengar dan diwujudkan!">
+        <meta property="og:image" content="https://ospkmhthamrin.com/images/potrait/ospkfull.jpg">
+    </x-slot:metadesc> 
     <section class="-mt-[95px] w-full min-h-[100vh] flex flex-col md:flex-row justify-center items-center">
         <div class="flex flex-col flex-1 h-full items-center justify-center px-6">
             <div class="flex flex-col items-center justify-center py-2">

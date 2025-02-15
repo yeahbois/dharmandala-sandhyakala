@@ -1,7 +1,8 @@
-<x-layout title="Thamnet - Beranda">
-    {{-- <x-slot:metadesc>
-        <meta name="Thamnet - Beranda" content="">
-    </x-slot:metadesc> --}}
+<x-layout title="Thamnet - Beranda" keywords="thamnet, blog, akademis">
+    <meta name="description" content="Belajar jadi lebih seru dengan program akademis OSIS! Yuk, cek blog kami untuk info lengkap tentang kegiatan pendidikan terbaru!">
+    <meta property="og:title" content="Thamrin Network - OSIS MPK SMA Negeri Unggulan M. H. Thamrin 2024/2025">
+    <meta property="og:description" content="Penasaran dengan program akademis OSIS? Baca blog terbaru tentang event, workshop, dan bimbingan belajar yang bisa kamu ikuti!">
+    <meta property="og:image" content="https://ospkmhthamrin.com/images/logo/osis/akad.webp">
 
     <div class="flex flex-1 flex-col justify-center items-center">
         <section class="w-full h-screen flex flex-col justify-center items-center bg-center bg-cover">

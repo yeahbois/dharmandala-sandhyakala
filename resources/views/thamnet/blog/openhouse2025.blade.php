@@ -1,10 +1,13 @@
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-<x-layout title="Thamnet - Open House 2025">
+<x-layout title="Thamnet - Open House 2025" keywords="open house, open house mht, open house 2025, open house mht 2025">
     {{-- Meta Description --}}
     <x-slot:metadesc>
-        <meta name="description" content="Temukan Open House SMAN Unggulan M.H. Thamrin 2025, dengan berbagai acara, sorotan, dan informasi pendaftaran." />
+        <meta name="description" content="Temukan Open House SMAN Unggulan M.H. Thamrin 2025, dengan berbagai acara, sorotan, dan informasi pendaftaran!" />
+        <meta property="og:title" content="Open House SMA Negeri Unggulan M. H. Thamrin 2024/2025">
+        <meta property="og:description" content="Jangan lewatkan Open House MHT tahun ini! Temukan program menarik, kenali MHT lebih dekat, dan siapkan dirimu untuk pengalaman seru!">
+        <meta property="og:image" content="https://ospkmhthamrin.com/images/proker/akad/oh/IMG_1230600.webp">
     </x-slot:metadesc>
 
     {{-- Hero Section --}}

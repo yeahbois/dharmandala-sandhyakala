@@ -1,4 +1,10 @@
-<x-proker.main title="THAMRIN SPORT AND CREATIVITY WEEK" seksi="K3OR" proker="Thamrin Sport and Creativity Week">
+<x-proker.main title="THAMRIN SPORT AND CREATIVITY WEEK" seksi="K3OR" proker="Thamrin Sport and Creativity Week" keywords="tsc mht, thamrin sport and creativity week, thamrin sports, thamrin creativity, thamrin sports week, thamrin creativity week">
+    <x-slot:metadesc>
+        <meta name="description" content="Saatnya unjuk bakat dan semangat! Thamrin Sport and Creativity Week hadir dengan class meeting seru & apresiasi seni setelah AAS!" />
+        <meta property="og:title" content="Thamrin Sport & Creativity Week - OSIS MPK SMA Negeri Unggulan M. H. Thamrin 2024/2025">
+        <meta property="og:description" content="Ajang class meeting dan apresiasi seni bagi seluruh siswa SMA Unggulan M.H. Thamrin setelah AAS. Lihat detail acaranya di sini!">
+        <meta property="og:image" content="https://ospkmhthamrin.com/images/proker/k3or/tsc/sports/637A0879514.webp">
+    </x-slot:metadesc>
     <x-slot:desc>
         [12/24] Kegiatan <span class="italic">class meeting</span> serta apresiasi seni yang dilaksanakan setelah AAS dengan mengadakan perlombaan antar kelas dan antar angkatan (basket, futsal, sepak bola, badminton, tenis meja, MLBB, fashion show, dan lain-lain).
     </x-slot>

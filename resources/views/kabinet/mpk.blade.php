@@ -1,4 +1,10 @@
-<x-layout title="MPK">
+<x-layout title="MPK" keywords="mpk, pengurus mpk mht 2024/2025, mpk mht, mpk mht 2024/2025, mpk mht agradama navaleksa, mpk mht agradama navaleksa 2024/2025">
+    <x-slot:metadesc>
+        <meta name="description" content="Kenali lebih dekat Pengurus MPK MHT Agradama Navaleksa 2024/2025! Inilah para pemimpin siswa yang siap mengawal aspirasi dan perubahan." />
+        <meta property="og:title" content="Pengurus MPK SMA Negeri Unggulan M. H. Thamrin 2024/2025">
+        <meta property="og:description" content="Kenali lebih dekat Pengurus MPK MHT Agradama Navaleksa 2024/2025! Inilah para pemimpin siswa yang siap mengawal aspirasi dan perubahan.">
+        <meta property="og:image" content="https://ospkmhthamrin.com/images/potrait/ospkfull.jpg">
+    </x-slot:metadesc>
     <main class="flex flex-col flex-grow w-full h-full">
         <section class="bg-white dark:bg-gray-900">
             <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
