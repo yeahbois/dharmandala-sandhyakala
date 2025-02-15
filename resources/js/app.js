@@ -49,7 +49,7 @@ barba.init({
 
       return gsap.to("#nav_prestasi_circle", {
         scale: 1000,
-        duration: 0.4,
+        duration: 0.1,
         onComplete: () => {
           data.current.container.style.display = 'none';
         }
