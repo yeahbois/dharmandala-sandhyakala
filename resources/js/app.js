@@ -48,8 +48,8 @@ barba.init({
       document.getElementById('nav_prestasi_circle').style.opacity = '1';
 
       return gsap.to("#nav_prestasi_circle", {
-        scale: 1000,
-        duration: 0.01,
+        scale: 600,
+        duration: 0.7,
         onComplete: () => {
           data.current.container.style.display = 'none';
         }
@@ -64,11 +64,11 @@ barba.init({
       //   duration: 1
       // });
       return gsap.fromTo("#nav_prestasi_circle", {
-        scale: 1000,
+        scale: 600,
         opacity: 1
       }, {
         scale: 1,
-        duration: 0.01,
+        duration: 0.7,
         onComplete: () => {
           document.getElementById("nav_prestasi_circle").style.opacity = "0";
           document.querySelector('body').style.overflow = 'auto';
