@@ -149,7 +149,7 @@
                 <h1 class="mb-4 font-bold text-4xl sm:text-6xl md:text-8xl text-white">
                     DHE Campaign
                 </h1>
-                <p class="text-xl md:text-4xl text-gray-300">
+                <p class="mb-4 text-xl md:text-4xl text-gray-300">
                     Untuk demokrasi, HAM, dan lingkungan.
                 </p>
             </div>
@@ -168,20 +168,37 @@
         </section>
 
         <!-- Link to /merchandise -->
-        {{-- <section class="bg-white dark:bg-gray-900">
-            <h3 class="text-6xl font-semibold">
-                Merchandise
-            </h3>
-            <p class="mt-1 text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat minus obcaecati minima laboriosam expedita officia accusantium quo asperiores eaque maxime, temporibus culpa quia cumque optio enim sequi, amet corrupti adipisci?
-            </p>
-            <div class="my-8">
-                <img src="{{ asset('images/sae vs rin.png') }}" alt="">
+        <section class="w-full min-h-screen p-16 flex flex-col justify-center items-center bg-center bg-cover">
+            <div class="flex flex-col items-center justify-center px-8">
+                <h1 class="mb-4 font-bold text-4xl sm:text-6xl md:text-8xl text-slate-900">
+                    Merchandise
+                </h1>
+                <p class="mb-4 text-xl md:text-4xl text-slate-500">
+                    Dapatkan koleksi terbatas dan tunjukkan dukunganmu untuk generasi muda berprestasi!
+                </p>         
             </div>
-            <a href="/merchandise" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
-                Get started
-                <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            <div class="w-full flex flex-col justify-center items-center md:flex-row space-y-8 md:space-y-0 space-x-0 md:space-x-8 sm:mt-8">
+                <div class="max-w-96">
+                    <img src={{ asset('images/proker/k3or/thamgoods/tshirt.png') }} alt="T-Shirt Merchandise">
+                </div>
+                <div class="max-w-96">
+                    <img src={{ asset('images/proker/k3or/thamgoods/stickers.png') }} alt="Sticker Merchandise">
+                </div>
+                <div class="max-w-96">
+                    <img src={{ asset('images/proker/k3or/thamgoods/sweater.png') }} alt="Sticker Merchandise">
+                </div>
+                <div class="max-w-96">
+                    <img src={{ asset('images/proker/k3or/thamgoods/food_container.png') }} alt="Sticker Merchandise">
+                </div>
+            </div>
+            <a href="https://form.jotform.com/250354013520037" target="_blank">
+                <button class="flex items-center justify-center mt-8 sm:mt-16 p-4 bg-white text-black border border-gray-300 rounded-lg shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                    </svg>
+                    <span class="ml-2 text-4xl font-semibold bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent">Buy Now!</span>
+                </button>       
             </a>
-        </section> --}}
+        </section>
     </main>
 </x-layout>
