@@ -49,7 +49,7 @@ barba.init({
 
       return gsap.to("#nav_prestasi_circle", {
         scale: 1000,
-        duration: 0.1,
+        duration: 0.01,
         onComplete: () => {
           data.current.container.style.display = 'none';
         }
@@ -68,7 +68,7 @@ barba.init({
         opacity: 1
       }, {
         scale: 1,
-        duration: 0.4,
+        duration: 0.01,
         onComplete: () => {
           document.getElementById("nav_prestasi_circle").style.opacity = "0";
           document.querySelector('body').style.overflow = 'auto';
