@@ -44,36 +44,6 @@
                     <input type="text" id="name" name="name" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg" required>
                 </div>
 
-                <!-- Ticket Purchase -->
-                <div class="mb-6">
-                    <label class="block text-gray-700 text-lg font-semibold mb-2">Sudah membeli tiket Open House?</label>
-                    <div class="flex justify-center space-x-6">
-                        <label class="inline-flex items-center text-gray-700 text-lg">
-                            <input type="radio" name="ticket" value="yes" class="form-radio text-blue-500" id="ticketYes" required>
-                            <span class="ml-2">Ya</span>
-                        </label>
-                        <label class="inline-flex items-center text-gray-700 text-lg">
-                            <input type="radio" name="ticket" value="no" class="form-radio text-blue-500" id="ticketNo" required>
-                            <span class="ml-2">Tidak</span>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Conditional Question for Ticket Purchase -->
-                <div id="ticketDay" class="mb-6 hidden">
-                    <label class="block text-gray-700 text-lg font-semibold mb-2">Pilih hari yang ada ditiket:</label>
-                    <div class="flex justify-center space-x-6">
-                        <label class="inline-flex items-center text-gray-700 text-lg">
-                            <input type="radio" name="day" value="1" class="form-radio text-blue-500" required>
-                            <span class="ml-2">Hari 1</span>
-                        </label>
-                        <label class="inline-flex items-center text-gray-700 text-lg">
-                            <input type="radio" name="day" value="2" class="form-radio text-blue-500" required>
-                            <span class="ml-2">Hari 2</span>
-                        </label>
-                    </div>
-                </div>
-
                 <!-- Payment Method and Number -->
                 <div class="mb-6">
                     <label for="payment" class="block text-gray-700 text-lg font-semibold mb-2">Metode Pembayaran</label>
@@ -91,8 +61,8 @@
 
                 <!-- Phone Number -->
                 <div class="mb-6">
-                    <label for="phone" class="block text-gray-700 text-lg font-semibold mb-2">Nomor Telepon</label>
-                    <input type="text" id="phone" name="phone" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg" required>
+                    <label for="usnig" class="block text-gray-700 text-lg font-semibold mb-2">Username IG</label>
+                    <input type="text" id="usnig" name="usnig" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg" required>
                 </div>
 
                 <!-- Submit Button -->
@@ -102,17 +72,6 @@
             </form>
         </div>
     </section>
-
-    <script>
-        // Show conditional question based on ticket purchase
-        document.getElementById('ticketYes').addEventListener('change', function() {
-            document.getElementById('ticketDay').classList.remove('hidden');
-        });
-
-        document.getElementById('ticketNo').addEventListener('change', function() {
-            document.getElementById('ticketDay').classList.add('hidden');
-        });
-    </script>
 
 </x-layout>
 
