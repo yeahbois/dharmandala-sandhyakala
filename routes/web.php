@@ -144,7 +144,7 @@ Route::get('/thamnet/blog/openhouse2025', function() {
 // THANOS
 
 Route::get('/thanos', function () {
-    $targetDate = Carbon::create(2025, 2, 5, 12, 30, 0, 'Asia/Bangkok'); // GMT+7 timezone
+    $targetDate = Carbon::create(2025, 7, 21, 12, 30, 0, 'Asia/Bangkok'); // GMT+7 timezone
     $endDate = $targetDate->copy()->addDays(1)->addHours(2)->addMinutes(0);
     $currentDate = Carbon::now('Asia/Bangkok');
 
@@ -155,21 +155,17 @@ Route::post('/submit-form', function () {
     $datetime = date('Y-m-d H:i:s');
     $name = request('name');
     $answer = request('question');
-    $ticket = request('ticket');
-    $day = request('day');
     $payment = request('payment');
     $paymentNumber = request('paymentNumber');
-    $phone = request('phone');
+    $phone = request('usnig');
 
     $request = new \Illuminate\Http\Request([
         'datetime' => $datetime,
         'name' => $name,
         'question' => $answer,
-        'ticket' => $ticket,
-        'day' => $day,
         'payment' => $payment,
         'paymentNumber' => $paymentNumber,
-        'phone' => $phone,
+        'username ig' => $phone,
     ]);
 
     $googleSheetService = app(GoogleSheetService::class);
