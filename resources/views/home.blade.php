@@ -5,6 +5,14 @@
         <meta property="og:description" content="Cari tahu event terbaru OSIS MPK MHT dan ikut berkontribusi dalam kegiatan sekolah!">
         <meta property="og:image" content="https://ospkmhthamrin.com/images/potrait/ospkfull.jpg">
     </x-slot:metadesc>
+    
+    @if(session('success'))
+    <script>
+        alert("{{ session('success') }}");
+    </script>
+    @endif
+
+    
     <section style="background-image:url('{{ asset('images/potrait/darkened_ospkfull.jpg') }}')" class="-mt-[95px] w-full min-h-screen p-4 sm:p-16 flex flex-col justify-center items-center bg-center bg-cover">
         <div class="flex flex-col items-center justify-center px-8">
             <img src={{ asset('images/logo/general/ospk514.webp') }}>
