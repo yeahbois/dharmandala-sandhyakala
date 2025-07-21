@@ -19,7 +19,6 @@ class FormController extends Controller
         // Append data to Google Sheets
         $this->googleSheetService->appendData($data->all());
 
-        redirect('/');
-        return alert('Jawaban terkirim, tunggu konfirmasi lebih lanjut!');
+        return redirect('/')->with('success', 'Jawaban terkirim, tunggu konfirmasi lebih lanjut!');
     }
 }
