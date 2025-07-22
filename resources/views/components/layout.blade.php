@@ -122,7 +122,7 @@
                     <image src="{{ asset('/images/logo/general/eagle_ascii1.png') }}"></image>
                 </div>
                 <div class="absolute bottom-4 right-4 text-gray-700">
-                    <p>Last updated: 15 Feb 2025</p>
+                    <p>Last updated: 22 July 2025</p>
                 </div>
             </footer>
         </main>
