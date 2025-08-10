@@ -12,7 +12,7 @@
                 <div class="mb-6 flex flex-col items-center">
                     <label class="block text-gray-700 text-lg font-semibold mb-4">Pilih jawaban yang benar:</label>
                     <div class="flex justify-center items-center mb-6 rounded-lg shadow-md">
-                        <img src="{{ asset('/images/thamnet/thanos/05.02.2025/quiz3.jpg') }}" alt="Question Image" class="w-96 rounded-l-lg">
+                        <img src="{{ asset('/images/thamnet/thanos/05.02.2025/quiz4.jpg') }}" alt="Question Image" class="w-96 rounded-l-lg">
                         <div class="flex flex-col pr-6 items-center space-y-4 w-full max-w-md mx-auto">
                             <label class="inline-flex items-center text-gray-700 text-lg">
                                 <input type="radio" name="question" value="a" class="form-radio text-blue-500" required>
