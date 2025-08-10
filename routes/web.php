@@ -144,7 +144,7 @@ Route::get('/thamnet/blog/openhouse2025', function() {
 // THANOS
 
 Route::get('/thanos', function () {
-    $targetDate = Carbon::create(2025, 8, 10, 06, 00, 0, 'Asia/Bangkok'); // GMT+7 timezone
+    $targetDate = Carbon::create(2025, 8, 10, 12, 00, 0, 'Asia/Bangkok'); // GMT+7 timezone
     $endDate = $targetDate->copy()->addDays(1)->addHours(2)->addMinutes(0);
     $currentDate = Carbon::now('Asia/Bangkok');
 
