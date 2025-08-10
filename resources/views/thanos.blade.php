@@ -12,7 +12,7 @@
                 <div class="mb-6 flex flex-col items-center">
                     <label class="block text-gray-700 text-lg font-semibold mb-4">Pilih jawaban yang benar:</label>
                     <div class="flex justify-center items-center mb-6 rounded-lg shadow-md">
-                        <img src="https://drive.google.com/file/d/1gSm5g96bMXw1ZBRWYKbH3n6RXfGPS6-x/view?usp=drivesdk" alt="Question Image" class="w-96 rounded-l-lg">
+                        <img src="https://cdn.discordapp.com/attachments/887673617335345173/1404048336868212817/2_2.jpg?ex=6899c569&is=689873e9&hm=24bf2ea6a7eca9a6b5b348d9b32730b4ab7b2e868105f05c36d9c9f4860f58f7&" alt="Question Image" class="w-96 rounded-l-lg">
                         <div class="flex flex-col pr-6 items-center space-y-4 w-full max-w-md mx-auto">
                             <label class="inline-flex items-center text-gray-700 text-lg">
                                 <input type="radio" name="question" value="a" class="form-radio text-blue-500" required>
