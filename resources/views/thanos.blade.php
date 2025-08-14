@@ -13,10 +13,10 @@
                     <label class="block text-gray-700 text-lg font-semibold mb-4">Pilih jawaban yang benar:</label>
                     <div class="flex justify-center items-center mb-6 rounded-lg shadow-md">
                         <div class="flex flex-col lg:flex-col justify-center items-center mb-6 rounded-lg shadow-md space-y-4">
-                    <img src="https://cdn.discordapp.com/attachments/887673617335345173/1404048336868212817/2_2.jpg?ex=6899c569&is=689873e9&hm=24bf2ea6a7eca9a6b5b348d9b32730b4ab7b2e868105f05c36d9c9f4860f58f7&" 
+                    <img src="https://cdn.discordapp.com/attachments/887673617335345173/1405587763864272896/IMG-20250814-WA0062.jpg?ex=689f5f1d&is=689e0d9d&hm=68c8d9bc1bea8f1707691e153b059f33482543df2b291fd7cd42348832697f00&" 
                         alt="Question Image" 
                         class="w-96 max-w-full rounded-lg">
-                    <img src="https://cdn.discordapp.com/attachments/887673617335345173/1404048336868212817/2_2.jpg?ex=6899c569&is=689873e9&hm=24bf2ea6a7eca9a6b5b348d9b32730b4ab7b2e868105f05c36d9c9f4860f58f7&" 
+                    <img src="https://cdn.discordapp.com/attachments/887673617335345173/1405587764191166566/IMG-20250814-WA0063.jpg?ex=689f5f1d&is=689e0d9d&hm=974c1ec9b5eeecb84651921d971f9e9aa2ce434435ae2df129ae470e361c96fe&" 
                         alt="Question Image" 
                         class="w-96 max-w-full rounded-lg">
                          </div>
