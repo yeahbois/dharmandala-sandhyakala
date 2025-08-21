@@ -173,6 +173,15 @@ Route::post('/submit-form', function () {
     return $formController->submitForm($request);
 });
 
+// AKADEMIS
+Route::get('/prestasimht', function() {
+    return redirect()->away('https://bit.ly/PrestasiMHT');
+});
+
+Route::get('/lombamht', function() {
+    return redirect()->away('https://bit.ly/PrestasiMHT');
+});
+
 Route::get('/sitemap.xml', function () {
     return response()->file(resource_path('views/sitemap.xml'), [
         'Content-Type' => 'application/xml'
