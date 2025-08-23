@@ -179,7 +179,7 @@ Route::get('/prestasimht', function() {
 });
 
 Route::get('/lombamht', function() {
-    return redirect()->away('https://bit.ly/PrestasiMHT');
+    return redirect()->away('https://forms.gle/WPmgaKRVJn6JiWmG6');
 });
 
 Route::get('/sitemap.xml', function () {
