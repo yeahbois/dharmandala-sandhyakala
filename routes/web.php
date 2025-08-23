@@ -175,7 +175,7 @@ Route::post('/submit-form', function () {
 
 // AKADEMIS
 Route::get('/prestasimht', function() {
-    return redirect()->away('https://bit.ly/PrestasiMHT');
+    return redirect()->away('https://forms.gle/VzviKQwzCPWuvREK8');
 });
 
 Route::get('/lombamht', function() {
