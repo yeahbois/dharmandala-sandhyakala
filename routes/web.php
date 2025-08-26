@@ -182,6 +182,10 @@ Route::get('/lombamht', function() {
     return redirect()->away('https://forms.gle/WPmgaKRVJn6JiWmG6');
 });
 
+Route::get('/admin/dashboard', function () {
+    return view('dashboard');
+});
+
 Route::get('/sitemap.xml', function () {
     return response()->file(resource_path('views/sitemap.xml'), [
         'Content-Type' => 'application/xml'

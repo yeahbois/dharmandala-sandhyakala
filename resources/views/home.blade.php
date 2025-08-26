@@ -20,10 +20,10 @@
                 OSIS SMA Negeri Unggulan M. H. Thamrin
             </h1>
             <p class="mb-4 text-xl md:text-4xl text-gray-300">
-                Selamat datang di beranda Agradama Navaleksa, 2024/2025.
+                Selamat datang di beranda Dharmandala Sandhyakala, 2025/2026.
             </p>    
-            <button onclick="document.getElementById('hamburger').click();" class="lg:hidden py-4 px-4 mb-16 rounded-lg bg-transparent border-yellow-400 hover:bg-yellow-400/75 focus:bg-yellow-400/75 hover:border-transparent focus:border-yellow-400/75 text-white border-2 text-xl font-semibold">
-                Get to know us!
+            <button onclick="document.getElementById('hamburger').click();" class="py-4 px-4 mb-16 rounded-lg bg-transparent border-yellow-400 hover:bg-yellow-400/75 focus:bg-yellow-400/75 hover:border-transparent focus:border-yellow-400/75 text-white border-2 text-xl font-semibold">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem eos maiores dignissimos doloribus architecto possimus quas, adipisci iste sapiente esse ipsa nemo unde accusamus, et iure aperiam, aut quasi quae.
             </button>
         </div>
     </section>
