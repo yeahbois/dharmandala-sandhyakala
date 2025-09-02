@@ -6,6 +6,9 @@
         <meta property="og:image" content="https://ospkmhthamrin.com/images/potrait/ospkfull.jpg">
     </x-slot:metadesc>
     
-    <h1 class="font-medium text-black-1000 ml-5">Admin Dashboard</h1>
+    <x-alert alert="Test Hello World!" forward_link="/home">
+    </x-alert>
+    
+    <h1 class="font-medium text-black-1000 ml-5 text-5xl">Admin Dashboard</h1>
 
 </x-layout>
