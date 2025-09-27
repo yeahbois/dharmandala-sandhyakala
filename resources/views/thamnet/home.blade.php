@@ -1,24 +1,24 @@
-<x-layout title="Thamnet - Beranda" keywords="thamnet, blog, akademis">
+<x-layout title="Thamnet - Beranda" keywords="thamnet, blog, akademis" :alert="$alert" :alertForward="$alertForward">
     <meta name="description" content="Belajar jadi lebih seru dengan program akademis OSIS! Yuk, cek blog kami untuk info lengkap tentang kegiatan pendidikan terbaru!">
     <meta property="og:title" content="Thamrin Network - OSIS MPK SMA Negeri Unggulan M. H. Thamrin 2024/2025">
     <meta property="og:description" content="Penasaran dengan program akademis OSIS? Baca blog terbaru tentang event, workshop, dan bimbingan belajar yang bisa kamu ikuti!">
     <meta property="og:image" content="https://ospkmhthamrin.com/images/logo/osis/akad.webp">
 
-    <div class="flex flex-1 flex-col justify-center items-center">
-        <section class="w-full h-screen flex flex-col justify-center items-center bg-center bg-cover">
-            <div class="flex flex-col min-h-[calc(100vh-95px)] items-center justify-center px-8">
+    <div class="flex flex-col items-center justify-start">
+        <section class="w-full min-h-screen flex flex-col justify-start items-center bg-center bg-cover">
+            <div class="flex flex-col items-center justify-start px-8 pt-20">
                 <div class="flex flex-col sm:flex-row justify-center space-x-4 max-w-full">
                     <!-- OSIS -->
                     <img src="{{ asset('/images/logo/general/osis514.webp') }}" width="250" alt="Logo 1">
-        
+
                     <!-- AKAD -->
                     <img src="{{ asset('/images/logo/osis/akad514.webp') }}" width="250" alt="Logo 2">
                 </div>
                 <h1 class="mb-2 font-bold text-6xl text-black mt-8">
                     Selamat datang di Thamnet
                 </h1>
-                <p class="mb-4 text-black-300">
-                    Thamnet adalah salah satu program kerja seksi Akademis dalam bentuk website blog yang terintegrasi dengan website OSIS SMAN Unggulan M.H. Thamrin kabinet Agradama Navaleksa.
+                <p class="mb-4 text-black-300 max-w-2xl text-center">
+                    Thamnet adalah salah satu program kerja seksi Akademis...
                 </p>
             </div>
         </section>

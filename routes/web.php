@@ -5,20 +5,34 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
 use App\Services\GoogleSheetService;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/', function () {
-    return view('home');
-});
-Route::get('/program-kerja', function() {
-    return view('program-kerja');
-});
-Route::get('/program-kerja/recent', function() {
-    return view('recent');
+    return view('home', [
+        "alert" => session('success'),
+        "alertForward" => "/"
+    ]);
 });
 
+// NAVBAR
+Route::get('/publikasiprestasi', function () {
+    return "Publikasi Prestasi";
+});
+
+Route::get('/thalation', function () {
+    return "Thalation";
+});
+
+Route::get('/programkerja', function () {
+    return "Program Kerja";
+});
+
+Route::get('/merch', function () {
+    return "Merchandise";
+});
+
+Route::get('/kabinet', function () {
+    $x = asset('images/potrait/osis/dhl/rafif400.webp');
+    return "<img src='$x'></img>";
+});
 
 
 // AKADEMIS
@@ -130,7 +144,10 @@ Route::get('/thamrin-wall-of-aspiration', function() {
 
 // THAMNET
 Route::get('/thamnet', function() {
-    return view('thamnet.home');
+    return view('thamnet.home', [
+        "alert" => "Hello World",
+        "alertForward" => "/hello"
+    ]);
 });
 
 Route::get('/thamnet/blog/hall-of-fame', function() {
@@ -144,11 +161,11 @@ Route::get('/thamnet/blog/openhouse2025', function() {
 // THANOS
 
 Route::get('/thanos', function () {
-    $targetDate = Carbon::create(2025, 8, 15, 19, 00, 0, 'Asia/Bangkok'); // GMT+7 timezone
+    $targetDate = Carbon::create(2025, 10, 29, 19, 00, 0, 'Asia/Bangkok'); // GMT+7 timezone
     $endDate = $targetDate->copy()->addDays(1)->addHours(1)->addMinutes(0);
     $currentDate = Carbon::now('Asia/Bangkok');
 
-    return view($currentDate->between($targetDate, $endDate) ? 'thanos' : 'thanos_wait');
+    return view('thanos');
 });
 
 Route::post('/submit-form', function () {
