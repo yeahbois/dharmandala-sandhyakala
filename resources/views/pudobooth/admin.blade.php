@@ -1,9 +1,33 @@
-<x-layout title="OSIS MPK MHT" :alert="$alert" :alertForward="$alertForward">
-    <x-slot:metadesc>
-        <meta name="description" content="Klik sekarang untuk menemukan kegiatan seru, proyek keren, dan cara ikut berkontribusi!">
-        <meta property="og:title" content="Beranda OSIS MPK SMA Negeri Unggulan M. H. Thamrin 2024/2025">
-        <meta property="og:description" content="Cari tahu event terbaru OSIS MPK MHT dan ikut berkontribusi dalam kegiatan sekolah!">
-        <meta property="og:image" content="https://ospkmhthamrin.com/images/potrait/ospkfull.jpg">
-    </x-slot:metadesc>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PudoBooth - Admin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
 
-</x-layout>
+    <div class="header">
+        <h1>PudoBooth Admin Dashboard</h1>
+    </div>
+
+    {{-- This will render the queue component --}}
+    <x-pudobooth.queue-admin />
+
+</body>
+</html>
