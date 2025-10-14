@@ -6,4 +6,4 @@
         <meta property="og:image" content="https://ospkmhthamrin.com/images/potrait/ospkfull.jpg">
     </x-slot:metadesc>
 
-</x-layout>
+</x-layout
