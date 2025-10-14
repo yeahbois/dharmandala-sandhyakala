@@ -1,0 +1,3 @@
+<x-layout title="Publikasi Prestasi">
+    Coming Soon...
+</x-layout>

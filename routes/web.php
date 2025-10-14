@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
 use App\Services\GoogleSheetService;
 
+// Home
 Route::get('/', function () {
     return view('home', [
         "alert" => session('success'),
@@ -12,26 +13,72 @@ Route::get('/', function () {
     ]);
 });
 
-// NAVBAR
+// ThamNet
+Route::get('/thamnet', function() {
+    return view('thamnet.home', [
+        "alert" => "Hello World",
+        "alertForward" => "/hello"
+    ]);
+});
+
+// Nav
 Route::get('/publikasiprestasi', function () {
-    return "Publikasi Prestasi";
+    return view('pubpres');
 });
-
 Route::get('/thalation', function () {
-    return "Thalation";
+    return view('thalation');
 });
-
 Route::get('/programkerja', function () {
     return "Program Kerja";
 });
-
-Route::get('/merch', function () {
-    return "Merchandise";
+Route::get('/kabinet/osis', function() {
+    return view('kabinet.osis');
+});
+Route::get('/kabinet/mpk', function() {
+    return view('kabinet.mpk');
 });
 
-Route::get('/kabinet', function () {
-    $x = asset('images/potrait/osis/dhl/rafif400.webp');
-    return "<img src='$x'></img>";
+// Thanos
+Route::get('/thanos', function () {
+    $targetDate = Carbon::create(2025, 10, 29, 19, 00, 0, 'Asia/Bangkok'); // GMT+7 timezone
+    $endDate = $targetDate->copy()->addDays(1)->addHours(1)->addMinutes(0);
+    $currentDate = Carbon::now('Asia/Bangkok');
+
+    return view('thanos');
+});
+Route::post('/submit-form', function () {
+    $datetime = date('Y-m-d H:i:s');
+    $name = request('name');
+    $answer = request('question');
+    $payment = request('payment');
+    $paymentNumber = request('paymentNumber');
+    $phone = request('usnig');
+
+    $request = new \Illuminate\Http\Request([
+        'datetime' => $datetime,
+        'name' => $name,
+        'question' => $answer,
+        'payment' => $payment,
+        'paymentNumber' => $paymentNumber,
+        'username ig' => $phone,
+    ]);
+
+    $googleSheetService = app(GoogleSheetService::class);
+    $formController = new FormController($googleSheetService);
+    return $formController->submitForm($request);
+});
+
+// Shortener Akademis
+Route::get('/prestasimht', function() {
+    return redirect()->away('https://forms.gle/VzviKQwzCPWuvREK8');
+});
+Route::get('/lombamht', function() {
+    return redirect()->away('https://forms.gle/WPmgaKRVJn6JiWmG6');
+});
+
+// Admin
+Route::get('/admin/dashboard', function () {
+    return view('dashboard');
 });
 
 
@@ -123,84 +170,12 @@ Route::get('/program-kerja/rohani/perayaan-isra-miraj', function() {
 
 
 
-
-// KABINET
-Route::get('/kabinet/osis', function() {
-    return view('kabinet.osis');
-});
-Route::get('/kabinet/mpk', function() {
-    return view('kabinet.mpk');
-});
-
-
-
-// OTHERS
-Route::get('/merchandise', function() {
-    return view('merchandise');
-});
-Route::get('/thamrin-wall-of-aspiration', function() {
-    return view('thalation');
-});
-
-// THAMNET
-Route::get('/thamnet', function() {
-    return view('thamnet.home', [
-        "alert" => "Hello World",
-        "alertForward" => "/hello"
-    ]);
-});
-
 Route::get('/thamnet/blog/hall-of-fame', function() {
     return view('thamnet.blog.halloffame');
 });
 
 Route::get('/thamnet/blog/openhouse2025', function() {
     return view('thamnet.blog.openhouse2025');
-});
-
-// THANOS
-
-Route::get('/thanos', function () {
-    $targetDate = Carbon::create(2025, 10, 29, 19, 00, 0, 'Asia/Bangkok'); // GMT+7 timezone
-    $endDate = $targetDate->copy()->addDays(1)->addHours(1)->addMinutes(0);
-    $currentDate = Carbon::now('Asia/Bangkok');
-
-    return view('thanos');
-});
-
-Route::post('/submit-form', function () {
-    $datetime = date('Y-m-d H:i:s');
-    $name = request('name');
-    $answer = request('question');
-    $payment = request('payment');
-    $paymentNumber = request('paymentNumber');
-    $phone = request('usnig');
-
-    $request = new \Illuminate\Http\Request([
-        'datetime' => $datetime,
-        'name' => $name,
-        'question' => $answer,
-        'payment' => $payment,
-        'paymentNumber' => $paymentNumber,
-        'username ig' => $phone,
-    ]);
-
-    $googleSheetService = app(GoogleSheetService::class);
-    $formController = new FormController($googleSheetService);
-    return $formController->submitForm($request);
-});
-
-// AKADEMIS
-Route::get('/prestasimht', function() {
-    return redirect()->away('https://forms.gle/VzviKQwzCPWuvREK8');
-});
-
-Route::get('/lombamht', function() {
-    return redirect()->away('https://forms.gle/WPmgaKRVJn6JiWmG6');
-});
-
-Route::get('/admin/dashboard', function () {
-    return view('dashboard');
 });
 
 Route::get('/sitemap.xml', function () {

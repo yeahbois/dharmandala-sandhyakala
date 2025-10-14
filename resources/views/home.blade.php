@@ -85,7 +85,7 @@
         <div class="flex-1 flex flex-col">
             <!-- Title -->
             <div class="text-lg sm:text-2xl md:text-3xl font-bold text-center py-4">
-            OSIS
+            Pengurus OSIS
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 w-full">
@@ -160,7 +160,7 @@
         <div class="flex-1 flex flex-col">
             <!-- Title -->
             <div class="text-lg sm:text-2xl md:text-3xl font-bold text-center py-4">
-            MPK
+            Pengurus MPK
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 w-full">
@@ -213,24 +213,24 @@
         </div>
     </section>
 
-    <section id="proker" style="background-color:#d238f4ff;" class="h-screen w-screen flex flex-col items-start text-gray-800 relative">
+    <section id="logo" style="background-image: url({{ asset('images/jon.png') }}); background-repeat: no-repat; background-position: center; background-size: cover;" class="h-screen w-screen flex flex-col items-start text-gray-800 relative">
+        <div class="pb-40 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Logo</h1>
+            <p class="text-base md:text-lg text-center px-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere error quaerat animi. Quod aperiam ducimus error quibusdam voluptatibus non vero sequi natus libero id dolorum reiciendis, amet iusto in molestiae?</p>
+        </div>
+        <x-divider type="oval" color="#f1f1f1ff"/>
+    </section>
+
+    <section id="proker" style="background-color:#f1f1f1ff;" class="h-screen w-screen flex flex-col items-start text-gray-800 relative">
         <div class="pb-40 text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-4">Program Kerja</h1>
             <p class="text-base md:text-lg text-center px-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere error quaerat animi. Quod aperiam ducimus error quibusdam voluptatibus non vero sequi natus libero id dolorum reiciendis, amet iusto in molestiae?</p>
         </div>
         <!-- X-PROKER -->
-        <x-divider type="oval" color="#0febffff"/>
+        <x-divider type="cloud" color="#0febffff"/>
     </section>
 
-    <section id="logo" style="background-color:#0febffff;" class="h-screen w-screen flex flex-col items-start text-gray-800 relative">
-        <div class="pb-40 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">Logo</h1>
-            <p class="text-base md:text-lg text-center px-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere error quaerat animi. Quod aperiam ducimus error quibusdam voluptatibus non vero sequi natus libero id dolorum reiciendis, amet iusto in molestiae?</p>
-        </div>
-        <x-divider type="cloud" color="#f1f1f1ff"/>
-    </section>
-
-    <section id="merch" style="background-color:#f1f1f1ff;" class="h-screen w-screen flex flex-col items-start text-gray-800 relative">
+    <section id="merch" style="background-color:#0febffff;" class="h-screen w-screen flex flex-col items-start text-gray-800 relative">
         <div class="pb-40 text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-4">Merchandise</h1>
             <p class="text-base md:text-lg text-center px-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere error quaerat animi. Quod aperiam ducimus error quibusdam voluptatibus non vero sequi natus libero id dolorum reiciendis, amet iusto in molestiae?</p>
@@ -240,7 +240,7 @@
 
     <section id="findus" style="background-color:#f1f1f1ff;" class="h-screen w-screen flex flex-col items-start text-gray-800 relative">
         <div class="pb-40 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">Karya Kami</h1>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Kayra Kami</h1>
             <p class="text-base md:text-lg text-center px-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere error quaerat animi. Quod aperiam ducimus error quibusdam voluptatibus non vero sequi natus libero id dolorum reiciendis, amet iusto in molestiae?</p>
         </div>
     </section>
