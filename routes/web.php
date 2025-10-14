@@ -81,6 +81,23 @@ Route::get('/admin/dashboard', function () {
     return view('dashboard');
 });
 
+// PudoBooth
+Route::get('/pudobooth', function () {
+    return view('pudobooth.camera');
+});
+
+Route::get('/pudobooth/queue', function () {
+    return view('pudobooth.queue');
+});
+
+Route::get('/pudobooth/gallery', function () {
+    return view('pudobooth.gallery');
+});
+
+Route::get('/admin/pudobooth', function () {
+    return view('pudobooth.admin');
+});
+
 
 // AKADEMIS
 Route::get('/program-kerja/akademis', function() {
