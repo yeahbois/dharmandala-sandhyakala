@@ -62,14 +62,21 @@
             <tr>
                 <td colspan="4" style="text-align:center; color: #888;">Queue is currently empty.</td>
             </tr>
-            {{-- Example of a row:
-            <tr>
-                <td>1</td>
-                <td>John Doe</td>
-                <td>12A</td>
-                <td>081234567890</td>
-            </tr>
-            --}}
+            <x-pudobooth.queue no="thomi"
+                               nama="thomi"
+                               kelas="thomi"
+                               notelp="thomi"
+            />
+            <x-pudobooth.queue no="thomi"
+                               nama="thomi"
+                               kelas="thomi"
+                               notelp="thomi"
+            />
+            <x-pudobooth.queue no="thomi"
+                               nama="thomi"
+                               kelas="thomi"
+                               notelp="thomi"
+            />
         </tbody>
     </table>
 </div>

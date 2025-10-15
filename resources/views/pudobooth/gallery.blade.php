@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PudoBooth - Gallery</title>
+<x-layout title="OSIS MPK MHT">
+    <x-slot:metadesc>
+        <meta name="description" content="Klik sekarang untuk menemukan kegiatan seru, proyek keren, dan cara ikut berkontribusi!">
+        <meta property="og:title" content="Beranda OSIS MPK SMA Negeri Unggulan M. H. Thamrin 2024/2025">
+        <meta property="og:description" content="Cari tahu event terbaru OSIS MPK MHT dan ikut berkontribusi dalam kegiatan sekolah!">
+        <meta property="og:image" content="https://ospkmhthamrin.com/images/potrait/ospkfull.jpg">
+    </x-slot:metadesc>
     <style>
-        body {
+        #body {
             font-family: Arial, sans-serif;
             display: flex;
             align-items: center;
@@ -18,9 +19,8 @@
             color: #555;
         }
     </style>
-</head>
-<body>
+<section id="body">
     <h1>PudoBooth Gallery</h1>
     {{-- Gallery content will be added later --}}
-</body>
-</html>
+</section>
+</x-layout>

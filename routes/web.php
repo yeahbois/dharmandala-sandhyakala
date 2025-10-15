@@ -4,6 +4,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
 use App\Services\GoogleSheetService;
+use App\Http\Controllers\DriveController;
 
 // Home
 Route::get('/', function () {
@@ -97,6 +98,10 @@ Route::get('/pudobooth/gallery', function () {
 Route::get('/admin/pudobooth', function () {
     return view('pudobooth.admin');
 });
+
+Route::get('/drive/files', [DriveController::class, 'index']);
+Route::post('/drive/upload', [DriveController::class, 'upload']);
+Route::delete('/drive/delete/{id}', [DriveController::class, 'delete']);
 
 
 // AKADEMIS

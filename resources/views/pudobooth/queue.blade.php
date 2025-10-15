@@ -1,93 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PudoBooth - Queue</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            background-color: #f0f0f0;
-            margin: 0;
-        }
-        .container {
-            background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            text-align: center;
-            width: 100%;
-            max-width: 400px;
-        }
-        h1 {
-            margin-bottom: 20px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input[type="text"], input[type="tel"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        button {
-            width: 100%;
-            padding: 12px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #28a745;
-            color: white;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #218838;
-        }
-        .queue-status {
-            margin-top: 20px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
+<x-layout title="OSIS MPK MHT">
+    <x-slot:metadesc>
+        <meta name="description" content="Klik sekarang untuk menemukan kegiatan seru, proyek keren, dan cara ikut berkontribusi!">
+        <meta property="og:title" content="Beranda OSIS MPK SMA Negeri Unggulan M. H. Thamrin 2024/2025">
+        <meta property="og:description" content="Cari tahu event terbaru OSIS MPK MHT dan ikut berkontribusi dalam kegiatan sekolah!">
+        <meta property="og:image" content="https://ospkmhthamrin.com/images/potrait/ospkfull.jpg">
+    </x-slot:metadesc>
 
-    <div class="container">
-        <h1>Join the PudoBooth Queue</h1>
-        <form action="#" method="POST">
-            <!-- In a real Laravel app, you'd use @csrf here -->
-            <div class="form-group">
-                <label for="nama">Nama</label>
-                <input type="text" id="nama" name="nama" required>
+    <div class="min-h-screen flex items-center justify-center bg-gray-100 font-sans p-6">
+        <div class="bg-white w-full max-w-md p-8 rounded-xl shadow-md text-center">
+            <h1 class="text-2xl font-bold text-gray-800 mb-6">Join the PudoBooth Queue</h1>
+
+            <form action="#" method="POST" class="space-y-5 text-left">
+                {{-- @csrf --}}
+                <div>
+                    <label for="nama" class="block text-sm font-semibold text-gray-700 mb-1">Nama</label>
+                    <input type="text" id="nama" name="nama" required
+                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                </div>
+
+                <div>
+                    <label for="kelas" class="block text-sm font-semibold text-gray-700 mb-1">Kelas</label>
+                    <input type="text" id="kelas" name="kelas" required
+                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                </div>
+
+                <div>
+                    <label for="no_telp" class="block text-sm font-semibold text-gray-700 mb-1">No Telp</label>
+                    <input type="tel" id="no_telp" name="no_telp" required
+                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-green-600 text-white py-3 rounded-md font-semibold text-lg transition-colors duration-300 hover:bg-green-700">
+                    Submit
+                </button>
+            </form>
+
+            <div class="mt-6 text-lg font-semibold text-gray-700">
+                Current queue: <span class="text-green-600">0</span>
             </div>
-            <div class="form-group">
-                <label for="kelas">Kelas</label>
-                <input type="text" id="kelas" name="kelas" required>
-            </div>
-            <div class="form-group">
-                <label for="no_telp">No Telp</label>
-                <input type="tel" id="no_telp" name="no_telp" required>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
-        <div class="queue-status">
-            Current queue: 0
         </div>
     </div>
-
-</body>
-</html>
+</x-layout>
