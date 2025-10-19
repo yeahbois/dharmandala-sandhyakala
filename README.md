@@ -21,21 +21,6 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-### Deployment on Hostinger
-
-**Troubleshooting Deployment Failures:**
-
-A diagnostic script (`check_env.php`) has been added to the project to help diagnose server environment issues. If your deployment fails, **please check the top of the deployment log**. You will see a section labeled "SERVER ENVIRONMENT DIAGNOSTICS" which lists the exact PHP version and all loaded extensions the server is using.
-
-Please ensure the following requirements are met by the server environment:
-
-1.  **MongoDB PHP Extension is Enabled:** The `mongodb` PHP extension must be enabled in your hosting environment. This is required for the application to connect to the MongoDB database.
-2.  **Correct PHP Version:** Your environment must be running **PHP 8.2 or higher**, as specified in the `composer.json` file.
-
-Without these, the `composer install` or `composer update` command will fail during deployment.
-
-You can usually manage PHP extensions and versions through the Hostinger hPanel under "PHP Configuration" or a similar section. If you have trouble, please contact Hostinger support for assistance.
-
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.

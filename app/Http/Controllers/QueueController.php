@@ -2,179 +2,158 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pbqueue;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use MongoDB\BSON\ObjectId;
 use App\Http\Controllers\FormController;
 use App\Services\GoogleSheetService;
 
 class QueueController extends Controller
 {
-    private $collection;
-
-    public function __construct()
-    {
-        // Use the native MongoDB database connection
-        $this->collection = DB::connection('mongodb')->getCollection('pbqueue');
-    }
-
-    /** ✅ Get all data, sorted by orderNo */
+    /** Get all data, sorted by orderNo */
     public function getAllData()
     {
-        $data = $this->collection
-            ->find([], ['sort' => ['orderNo' => 1]])
-            ->toArray();
-
+        $data = Pbqueue::orderBy('orderNo')->get();
         return response()->json($data);
     }
 
-    /** ✅ Add a new entry to the queue (always at bottom) */
+    /** Add a new entry to the queue (always at bottom) */
     public function appendData(Request $request)
     {
         $data = $request->only(['nama', 'tipe_antrian']);
-        $check = $this->collection->findOne(['nama' => $data['nama']]);
-        if ($check) return response()->json(['success' => false, 'message' => 'data sudah ada'], 500);
-        $maxOrderDoc = $this->collection->findOne([], ['sort' => ['orderNo' => -1]]);
-        $maxOrder = $maxOrderDoc['orderNo'] ?? 0;
+        if (Pbqueue::where('nama', $data['nama'])->exists()) {
+            return response()->json(['success' => false, 'message' => 'data sudah ada'], 500);
+        }
 
-        $insertData = [
+        $maxOrder = Pbqueue::max('orderNo') ?? 0;
+
+        $entry = Pbqueue::create([
             'nama' => $data['nama'],
             'tipe' => $data['tipe_antrian'],
             'orderNo' => $maxOrder + 1,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ];
+        ]);
 
-        $this->collection->insertOne($insertData);
-
-        return response()->json(['success' => true, 'data' => $insertData]);
+        return response()->json(['success' => true, 'data' => $entry]);
     }
 
-    /** ✅ Remove by name */
+    /** Remove by name */
     public function removeData($name)
     {
-        $target = $this->collection->findOne(['nama' => $name]);
-        if (!$target) {
-            return response()->json(['error' => 'Not found'], 404);
-        }
+        return DB::transaction(function () use ($name) {
+            $target = Pbqueue::where('nama', $name)->first();
+            if (!$target) {
+                return response()->json(['error' => 'Not found'], 404);
+            }
 
-        // Delete target and shift others up
-        $this->collection->deleteOne(['nama' => $name]);
-        $this->collection->updateMany(
-            ['orderNo' => ['$gt' => $target['orderNo']]],
-            ['$inc' => ['orderNo' => -1]]
-        );
+            $orderNo = $target->orderNo;
+            $target->delete();
 
-        return response()->json(['success' => true]);
+            Pbqueue::where('orderNo', '>', $orderNo)->decrement('orderNo');
+
+            return response()->json(['success' => true]);
+        });
     }
 
-    /** ✅ Search by name (partial) */
+    /** Search by name (partial) */
     public function searchByName($name)
     {
-        $cursor = $this->collection->find(
-            ['nama' => ['$regex' => $name, '$options' => 'i']],
-            ['sort' => ['orderNo' => 1]]
-        );
-
-        return response()->json(iterator_to_array($cursor));
+        $results = Pbqueue::where('nama', 'LIKE', "%{$name}%")
+            ->orderBy('orderNo')
+            ->get();
+        return response()->json($results);
     }
 
-    /** ✅ Move up by one */
+    /** Move up by one */
     public function moveUp($name)
     {
-        $current = $this->collection->findOne(['nama' => $name]);
-        if (!$current) return response()->json(['error' => 'Not found'], 404);
-        if ($current['orderNo'] <= 1) return response()->json(['error' => 'Already at top'], 400);
+        return DB::transaction(function () use ($name) {
+            $current = Pbqueue::where('nama', $name)->first();
+            if (!$current) return response()->json(['error' => 'Not found'], 404);
+            if ($current->orderNo <= 1) return response()->json(['error' => 'Already at top'], 400);
 
-        $prev = $this->collection->findOne(['orderNo' => $current['orderNo'] - 1]);
-        if (!$prev) return response()->json(['error' => 'Previous item not found'], 500);
+            $prev = Pbqueue::where('orderNo', $current->orderNo - 1)->first();
+            if (!$prev) return response()->json(['error' => 'Previous item not found'], 500);
 
-        $this->collection->updateOne(
-            ['_id' => new ObjectId($current['_id'])],
-            ['$set' => ['orderNo' => $prev['orderNo']]]
-        );
-        $this->collection->updateOne(
-            ['_id' => new ObjectId($prev['_id'])],
-            ['$set' => ['orderNo' => $current['orderNo']]]
-        );
+            // Swap order numbers
+            $current->orderNo--;
+            $prev->orderNo++;
+            $current->save();
+            $prev->save();
 
-        return response()->json(['success' => true]);
+            return response()->json(['success' => true]);
+        });
     }
 
-    /** ✅ Move down by one */
+    /** Move down by one */
     public function moveDown($name)
     {
-        $current = $this->collection->findOne(['nama' => $name]);
-        if (!$current) return response()->json(['error' => 'Not found'], 404);
+        return DB::transaction(function () use ($name) {
+            $current = Pbqueue::where('nama', $name)->first();
+            if (!$current) return response()->json(['error' => 'Not found'], 404);
 
-        $next = $this->collection->findOne(['orderNo' => $current['orderNo'] + 1]);
-        if (!$next) return response()->json(['error' => 'Already at bottom'], 400);
+            $next = Pbqueue::where('orderNo', $current->orderNo + 1)->first();
+            if (!$next) return response()->json(['error' => 'Already at bottom'], 400);
 
-        $this->collection->updateOne(
-            ['_id' => new ObjectId($current['_id'])],
-            ['$set' => ['orderNo' => $next['orderNo']]]
-        );
-        $this->collection->updateOne(
-            ['_id' => new ObjectId($next['_id'])],
-            ['$set' => ['orderNo' => $current['orderNo']]]
-        );
+            // Swap order numbers
+            $current->orderNo++;
+            $next->orderNo--;
+            $current->save();
+            $next->save();
 
-        return response()->json(['success' => true]);
+            return response()->json(['success' => true]);
+        });
     }
 
-    /** ✅ Move to top */
+    /** Move to top */
     public function moveToTop($name)
     {
-        $current = $this->collection->findOne(['nama' => $name]);
-        if (!$current) return response()->json(['error' => 'Not found'], 404);
+        return DB::transaction(function () use ($name) {
+            $current = Pbqueue::where('nama', $name)->first();
+            if (!$current) return response()->json(['error' => 'Not found'], 404);
 
-        $this->collection->updateMany(
-            ['orderNo' => ['$lt' => $current['orderNo']]],
-            ['$inc' => ['orderNo' => 1]]
-        );
-        $this->collection->updateOne(
-            ['_id' => new ObjectId($current['_id'])],
-            ['$set' => ['orderNo' => 1]]
-        );
+            Pbqueue::where('orderNo', '<', $current->orderNo)->increment('orderNo');
+            $current->orderNo = 1;
+            $current->save();
 
-        return response()->json(['success' => true]);
+            return response()->json(['success' => true]);
+        });
     }
 
-    /** ✅ Move to bottom */
+    /** Move to bottom */
     public function moveToBottom($name)
     {
-        $current = $this->collection->findOne(['nama' => $name]);
-        if (!$current) return response()->json(['error' => 'Not found'], 404);
+        return DB::transaction(function () use ($name) {
+            $current = Pbqueue::where('nama', $name)->first();
+            if (!$current) return response()->json(['error' => 'Not found'], 404);
 
-        $maxOrderDoc = $this->collection->findOne([], ['sort' => ['orderNo' => -1]]);
-        $maxOrder = $maxOrderDoc['orderNo'] ?? 0;
+            $maxOrder = Pbqueue::max('orderNo') ?? 0;
 
-        $this->collection->updateMany(
-            ['orderNo' => ['$gt' => $current['orderNo']]],
-            ['$inc' => ['orderNo' => -1]]
-        );
-        $this->collection->updateOne(
-            ['_id' => new ObjectId($current['_id'])],
-            ['$set' => ['orderNo' => $maxOrder]]
-        );
+            Pbqueue::where('orderNo', '>', $current->orderNo)->decrement('orderNo');
+            $current->orderNo = $maxOrder;
+            $current->save();
 
-        return response()->json(['success' => true]);
+            return response()->json(['success' => true]);
+        });
     }
 
-    /** ✅ Mark as completed */
+    /** Mark as completed */
     public function complete(Request $request)
     {
         $name = $request->input('name');
         $jumlah = $request->input('jumlah');
 
-        $dataPesan = $this->collection->findOne(['nama' => $name]);
-        if (!$dataPesan) return \Log::info('not found');
+        $dataPesan = Pbqueue::where('nama', $name)->first();
+        if (!$dataPesan) {
+             \Log::info('Queue item not found for completion: ' . $name);
+             return response()->json(['error' => 'Not found'], 404);
+        }
 
         $data = new \Illuminate\Http\Request([
-            'Nama' => $dataPesan['nama'],
+            'Nama' => $dataPesan->nama,
             'Jumlah Pesanan' => $jumlah
         ]);
 
+        // Assuming GoogleSheetService and FormController are correctly set up
         $googleSheetService = new GoogleSheetService("1MYDCEtoS0BLec9WCfFAhlZoL9txz1QIXnZTQXeDOrHs");
         $formController = new FormController($googleSheetService);
         return $formController->submitForm($data);

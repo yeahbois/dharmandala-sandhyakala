@@ -3,13 +3,8 @@
 use Illuminate\Support\Str;
 
 return [
-    'default' => env('DB_CONNECTION'),
+    'default' => env('DB_CONNECTION', 'mysql'),
     'connections' => [
-        'mongodb' => [
-            'driver' => 'mongodb',
-            'dsn' => env('DB_URI'),
-            'database' => env('DB_DATABASE'),
-        ],
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DB_URL'),

@@ -2,101 +2,71 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Setting;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use MongoDB\BSON\ObjectId;
+use Illuminate\Support\Facades\Log;
 
 class PudoBoothAdmin extends Controller
 {
-    private $collection;
-
-    public function __construct()
-    {
-        // Use the native MongoDB database connection
-        $this->collection = DB::connection('mongodb')->getCollection('settings');
-    }
-
     private function updateUrlField($field, $url)
     {
         try {
-            // Update the first document with type = "url"
-            $result = $this->collection->updateOne(
-                ['type' => 'url'],
-                ['$set' => ["value.$field" => $url]]
-            );
-
-            return $result->getModifiedCount() > 0;
+            $setting = Setting::firstOrNew(['type' => 'url']);
+            $value = $setting->value ?? [];
+            $value[$field] = $url;
+            $setting->value = $value;
+            return $setting->save();
         } catch (\Exception $e) {
-            \Log::error("Failed to update $field: " . $e->getMessage());
+            Log::error("Failed to update $field: " . $e->getMessage());
             return false;
         }
     }
 
-    /**
-     * Update driveURL field
-     */
     public function changeDriveURL($url)
     {
         return $this->updateUrlField('driveURL', $url);
     }
 
-    /**
-     * Update spreadSheetURL field
-     */
     public function changeSpreadsheetURL($url)
     {
         return $this->updateUrlField('spreadSheetURL', $url);
     }
 
-    /**
-     * Update frameCDNURL field
-     */
     public function changeFrameURL($url)
     {
         return $this->updateUrlField('frameCDNURL', $url);
     }
 
-    /**
-     * Get preset settings
-     */
     public function getPreset($id)
     {
         try {
-            $preset = $this->collection->findOne([
-                'type' => 'preset',
-                'preset' => (int)$id
-            ]);
+            $preset = Setting::where('type', 'preset')->where('preset', (int)$id)->first();
 
             if (!$preset) {
                 return response()->json(['error' => 'Preset not found'], 404);
             }
 
             return response()->json([
-                'preset' => $preset['preset'],
-                'values' => $preset['value'] ?? []
+                'preset' => $preset->preset,
+                'values' => $preset->value ?? []
             ]);
         } catch (\Exception $e) {
-            \Log::error("Failed to get preset $id: " . $e->getMessage());
+            Log::error("Failed to get preset $id: " . $e->getMessage());
             return response()->json(['error' => 'Failed to get preset'], 500);
         }
     }
 
-    /**
-     * Update preset settings
-     */
     public function changePresetSetting(Request $request, $id)
     {
         try {
             $data = $request->all();
-            
-            // Update or insert the preset
-            $result = $this->collection->updateOne(
+
+            $setting = Setting::updateOrCreate(
                 ['type' => 'preset', 'preset' => (int)$id],
-                ['$set' => ['value' => $data]],
-                ['upsert' => true]
+                ['value' => $data]
             );
 
-            if ($result->getModifiedCount() > 0 || $result->getUpsertedCount() > 0) {
+            if ($setting) {
                 return response()->json([
                     'success' => true,
                     'message' => "Preset $id updated successfully"
@@ -108,19 +78,25 @@ class PudoBoothAdmin extends Controller
                 ]);
             }
         } catch (\Exception $e) {
-            \Log::error("Failed to update preset $id: " . $e->getMessage());
+            Log::error("Failed to update preset $id: " . $e->getMessage());
             return response()->json(['error' => 'Failed to update preset'], 500);
         }
     }
 
-    public function getURL($data) {
-        $dbRes = $this->collection->findOne(["type" => "url"]);
+    public function getURL($data)
+    {
+        $setting = Setting::where('type', 'url')->first();
+        if (!$setting) {
+            return response()->json(["error" => "not found"]);
+        }
+        $urls = $setting->value;
+
         if ($data == "drive") {
-            return $dbRes['driveURL'];
+            return $urls['driveURL'] ?? null;
         } else if ($data == "spreadsheet") {
-            return $dbRes['spreadSheetURL'];
+            return $urls['spreadSheetURL'] ?? null;
         } else if ($data == "frame") {
-            return $dbRes['frameCDNURL'];
+            return $urls['frameCDNURL'] ?? null;
         } else {
             return response()->json(["error" => "not found"]);
         }

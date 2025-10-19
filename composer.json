@@ -9,7 +9,6 @@
         "google/apiclient": "^2.15",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
-        "mongodb/laravel-mongodb": "^5.5",
         "monolog/monolog": "^3.0"
     },
     "require-dev": {
@@ -34,9 +33,6 @@
         }
     },
     "scripts": {
-        "pre-install-cmd": [
-            "@php check_env.php"
-        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
