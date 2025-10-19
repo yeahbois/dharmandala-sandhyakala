@@ -21,6 +21,33 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
+## Final Configuration (Required)
+
+After a successful deployment, you must configure your Google Drive API credentials in your server's `.env` file for the application to be fully functional.
+
+1.  **Get Your Credentials**: Follow a tutorial to create credentials for a Google Drive API project. You will need:
+    *   `GOOGLE_CLIENT_ID`
+    *   `GOOGLE_CLIENT_SECRET`
+    *   `GOOGLE_REDIRECT_URI` (This should be set to `your_domain.com/google/callback`)
+    *   `GOOGLE_DRIVE_ID` (The ID of the Google Drive folder where you want to store files)
+    *   `ADMIN_SECRET` (A secret password of your choice to protect the authorization link)
+
+2.  **Update Your `.env` File**: Log into your server (e.g., via Hostinger's File Manager) and edit the `.env` file. Fill in the values you obtained in Step 1:
+
+    ```
+    GOOGLE_CLIENT_ID=your_client_id
+    GOOGLE_CLIENT_SECRET=your_client_secret
+    GOOGLE_REDIRECT_URI=https://your_domain.com/google/callback
+    GOOGLE_DRIVE_ID=your_folder_id
+    ADMIN_SECRET=your_secret_password
+    ```
+
+3.  **Authorize the Application**: To connect your application to Google Drive, you must visit the following URL in your browser, replacing the placeholders with your domain and secret:
+
+    `https://your_domain.com/google/redirect?key=your_secret_password`
+
+    This will redirect you to Google to approve the connection. After you approve, the application will be fully configured.
+
 ## Troubleshooting
 
 ### "Database connection [mongodb] not configured" Error
