@@ -21,6 +21,12 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
+### Deployment on Hostinger
+
+When deploying this application to Hostinger, please ensure that the `mongodb` PHP extension is enabled in your hosting environment. This extension is required for the application to connect to the MongoDB database. Without it, the `composer install` or `composer update` command will fail during deployment.
+
+You can usually enable PHP extensions through the Hostinger hPanel under "PHP Configuration" or a similar section. If you have trouble finding it, please contact Hostinger support for assistance.
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
