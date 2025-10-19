@@ -11,9 +11,9 @@ class GoogleController extends Controller
     private function getClient()
     {
         $client = new GoogleClient();
-        $client->setClientId(env('GOOGLE_CLIENT_ID'));
-        $client->setClientSecret(env('GOOGLE_CLIENT_SECRET'));
-        $client->setRedirectUri(env('GOOGLE_REDIRECT_URI'));
+        $client->setClientId(config('google.client_id'));
+        $client->setClientSecret(config('google.client_secret'));
+        $client->setRedirectUri(config('google.redirect_uri'));
         $client->addScope(Drive::DRIVE_FILE);
         $client->setAccessType('offline');
         $client->setPrompt('consent');
@@ -24,7 +24,7 @@ class GoogleController extends Controller
     public function redirectToGoogle(Request $request)
     {
         // Optional security check
-        if ($request->query('key') !== env('ADMIN_SECRET')) {
+        if ($request->query('key') !== config('google.admin_secret')) {
             abort(403, 'Unauthorized');
         }
 
@@ -111,7 +111,7 @@ class GoogleController extends Controller
         }
 
         $file = $request->file('file');
-        $folderId = env('GOOGLE_DRIVE_ID'); // set your folder ID in .env
+        $folderId = config('google.drive_id'); // set your folder ID in .env
 
         try {
             $fileId = self::uploadToDrive($file->getPathname(), $file->getClientOriginalName(), $folderId);
