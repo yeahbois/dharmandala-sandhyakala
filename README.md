@@ -23,9 +23,14 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
 ### Deployment on Hostinger
 
-When deploying this application to Hostinger, please ensure that the `mongodb` PHP extension is enabled in your hosting environment. This extension is required for the application to connect to the MongoDB database. Without it, the `composer install` or `composer update` command will fail during deployment.
+When deploying this application to Hostinger, please ensure the following:
 
-You can usually enable PHP extensions through the Hostinger hPanel under "PHP Configuration" or a similar section. If you have trouble finding it, please contact Hostinger support for assistance.
+1.  **MongoDB PHP Extension is Enabled:** The `mongodb` PHP extension must be enabled in your hosting environment. This is required for the application to connect to the MongoDB database.
+2.  **Correct PHP Version:** Your environment must be running **PHP 8.2 or higher**, as specified in the `composer.json` file.
+
+Without these, the `composer install` or `composer update` command will fail during deployment.
+
+You can usually manage PHP extensions and versions through the Hostinger hPanel under "PHP Configuration" or a similar section. If you have trouble, please contact Hostinger support for assistance.
 
 ## Learning Laravel
 

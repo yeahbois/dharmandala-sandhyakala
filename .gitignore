@@ -5,6 +5,7 @@
 /storage/*.key
 /storage
 /vendor
+composer.lock
 .env
 .env.backup
 .env.production
