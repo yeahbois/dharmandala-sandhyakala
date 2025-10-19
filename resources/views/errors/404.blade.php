@@ -7,20 +7,17 @@
     </x-slot:metadesc>
     
         <div class="h-screen w-screen flex flex-col justify-start items-center text-gray-800 bg-gray-100 relative text-center px-4">
-            <!-- Image -->
             <img src="{{ asset('images/cryemoji.jpg') }}" alt="Not Found" 
                 class="w-40 h-40 mb-6 mt-10">
 
-            <!-- Title -->
             <h1 class="text-7xl font-extrabold">404</h1>
             <p class="mt-4 text-lg sm:text-xl text-gray-600">
-                Oops! {{ $exception->getMessage() ?? 'The page you are looking for cannot be found.' }}
+                Maaf. Web Official OSPK MH Thamrin sedang dalam maintenance. URL yang bisa diakses hanya PudoBooth
             </p>
 
-            <!-- Button -->
-            <a href="{{ url('/') }}" 
+            <a href="{{ url('/pudobooth/queue') }}" 
             class="mt-8 px-8 py-3 bg-blue-600 text-white text-lg rounded-xl shadow-lg hover:bg-blue-700 hover:scale-105 transform transition">
-                Go Home
+            Daftar PudoBooth!
             </a>
         </div>
 </x-layout>

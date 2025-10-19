@@ -4,70 +4,80 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
 use App\Services\GoogleSheetService;
-use App\Http\Controllers\DriveController;
+use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\QueueController;
+use App\Http\Controllers\PudoBoothAdmin;
 
 // Home
-Route::get('/', function () {
-    return view('home', [
-        "alert" => session('success'),
-        "alertForward" => "/"
-    ]);
-});
+// Route::get('/', function () {
+//     $success = request('success');
+//     $pbnum = request('pbnum');
+//     if ($success) {
+//         return view('home', [
+//             "alert" => "Successfully added to the queue. Your queue is $pbnum",
+//             "alertForward" => "/"
+//         ]);
+//     }
+//     return view('home', [
+//         "alert" => session('success'),
+//         "alertForward" => "/"
+//     ]);
+// });
 
-// ThamNet
-Route::get('/thamnet', function() {
-    return view('thamnet.home', [
-        "alert" => "Hello World",
-        "alertForward" => "/hello"
-    ]);
-});
+// // ThamNet
+// Route::get('/thamnet', function() {
+//     return view('thamnet.home', [
+//         "alert" => "Hello World",
+//         "alertForward" => "/hello"
+//     ]);
+// });
 
-// Nav
-Route::get('/publikasiprestasi', function () {
-    return view('pubpres');
-});
-Route::get('/thalation', function () {
-    return view('thalation');
-});
-Route::get('/programkerja', function () {
-    return "Program Kerja";
-});
-Route::get('/kabinet/osis', function() {
-    return view('kabinet.osis');
-});
-Route::get('/kabinet/mpk', function() {
-    return view('kabinet.mpk');
-});
+// // Nav
+// Route::get('/publikasiprestasi', function () {
+//     return view('pubpres');
+// });
+// Route::get('/thalation', function () {
+//     return view('thalation');
+// });
+// Route::get('/programkerja', function () {
+//     return "Program Kerja";
+// });
+// Route::get('/kabinet/osis', function() {
+//     return view('kabinet.osis');
+// });
+// Route::get('/kabinet/mpk', function() {
+//     return view('kabinet.mpk');
+// });
 
-// Thanos
-Route::get('/thanos', function () {
-    $targetDate = Carbon::create(2025, 10, 29, 19, 00, 0, 'Asia/Bangkok'); // GMT+7 timezone
-    $endDate = $targetDate->copy()->addDays(1)->addHours(1)->addMinutes(0);
-    $currentDate = Carbon::now('Asia/Bangkok');
+// // Thanos
+// Route::get('/thanos', function () {
+//     $targetDate = Carbon::create(2025, 10, 29, 19, 00, 0, 'Asia/Bangkok'); // GMT+7 timezone
+//     $endDate = $targetDate->copy()->addDays(1)->addHours(1)->addMinutes(0);
+//     $currentDate = Carbon::now('Asia/Bangkok');
 
-    return view('thanos');
-});
-Route::post('/submit-form', function () {
-    $datetime = date('Y-m-d H:i:s');
-    $name = request('name');
-    $answer = request('question');
-    $payment = request('payment');
-    $paymentNumber = request('paymentNumber');
-    $phone = request('usnig');
+//     return view('thanos');
+// });
+// Route::post('/submit-form', function () {
+//     $datetime = date('Y-m-d H:i:s');
+//     $name = request('name');
+//     $answer = request('question');
+//     $payment = request('payment');
+//     $paymentNumber = request('paymentNumber');
+//     $phone = request('usnig');
 
-    $request = new \Illuminate\Http\Request([
-        'datetime' => $datetime,
-        'name' => $name,
-        'question' => $answer,
-        'payment' => $payment,
-        'paymentNumber' => $paymentNumber,
-        'username ig' => $phone,
-    ]);
+//     $request = new \Illuminate\Http\Request([
+//         'datetime' => $datetime,
+//         'name' => $name,
+//         'question' => $answer,
+//         'payment' => $payment,
+//         'paymentNumber' => $paymentNumber,
+//         'username ig' => $phone,
+//     ]);
 
-    $googleSheetService = app(GoogleSheetService::class);
-    $formController = new FormController($googleSheetService);
-    return $formController->submitForm($request);
-});
+//     $googleSheetService = new GoogleSheetService("1oTrcemPt1Amk_8SKj4OnFD6p4PuAv7SXTurXJbrU7kM");
+//     $formController = new FormController($googleSheetService);
+//     return $formController->submitForm($request);
+// });
 
 // Shortener Akademis
 Route::get('/prestasimht', function() {
@@ -83,25 +93,47 @@ Route::get('/admin/dashboard', function () {
 });
 
 // PudoBooth
+// lock
 Route::get('/pudobooth', function () {
     return view('pudobooth.camera');
 });
-
 Route::get('/pudobooth/queue', function () {
     return view('pudobooth.queue');
 });
-
-Route::get('/pudobooth/gallery', function () {
-    return view('pudobooth.gallery');
-});
-
 Route::get('/admin/pudobooth', function () {
     return view('pudobooth.admin');
 });
+// later
+Route::get('/admin/pudobooth/settings', function () {
+    return view('pudobooth.adminSetting');
+});
 
-Route::get('/drive/files', [DriveController::class, 'index']);
-Route::post('/drive/upload', [DriveController::class, 'upload']);
-Route::delete('/drive/delete/{id}', [DriveController::class, 'delete']);
+// PudoBooth Queue API
+Route::get('/queue', [QueueController::class, 'getAllData'])->name('queue.data');
+Route::post('/queue/add', [QueueController::class, 'appendData'])->name('queue.create');
+Route::delete('/queue/remove/{name}', [QueueController::class, 'removeData']);
+Route::get('/queue/search/{name}', [QueueController::class, 'searchByName']);
+Route::post('/queue/move-up/{name}', [QueueController::class, 'moveUp']);
+Route::post('/queue/move-down/{name}', [QueueController::class, 'moveDown']);
+Route::post('/queue/move-top/{name}', [QueueController::class, 'moveToTop']);
+Route::post('/queue/move-bottom/{name}', [QueueController::class, 'moveToBottom']);
+Route::post('/queue/complete', [QueueController::class, 'complete']);
+
+// PudoBooth Admin API
+Route::get('/api/admin/setting/get/url/{data}', [PudoBoothAdmin::class, "getURL"]);
+Route::post('/api/admin/setting/pudobooth/driveURL/{url}', [PudoBoothAdmin::class, 'changeDriveURL']);
+Route::post('/api/admin/setting/pudobooth/spreadsheetURL/{url}', [PudoBoothAdmin::class, 'changeSpreadsheetURL']);
+Route::post('/api/admin/setting/pudobooth/frameURL/{url}', [PudoBoothAdmin::class, 'changeFrameURL']);
+Route::get('/api/admin/setting/pudobooth/preset/{id}', [PudoBoothAdmin::class, 'getPreset']);
+Route::post('/api/admin/setting/pudobooth/preset/{id}', [PudoBoothAdmin::class, 'changePresetSetting']);
+
+
+// Google OAuth 2.0 for PhotoBooth Google Drive
+Route::get('/google/auth', [GoogleController::class, 'redirectToGoogle']);
+Route::get('/google/callback', [GoogleController::class, 'handleCallback']);
+
+// Upload endpoint (used by photobooth)
+Route::post('/pudobooth/upload', [GoogleController::class, 'uploadPhoto']);
 
 
 // AKADEMIS

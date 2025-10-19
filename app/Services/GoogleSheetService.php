@@ -13,39 +13,15 @@ class GoogleSheetService
     protected $service;
     protected $spreadsheetId;
 
-    public function __construct()
+    public function __construct($spreadsheet)
     {
-        // Initialize Google Client
-        $this->client = new Google_Client();
+        $this->client = new \Google_Client();
         $this->client->setAuthConfig(storage_path('credentials.json'));
-        $this->client->addScope(Google_Service_Sheets::SPREADSHEETS);
+        $this->client->setScopes([\Google_Service_Sheets::SPREADSHEETS]);
+        $this->client->useApplicationDefaultCredentials(); // ✅ key line
 
-        // Initialize Google Sheets Service
-        $this->service = new Google_Service_Sheets($this->client);
-
-        // Set the Spreadsheet ID
-        $this->spreadsheetId = '1oTrcemPt1Amk_8SKj4OnFD6p4PuAv7SXTurXJbrU7kM'; // Replace with your actual spreadsheet ID
-
-        // Check and refresh the token if necessary
-        $this->checkAndRefreshToken();
-    }
-
-    // Function to check and refresh the token if expired
-    private function checkAndRefreshToken()
-    {
-        // Check if the client has a valid access token
-        if ($this->client->isAccessTokenExpired()) {
-            // Check if a refresh token is available
-            if ($this->client->getRefreshToken()) {
-                // Refresh the access token using the refresh token
-                $this->client->fetchAccessTokenWithRefreshToken($this->client->getRefreshToken());
-                Log::info("Access token refreshed.");
-            } else {
-                // If no refresh token is available, log the error and return
-                Log::error("Client authentication failed. No refresh token available.");
-                return;
-            }
-        }
+        $this->service = new \Google_Service_Sheets($this->client);
+        $this->spreadsheetId = $spreadsheet;
     }
 
     public function appendData(array $data)

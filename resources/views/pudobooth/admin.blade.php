@@ -11,7 +11,6 @@
             <h1 class="text-3xl font-bold text-gray-800">PudoBooth Admin Dashboard</h1>
         </header>
 
-        {{-- Render the queue component --}}
         <x-pudobooth.queue-admin/>
     </div>
 </x-layout>
