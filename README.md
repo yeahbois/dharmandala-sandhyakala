@@ -21,6 +21,20 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
+## Troubleshooting
+
+### "Database connection [mongodb] not configured" Error
+
+If you encounter this error after deploying, it is likely because the `.env` file on your server contains a stale database configuration. Deployment scripts typically do not overwrite the `.env` file to protect your production settings.
+
+To fix this, you must manually log into your server (e.g., via FTP or a file manager) and edit the `.env` file. Ensure the following line is correct:
+
+```
+DB_CONNECTION=mysql
+```
+
+The application's default database connection has been hardcoded to `mysql` as a failsafe, but it is best practice to ensure your `.env` file is correct.
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
