@@ -38,9 +38,7 @@
             "@php artisan package:discover --ansi",
             "@php artisan config:clear",
             "@php artisan config:cache",
-            "@php artisan migrate --force",
-            "@npm install",
-            "@npm run build"
+            "@php artisan migrate --force"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
