@@ -27,7 +27,7 @@
         <!-- Upload prompt -->
         <div id="upload-prompt" class="text-gray-600 text-center z-10">
           <p class="mb-2">Upload a photo to apply filters</p>
-          <input type="file" id="image-upload" accept="image/png, image/jpeg" class="block mx-auto">
+          <input type="file" id="image-upload" accept="image/png, image/jpeg" class="block mx-auto" multiple>
         </div>
       </div>  
 
@@ -590,47 +590,210 @@
     }
 
     shootButton.addEventListener('click', async () => {
-      if (isProcessing || !originalImage) return;
-      isProcessing = true;
-      shootButton.disabled = true;
-      await uploadToGoogleDrive();
-      isProcessing = false;
-      shootButton.disabled = false;
-    });
+        if (isProcessing || !window.pendingFiles || window.pendingFiles.length === 0) return;
 
-    // Handle image upload
-    uploadInput.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
+        isProcessing = true;
+        shootButton.disabled = true;
+        loadingOverlay.classList.remove('hidden');
 
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      const img = new Image();
-      img.crossOrigin = 'Anonymous';
-      img.onload = () => {
-        originalImage = img;
-        uploadPrompt.classList.add('hidden');
-        shootButton.disabled = false;
+        const files = window.pendingFiles;
+        const baseName = window.uploadFilename || 'pudobooth_photo';
+        let successCount = 0;
 
-        // Initialize GPU if not done
-        if (!gpu) {
-          initGPU();
+        for (let i = 0; i < files.length; i++) {
+          try {
+            // Create image object from file
+            const file = files[i];
+            const img = await new Promise((resolve, reject) => {
+              const reader = new FileReader();
+              reader.onload = (e) => {
+                const image = new Image();
+                image.onload = () => resolve(image);
+                image.onerror = reject;
+                image.src = e.target.result;
+              };
+              reader.onerror = reject;
+              reader.readAsDataURL(file);
+            });
+
+            // Temporarily set as originalImage for processing
+            const prevImage = originalImage;
+            originalImage = img;
+
+            // Re-apply filters for this image
+            const exportSize = getExportSize(img);
+            const exportCanvas = document.createElement('canvas');
+            exportCanvas.width = exportSize.width;
+            exportCanvas.height = exportSize.height;
+            const exportCtx = exportCanvas.getContext('2d');
+            exportCtx.drawImage(img, 0, 0, exportSize.width, exportSize.height);
+
+            // Apply filters (same as in captureHighResFrame)
+            const imageData = exportCtx.getImageData(0, 0, exportSize.width, exportSize.height);
+            const vibrance = (Number(sliders.vibrance.value) - 100) / 100;
+            const highlights = (Number(sliders.highlights.value) - 100) / 100;
+            const shadows = (Number(sliders.shadows.value) - 100) / 100;
+            const whitepoint = Number(sliders.whitepoint.value) / 100;
+            const blackpoint = Number(sliders.blackpoint.value) / 100;
+            const exposure = (Number(sliders.exposure.value) - 100) / 100;
+            const sharpness = (Number(sliders.sharpness.value) - 100) / 100;
+            const blurVal = Number(sliders.blur.value);
+            const glowVal = Number(sliders.glow.value);
+            const vignetteVal = Number(sliders.vignette.value) / 200;
+            const rgbSplitVal = Number(sliders.rgbsplit.value);
+
+            applyCPUFiltersToImageData(
+              imageData, vibrance, highlights, shadows, whitepoint, blackpoint,
+              exposure, sharpness, blurVal, glowVal, vignetteVal, rgbSplitVal
+            );
+            exportCtx.putImageData(imageData, 0, 0);
+
+            // Apply post-effects
+            if (blurVal > 0 || glowVal > 0 || rgbSplitVal > 0 || sharpness > 0.15) {
+              const temp = document.createElement('canvas');
+              temp.width = exportSize.width;
+              temp.height = exportSize.height;
+              const tctx = temp.getContext('2d');
+              tctx.drawImage(exportCanvas, 0, 0);
+
+              if (blurVal > 0) {
+                exportCtx.filter = `blur(${blurVal * (exportSize.width / 800)}px)`;
+                exportCtx.drawImage(temp, 0, 0);
+                exportCtx.filter = 'none';
+              }
+
+              if (rgbSplitVal > 0) {
+                const offset = Math.max(1, Math.round(rgbSplitVal * (exportSize.width / 800) / 2));
+                exportCtx.globalCompositeOperation = 'screen';
+                exportCtx.globalAlpha = 0.5;
+                exportCtx.drawImage(temp, offset, 0);
+                exportCtx.globalCompositeOperation = 'multiply';
+                exportCtx.drawImage(temp, -offset, 0);
+                exportCtx.globalCompositeOperation = 'source-over';
+                exportCtx.globalAlpha = 1.0;
+              }
+
+              if (glowVal > 0) {
+                exportCtx.filter = `blur(${glowVal * (exportSize.width / 800)}px)`;
+                exportCtx.globalCompositeOperation = 'screen';
+                exportCtx.globalAlpha = 0.5;
+                exportCtx.drawImage(temp, 0, 0);
+                exportCtx.filter = 'none';
+                exportCtx.globalCompositeOperation = 'source-over';
+                exportCtx.globalAlpha = 1.0;
+              }
+
+              if (sharpness > 0.15) {
+                const imgData = exportCtx.getImageData(0, 0, exportSize.width, exportSize.height);
+                sharpenImageData(imgData, sharpness);
+                exportCtx.putImageData(imgData, 0, 0);
+              }
+            }
+
+            // Apply frame
+            const frameImg = new Image();
+            await new Promise((resolve, reject) => {
+              frameImg.crossOrigin = 'Anonymous';
+              frameImg.onload = () => {
+                exportCtx.drawImage(frameImg, 0, 0, exportSize.width, exportSize.height);
+                resolve();
+              };
+              frameImg.onerror = () => {
+                console.warn('Frame failed to load');
+                resolve(); // continue without frame
+              };
+              frameImg.src = frameOverlay.src;
+            });
+
+            // Generate filename: base, base_2, base_3, etc.
+            const safeBase = baseName.replace(/[^a-z0-9_-]/gi, '_');
+            const fileName = i === 0 ? `${safeBase}.jpg` : `${safeBase}_${i + 1}.jpg`;
+
+            // Convert to blob and upload
+            const blob = await new Promise(resolve => 
+              exportCanvas.toBlob(resolve, 'image/jpeg', 0.92)
+            );
+
+            const formData = new FormData();
+            formData.append('file', blob, fileName);
+
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 60000);
+
+            const response = await fetch('/pudobooth/upload', {
+              method: 'POST',
+              body: formData,
+              headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+              signal: controller.signal
+            });
+
+            clearTimeout(timeoutId);
+            if (response.ok) successCount++;
+
+            // Restore original preview image
+            originalImage = prevImage;
+            if (originalImage) {
+              drawBaseImage();
+              applyFilters();
+            }
+
+          } catch (err) {
+            console.error(`Failed to process file ${i + 1}:`, err);
+          }
         }
 
-        // First: show raw image
-        drawBaseImage();
+        // Final UI update
+        loadingOverlay.classList.add('hidden');
+        isProcessing = false;
+        shootButton.disabled = false;
+        alert(`✅ ${successCount}/${files.length} photo(s) uploaded successfully!`);
+      });
 
-        // Then: apply filters (in case sliders aren't default)
-        setTimeout(() => applyFilters(), 100); // small delay to ensure canvas is ready
-      };
-      img.onerror = () => {
-        alert('Failed to load image. Please try another file.');
-        uploadPrompt.classList.remove('hidden');
-      };
-      img.src = event.target.result;
-    };
-    reader.readAsDataURL(file);
-  });
+    // Handle image upload
+    // Handle single or multiple image uploads
+    uploadInput.addEventListener('change', (e) => {
+      const files = Array.from(e.target.files);
+      if (files.length === 0) return;
+
+      // Reset UI
+      uploadPrompt.classList.add('hidden');
+      shootButton.disabled = true; // will enable after first image loads
+
+      let loadedCount = 0;
+      const total = files.length;
+
+      files.forEach((file, index) => {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          const img = new Image();
+          img.crossOrigin = 'Anonymous';
+          img.onload = () => {
+            // For the FIRST image, set as preview and enable shoot
+            if (index === 0) {
+              originalImage = img;
+              drawBaseImage();
+              if (!gpu) initGPU();
+              setTimeout(() => applyFilters(), 100);
+              shootButton.disabled = false;
+            }
+
+            loadedCount++;
+            if (loadedCount === total) {
+              // Optional: show how many files loaded
+              console.log(`✅ ${total} image(s) ready for processing`);
+            }
+          };
+          img.onerror = () => {
+            alert(`Failed to load image: ${file.name}`);
+          };
+          img.src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+      });
+
+      // Store all files for batch upload
+      window.pendingFiles = files;
+    });
 
   Object.values(sliders).forEach(slider => {
     slider.addEventListener('input', () => {
