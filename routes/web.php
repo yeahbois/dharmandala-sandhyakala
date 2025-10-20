@@ -98,7 +98,7 @@ Route::get('/pudobooth', function () {
     return view('pudobooth.camera');
 });
 Route::get('/pudobooth/queue', function () {
-    return view('pudobooth.queue');
+    return "Queue Closed";
 });
 Route::get('/admin/pudobooth', function () {
     return view('pudobooth.admin');
