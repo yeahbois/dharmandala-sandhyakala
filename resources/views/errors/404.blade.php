@@ -12,12 +12,12 @@
 
             <h1 class="text-7xl font-extrabold">404</h1>
             <p class="mt-4 text-lg sm:text-xl text-gray-600">
-                Maaf. Web Official OSPK MH Thamrin sedang dalam maintenance. URL yang bisa diakses hanya PudoBooth
+                Maaf. Web Official OSPK MH Thamrin sedang dalam maintenance.
             </p>
 
-            <a href="{{ url('/pudobooth/queue') }}" 
+            <!-- <a href="{{ url('/pudobooth/queue') }}" 
             class="mt-8 px-8 py-3 bg-blue-600 text-white text-lg rounded-xl shadow-lg hover:bg-blue-700 hover:scale-105 transform transition">
-            Daftar PudoBooth!
-            </a>
+            
+            </a> -->
         </div>
 </x-layout>
