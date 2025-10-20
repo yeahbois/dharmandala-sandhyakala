@@ -43,7 +43,7 @@
           <div><label class="block text-sm font-medium">Exposure</label><input id="exposure" type="range" min="0" max="200" value="100" class="w-full"></div>  
           <div><label class="block text-sm font-medium">Blur</label><input id="blur" type="range" min="0" max="20" value="0" class="w-full"></div>  
           <div><label class="block text-sm font-medium">Glow</label><input id="glow" type="range" min="0" max="20" value="0" class="w-full"></div>  
-          <div><label class="block text-sm font-medium">Vignette</label><input id="vignette" type="range" min="0" max="200" value="100" class="w-full"></div>  
+          <div><label class="block text-sm font-medium">Vignette</label><input id="vignette" type="range" min="0" max="200" value="0" class="w-full"></div>  
           <div><label class="block text-sm font-medium">RGB Split</label><input id="rgbsplit" type="range" min="0" max="40" value="0" class="w-full"></div>  
         </div>  
 
