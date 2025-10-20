@@ -5,18 +5,18 @@
     <meta property="og:description" content="Cari tahu event terbaru OSIS MPK MHT dan ikut berkontribusi dalam kegiatan sekolah!">      
     <meta property="og:image" content="https://ospkmhthamrin.com/images/potrait/ospkfull.jpg">      
   </x-slot:metadesc>      
+
   <div class="flex flex-col min-h-screen bg-gray-100 w-full" style="margin: 0; padding: 0; overflow-x: hidden;">  
     <h1 class="text-3xl font-bold mb-6 text-gray-800 text-center">PudoBooth Camera (GPU Filters)</h1>  
-      
-    <!-- Main layout: camera left, controls right -->  
+
+    <!-- Main layout: image preview left, controls right -->  
     <div class="flex flex-col lg:flex-row w-full gap-6 justify-start items-start" style="margin: 0; padding: 0 10px; width: 100vw;">  
-      <!-- Camera container: full width on small screens, 2/3 on large screens -->  
-      <div id="camera-container" class="relative w-full lg:w-2/3 h-[600px] rounded-lg overflow-hidden shadow-lg">  
-        <video id="camera-feed" autoplay playsinline class="absolute top-0 left-0 w-full h-full object-cover" style="transform: scaleX(-1);"></video>  
+      <!-- Image preview container -->  
+      <div id="camera-container" class="relative w-full lg:w-2/3 h-[600px] rounded-lg overflow-hidden shadow-lg bg-gray-200 flex items-center justify-center">  
         <canvas id="camera-canvas" class="absolute top-0 left-0 w-full h-full"></canvas>  
         <img id="frame-overlay"
-        src="https://raw.githubusercontent.com/yeahbois/photobooth/main/FRAME%20TSF.png" 
-        class="absolute top-0 left-0 w-full h-full pointer-events-none" crossorigin="anonymous">    
+          src="https://raw.githubusercontent.com/yeahbois/photobooth/main/FRAME%20TSF.png"
+          class="absolute top-0 left-0 w-full h-full pointer-events-none" crossorigin="anonymous">    
         <!-- Loading overlay -->  
         <div id="loading-overlay" class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">  
           <div class="text-white text-center">  
@@ -24,7 +24,13 @@
             <div class="text-xl">Uploading to Google Drive...</div>  
           </div>  
         </div>  
+        <!-- Upload prompt -->
+        <div id="upload-prompt" class="text-gray-600 text-center z-10">
+          <p class="mb-2">Upload a photo to apply filters</p>
+          <input type="file" id="image-upload" accept="image/png, image/jpeg" class="block mx-auto">
+        </div>
       </div>  
+
       <!-- Controls container -->  
       <div id="controls" class="w-full lg:w-1/3 bg-white rounded-xl shadow-md p-6 flex flex-col gap-6">  
         <div class="grid grid-cols-2 gap-4">  
@@ -40,651 +46,486 @@
           <div><label class="block text-sm font-medium">Vignette</label><input id="vignette" type="range" min="0" max="200" value="100" class="w-full"></div>  
           <div><label class="block text-sm font-medium">RGB Split</label><input id="rgbsplit" type="range" min="0" max="40" value="0" class="w-full"></div>  
         </div>  
-        
+
         <!-- Preset buttons -->
         <div class="grid grid-cols-3 gap-2">
           <button id="preset1-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-3 rounded-md text-sm">Preset 1</button>
           <button id="preset2-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-3 rounded-md text-sm">Preset 2</button>
           <button id="preset3-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-3 rounded-md text-sm">Preset 3</button>
         </div>
-        
+
         <div class="flex justify-center">  
-          <button id="shoot-button" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md w-full">Shoot</button>  
+          <button id="shoot-button" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md w-full" disabled>Shoot</button>  
         </div>  
       </div>  
     </div>  
   </div>  
+
   <script src="https://cdn.jsdelivr.net/npm/gpu.js@latest/dist/gpu-browser.min.js"></script>  
   <script>  
-    // elements  
-    const video = document.getElementById('camera-feed');  
-    const canvas = document.getElementById('camera-canvas');  
-    const ctx = canvas.getContext('2d');  
-    const frameOverlay = document.getElementById('frame-overlay');  
-    const shootButton = document.getElementById('shoot-button');  
-    const loadingOverlay = document.getElementById('loading-overlay');  
-    // Set canvas dimensions  
-    canvas.width = 800;  
-    canvas.height = 600;  
-    // placeholders for objects we'll set up after camera starts  
-    let videoReady = false;  
-    let stream = null; // Store the stream reference  
-    let animationFrame = null;  
-    let gpu = null;  
-    let filterKernel = null;  
-    let tempCanvas = null;  
-    let tempCtx = null;  
-    let isProcessing = false; // Flag to prevent multiple simultaneous shoots  
-    let frameOverlayLoaded = false; // Track if frame overlay is loaded  
-    // sliders  
-    const sliders = {};  
-    ['vibrance','highlights','shadows','whitepoint','blackpoint','sharpness','exposure','blur','glow','vignette','rgbsplit']  
-      .forEach(id => sliders[id] = document.getElementById(id));  
-      
+    // Elements
+    const canvas = document.getElementById('camera-canvas');
+    const ctx = canvas.getContext('2d');
+    const frameOverlay = document.getElementById('frame-overlay');
+    const shootButton = document.getElementById('shoot-button');
+    const loadingOverlay = document.getElementById('loading-overlay');
+    const uploadInput = document.getElementById('image-upload');
+    const uploadPrompt = document.getElementById('upload-prompt');
+
+    // Set canvas dimensions
+    canvas.width = 800;
+    canvas.height = 600;
+
+    // State
+    let originalImage = null;
+    let gpu = null;
+    let filterKernel = null;
+    let tempCanvas = null;
+    let tempCtx = null;
+    let isProcessing = false;
+    let frameOverlayLoaded = false;
+
+    // Sliders
+    const sliders = {};
+    ['vibrance','highlights','shadows','whitepoint','blackpoint','sharpness','exposure','blur','glow','vignette','rgbsplit']
+      .forEach(id => sliders[id] = document.getElementById(id));
+
     // Preset buttons
     const preset1Btn = document.getElementById('preset1-btn');
     const preset2Btn = document.getElementById('preset2-btn');
     const preset3Btn = document.getElementById('preset3-btn');
-    
-    // Function to fetch and apply preset
+
+    // Load preset function (same as before)
     async function loadPreset(presetId) {
       try {
         const response = await fetch(`/api/admin/setting/pudobooth/preset/${presetId}`);
-        
-        if (!response.ok) {
-          throw new Error(`Failed to load preset: ${response.status}`);
-        }
-        
+        if (!response.ok) throw new Error(`Failed to load preset: ${response.status}`);
         const data = await response.json();
-        
-        if (data.error) {
-          throw new Error(data.error);
-        }
-        
-        // Apply preset values to sliders
-        const values = data.values || {};
-        
-        // Default values for sliders if not specified in preset
+        if (data.error) throw new Error(data.error);
+
         const defaultValues = {
-          vibrance: 100,
-          highlights: 100,
-          shadows: 100,
-          whitepoint: 100,
-          blackpoint: 100,
-          sharpness: 100,
-          exposure: 100,
-          blur: 0,
-          glow: 0,
-          vignette: 100,
-          rgbsplit: 0
+          vibrance: 100, highlights: 100, shadows: 100, whitepoint: 100,
+          blackpoint: 100, sharpness: 100, exposure: 100, blur: 0,
+          glow: 0, vignette: 100, rgbsplit: 0
         };
-        
-        // Update each slider with preset value or default
+
         Object.keys(sliders).forEach(sliderId => {
-          const value = values[sliderId] !== undefined ? values[sliderId] : defaultValues[sliderId];
+          const value = data.values?.[sliderId] ?? defaultValues[sliderId];
           sliders[sliderId].value = value;
         });
-        
-        // Show success message
-        console.log(`Preset ${presetId} loaded successfully`);
-        
+
+        if (originalImage) applyFilters(); // Re-apply if image is loaded
       } catch (error) {
         console.error('Error loading preset:', error);
         alert(`Failed to load preset: ${error.message}`);
       }
     }
-    
-    // Add event listeners to preset buttons
+
     preset1Btn.addEventListener('click', () => loadPreset(1));
     preset2Btn.addEventListener('click', () => loadPreset(2));
     preset3Btn.addEventListener('click', () => loadPreset(3));
-    
-    // Initialize GPU.js  
-    function initGPU() {  
-      try {  
-        gpu = new GPU();  
-          
-        // Create a temporary canvas for GPU processing  
-        tempCanvas = document.createElement('canvas');  
-        tempCanvas.width = canvas.width;  
-        tempCanvas.height = canvas.height;  
-        tempCtx = tempCanvas.getContext('2d');  
-          
-        // Create the filter kernel  
-        createFilterKernel();  
-          
-        console.log('GPU.js initialized successfully');  
-        return true;  
-      } catch (e) {  
-        console.error('Failed to initialize GPU.js:', e);  
-        alert('Your browser doesn\'t support WebGL, which is required for GPU-accelerated filters. Falling back to CPU processing.');  
-        return false;  
-      }  
-    }  
-    // Create the GPU filter kernel  
-    function createFilterKernel() {  
-      filterKernel = gpu.createKernel(function(image, vibrance, highlights, shadows, whitepoint, blackpoint, exposure, sharpness, blurVal, glowVal, vignetteVal, rgbSplitVal) {  
-        const pixel = image[this.thread.y][this.thread.x];  
-          
-        // Extract RGB values  
-        let r = pixel[0];  
-        let g = pixel[1];  
-        let b = pixel[2];  
-          
-        // Apply exposure  
-        r = r * (1.0 + exposure);  
-        g = g * (1.0 + exposure);  
-        b = b * (1.0 + exposure);  
-          
-        // Apply contrast based on highlights  
-        const contrastFactor = 1.0 + (highlights * 0.3);  
-        r = ((r / 255.0 - 0.5) * contrastFactor + 0.5) * 255.0;  
-        g = ((g / 255.0 - 0.5) * contrastFactor + 0.5) * 255.0;  
-        b = ((b / 255.0 - 0.5) * contrastFactor + 0.5) * 255.0;  
-          
-        // Apply vibrance (selective saturation)  
-        const gray = 0.2989 * r + 0.5870 * g + 0.1140 * b;  
-        const sat = (vibrance > 0.0) ? 1.0 + vibrance * 0.8 : 1.0 + vibrance * 0.5;  
-        r = gray + sat * (r - gray);  
-        g = gray + sat * (g - gray);  
-        b = gray + sat * (b - gray);  
-          
-        // Apply white point  
-        if (whitepoint !== 1.0) {  
-          const wp = 1.0 + (whitepoint - 1.0) * 0.25;  
-          r = r * wp;  
-          g = g * wp;  
-          b = b * wp;  
-        }  
-          
-        // Apply black point  
-        if (blackpoint !== 1.0) {  
-          const bp = 1.0 - (1.0 - blackpoint) * 0.25;  
-          r = r * bp;  
-          g = g * bp;  
-          b = b * bp;  
-        }  
-          
-        // Apply shadows (darken mid-tones)  
-        if (shadows < 0.0) {  
-          const shadowFactor = Math.max(-shadows * 0.2, 0.0);  
-          const gray = 0.2989 * r + 0.5870 * g + 0.1140 * b;  
-          r = r * (1.0 - shadowFactor) + gray * shadowFactor;  
-          g = g * (1.0 - shadowFactor) + gray * shadowFactor;  
-          b = b * (1.0 - shadowFactor) + gray * shadowFactor;  
-        }  
-          
-        // Apply vignette  
-        if (vignetteVal > 0.0) {  
-          const x = this.thread.x;  
-          const y = this.thread.y;  
-          const centerX = this.constants.width / 2.0;  
-          const centerY = this.constants.height / 2.0;  
-          const maxDist = Math.sqrt(centerX * centerX + centerY * centerY);  
-          const dist = Math.sqrt((x - centerX) * (x - centerX) + (y - centerY) * (y - centerY));  
-          const vignette = 1.0 - (dist / maxDist) * vignetteVal;  
-            
-          r = r * vignette;  
-          g = g * vignette;  
-          b = b * vignette;  
-        }  
-          
-        // Clamp values  
-        r = Math.min(255.0, Math.max(0.0, r));  
-        g = Math.min(255.0, Math.max(0.0, g));  
-        b = Math.min(255.0, Math.max(0.0, b));  
-          
-        this.color(r, g, b, pixel[3]);  
-      })  
-      .setOutput([canvas.width, canvas.height])  
-      .setGraphical(true)  
-      .setConstants({ width: canvas.width, height: canvas.height });  
-    }  
-    // Apply filters using GPU.js  
-    function applyGPUFilters() {  
-      if (!gpu || !filterKernel || !videoReady) return;  
-        
-      // Draw video to temporary canvas with horizontal flip to unmirror it  
-      tempCtx.save();  
-      tempCtx.scale(-1, 1);  
-      tempCtx.drawImage(video, -tempCanvas.width, 0, tempCanvas.width, tempCanvas.height);  
-      tempCtx.restore();  
-        
-      // Get image data from temporary canvas  
-      const imageData = tempCtx.getImageData(0, 0, tempCanvas.width, tempCanvas.height);  
-        
-      // Convert to format expected by GPU.js  
-      const pixels = [];  
-      for (let y = 0; y < tempCanvas.height; y++) {  
-        const row = [];  
-        for (let x = 0; x < tempCanvas.width; x++) {  
-          const idx = (y * tempCanvas.width + x) * 4;  
-          row.push([  
-            imageData.data[idx],  
-            imageData.data[idx + 1],  
-            imageData.data[idx + 2],  
-            imageData.data[idx + 3]  
-          ]);  
-        }  
-        pixels.push(row);  
-      }  
-        
-      // Get slider values  
-      const vibrance = (Number(sliders.vibrance.value) - 100) / 100;   // -1..+1  
-      const highlights = (Number(sliders.highlights.value) - 100) / 100;  
-      const shadows = (Number(sliders.shadows.value) - 100) / 100;  
-      const whitepoint = Number(sliders.whitepoint.value) / 100; // 0..2  
-      const blackpoint = Number(sliders.blackpoint.value) / 100; // 0..2  
-      const exposure = (Number(sliders.exposure.value) - 100) / 100; // -1..+1  
-      const sharpness = (Number(sliders.sharpness.value) - 100) / 100; // -1..+1  
-      const blurVal = Number(sliders.blur.value);  
-      const glowVal = Number(sliders.glow.value);  
-      const vignetteVal = Number(sliders.vignette.value) / 200;  
-      const rgbSplitVal = Number(sliders.rgbsplit.value);  
-        
-      // Apply filters on GPU  
-      const filteredCanvas = filterKernel(pixels, vibrance, highlights, shadows, whitepoint, blackpoint, exposure, sharpness, blurVal, glowVal, vignetteVal, rgbSplitVal);  
-        
-      // Draw the result to our main canvas  
-      ctx.drawImage(filteredCanvas, 0, 0);  
-        
-      // Apply post-processing effects that can't be done in the kernel  
-      if (blurVal > 0) {  
-        ctx.filter = `blur(${blurVal}px)`;  
-        ctx.drawImage(canvas, 0, 0);  
-        ctx.filter = 'none';  
-      }  
-        
-      if (rgbSplitVal > 0) {  
-        ctx.globalCompositeOperation = 'screen';  
-        ctx.globalAlpha = 0.5;  
-          
-        // Red channel - shift right  
-        ctx.drawImage(canvas, rgbSplitVal/2, 0, canvas.width, canvas.height);  
-          
-        // Blue channel - shift left  
-        ctx.globalCompositeOperation = 'multiply';  
-        ctx.drawImage(canvas, -rgbSplitVal/2, 0, canvas.width, canvas.height);  
-          
-        ctx.globalCompositeOperation = 'source-over';  
-        ctx.globalAlpha = 1.0;  
-      }  
-        
-      if (glowVal > 0) {  
-        ctx.filter = `blur(${glowVal}px)`;  
-        ctx.globalCompositeOperation = 'screen';  
-        ctx.globalAlpha = 0.5;  
-        ctx.drawImage(canvas, 0, 0);  
-        ctx.filter = 'none';  
-        ctx.globalCompositeOperation = 'source-over';  
-        ctx.globalAlpha = 1.0;  
-      }  
-        
-      if (sharpness > 0.15) {  
-        // Apply convolution for sharpness  
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);  
-        const data = imageData.data;  
-        const width = imageData.width;  
-        const height = imageData.height;  
-          
-        const s = 1 + sharpness * 2;  
-        const kernel = [0, -1*s, 0, -1*s, 5*s, -1*s, 0, -1*s, 0];  
-          
-        const tempData = new Uint8ClampedArray(data);  
-          
-        for (let y = 1; y < height - 1; y++) {  
-          for (let x = 1; x < width - 1; x++) {  
-            let r = 0, g = 0, b = 0;  
-              
-            for (let ky = -1; ky <= 1; ky++) {  
-              for (let kx = -1; kx <= 1; kx++) {  
-                const idx = ((y + ky) * width + (x + kx)) * 4;  
-                const weight = kernel[(ky + 1) * 3 + (kx + 1)];  
-                  
-                r += tempData[idx] * weight;  
-                g += tempData[idx + 1] * weight;  
-                b += tempData[idx + 2] * weight;  
-              }  
-            }  
-              
-            const idx = (y * width + x) * 4;  
-            data[idx] = Math.min(255, Math.max(0, r));  
-            data[idx + 1] = Math.min(255, Math.max(0, g));  
-            data[idx + 2] = Math.min(255, Math.max(0, b));  
-          }  
-        }  
-          
-        ctx.putImageData(imageData, 0, 0);  
-      }  
-    }  
-    // Fallback CPU-based processing for browsers without WebGL support  
-    function applyCPUFilters() {  
-      if (!videoReady) return;  
-        
-      // Draw video to canvas with horizontal flip to unmirror it  
-      ctx.save();  
-      ctx.scale(-1, 1);  
-      ctx.drawImage(video, -canvas.width, 0, canvas.width, canvas.height);  
-      ctx.restore();  
-        
-      // Get image data  
-      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);  
-      const data = imageData.data;  
-      const width = imageData.width;  
-      const height = imageData.height;  
-        
-      // Get slider values  
-      const vibrance = (Number(sliders.vibrance.value) - 100) / 100;   // -1..+1  
-      const highlights = (Number(sliders.highlights.value) - 100) / 100;  
-      const shadows = (Number(sliders.shadows.value) - 100) / 100;  
-      const whitepoint = Number(sliders.whitepoint.value) / 100; // 0..2  
-      const blackpoint = Number(sliders.blackpoint.value) / 100; // 0..2  
-      const exposure = (Number(sliders.exposure.value) - 100) / 100; // -1..+1  
-      const sharpness = (Number(sliders.sharpness.value) - 100) / 100; // -1..+1  
-      const blurVal = Number(sliders.blur.value);  
-      const glowVal = Number(sliders.glow.value);  
-      const vignetteVal = Number(sliders.vignette.value) / 200;  
-      const rgbSplitVal = Number(sliders.rgbsplit.value);  
-        
-      // Apply color adjustments  
-      for (let i = 0; i < data.length; i += 4) {  
-        let r = data[i];  
-        let g = data[i + 1];  
-        let b = data[i + 2];  
-          
-        // Apply exposure  
-        r = r * (1 + exposure);  
-        g = g * (1 + exposure);  
-        b = b * (1 + exposure);  
-          
-        // Apply contrast based on highlights  
-        const contrastFactor = 1 + (highlights * 0.3);  
-        r = ((r / 255 - 0.5) * contrastFactor + 0.5) * 255;  
-        g = ((g / 255 - 0.5) * contrastFactor + 0.5) * 255;  
-        b = ((b / 255 - 0.5) * contrastFactor + 0.5) * 255;  
-          
-        // Apply vibrance (selective saturation)  
-        const gray = 0.2989 * r + 0.5870 * g + 0.1140 * b;  
-        const sat = (vibrance > 0) ? 1 + vibrance * 0.8 : 1 + vibrance * 0.5;  
-        r = gray + sat * (r - gray);  
-        g = gray + sat * (g - gray);  
-        b = gray + sat * (b - gray);  
-          
-        // Apply white point  
-        if (whitepoint !== 1) {  
-          const wp = 1 + (whitepoint - 1) * 0.25;  
-          r = r * wp;  
-          g = g * wp;  
-          b = b * wp;  
-        }  
-          
-        // Apply black point  
-        if (blackpoint !== 1) {  
-          const bp = 1 - (1 - blackpoint) * 0.25;  
-          r = r * bp;  
-          g = g * bp;  
-          b = b * bp;  
-        }  
-          
-        // Apply shadows (darken mid-tones)  
-        if (shadows < 0) {  
-          const shadowFactor = Math.max(-shadows * 0.2, 0);  
-          const gray = 0.2989 * r + 0.5870 * g + 0.1140 * b;  
-          r = r * (1 - shadowFactor) + gray * shadowFactor;  
-          g = g * (1 - shadowFactor) + gray * shadowFactor;  
-          b = b * (1 - shadowFactor) + gray * shadowFactor;  
-        }  
-          
-        // Apply vignette  
-        if (vignetteVal > 0) {  
-          const x = (i / 4) % width;  
-          const y = Math.floor((i / 4) / width);  
-          const centerX = width / 2;  
-          const centerY = height / 2;  
-          const maxDist = Math.sqrt(centerX * centerX + centerY * centerY);  
-          const dist = Math.sqrt((x - centerX) * (x - centerX) + (y - centerY) * (y - centerY));  
-          const vignette = 1 - (dist / maxDist) * vignetteVal;  
-            
-          r = r * vignette;  
-          g = g * vignette;  
-          b = b * vignette;  
-        }  
-          
-        // Clamp values  
-        data[i] = Math.min(255, Math.max(0, r));  
-        data[i + 1] = Math.min(255, Math.max(0, g));  
-        data[i + 2] = Math.min(255, Math.max(0, b));  
-      }  
-        
-      // Put filtered image back  
-      ctx.putImageData(imageData, 0, 0);  
-        
-      // Apply CSS filters for effects that are expensive to compute  
-      const filters = [];  
-      if (blurVal > 0) filters.push(`blur(${blurVal}px)`);  
-      if (rgbSplitVal > 0) {  
-        // RGB split can be simulated with CSS  
-        filters.push(`contrast(200%) saturate(0%)`);  
-      }  
-      if (glowVal > 0) {  
-        filters.push(`contrast(120%) brightness(110%)`);  
-      }  
-        
-      if (filters.length > 0) {  
-        ctx.filter = filters.join(' ');  
-        ctx.drawImage(canvas, 0, 0);  
-        ctx.filter = 'none';  
-      }  
-    }  
-    // Process and render video frame  
-    function processFrame() {  
-      if (!videoReady || video.paused || video.ended) return;  
-        
-      // Use GPU processing if available, otherwise fall back to CPU  
-      if (gpu && filterKernel) {  
-        applyGPUFilters();  
-      } else {  
-        applyCPUFilters();  
-      }  
-        
-      // Continue processing frames  
-      animationFrame = requestAnimationFrame(processFrame);  
-    }  
-    // Optimized capture function - directly captures what's shown in the preview  
-    function captureCurrentFrame() {  
-      return new Promise((resolve) => {  
-        // Create a new canvas to capture the current view  
-        const captureCanvas = document.createElement('canvas');  
-        captureCanvas.width = canvas.width;  
-        captureCanvas.height = canvas.height;  
-        const captureCtx = captureCanvas.getContext('2d');  
-          
-        // Draw the current canvas content (with filters applied)  
-        captureCtx.drawImage(canvas, 0, 0);  
-          
-        // Load and draw the frame overlay  
-        const frameImg = new Image();  
-        frameImg.crossOrigin = 'Anonymous';  
-          
-        frameImg.onload = () => {  
-          // Draw the frame overlay on top  
-          captureCtx.drawImage(frameImg, 0, 0, captureCanvas.width, captureCanvas.height);  
-          resolve(captureCanvas);  
-        };  
-          
-        // If the frame overlay has already loaded, use it directly  
-        if (frameOverlayLoaded) {  
-          frameImg.src = frameOverlay.src;  
-        } else {  
-          // Otherwise, wait for it to load  
-          frameOverlay.onload = () => {  
-            frameOverlayLoaded = true;  
-            frameImg.src = frameOverlay.src;  
-          };  
-          // Start loading the frame overlay  
-          frameImg.src = frameOverlay.src;  
-        }  
-      });  
-    }  
-    // Upload to Google Drive  
-    async function uploadToGoogleDrive() {  
-      if (!videoReady) {  
-        return alert('Camera not ready yet.');  
-      }  
-        
-      try {  
-        // Show loading overlay  
-        loadingOverlay.classList.remove('hidden');  
-          
-        // Capture the current frame with the frame overlay  
-        const captureCanvas = await captureCurrentFrame();  
-          
-        // Convert to blob with higher quality but smaller size  
-        const blob = await new Promise(resolve => {  
-          captureCanvas.toBlob(resolve, 'image/jpeg', 0.85);  
-        });  
-          
-        // Create a simple form data object  
-        const formData = new FormData();  
-        const filename = `pudobooth_${Date.now()}.jpg`;  
-        formData.append('file', blob, filename);  
-          
-        // Add timeout to the fetch request  
-        const controller = new AbortController();  
-        const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout  
-          
-        try {  
-          const response = await fetch('/pudobooth/upload', {  
-            method: 'POST',  
-            body: formData,  
-            headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },  
-            signal: controller.signal  
-          });  
-            
-          clearTimeout(timeoutId);  
-            
-          if (!response.ok) {  
-            const errorText = await response.text();  
-            throw new Error(`Upload failed with status ${response.status}: ${errorText}`);  
-          }  
-            
-          const result = await response.json();  
-            
-          // Hide loading overlay  
-          loadingOverlay.classList.add('hidden');  
-            
-          alert(`✅ Uploaded successfully!\n📂 File: ${result.name}\n🔗 ${result.webViewLink}`);  
-        } catch (fetchError) {  
-          clearTimeout(timeoutId);  
-          throw fetchError;  
-        }  
-      } catch (err) {  
-        console.error('Upload error:', err);  
-        loadingOverlay.classList.add('hidden');  
-          
-        if (err.name === 'AbortError') {  
-          alert('Upload timed out. Please try again.');  
-        } else {  
-          alert('Failed to upload to Google Drive: ' + err.message);  
-        }  
-      } finally {  
-        // Resume camera processing  
-        animationFrame = requestAnimationFrame(processFrame);  
-      }  
-    }  
-    // Shoot button click handler  
-    shootButton.addEventListener('click', () => {  
-      if (!videoReady || isProcessing) {  
-        return;  
-      }  
-        
-      isProcessing = true;  
-      shootButton.disabled = true;  
-        
-      // Stop camera processing  
-      cancelAnimationFrame(animationFrame);  
-        
-      // Directly capture and upload the image  
-      uploadToGoogleDrive().finally(() => {  
-        isProcessing = false;  
-        shootButton.disabled = false;  
-      });  
-    });  
-    // init camera  
-    async function startCamera() {  
-      try {  
-        // Clean up any existing stream  
-        if (stream) {  
-          stream.getTracks().forEach(track => track.stop());  
-        }  
-          
-        // Get user media  
-        stream = await navigator.mediaDevices.getUserMedia({   
-          video: {   
-            width: { ideal: 800 },   
-            height: { ideal: 600 },   
-            facingMode: 'user'   
-          },   
-          audio: false   
-        });  
-          
-        // Set video source  
-        video.srcObject = stream;  
-          
-        // Wait for video to be ready  
-        video.addEventListener('loadeddata', async () => {  
-          try {  
-            await video.play();  
-              
-            // Wait a bit for the video to actually start playing  
-            await new Promise(resolve => setTimeout(resolve, 500));  
-              
-            // Check if video is actually playing  
-            if (video.paused || video.ended || video.readyState < 2) {  
-              throw new Error('Video is not playing properly');  
-            }  
-              
-            videoReady = true;  
-              
-            // Initialize GPU.js if not already done  
-            if (!gpu) {  
-              initGPU();  
-            }  
-              
-            // Start processing frames  
-            processFrame();  
-              
-            console.log('Camera initialized successfully');  
-          } catch (err) {  
-            console.error('Error playing video:', err);  
-            alert('Could not play video from camera: ' + err.message);  
-          }  
-        });  
-          
-        // Handle video errors  
-        video.addEventListener('error', (e) => {  
-          console.error('Video error:', e);  
-          alert('Video error occurred. Please check camera permissions.');  
-        });  
-          
-      } catch (err) {  
-        console.error('Camera error:', err);  
-        alert('Could not access the camera. Make sure you allowed permission and are on localhost or HTTPS. Error: ' + err.message);  
-      }  
-    }  
-    // Clean up function to stop camera when page unloads  
-    window.addEventListener('beforeunload', () => {  
-      if (stream) {  
-        stream.getTracks().forEach(track => track.stop());  
-      }  
-      if (animationFrame) {  
-        cancelAnimationFrame(animationFrame);  
-      }  
-      if (gpu) {  
-        gpu.destroy();  
-      }  
-    });  
-    // start  
-    startCamera();  
+
+    // GPU.js init (same as before)
+    function initGPU() {
+      try {
+        gpu = new GPU();
+        tempCanvas = document.createElement('canvas');
+        tempCanvas.width = canvas.width;
+        tempCanvas.height = canvas.height;
+        tempCtx = tempCanvas.getContext('2d');
+        createFilterKernel();
+        return true;
+      } catch (e) {
+        console.error('GPU init failed:', e);
+        alert('WebGL not supported. Using CPU fallback.');
+        return false;
+      }
+    }
+
+    function createFilterKernel() {
+      filterKernel = gpu.createKernel(function(image, vibrance, highlights, shadows, whitepoint, blackpoint, exposure, sharpness, blurVal, glowVal, vignetteVal, rgbSplitVal) {
+        const pixel = image[this.thread.y][this.thread.x];
+        let r = pixel[0], g = pixel[1], b = pixel[2];
+
+        r = r * (1.0 + exposure);
+        g = g * (1.0 + exposure);
+        b = b * (1.0 + exposure);
+
+        const contrastFactor = 1.0 + (highlights * 0.3);
+        r = ((r / 255.0 - 0.5) * contrastFactor + 0.5) * 255.0;
+        g = ((g / 255.0 - 0.5) * contrastFactor + 0.5) * 255.0;
+        b = ((b / 255.0 - 0.5) * contrastFactor + 0.5) * 255.0;
+
+        const gray = 0.2989 * r + 0.5870 * g + 0.1140 * b;
+        const sat = (vibrance > 0.0) ? 1.0 + vibrance * 0.8 : 1.0 + vibrance * 0.5;
+        r = gray + sat * (r - gray);
+        g = gray + sat * (g - gray);
+        b = gray + sat * (b - gray);
+
+        if (whitepoint !== 1.0) {
+          const wp = 1.0 + (whitepoint - 1.0) * 0.25;
+          r *= wp; g *= wp; b *= wp;
+        }
+
+        if (blackpoint !== 1.0) {
+          const bp = 1.0 - (1.0 - blackpoint) * 0.25;
+          r *= bp; g *= bp; b *= bp;
+        }
+
+        if (shadows < 0.0) {
+          const shadowFactor = Math.max(-shadows * 0.2, 0.0);
+          const gray2 = 0.2989 * r + 0.5870 * g + 0.1140 * b;
+          r = r * (1.0 - shadowFactor) + gray2 * shadowFactor;
+          g = g * (1.0 - shadowFactor) + gray2 * shadowFactor;
+          b = b * (1.0 - shadowFactor) + gray2 * shadowFactor;
+        }
+
+        if (vignetteVal > 0.0) {
+          const x = this.thread.x;
+          const y = this.thread.y;
+          const centerX = this.constants.width / 2.0;
+          const centerY = this.constants.height / 2.0;
+          const maxDist = Math.sqrt(centerX * centerX + centerY * centerY);
+          const dist = Math.sqrt((x - centerX) ** 2 + (y - centerY) ** 2);
+          const vignette = 1.0 - (dist / maxDist) * vignetteVal;
+          r *= vignette; g *= vignette; b *= vignette;
+        }
+
+        r = Math.min(255, Math.max(0, r));
+        g = Math.min(255, Math.max(0, g));
+        b = Math.min(255, Math.max(0, b));
+
+        this.color(r, g, b, pixel[3]);
+      })
+      .setOutput([canvas.width, canvas.height])
+      .setGraphical(true)
+      .setConstants({ width: canvas.width, height: canvas.height });
+    }
+
+    // Apply filters (GPU or CPU)
+    function applyFilters() {
+    if (!originalImage) return;
+
+    // Step 1: Draw clean base image
+    drawBaseImage();
+
+    // Step 2: If GPU is ready, use it. Otherwise, skip advanced filtering.
+    const vibrance = (Number(sliders.vibrance.value) - 100) / 100;
+    const highlights = (Number(sliders.highlights.value) - 100) / 100;
+    const shadows = (Number(sliders.shadows.value) - 100) / 100;
+    const whitepoint = Number(sliders.whitepoint.value) / 100;
+    const blackpoint = Number(sliders.blackpoint.value) / 100;
+    const exposure = (Number(sliders.exposure.value) - 100) / 100;
+    const sharpness = (Number(sliders.sharpness.value) - 100) / 100;
+    const blurVal = Number(sliders.blur.value);
+    const glowVal = Number(sliders.glow.value);
+    const vignetteVal = Number(sliders.vignette.value) / 200;
+    const rgbSplitVal = Number(sliders.rgbsplit.value);
+
+    // Only apply GPU/CPU filters if at least one non-default value is used
+    const isDefault = (
+      vibrance === 0 && highlights === 0 && shadows === 0 &&
+      whitepoint === 1 && blackpoint === 1 && exposure === 0 &&
+      sharpness === 0 && blurVal === 0 && glowVal === 0 &&
+      vignetteVal === 0.5 && rgbSplitVal === 0
+    );
+
+    if (!isDefault && gpu && filterKernel) {
+      // Use GPU path
+      tempCtx.clearRect(0, 0, tempCanvas.width, tempCanvas.height);
+      tempCtx.drawImage(originalImage, 0, 0, tempCanvas.width, tempCanvas.height);
+
+      const imageData = tempCtx.getImageData(0, 0, tempCanvas.width, tempCanvas.height);
+      const pixels = [];
+      for (let y = 0; y < tempCanvas.height; y++) {
+        const row = [];
+        for (let x = 0; x < tempCanvas.width; x++) {
+          const idx = (y * tempCanvas.width + x) * 4;
+          row.push([imageData.data[idx], imageData.data[idx+1], imageData.data[idx+2], imageData.data[idx+3]]);
+        }
+        pixels.push(row);
+      }
+
+      const filteredCanvas = filterKernel(
+        pixels, vibrance, highlights, shadows, whitepoint, blackpoint,
+        exposure, sharpness, blurVal, glowVal, vignetteVal, rgbSplitVal
+      );
+
+      // Clear and draw filtered result
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(filteredCanvas, 0, 0);
+    } else if (!isDefault) {
+      // CPU fallback: apply directly on main canvas image data
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      applyCPUFiltersToImageData(
+        imageData, vibrance, highlights, shadows, whitepoint, blackpoint,
+        exposure, sharpness, blurVal, glowVal, vignetteVal, rgbSplitVal
+      );
+      ctx.putImageData(imageData, 0, 0);
+    }
+
+    // Apply post-effects (blur, glow, RGB split) — these work on canvas
+    let needsRedraw = false;
+    const currentCanvas = document.createElement('canvas');
+    currentCanvas.width = canvas.width;
+    currentCanvas.height = canvas.height;
+    const currentCtx = currentCanvas.getContext('2d');
+    currentCtx.drawImage(canvas, 0, 0);
+
+    if (blurVal > 0) {
+      ctx.filter = `blur(${blurVal}px)`;
+      ctx.drawImage(currentCanvas, 0, 0);
+      ctx.filter = 'none';
+      needsRedraw = true;
+    }
+
+    if (rgbSplitVal > 0) {
+      ctx.globalCompositeOperation = 'screen';
+      ctx.globalAlpha = 0.5;
+      ctx.drawImage(currentCanvas, rgbSplitVal / 2, 0);
+      ctx.globalCompositeOperation = 'multiply';
+      ctx.drawImage(currentCanvas, -rgbSplitVal / 2, 0);
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.globalAlpha = 1.0;
+      needsRedraw = true;
+    }
+
+    if (glowVal > 0) {
+      ctx.filter = `blur(${glowVal}px)`;
+      ctx.globalCompositeOperation = 'screen';
+      ctx.globalAlpha = 0.5;
+      ctx.drawImage(currentCanvas, 0, 0);
+      ctx.filter = 'none';
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.globalAlpha = 1.0;
+      needsRedraw = true;
+    }
+
+    if (sharpness > 0.15) {
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      sharpenImageData(imageData, sharpness);
+      ctx.putImageData(imageData, 0, 0);
+      needsRedraw = true;
+    }
+  }
+
+    function drawBaseImage() {
+    if (!originalImage) return;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Scale image to fit canvas while preserving aspect ratio
+    const img = originalImage;
+    const hRatio = canvas.width / img.width;
+    const vRatio = canvas.height / img.height;
+    const ratio = Math.min(hRatio, vRatio);
+    const centerShiftX = (canvas.width - img.width * ratio) / 2;
+    const centerShiftY = (canvas.height - img.height * ratio) / 2;
+
+    ctx.drawImage(
+      img,
+      0, 0, img.width, img.height,
+      centerShiftX, centerShiftY, img.width * ratio, img.height * ratio
+    );
+  }
+
+    // CPU filter helper
+    function applyCPUFiltersToImageData(imageData, vibrance, highlights, shadows, whitepoint, blackpoint, exposure, sharpness, blurVal, glowVal, vignetteVal, rgbSplitVal) {
+      const data = imageData.data;
+      const width = imageData.width;
+      const height = imageData.height;
+
+      for (let i = 0; i < data.length; i += 4) {
+        let r = data[i], g = data[i+1], b = data[i+2];
+
+        r *= (1 + exposure); g *= (1 + exposure); b *= (1 + exposure);
+
+        const contrastFactor = 1 + (highlights * 0.3);
+        r = ((r / 255 - 0.5) * contrastFactor + 0.5) * 255;
+        g = ((g / 255 - 0.5) * contrastFactor + 0.5) * 255;
+        b = ((b / 255 - 0.5) * contrastFactor + 0.5) * 255;
+
+        const gray = 0.2989 * r + 0.5870 * g + 0.1140 * b;
+        const sat = (vibrance > 0) ? 1 + vibrance * 0.8 : 1 + vibrance * 0.5;
+        r = gray + sat * (r - gray);
+        g = gray + sat * (g - gray);
+        b = gray + sat * (b - gray);
+
+        if (whitepoint !== 1) {
+          const wp = 1 + (whitepoint - 1) * 0.25;
+          r *= wp; g *= wp; b *= wp;
+        }
+
+        if (blackpoint !== 1) {
+          const bp = 1 - (1 - blackpoint) * 0.25;
+          r *= bp; g *= bp; b *= bp;
+        }
+
+        if (shadows < 0) {
+          const shadowFactor = Math.max(-shadows * 0.2, 0);
+          const gray2 = 0.2989 * r + 0.5870 * g + 0.1140 * b;
+          r = r * (1 - shadowFactor) + gray2 * shadowFactor;
+          g = g * (1 - shadowFactor) + gray2 * shadowFactor;
+          b = b * (1 - shadowFactor) + gray2 * shadowFactor;
+        }
+
+        if (vignetteVal > 0) {
+          const x = (i / 4) % width;
+          const y = Math.floor((i / 4) / width);
+          const centerX = width / 2;
+          const centerY = height / 2;
+          const maxDist = Math.sqrt(centerX*centerX + centerY*centerY);
+          const dist = Math.sqrt((x - centerX)**2 + (y - centerY)**2);
+          const vignette = 1 - (dist / maxDist) * vignetteVal;
+          r *= vignette; g *= vignette; b *= vignette;
+        }
+
+        data[i] = Math.min(255, Math.max(0, r));
+        data[i+1] = Math.min(255, Math.max(0, g));
+        data[i+2] = Math.min(255, Math.max(0, b));
+      }
+    }
+
+    function sharpenImageData(imageData, sharpness) {
+      const data = imageData.data;
+      const width = imageData.width;
+      const height = imageData.height;
+      const s = 1 + sharpness * 2;
+      const kernel = [0, -s, 0, -s, 5*s, -s, 0, -s, 0];
+      const tempData = new Uint8ClampedArray(data);
+
+      for (let y = 1; y < height - 1; y++) {
+        for (let x = 1; x < width - 1; x++) {
+          let r = 0, g = 0, b = 0;
+          for (let ky = -1; ky <= 1; ky++) {
+            for (let kx = -1; kx <= 1; kx++) {
+              const idx = ((y + ky) * width + (x + kx)) * 4;
+              const weight = kernel[(ky + 1) * 3 + (kx + 1)];
+              r += tempData[idx] * weight;
+              g += tempData[idx + 1] * weight;
+              b += tempData[idx + 2] * weight;
+            }
+          }
+          const idx = (y * width + x) * 4;
+          data[idx] = Math.min(255, Math.max(0, r));
+          data[idx + 1] = Math.min(255, Math.max(0, g));
+          data[idx + 2] = Math.min(255, Math.max(0, b));
+        }
+      }
+    }
+
+    // Capture current view with frame
+    function captureCurrentFrame() {
+      return new Promise((resolve) => {
+        const captureCanvas = document.createElement('canvas');
+        captureCanvas.width = canvas.width;
+        captureCanvas.height = canvas.height;
+        const captureCtx = captureCanvas.getContext('2d');
+
+        captureCtx.drawImage(canvas, 0, 0);
+
+        const frameImg = new Image();
+        frameImg.crossOrigin = 'Anonymous';
+        frameImg.onload = () => {
+          captureCtx.drawImage(frameImg, 0, 0, captureCanvas.width, captureCanvas.height);
+          resolve(captureCanvas);
+        };
+
+        if (frameOverlayLoaded) {
+          frameImg.src = frameOverlay.src;
+        } else {
+          frameOverlay.onload = () => {
+            frameOverlayLoaded = true;
+            frameImg.src = frameOverlay.src;
+          };
+          frameImg.src = frameOverlay.src;
+        }
+      });
+    }
+
+    // Upload to Google Drive
+    async function uploadToGoogleDrive() {
+      try {
+        loadingOverlay.classList.remove('hidden');
+        const captureCanvas = await captureCurrentFrame();
+        const blob = await new Promise(resolve => captureCanvas.toBlob(resolve, 'image/jpeg', 0.85));
+        const formData = new FormData();
+        formData.append('file', blob, `pudobooth_${Date.now()}.jpg`);
+
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 30000);
+
+        const response = await fetch('/pudobooth/upload', {
+          method: 'POST',
+          body: formData,
+          headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+          signal: controller.signal
+        });
+
+        clearTimeout(timeoutId);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+        const result = await response.json();
+        loadingOverlay.classList.add('hidden');
+        alert(`✅ Uploaded successfully!\n📂 File: ${result.name}\n🔗 ${result.webViewLink}`);
+      } catch (err) {
+        loadingOverlay.classList.add('hidden');
+        if (err.name === 'AbortError') {
+          alert('Upload timed out. Please try again.');
+        } else {
+          alert('Upload failed: ' + err.message);
+        }
+      }
+    }
+
+    shootButton.addEventListener('click', async () => {
+      if (isProcessing || !originalImage) return;
+      isProcessing = true;
+      shootButton.disabled = true;
+      await uploadToGoogleDrive();
+      isProcessing = false;
+      shootButton.disabled = false;
+    });
+
+    // Handle image upload
+    uploadInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const img = new Image();
+      img.crossOrigin = 'Anonymous';
+      img.onload = () => {
+        originalImage = img;
+        uploadPrompt.classList.add('hidden');
+        shootButton.disabled = false;
+
+        // Initialize GPU if not done
+        if (!gpu) {
+          initGPU();
+        }
+
+        // First: show raw image
+        drawBaseImage();
+
+        // Then: apply filters (in case sliders aren't default)
+        setTimeout(() => applyFilters(), 100); // small delay to ensure canvas is ready
+      };
+      img.onerror = () => {
+        alert('Failed to load image. Please try another file.');
+        uploadPrompt.classList.remove('hidden');
+      };
+      img.src = event.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+
+  Object.values(sliders).forEach(slider => {
+    slider.addEventListener('input', () => {
+      if (originalImage) applyFilters();
+    });
+  });
+
+    // Initialize GPU if possible
+    initGPU();
   </script>  
 </x-layout>
