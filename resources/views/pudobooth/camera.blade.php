@@ -54,6 +54,11 @@
           <button id="preset3-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-3 rounded-md text-sm">Preset 3</button>
         </div>
 
+        <!-- Filename display -->
+        <div id="filename-display" class="text-sm text-gray-600 italic text-center min-h-[24px]">
+          Loading filename...
+        </div>
+
         <div class="flex justify-center">  
           <button id="shoot-button" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md w-full" disabled>Shoot</button>  
         </div>  
@@ -412,46 +417,154 @@
       }
     }
 
+    // Fetch filename from /queue API
+    async function fetchFilename() {
+        const filenameDisplay = document.getElementById('filename-display');
+        try {
+          const response = await fetch('/queue');
+          if (!response.ok) throw new Error('Failed to fetch queue data');
+          
+          const data = await response.json();
+          // ✅ Use 'nama', not 'name'
+          if (Array.isArray(data) && data.length > 0 && data[0].nama) {
+            window.uploadFilename = data[0].nama.trim() || 'pudobooth_photo';
+          } else {
+            window.uploadFilename = 'pudobooth_photo';
+          }
+          filenameDisplay.textContent = `📁 File will be saved as: ${window.uploadFilename}.jpg`;
+        } catch (err) {
+          console.warn('Could not load filename from /queue:', err);
+          window.uploadFilename = 'pudobooth_photo';
+          filenameDisplay.textContent = '📁 Using default filename';
+        }
+      }
+
     // Capture current view with frame
-    function captureCurrentFrame() {
-      return new Promise((resolve) => {
-        const captureCanvas = document.createElement('canvas');
-        captureCanvas.width = canvas.width;
-        captureCanvas.height = canvas.height;
-        const captureCtx = captureCanvas.getContext('2d');
+    async function captureHighResFrame() {
+      return new Promise(async (resolve) => {
+        if (!originalImage) return resolve(null);
 
-        captureCtx.drawImage(canvas, 0, 0);
+        const exportSize = getExportSize(originalImage);
+        const exportCanvas = document.createElement('canvas');
+        exportCanvas.width = exportSize.width;
+        exportCanvas.height = exportSize.height;
+        const exportCtx = exportCanvas.getContext('2d');
 
+        // Step 1: Draw original image at high res
+        exportCtx.drawImage(originalImage, 0, 0, exportSize.width, exportSize.height);
+
+        // Step 2: Apply filters via CPU (GPU not used for high-res)
+        const imageData = exportCtx.getImageData(0, 0, exportSize.width, exportSize.height);
+        const vibrance = (Number(sliders.vibrance.value) - 100) / 100;
+        const highlights = (Number(sliders.highlights.value) - 100) / 100;
+        const shadows = (Number(sliders.shadows.value) - 100) / 100;
+        const whitepoint = Number(sliders.whitepoint.value) / 100;
+        const blackpoint = Number(sliders.blackpoint.value) / 100;
+        const exposure = (Number(sliders.exposure.value) - 100) / 100;
+        const sharpness = (Number(sliders.sharpness.value) - 100) / 100;
+        const blurVal = Number(sliders.blur.value);
+        const glowVal = Number(sliders.glow.value);
+        const vignetteVal = Number(sliders.vignette.value) / 200;
+        const rgbSplitVal = Number(sliders.rgbsplit.value);
+
+        // Apply base color filters
+        applyCPUFiltersToImageData(
+          imageData, vibrance, highlights, shadows, whitepoint, blackpoint,
+          exposure, sharpness, blurVal, glowVal, vignetteVal, rgbSplitVal
+        );
+        exportCtx.putImageData(imageData, 0, 0);
+
+        // Apply post-effects that require canvas operations
+        if (blurVal > 0 || glowVal > 0 || rgbSplitVal > 0 || sharpness > 0.15) {
+          // For simplicity, we'll apply blur/glow via temporary canvas
+          const temp = document.createElement('canvas');
+          temp.width = exportSize.width;
+          temp.height = exportSize.height;
+          const tctx = temp.getContext('2d');
+          tctx.drawImage(exportCanvas, 0, 0);
+
+          // Blur
+          if (blurVal > 0) {
+            exportCtx.filter = `blur(${blurVal * (exportSize.width / 800)}px)`; // scale blur
+            exportCtx.drawImage(temp, 0, 0);
+            exportCtx.filter = 'none';
+          }
+
+          // RGB Split (scaled)
+          if (rgbSplitVal > 0) {
+            const offset = Math.max(1, Math.round(rgbSplitVal * (exportSize.width / 800) / 2));
+            exportCtx.globalCompositeOperation = 'screen';
+            exportCtx.globalAlpha = 0.5;
+            exportCtx.drawImage(temp, offset, 0);
+            exportCtx.globalCompositeOperation = 'multiply';
+            exportCtx.drawImage(temp, -offset, 0);
+            exportCtx.globalCompositeOperation = 'source-over';
+            exportCtx.globalAlpha = 1.0;
+          }
+
+          // Glow
+          if (glowVal > 0) {
+            exportCtx.filter = `blur(${glowVal * (exportSize.width / 800)}px)`;
+            exportCtx.globalCompositeOperation = 'screen';
+            exportCtx.globalAlpha = 0.5;
+            exportCtx.drawImage(temp, 0, 0);
+            exportCtx.filter = 'none';
+            exportCtx.globalCompositeOperation = 'source-over';
+            exportCtx.globalAlpha = 1.0;
+          }
+
+          // Sharpness
+          if (sharpness > 0.15) {
+            const imgData = exportCtx.getImageData(0, 0, exportSize.width, exportSize.height);
+            sharpenImageData(imgData, sharpness);
+            exportCtx.putImageData(imgData, 0, 0);
+          }
+        }
+
+        // Step 3: Load and draw frame at high resolution
         const frameImg = new Image();
         frameImg.crossOrigin = 'Anonymous';
         frameImg.onload = () => {
-          captureCtx.drawImage(frameImg, 0, 0, captureCanvas.width, captureCanvas.height);
-          resolve(captureCanvas);
+          exportCtx.drawImage(frameImg, 0, 0, exportSize.width, exportSize.height);
+          resolve(exportCanvas);
         };
-
-        if (frameOverlayLoaded) {
-          frameImg.src = frameOverlay.src;
-        } else {
-          frameOverlay.onload = () => {
-            frameOverlayLoaded = true;
-            frameImg.src = frameOverlay.src;
-          };
-          frameImg.src = frameOverlay.src;
-        }
+        frameImg.onerror = () => {
+          console.warn('Frame failed to load, exporting without frame');
+          resolve(exportCanvas);
+        };
+        frameImg.src = frameOverlay.src;
       });
+    }
+
+    function getExportSize(img) {
+      const maxWidth = 6000;
+      const maxHeight = 4000;
+      const ratio = Math.min(maxWidth / img.width, maxHeight / img.height, 1); // don't upscale
+      return {
+        width: Math.floor(img.width * ratio),
+        height: Math.floor(img.height * ratio)
+      };
     }
 
     // Upload to Google Drive
     async function uploadToGoogleDrive() {
       try {
         loadingOverlay.classList.remove('hidden');
-        const captureCanvas = await captureCurrentFrame();
-        const blob = await new Promise(resolve => captureCanvas.toBlob(resolve, 'image/jpeg', 0.85));
+        
+        const highResCanvas = await captureHighResFrame();
+        if (!highResCanvas) throw new Error('No image to upload');
+
+        // Use high quality (0.92) for large images
+        const blob = await new Promise(resolve => 
+          highResCanvas.toBlob(resolve, 'image/jpeg', 0.92)
+        );
+
         const formData = new FormData();
-        formData.append('file', blob, `pudobooth_${Date.now()}.jpg`);
+        const safeName = (window.uploadFilename || 'pudobooth_photo').replace(/[^a-z0-9_-]/gi, '_');
+        formData.append('file', blob, `${safeName}.jpg`);
 
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 30000);
+        const timeoutId = setTimeout(() => controller.abort(), 60000); // 60s timeout for large files
 
         const response = await fetch('/pudobooth/upload', {
           method: 'POST',
@@ -471,7 +584,7 @@
         if (err.name === 'AbortError') {
           alert('Upload timed out. Please try again.');
         } else {
-          alert('Upload failed: ' + err.message);
+          alert('Upload failed: ' + (err.message || 'Unknown error'));
         }
       }
     }
@@ -527,5 +640,6 @@
 
     // Initialize GPU if possible
     initGPU();
+    fetchFilename();
   </script>  
 </x-layout>
