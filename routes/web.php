@@ -9,75 +9,75 @@ use App\Http\Controllers\QueueController;
 use App\Http\Controllers\PudoBoothAdmin;
 
 // Home
-// Route::get('/', function () {
-//     $success = request('success');
-//     $pbnum = request('pbnum');
-//     if ($success) {
-//         return view('home', [
-//             "alert" => "Successfully added to the queue. Your queue is $pbnum",
-//             "alertForward" => "/"
-//         ]);
-//     }
-//     return view('home', [
-//         "alert" => session('success'),
-//         "alertForward" => "/"
-//     ]);
-// });
+Route::get('/', function () {
+    $success = request('success');
+    $pbnum = request('pbnum');
+    if ($success) {
+        return view('home', [
+            "alert" => "Successfully added to the queue. Your queue is $pbnum",
+            "alertForward" => "/"
+        ]);
+    }
+    return view('home', [
+        "alert" => session('success'),
+        "alertForward" => "/"
+    ]);
+});
 
-// // ThamNet
-// Route::get('/thamnet', function() {
-//     return view('thamnet.home', [
-//         "alert" => "Hello World",
-//         "alertForward" => "/hello"
-//     ]);
-// });
+// ThamNet
+Route::get('/thamnet', function() {
+    return view('thamnet.home', [
+        "alert" => "Hello World",
+        "alertForward" => "/hello"
+    ]);
+});
 
-// // Nav
-// Route::get('/publikasiprestasi', function () {
-//     return view('pubpres');
-// });
-// Route::get('/thalation', function () {
-//     return view('thalation');
-// });
-// Route::get('/programkerja', function () {
-//     return "Program Kerja";
-// });
-// Route::get('/kabinet/osis', function() {
-//     return view('kabinet.osis');
-// });
-// Route::get('/kabinet/mpk', function() {
-//     return view('kabinet.mpk');
-// });
+// Nav
+Route::get('/publikasiprestasi', function () {
+    return view('pubpres');
+});
+Route::get('/thalation', function () {
+    return view('thalation');
+});
+Route::get('/programkerja', function () {
+    return "Program Kerja";
+});
+Route::get('/kabinet/osis', function() {
+    return view('kabinet.osis');
+});
+Route::get('/kabinet/mpk', function() {
+    return view('kabinet.mpk');
+});
 
-// // Thanos
-// Route::get('/thanos', function () {
-//     $targetDate = Carbon::create(2025, 10, 29, 19, 00, 0, 'Asia/Bangkok'); // GMT+7 timezone
-//     $endDate = $targetDate->copy()->addDays(1)->addHours(1)->addMinutes(0);
-//     $currentDate = Carbon::now('Asia/Bangkok');
+// Thanos
+Route::get('/thanos', function () {
+    $targetDate = Carbon::create(2025, 10, 29, 19, 00, 0, 'Asia/Bangkok'); // GMT+7 timezone
+    $endDate = $targetDate->copy()->addDays(1)->addHours(1)->addMinutes(0);
+    $currentDate = Carbon::now('Asia/Bangkok');
 
-//     return view('thanos');
-// });
-// Route::post('/submit-form', function () {
-//     $datetime = date('Y-m-d H:i:s');
-//     $name = request('name');
-//     $answer = request('question');
-//     $payment = request('payment');
-//     $paymentNumber = request('paymentNumber');
-//     $phone = request('usnig');
+    return view('thanos');
+});
+Route::post('/submit-form', function () {
+    $datetime = date('Y-m-d H:i:s');
+    $name = request('name');
+    $answer = request('question');
+    $payment = request('payment');
+    $paymentNumber = request('paymentNumber');
+    $phone = request('usnig');
 
-//     $request = new \Illuminate\Http\Request([
-//         'datetime' => $datetime,
-//         'name' => $name,
-//         'question' => $answer,
-//         'payment' => $payment,
-//         'paymentNumber' => $paymentNumber,
-//         'username ig' => $phone,
-//     ]);
+    $request = new \Illuminate\Http\Request([
+        'datetime' => $datetime,
+        'name' => $name,
+        'question' => $answer,
+        'payment' => $payment,
+        'paymentNumber' => $paymentNumber,
+        'username ig' => $phone,
+    ]);
 
-//     $googleSheetService = new GoogleSheetService("1oTrcemPt1Amk_8SKj4OnFD6p4PuAv7SXTurXJbrU7kM");
-//     $formController = new FormController($googleSheetService);
-//     return $formController->submitForm($request);
-// });
+    $googleSheetService = new GoogleSheetService("1oTrcemPt1Amk_8SKj4OnFD6p4PuAv7SXTurXJbrU7kM");
+    $formController = new FormController($googleSheetService);
+    return $formController->submitForm($request);
+});
 
 // Shortener Akademis
 Route::get('/prestasimht', function() {
