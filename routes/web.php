@@ -24,14 +24,6 @@ Route::get('/', function () {
     ]);
 });
 
-// ThamNet
-Route::get('/thamnet', function() {
-    return view('thamnet.home', [
-        "alert" => "Hello World",
-        "alertForward" => "/hello"
-    ]);
-});
-
 // Nav
 Route::get('/publikasiprestasi', function () {
     return view('pubpres');
@@ -92,48 +84,54 @@ Route::get('/admin/dashboard', function () {
     return view('dashboard');
 });
 
-// PudoBooth
-// lock
-Route::get('/pudobooth', function () {
-    return view('pudobooth.camera');
+// ThamNet
+Route::get('/thamnet', function () {
+    return 0;
 });
-Route::get('/pudobooth/queue', function () {
-    return "Queue closed.";
+Route::get('/thamnet/blog/{name}', function () {
+    return 0;
 });
-Route::get('/admin/pudobooth', function () {
-    return view('pudobooth.admin');
-});
-// later
-Route::get('/admin/pudobooth/settings', function () {
-    return view('pudobooth.adminSetting');
+Route::get('/thamnet/blog/new', function () {
+    return 0;
 });
 
-// PudoBooth Queue API
-Route::get('/queue', [QueueController::class, 'getAllData'])->name('queue.data');
-Route::post('/queue/add', [QueueController::class, 'appendData'])->name('queue.create');
-Route::delete('/queue/remove/{name}', [QueueController::class, 'removeData']);
-Route::get('/queue/search/{name}', [QueueController::class, 'searchByName']);
-Route::post('/queue/move-up/{name}', [QueueController::class, 'moveUp']);
-Route::post('/queue/move-down/{name}', [QueueController::class, 'moveDown']);
-Route::post('/queue/move-top/{name}', [QueueController::class, 'moveToTop']);
-Route::post('/queue/move-bottom/{name}', [QueueController::class, 'moveToBottom']);
-Route::post('/queue/complete', [QueueController::class, 'complete']);
-
-// PudoBooth Admin API
-Route::get('/api/admin/setting/get/url/{data}', [PudoBoothAdmin::class, "getURL"]);
-Route::post('/api/admin/setting/pudobooth/driveURL/{url}', [PudoBoothAdmin::class, 'changeDriveURL']);
-Route::post('/api/admin/setting/pudobooth/spreadsheetURL/{url}', [PudoBoothAdmin::class, 'changeSpreadsheetURL']);
-Route::post('/api/admin/setting/pudobooth/frameURL/{url}', [PudoBoothAdmin::class, 'changeFrameURL']);
-Route::get('/api/admin/setting/pudobooth/preset/{id}', [PudoBoothAdmin::class, 'getPreset']);
-Route::post('/api/admin/setting/pudobooth/preset/{id}', [PudoBoothAdmin::class, 'changePresetSetting']);
 
 
-// Google OAuth 2.0 for PhotoBooth Google Drive
-Route::get('/google/auth', [GoogleController::class, 'redirectToGoogle']);
-Route::get('/google/callback', [GoogleController::class, 'handleCallback']);
-
-// Upload endpoint (used by photobooth)
-Route::post('/pudobooth/upload', [GoogleController::class, 'uploadPhoto']);
+// // PudoBooth
+// Route::get('/pudobooth', function () {
+//     return view('pudobooth.camera');
+// });
+// Route::get('/pudobooth/queue', function () {
+//     return "Queue closed.";
+// });
+// Route::get('/admin/pudobooth', function () {
+//     return view('pudobooth.admin');
+// });
+// Route::get('/admin/pudobooth/settings', function () {
+//     return view('pudobooth.adminSetting');
+// });
+// // PudoBooth Queue API
+// Route::get('/queue', [QueueController::class, 'getAllData'])->name('queue.data');
+// Route::post('/queue/add', [QueueController::class, 'appendData'])->name('queue.create');
+// Route::delete('/queue/remove/{name}', [QueueController::class, 'removeData']);
+// Route::get('/queue/search/{name}', [QueueController::class, 'searchByName']);
+// Route::post('/queue/move-up/{name}', [QueueController::class, 'moveUp']);
+// Route::post('/queue/move-down/{name}', [QueueController::class, 'moveDown']);
+// Route::post('/queue/move-top/{name}', [QueueController::class, 'moveToTop']);
+// Route::post('/queue/move-bottom/{name}', [QueueController::class, 'moveToBottom']);
+// Route::post('/queue/complete', [QueueController::class, 'complete']);
+// // PudoBooth Admin API
+// Route::get('/api/admin/setting/get/url/{data}', [PudoBoothAdmin::class, "getURL"]);
+// Route::post('/api/admin/setting/pudobooth/driveURL/{url}', [PudoBoothAdmin::class, 'changeDriveURL']);
+// Route::post('/api/admin/setting/pudobooth/spreadsheetURL/{url}', [PudoBoothAdmin::class, 'changeSpreadsheetURL']);
+// Route::post('/api/admin/setting/pudobooth/frameURL/{url}', [PudoBoothAdmin::class, 'changeFrameURL']);
+// Route::get('/api/admin/setting/pudobooth/preset/{id}', [PudoBoothAdmin::class, 'getPreset']);
+// Route::post('/api/admin/setting/pudobooth/preset/{id}', [PudoBoothAdmin::class, 'changePresetSetting']);
+// // Google OAuth 2.0 for PhotoBooth Google Drive
+// Route::get('/google/auth', [GoogleController::class, 'redirectToGoogle']);
+// Route::get('/google/callback', [GoogleController::class, 'handleCallback']);
+// // Upload endpoint (used by photobooth)
+// Route::post('/pudobooth/upload', [GoogleController::class, 'uploadPhoto']);
 
 
 // AKADEMIS
