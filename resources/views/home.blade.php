@@ -1,4 +1,9 @@
-<x-layout title="OSIS MPK MHT" :alert="$alert" :alertForward="$alertForward">
+<!-- SEMENTARA -->
+<x-layout title="Home">
+Open House Yay!
+</x-layout>
+
+<!-- <x-layout title="OSIS MPK MHT" :alert="$alert" :alertForward="$alertForward">
     <x-slot:metadesc>
         <meta name="description" content="Klik sekarang untuk menemukan kegiatan seru, proyek keren, dan cara ikut berkontribusi!">
         <meta property="og:title" content="Beranda OSIS MPK SMA Negeri Unggulan M. H. Thamrin 2024/2025">
@@ -238,4 +243,4 @@
         </div>
     </section>
 
-</x-layout>
+</x-layout> -->

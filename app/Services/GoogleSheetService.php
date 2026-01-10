@@ -24,8 +24,14 @@ class GoogleSheetService
         $this->spreadsheetId = $spreadsheet;
     }
 
+    public function getAllData($range)
+    {
+        $response = $this->service->spreadsheets_values->get($this->spreadsheetId, $range);
+        return $response->getValues();
+    }
+
     public function appendData(array $data)
-        {
+    {
         // Debug: Log the received data
         Log::info("Received data: " . json_encode($data));
 

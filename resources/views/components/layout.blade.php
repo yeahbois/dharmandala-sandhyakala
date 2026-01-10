@@ -21,7 +21,7 @@
             <div class="flex justify-center z-20 w-full bg-white">
             <nav id="navbar" class="z-50 fixed bg-white dark:bg-gray-900 fixed w-full top-0 start-0 border-b border-gray-200 dark:border-gray-600">
               <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-              <a href="/#" class="flex items-center space-x-3 rtl:space-x-reverse">
+              <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
                   <img src="{{ asset('images/logo/general/ospk384.webp') }}" class="h-8" alt="Flowbite Logo">
                   <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Dharmakala</span>
               </a>
@@ -55,10 +55,10 @@
                     <a href="/thalation" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Thalation</a>
                   </li>
                   <li>
-                    <a href="{{ url('/#proker') }}" data-barba-prevent="self" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Program Kerja</a>
+                    <a href="/programkerja" data-barba-prevent="self" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Program Kerja</a>
                   </li>
                   <li>
-                    <a href="{{ url('/#merch') }}" data-barba-prevent="self" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Merchandise</a>
+                    <a href="/merchandise" data-barba-prevent="self" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Merchandise</a>
                   </li>
 
                   <li>
@@ -83,10 +83,10 @@
             <div id="dropdownNavbarKabinet" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600">
                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                   <li>
-                    <a href="{{ url('/#osis') }}" data-barba-prevent="self" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">OSIS</a>
+                    <a href="/kabinet/osis" data-barba-prevent="self" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">OSIS</a>
                   </li>
                   <li>
-                    <a href="{{ url('/#mpk') }}" data-barba-prevent="self" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">MPK</a>
+                    <a href="/kabinet/mpk" data-barba-prevent="self" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">MPK</a>
                   </li>
                 </ul>
                 <div class="py-1">
@@ -118,7 +118,7 @@
               <div class="w-full max-w-screen-xl mx-auto px-4 md:py-8">
                 <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                   <!-- Logo + Title aligned left -->
-                  <a href="/#" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                  <a href="/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
                     <img src="{{ asset('images/logo/general/ospk384.webp') }}" class="h-8" alt="Flowbite Logo" />
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Dharmakala</span>
                   </a>
@@ -132,7 +132,7 @@
                 </div>
                 <hr class="my-6 border-gray-200 dark:border-gray-700 lg:my-8" />
                 <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
-                  © 2025 <a href="/#" class="hover:underline">Dharmandala Sandhyakala</a>. All Rights Reserved.
+                  © 2026 <a href="/#" class="hover:underline">Dharmandala Sandhyakala</a>. All Rights Reserved.
                 </span>
               </div>
             </footer>

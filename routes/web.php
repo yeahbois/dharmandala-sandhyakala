@@ -7,38 +7,40 @@ use App\Services\GoogleSheetService;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\QueueController;
 use App\Http\Controllers\PudoBoothAdmin;
+use App\Http\Controllers\OpenHouseController;
 
 // Home
 Route::get('/', function () {
-    $success = request('success');
-    $pbnum = request('pbnum');
-    if ($success) {
-        return view('home', [
-            "alert" => "Successfully added to the queue. Your queue is $pbnum",
-            "alertForward" => "/"
-        ]);
-    }
-    return view('home', [
+    return view('sementara.homepage', [
         "alert" => session('success'),
         "alertForward" => "/"
     ]);
 });
+Route::get('/maintenance', function () {
+    return view('sementara.maintenance');
+});
+Route::get('/openhouse26', function () {
+    return view('sementara.openhouse');
+});
 
 // Nav
 Route::get('/publikasiprestasi', function () {
-    return view('pubpres');
+    return view('sementara.maintenance');
 });
 Route::get('/thalation', function () {
-    return view('thalation');
+    return view('sementara.maintenance');
 });
 Route::get('/programkerja', function () {
-    return "Program Kerja";
+    return view('sementara.maintenance');
 });
-Route::get('/kabinet/osis', function() {
-    return view('kabinet.osis');
+Route::get('/merchandise', function () {
+    return view('sementara.maintenance');
 });
-Route::get('/kabinet/mpk', function() {
-    return view('kabinet.mpk');
+Route::get('/kabinet/osis', function () {
+    return view('sementara.maintenance');
+});
+Route::get('/kabinet/mpk', function () {
+    return view('sementara.maintenance');
 });
 
 // Thanos
@@ -71,6 +73,35 @@ Route::post('/submit-form', function () {
     return $formController->submitForm($request);
 });
 
+// OPEN HOUSE FRONTEND
+Route::get('/oh/ticket', function() {
+    return view('sementara.openhouse_check_ticket');
+});
+Route::get('/oh/ticket/data', [OpenHouseController::class, 'showTicketDataPage'])->name('oh.ticketdata');
+Route::get('/oh/dashboard', function() {
+    return view('sementara.openhouse_dashboard');
+});
+Route::get('oh/database', function() {
+    return redirect()->away('https://auth-db1322.hstgr.io/');
+});
+// OPEN HOUSE API
+// DEBUG
+Route::get('/api/oh/data', [OpenHouseController::class, 'getOpenHouseData'])->name('oh.data');
+Route::get('/api/oh/stats', [OpenHouseController::class, 'getOpenHouseStats'])->name('oh.stats');
+Route::get('/api/oh/parsed-data', [OpenHouseController::class, 'getParsedData'])->name('oh.parseddata');
+Route::get('/api/oh/sync-sql', [OpenHouseController::class, 'syncToSQLDatabase'])->name('oh.syncsql');
+Route::get('/api/oh/check-new-data', [OpenHouseController::class, 'checkSheetsBaru'])->name('oh.checknewdata');
+Route::get('/api/oh/sql-search', [OpenHouseController::class, 'sqlSearchLogic'])->name('oh.sqlsearchdata');
+// API SHEETS
+Route::get('/api/oh/check-ticket-sheets/{name}', [OpenHouseController::class, 'sheetsCheckTicket'])->name('oh.checkticket');
+// API SQL
+Route::get('/api/oh/get-all-data-sql', [OpenHouseController::class, 'sqlGetAllData'])->name('oh.getallsqldata');
+Route::get('/api/oh/check-ticket-sql', [OpenHouseController::class, 'sqlCheckTicket'])->name('oh.checkticketsql');
+Route::get('/api/oh/update-ticket-status', [OpenHouseController::class, 'sqlUpdateTicketStatus'])->name('oh.updateticketstatus');
+// API ABSENSI
+Route::get('/api/oh/present', [OpenHouseController::class, 'sqlOHPresent'])->name('oh.sqlOHPresent');
+
+
 // Shortener Akademis
 Route::get('/prestasimht', function() {
     return redirect()->away('https://forms.gle/VzviKQwzCPWuvREK8');
@@ -79,22 +110,16 @@ Route::get('/lombamht', function() {
     return redirect()->away('https://forms.gle/WPmgaKRVJn6JiWmG6');
 });
 
-// Admin
-Route::get('/admin/dashboard', function () {
-    return view('dashboard');
-});
-
 // ThamNet
 Route::get('/thamnet', function () {
-    return 0;
+    return view('sementara.maintenance');
 });
 Route::get('/thamnet/blog/{name}', function () {
-    return 0;
+    return view('sementara.maintenance');
 });
 Route::get('/thamnet/blog/new', function () {
-    return 0;
+    return view('sementara.maintenance');
 });
-
 
 
 // // PudoBooth
@@ -165,8 +190,6 @@ Route::get('/publikasi-prestasi/3-februari-2025', function() {
     return view('program-kerja.akademis.pubpres.03022025');
 });
 
-
-
 // DHL
 Route::get('/program-kerja/dhl/a-day-of-environment-and-human-rights', function() {
     return view('program-kerja.dhl.donuts');
@@ -174,8 +197,6 @@ Route::get('/program-kerja/dhl/a-day-of-environment-and-human-rights', function(
 Route::get('/program-kerja/dhl/student-council-conference', function() {
     return view('program-kerja.dhl.scorence');
 });
-
-
 
 // K3OR
 Route::get('/program-kerja/k3or', function() {
@@ -191,8 +212,6 @@ Route::get('/program-kerja/k3or/thamrin-sport-and-creativity-week', function() {
     return view('program-kerja.k3or.tsc');
 });
 
-
-
 // SASTRA BUDAYA
 Route::get('/program-kerja/sastra-budaya', function() {
     return view('program-kerja.sasbud');
@@ -207,8 +226,6 @@ Route::get('/program-kerja/sastra-budaya/thamrin-got-talent', function() {
     return view('program-kerja.sasbud.tgt');
 });
 
-
-
 // ROHANI
 Route::get('/program-kerja/rohani', function() {
     return view('program-kerja.rohani');
@@ -220,8 +237,7 @@ Route::get('/program-kerja/rohani/perayaan-isra-miraj', function() {
     return view('program-kerja.rohani.isra-miraj');
 });
 
-
-
+// ThamNet
 Route::get('/thamnet/blog/hall-of-fame', function() {
     return view('thamnet.blog.halloffame');
 });

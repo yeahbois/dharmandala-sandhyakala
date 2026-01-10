@@ -16,5 +16,8 @@ export default defineConfig({
         headers: {
             'Access-Control-Allow-Origin': '*',
         },
+        host: true,
+        port: 5000,
+        allowedHosts: true,
     },
 });
