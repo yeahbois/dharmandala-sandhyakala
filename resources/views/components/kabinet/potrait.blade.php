@@ -7,9 +7,9 @@
     'logoLink' => null,
 ])
 
-<div class="group relative bg-surface-container-lowest ivory-card-shadow rounded-xl overflow-hidden transition-all hover:-translate-y-1">
+<div class="group relative bg-surface ivory-card-shadow overflow-hidden transition-all hover:-translate-y-1 border border-outline/10 h-full flex flex-col">
     {{-- Square Photo --}}
-    <div class="member-photo-aspect overflow-hidden bg-slate-200">
+    <div class="member-photo-aspect overflow-hidden bg-surface-variant">
         <img class="w-full h-full object-cover transition-all duration-700" 
              src="{{ asset('images/potrait/'.$link.'.webp') }}" 
              alt="{{ $name }}" />

@@ -47,6 +47,10 @@
       --theme-secondary-600: #006d30;
     }
 
+    * {
+      border-radius: 0 !important;
+    }
+
     .ivory-card-shadow {
       box-shadow: 0 10px 30px -10px rgba(13, 28, 47, 0.08);
     }
@@ -291,38 +295,38 @@
           <h4
             class="text-[9px] md:text-[10px] font-black tracking-[0.5em] uppercase mb-8 md:mb-10 opacity-30 text-center">
             Theme Selector</h4>
-          <div class="flex gap-4 md:gap-8 lg:gap-10 flex-wrap justify-center"> <button onclick="setAppTheme('light')"
-              class="flex flex-col items-center group">
+          <div class="flex gap-4 md:gap-8 lg:gap-10 flex-wrap justify-center">
+            <button onclick="setAppTheme('light')" class="flex flex-col items-center group">
               <div
-                class="w-10 h-10 md:w-12 md:h-12 rounded-sm bg-[#173bab] shadow-xl ring-offset-2 ring-2 ring-transparent group-hover:ring-[#173bab] transition-all">
+                class="w-10 h-10 md:w-12 md:h-12 bg-[#173bab] shadow-xl ring-offset-2 ring-2 ring-transparent group-hover:ring-[#173bab] transition-all">
               </div>
               <span
                 class="text-[8px] md:text-[9px] mt-3 font-black uppercase tracking-[0.2em] text-[#173bab] opacity-60 group-hover:opacity-100 transition-opacity">Default</span>
             </button>
             <button onclick="setAppTheme('dark')" class="flex flex-col items-center group">
               <div
-                class="w-10 h-10 md:w-12 md:h-12 rounded-sm bg-[#5865F2] shadow-xl ring-offset-2 ring-2 ring-transparent group-hover:ring-[#5865F2] transition-all">
+                class="w-10 h-10 md:w-12 md:h-12 bg-[#5865F2] shadow-xl ring-offset-2 ring-2 ring-transparent group-hover:ring-[#5865F2] transition-all">
               </div>
               <span
                 class="text-[8px] md:text-[9px] mt-3 font-black uppercase tracking-[0.2em] text-[#5865F2] opacity-60 group-hover:opacity-100 transition-opacity">Dark</span>
             </button>
             <button onclick="setAppTheme('ultradark')" class="flex flex-col items-center group">
               <div
-                class="w-10 h-10 md:w-12 md:h-12 rounded-sm bg-[#313338] shadow-xl ring-offset-2 ring-2 ring-transparent group-hover:ring-[#FFFFFF] transition-all border border-outline/20">
+                class="w-10 h-10 md:w-12 md:h-12 bg-[#313338] shadow-xl ring-offset-2 ring-2 ring-transparent group-hover:ring-[#FFFFFF] transition-all border border-outline/20">
               </div>
               <span
                 class="text-[8px] md:text-[9px] mt-3 font-black uppercase tracking-[0.2em] text-on-surface opacity-40 group-hover:opacity-100 transition-opacity whitespace-nowrap">Ultra Dark</span>
             </button>
             <button onclick="setAppTheme('pastel-blue-purple')" class="flex flex-col items-center group">
               <div
-                class="w-10 h-10 md:w-12 md:h-12 rounded-sm bg-[#A5B4FC] shadow-xl ring-offset-2 ring-2 ring-transparent group-hover:ring-[#A5B4FC] transition-all">
+                class="w-10 h-10 md:w-12 md:h-12 bg-[#A5B4FC] shadow-xl ring-offset-2 ring-2 ring-transparent group-hover:ring-[#A5B4FC] transition-all">
               </div>
               <span
                 class="text-[8px] md:text-[9px] mt-3 font-black uppercase tracking-[0.2em] text-[#818CF8] opacity-60 group-hover:opacity-100 transition-opacity">MPK</span>
             </button>
             <button onclick="setAppTheme('pastel-pink')" class="flex flex-col items-center group">
               <div
-                class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#FFB6C1] shadow-xl ring-offset-2 ring-2 ring-transparent group-hover:ring-[#FFB6C1] transition-all">
+                class="w-10 h-10 md:w-12 md:h-12 bg-[#FFB6C1] shadow-xl ring-offset-2 ring-2 ring-transparent group-hover:ring-[#FFB6C1] transition-all">
               </div>
               <span
                 class="text-[8px] md:text-[9px] mt-3 font-black uppercase tracking-[0.2em] text-[#FF69B4] opacity-60 group-hover:opacity-100 transition-opacity">OSIS</span>

@@ -26,54 +26,54 @@
 
     <main class="pt-24 min-h-screen bg-surface" id="detail-page">
         <!-- Section 1: Division Hero -->
-        <section class="px-8 py-20 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+        <section class="px-6 md:px-8 py-20 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16">
             <div class="w-full md:w-1/2 relative group">
-                <div class="absolute -inset-4 bg-primary/10 blur-3xl rounded-full opacity-50"></div>
-                <div class="relative bg-surface-container-lowest p-12 rounded-2xl border border-outline-variant/15 flex items-center justify-center aspect-square shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+                <div class="absolute -inset-4 bg-primary/10 blur-3xl rounded-none opacity-50"></div>
+                <div class="relative bg-surface p-8 md:p-12 border border-outline/10 flex items-center justify-center aspect-square shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
                     @if(isset($data['logo']) && $data['logo'])
-                        <img src="{{ asset($data['logo']) }}" class="w-full h-full object-contain drop-shadow-xl" alt="{{ $data['name'] }}">
+                        <img src="{{ asset($data['logo']) }}" class="w-full h-full object-contain drop-shadow-xl filter grayscale group-hover:grayscale-0 transition-all duration-700" alt="{{ $data['name'] }}">
                     @else
-                        <span class="material-symbols-outlined text-[120px] text-primary">{{ $data['icon'] ?? 'groups' }}</span>
+                        <span class="material-symbols-outlined text-[80px] md:text-[120px] text-primary">{{ $data['icon'] ?? 'groups' }}</span>
                     @endif
                 </div>
             </div>
-            <div class="w-full md:w-1/2 space-y-6">
-                <div class="inline-block px-3 py-1 bg-primary/10 text-primary font-bold text-[10px] tracking-widest uppercase rounded-full">
+            <div class="w-full md:w-1/2 space-y-6 text-center md:text-left">
+                <div class="inline-block px-4 py-1.5 bg-primary/10 text-primary font-black text-[10px] tracking-[0.3em] uppercase rounded-none border border-primary/20">
                     {{ $data['group'] }}
                 </div>
-                <h1 class="text-6xl md:text-7xl font-black tracking-tighter leading-[0.9] text-on-surface uppercase">
+                <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-[0.9] text-on-surface uppercase">
                     {{ $data['name'] }}
                 </h1>
-                <p class="text-body-lg text-on-surface-variant leading-relaxed max-w-xl italic opacity-80">
+                <p class="text-sm md:text-lg text-on-surface-variant leading-relaxed max-w-xl italic opacity-60">
                     "{{ $data['about'] }}"
                 </p>
-                <div class="flex gap-4 pt-4">
+                <div class="flex justify-center md:justify-start gap-8 pt-6">
                     <div class="flex flex-col">
-                        <span class="text-2xl font-bold text-primary">{{ count($data['members'] ?? []) }}</span>
-                        <span class="text-[10px] font-bold uppercase tracking-widest opacity-60">Total Members</span>
+                        <span class="text-3xl md:text-4xl font-black text-on-surface leading-none tracking-tighter">{{ count($data['members'] ?? []) }}</span>
+                        <span class="text-[9px] font-black uppercase tracking-[0.2em] opacity-40 mt-2">Total Personnel</span>
                     </div>
-                    <div class="w-px h-10 bg-outline-variant/30 mx-4"></div>
+                    <div class="w-px h-12 bg-outline/10"></div>
                     <div class="flex flex-col">
-                        <span class="text-2xl font-bold text-primary">2025</span>
-                        <span class="text-[10px] font-bold uppercase tracking-widest opacity-60">Cabinet Year</span>
+                        <span class="text-3xl md:text-4xl font-black text-on-surface leading-none tracking-tighter">25/26</span>
+                        <span class="text-[9px] font-black uppercase tracking-[0.2em] opacity-40 mt-2">Cabinet Cycle</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Section 2: Featured Proker -->
-        <section class="bg-surface-container-low py-32 px-8">
+        <section class="bg-surface-variant/10 py-32 px-8">
             <div class="max-w-7xl mx-auto">
-                <div class="mb-16 flex justify-between items-end">
-                    <div>
-                        <span class="text-label-sm font-bold tracking-[0.2em] text-primary uppercase">Signature Programs</span>
-                        <h2 class="text-4xl font-bold tracking-tight mt-2">Highlights of the Quarter</h2>
+                <div class="mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+                    <div class="text-left">
+                        <span class="text-[10px] font-black tracking-[0.4em] text-primary uppercase">Signature Programs</span>
+                        <h2 class="text-4xl md:text-5xl font-black tracking-tighter mt-2 uppercase">Highlights of the Quarter</h2>
                     </div>
                     <div class="flex gap-2">
-                        <button class="p-2 rounded-full border border-primary/20 hover:bg-primary/5 transition-colors">
+                        <button class="w-10 h-10 flex items-center justify-center border border-primary/20 hover:bg-primary/5 transition-colors">
                             <span class="material-symbols-outlined text-primary">chevron_left</span>
                         </button>
-                        <button class="p-2 rounded-full border border-primary/20 hover:bg-primary/5 transition-colors">
+                        <button class="w-10 h-10 flex items-center justify-center border border-primary/20 hover:bg-primary/5 transition-colors">
                             <span class="material-symbols-outlined text-primary">chevron_right</span>
                         </button>
                     </div>
@@ -81,7 +81,7 @@
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <!-- Featured Card 1 (Placeholder) -->
-                    <div class="group relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm transition-all hover:shadow-2xl border border-outline-variant/10">
+                    <div class="group relative overflow-hidden bg-surface-container-lowest shadow-sm transition-all hover:shadow-2xl border border-outline-variant/10">
                         <div class="aspect-[16/9] overflow-hidden bg-primary/5">
                             <div class="w-full h-full flex items-center justify-center">
                                 <span class="material-symbols-outlined text-6xl text-primary/20">auto_awesome</span>
@@ -89,7 +89,7 @@
                         </div>
                         <div class="p-8">
                             <div class="flex items-center gap-2 mb-4">
-                                <span class="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/5 px-2 py-1 rounded">Annual Event</span>
+                                <span class="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/5 px-2 py-1">Annual Event</span>
                             </div>
                             <h3 class="text-2xl font-bold mb-4">Strategic Initiative Alpha</h3>
                             <p class="text-on-surface-variant mb-6 line-clamp-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -100,7 +100,7 @@
                         </div>
                     </div>
                     <!-- Featured Card 2 (Placeholder) -->
-                    <div class="group relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm transition-all hover:shadow-2xl border border-outline-variant/10 mt-0 md:mt-12">
+                    <div class="group relative overflow-hidden bg-surface-container-lowest shadow-sm transition-all hover:shadow-2xl border border-outline-variant/10 mt-0 md:mt-12">
                         <div class="aspect-[16/9] overflow-hidden bg-primary/5">
                             <div class="w-full h-full flex items-center justify-center">
                                 <span class="material-symbols-outlined text-6xl text-primary/20">shutter_speed</span>
@@ -108,7 +108,7 @@
                         </div>
                         <div class="p-8">
                             <div class="flex items-center gap-2 mb-4">
-                                <span class="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/5 px-2 py-1 rounded">Quarterly Goal</span>
+                                <span class="text-[10px] font-bold text-primary uppercase tracking-widest bg-primary/5 px-2 py-1">Quarterly Goal</span>
                             </div>
                             <h3 class="text-2xl font-bold mb-4">Innovation Pipeline Beta</h3>
                             <p class="text-on-surface-variant mb-6 line-clamp-2">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -132,19 +132,19 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 @for ($i = 1; $i <= 5; $i++)
-                <div class="bg-surface-container border border-outline-variant/15 p-8 rounded-xl hover:bg-surface-container-high transition-all hover:-translate-y-1">
+                <div class="bg-surface-container border border-outline-variant/15 p-8 hover:bg-surface-container-high transition-all hover:-translate-y-1">
                     <span class="material-symbols-outlined text-primary mb-6 block text-3xl">hub</span>
                     <h4 class="font-bold text-lg mb-2">Program Initiative #{{ $i }}</h4>
                     <p class="text-sm text-on-surface-variant">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                 </div>
                 @endfor
                 
-                <div class="bg-primary text-on-primary p-8 rounded-xl flex flex-col justify-between shadow-xl">
+                <div class="bg-primary text-on-primary p-8 flex flex-col justify-between shadow-xl">
                     <div>
                         <h4 class="font-bold text-lg mb-2">Explore Repository</h4>
                         <p class="text-sm opacity-80">Access the full archive of past programs and technical blueprints for future implementations.</p>
                     </div>
-                    <button class="mt-8 border border-on-primary/30 hover:bg-on-primary hover:text-primary transition-all px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest">
+                    <button class="mt-8 border border-on-primary/30 hover:bg-on-primary hover:text-primary transition-all px-4 py-2 text-xs font-bold uppercase tracking-widest">
                         Access Archive
                     </button>
                 </div>

@@ -2,8 +2,8 @@
     <div class="w-full min-h-[90vh] bg-background text-on-surface flex items-center justify-center px-4 py-20 relative overflow-hidden">
         <!-- Abstract Decorative Elements -->
         <div class="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
-            <div class="absolute top-[-10%] right-[-5%] w-[300px] md:w-[500px] h-[300px] md:h-[500px] rounded-full bg-primary/10 blur-[80px] md:blur-[120px]"></div>
-            <div class="absolute bottom-[-10%] left-[-5%] w-[250px] md:w-[400px] h-[250px] md:h-[400px] rounded-full bg-on-tertiary-container/10 blur-[70px] md:blur-[100px]"></div>
+            <div class="absolute top-[-10%] right-[-5%] w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-primary/10 blur-[80px] md:blur-[120px] rounded-none"></div>
+            <div class="absolute bottom-[-10%] left-[-5%] w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-on-tertiary-container/10 blur-[70px] md:blur-[100px] rounded-none"></div>
         </div>
 
         <div class="relative z-10 w-full max-w-md">
@@ -15,9 +15,9 @@
                 </h1>
             </div>
 
-            <div class="bg-surface/80 backdrop-blur-xl border border-outline/20 rounded-3xl p-8 md:p-10 shadow-2xl">
+            <div class="bg-surface/80 backdrop-blur-xl border border-outline/20 p-8 md:p-10 shadow-2xl rounded-none">
                 @if ($errors->any())
-                    <div class="mb-6 p-4 rounded-xl bg-error/10 border border-error/20 text-error text-sm font-bold tracking-wide">
+                    <div class="mb-6 p-4 bg-error/10 border border-error/20 text-error text-sm font-bold tracking-wide">
                         <ul>
                             @foreach ($errors->all() as $error)
                                 <li>{{ $error }}</li>
@@ -31,18 +31,18 @@
                     <div class="space-y-2">
                         <label for="username" class="text-[10px] font-black tracking-[0.2em] text-secondary uppercase block">Admin Identifier</label>
                         <input type="text" id="username" name="username" value="{{ old('username') }}" required autofocus
-                            class="w-full bg-surface-variant/50 border border-outline/30 rounded-xl px-4 py-3 text-on-surface font-semibold focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder:text-on-surface-variant/50"
+                            class="w-full bg-surface-variant/50 border border-outline/30 px-4 py-3 text-on-surface font-semibold focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder:text-on-surface-variant/50"
                             placeholder="Enter username">
                     </div>
 
                     <div class="space-y-2">
                         <label for="password" class="text-[10px] font-black tracking-[0.2em] text-secondary uppercase block">Passcode</label>
                         <input type="password" id="password" name="password" required
-                            class="w-full bg-surface-variant/50 border border-outline/30 rounded-xl px-4 py-3 text-on-surface font-semibold focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder:text-on-surface-variant/50"
+                            class="w-full bg-surface-variant/50 border border-outline/30 px-4 py-3 text-on-surface font-semibold focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder:text-on-surface-variant/50"
                             placeholder="Enter password">
                     </div>
 
-                    <button type="submit" class="w-full mt-8 px-8 py-4 bg-primary text-on-primary text-[10px] md:text-xs font-black uppercase tracking-[0.3em] rounded-xl hover:opacity-90 transition-all duration-300 shadow-xl shadow-primary/20">
+                    <button type="submit" class="w-full mt-8 px-8 py-4 bg-primary text-on-primary text-[10px] md:text-xs font-black uppercase tracking-[0.3em] hover:opacity-90 transition-all duration-300 shadow-xl shadow-primary/20">
                         Authenticate
                     </button>
                 </form>

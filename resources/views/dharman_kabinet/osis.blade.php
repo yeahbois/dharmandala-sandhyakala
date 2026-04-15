@@ -41,7 +41,7 @@
             </div>
         </header>
 
-        <div class="max-w-7xl mx-auto px-8">
+        <div class="max-w-7xl mx-auto px-4 md:px-0">
             @foreach($data['structure'] as $item)
                 @if($item['type'] === 'bidang')
                     <x-kabinet.bidang :name="$item['name']" :group="$item['group']" :logo="$item['logo']" :slug="$item['slug']" :type="'osis'">
@@ -56,7 +56,7 @@
                         @endforeach
                     </x-kabinet.bidang>
                 @elseif($item['type'] === 'container')
-                    <section class="max-w-7xl mx-auto mb-32">
+                    <section class="max-w-7xl mx-auto px-8 mb-32">
                         <div class="flex items-end justify-between mb-16 border-b-2 border-primary pb-4">
                             <div class="text-left">
                                 <h2 class="text-[10px] font-bold tracking-[0.4em] uppercase text-primary mb-2">{{ $item['group'] }}</h2>
