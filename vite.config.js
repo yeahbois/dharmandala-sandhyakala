@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import FullReload from 'vite-plugin-full-reload';
- 
+
 export default defineConfig({
     plugins: [
         laravel({
@@ -9,15 +9,18 @@ export default defineConfig({
             refresh: true,
         }),
         FullReload([
-      'resources/views/**', // reload semua file blade di folder views
+            'resources/views/**',
         ]),
     ],
     server: {
         headers: {
             'Access-Control-Allow-Origin': '*',
         },
-        host: true,
+        host: '0.0.0.0',        // Changed: allow Docker to expose this
         port: 5000,
         allowedHosts: true,
+        hmr: {
+            host: 'localhost',   // Browser connects to localhost
+        },
     },
 });

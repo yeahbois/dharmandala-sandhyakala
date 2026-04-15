@@ -1,0 +1,109 @@
+services:
+
+  # ── MySQL Database ──────────────────────────────────────────────────────────
+  db:
+    image: mysql:8.0
+    container_name: dharmakala_db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: dharmakala
+      MYSQL_USER: dharmakala_user
+      MYSQL_PASSWORD: Dharmandala123
+      MYSQL_ROOT_PASSWORD: rootpassword123
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - dharmakala_net
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Laravel PHP-FPM App ─────────────────────────────────────────────────────
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dharmakala_app
+    restart: unless-stopped
+    volumes:
+      - .:/var/www/html # Live code sync (your edits = instant effect)
+      - /var/www/html/vendor # Keep vendor inside container (don't sync)
+      - /var/www/html/node_modules
+    networks:
+      - dharmakala_net
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # ── Nginx Web Server ────────────────────────────────────────────────────────
+  nginx:
+    image: nginx:alpine
+    container_name: dharmakala_nginx
+    restart: unless-stopped
+    ports:
+      - "8080:80" # Visit http://localhost:8080
+    volumes:
+      - .:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - dharmakala_net
+    depends_on:
+      - app
+
+  # ── Vite Dev Server (for hot reload during development) ────────────────────
+  vite:
+    image: node:20-alpine
+    container_name: dharmakala_vite
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules # Keep node_modules inside container
+    ports:
+      - "5000:5000" # Vite runs on port 5000 (matches vite.config.js)
+    networks:
+      - dharmakala_net
+    command: sh -c "npm ci && (npm run build --watch & npm run dev -- --host 0.0.0.0)"
+    depends_on:
+      - app
+
+  # ── phpMyAdmin Database GUI ──────────────────────────────────────────────────
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: dharmakala_phpmyadmin
+    restart: unless-stopped
+    ports:
+      - "8081:80" # Visit http://localhost:8081
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: rootpassword123
+    networks:
+      - dharmakala_net
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # ── Ngrok (Public Port Forwarding) ──────────────────────────────────────────
+  ngrok:
+    image: ngrok/ngrok:latest
+    container_name: dharmakala_ngrok
+    restart: unless-stopped
+    ports:
+      - "4040:4040" # Ngrok dashboard
+    env_file:
+      - .env.docker
+    command: "http nginx:80"
+    networks:
+      - dharmakala_net
+    depends_on:
+      - nginx
+
+volumes:
+  db_data:
+    # Persistent MySQL data (survives container restarts)
+
+networks:
+  dharmakala_net:
+    driver: bridge
