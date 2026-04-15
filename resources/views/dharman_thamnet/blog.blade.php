@@ -28,7 +28,6 @@
             margin: 2rem 0;
             background: var(--theme-surface-variant);
             padding: 1rem 1.5rem;
-            border-radius: 0 0.5rem 0.5rem 0;
         }
         .article-gradient {
             background: linear-gradient(to bottom, var(--theme-surface), var(--theme-background));
@@ -49,7 +48,7 @@
             
             <div class="absolute bottom-0 left-0 w-full pb-16 px-8 md:px-20">
                 <div class="max-w-4xl mx-auto space-y-6">
-                    <span class="px-4 py-2 bg-primary text-on-primary text-xs font-black uppercase tracking-widest rounded-full">
+                    <span class="px-4 py-2 bg-primary text-on-primary text-xs font-black uppercase tracking-widest">
                         {{ $post->category }}
                     </span>
                     <h1 class="text-4xl md:text-7xl font-black tracking-tighter text-on-surface leading-tight">
@@ -57,7 +56,7 @@
                     </h1>
                     <div class="flex items-center gap-6 pt-4">
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold text-sm">
+                            <div class="w-10 h-10 bg-primary-container flex items-center justify-center text-on-primary-container font-bold text-sm">
                                 {{ strtoupper(substr($post->author, 0, 1)) }}
                             </div>
                             <div class="text-left">
@@ -84,10 +83,10 @@
                         <p class="text-xs text-on-surface-variant font-medium">Shared via ThamNet • The Digital Ivory Tower</p>
                     </div>
                     <div class="flex gap-4">
-                        <button class="px-6 py-2 rounded-full border border-outline/20 text-on-surface-variant text-xs font-bold hover:bg-surface-variant transition-colors">
+                        <button class="px-6 py-2 border border-outline/20 text-on-surface-variant text-xs font-bold hover:bg-surface-variant transition-colors">
                             Copy Link
                         </button>
-                        <button class="px-6 py-2 rounded-full bg-primary text-on-primary text-xs font-bold hover:opacity-90 transition-colors">
+                        <button class="px-6 py-2 bg-primary text-on-primary text-xs font-bold hover:opacity-90 transition-colors">
                             Share Post
                         </button>
                     </div>

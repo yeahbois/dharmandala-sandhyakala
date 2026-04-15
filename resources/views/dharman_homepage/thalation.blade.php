@@ -8,21 +8,28 @@
 
     <!-- Hero Section -->
     <section
-        class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden w-full">
-        <div class="absolute inset-0 bg-gradient-to-br from-surface to-surface-container-low -z-10"></div>
-        <div class="mb-12 transition-all duration-700 w-full flex flex-col items-center">
-            <img class="w-24 h-24 md:w-32 md:h-32 mx-auto mb-8 grayscale hover:grayscale-0 transition-all duration-500"
+        class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden w-full bg-background">
+        <div class="absolute inset-0 bg-gradient-to-br from-surface to-surface-variant/10 -z-10"></div>
+
+        <!-- Background Decoration -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
+            <div class="absolute top-[-10%] right-[-10%] w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-primary/5 blur-[120px]"></div>
+            <div class="absolute bottom-[-10%] left-[-10%] w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-secondary/5 blur-[100px]"></div>
+        </div>
+
+        <div class="relative z-10 mb-12 transition-all duration-700 w-full flex flex-col items-center">
+            <img class="w-20 h-20 md:w-32 md:h-32 mx-auto mb-10 grayscale hover:grayscale-0 transition-all duration-700 hover:scale-110"
                 src="{{ asset('images/logo/general/mpk514.webp') }}" alt="MPK Logo" />
-            <h1 class="text-6xl md:text-9xl font-black tracking-tighter text-primary mb-6 leading-none uppercase">
-                THALATION
+            <h1 class="text-6xl sm:text-7xl md:text-9xl font-black tracking-tighter text-on-surface mb-8 leading-[0.85] uppercase">
+                THALA<br/>TION
             </h1>
             <p
-                class="text-base md:text-xl text-on-surface-variant max-w-2xl mx-auto tracking-wide font-light uppercase tracking-[0.2em] opacity-80">
-                Welcome to MPK's Thamrin Wall of Aspiration! <br class="hidden md:block" />
+                class="text-xs md:text-xl text-on-surface-variant max-w-2xl mx-auto font-medium uppercase tracking-[0.3em] opacity-60 leading-relaxed px-4">
+                Thamrin Wall of Aspiration. <br class="hidden md:block" />
                 A digital gateway for intellectual growth and student governance.
             </p>
         </div>
-        <div class="w-full max-w-[1px] h-24 bg-gradient-to-b from-primary/20 to-transparent"></div>
+        <div class="relative z-10 w-full max-w-[1px] h-24 bg-gradient-to-b from-primary/30 to-transparent mt-12"></div>
     </section>
 
     <!-- MPK Functions Grid -->
@@ -135,7 +142,7 @@
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10 w-full">
             <div class="lg:w-1/2 text-center lg:text-left">
                 <div
-                    class="inline-block px-4 py-1.5 bg-on-primary-container/10 rounded-full text-[10px] font-black tracking-widest mb-8 border border-on-primary-container/20 uppercase">
+                    class="inline-block px-4 py-1.5 bg-on-primary-container/10 rounded-none text-[10px] font-black tracking-widest mb-8 border border-on-primary-container/20 uppercase">
                     LIVE STATUS: ACTIVE
                 </div>
                 <h2 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-8 uppercase leading-none">
@@ -153,11 +160,11 @@
             </div>
             <div
                 class="lg:w-1/2 w-full aspect-video bg-on-primary-container/5 backdrop-blur-xl rounded-sm border border-on-primary-container/10 flex items-center justify-center p-2 shadow-inner">
-                <div class="w-full h-full bg-surface shadow-2xl rounded-sm flex flex-col overflow-hidden">
+                <div class="w-full h-full bg-surface shadow-2xl rounded-none flex flex-col overflow-hidden">
                     <div class="h-10 bg-surface-variant flex items-center px-4 gap-2 border-b border-outline/10">
-                        <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                        <div class="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
-                        <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                        <div class="w-2.5 h-2.5 rounded-none bg-red-400"></div>
+                        <div class="w-2.5 h-2.5 rounded-none bg-yellow-400"></div>
+                        <div class="w-2.5 h-2.5 rounded-none bg-green-400"></div>
                         <span class="ml-4 text-[10px] font-black uppercase tracking-widest opacity-40">Aspiration
                             Stream</span>
                     </div>
@@ -173,7 +180,7 @@
             </div>
         </div>
         <div
-            class="absolute top-0 right-0 w-[500px] h-[500px] bg-on-primary-container/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2">
+            class="absolute top-0 right-0 w-[500px] h-[500px] bg-on-primary-container/5 rounded-none blur-[120px] -translate-y-1/2 translate-x-1/2">
         </div>
     </section>
 

@@ -53,10 +53,10 @@
                     The digital heartbeat of Dharmandala Sandhyakala. A curated ecosystem for the elite minds of M.H. Thamrin.
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="/login" class="w-full sm:w-auto px-10 py-4 bg-primary text-on-primary text-[10px] md:text-xs font-black uppercase tracking-[0.3em] rounded-xl hover:opacity-90 transition-all duration-300 shadow-xl shadow-primary/10">
+                    <a href="/login" class="w-full sm:w-auto px-10 py-4 bg-primary text-on-primary text-[10px] md:text-xs font-black uppercase tracking-[0.3em] rounded-sm hover:opacity-90 transition-all duration-300 shadow-xl shadow-primary/10">
                         Access Portal
                     </a>
-                    <a href="{{ route('thamnet.editor') }}" class="w-full sm:w-auto px-10 py-4 bg-surface-variant text-on-surface-variant text-[10px] md:text-xs font-black uppercase tracking-[0.3em] rounded-xl border border-outline/15 hover:bg-surface transition-all duration-300 backdrop-blur-sm">
+                    <a href="{{ route('thamnet.editor') }}" class="w-full sm:w-auto px-10 py-4 bg-surface-variant text-on-surface-variant text-[10px] md:text-xs font-black uppercase tracking-[0.3em] rounded-sm border border-outline/15 hover:bg-surface transition-all duration-300 backdrop-blur-sm">
                         Compose Legacy
                     </a>
                 </div>
@@ -64,21 +64,22 @@
         </section>
 
         <!-- Section 2: Newest Media -->
-        <section class="py-20 md:py-32 bg-surface">
+        <section class="py-20 md:py-32 bg-surface overflow-x-hidden">
+        <section class="py-20 md:py-32 bg-surface overflow-x-hidden">
             <div class="max-w-7xl mx-auto px-6 md:px-8">
                 <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 border-b border-outline/10 pb-8 gap-6">
                     <div class="text-left">
                         <span class="text-[10px] md:text-xs font-black tracking-[0.4em] text-secondary uppercase block mb-2">Multimedia Feed</span>
                         <h2 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface uppercase leading-none">Newest Media</h2>
                     </div>
-                    <div class="flex gap-3">
+                    <div class="flex gap-2">
                         <button onclick="document.getElementById('media-scroll').scrollBy({left: -400, behavior: 'smooth'})" 
-                            class="p-4 rounded-full bg-surface-variant/30 text-on-surface hover:bg-primary hover:text-on-primary transition-all duration-300">
-                            <span class="material-symbols-outlined">arrow_back</span>
+                            class="w-10 h-10 flex items-center justify-center bg-surface-variant/30 text-on-surface hover:bg-primary hover:text-on-primary transition-all duration-300">
+                            <span class="material-symbols-outlined">chevron_left</span>
                         </button>
                         <button onclick="document.getElementById('media-scroll').scrollBy({left: 400, behavior: 'smooth'})"
-                            class="p-4 rounded-full bg-surface-variant/30 text-on-surface hover:bg-primary hover:text-on-primary transition-all duration-300">
-                            <span class="material-symbols-outlined">arrow_forward</span>
+                            class="w-10 h-10 flex items-center justify-center bg-surface-variant/30 text-on-surface hover:bg-primary hover:text-on-primary transition-all duration-300">
+                            <span class="material-symbols-outlined">chevron_right</span>
                         </button>
                     </div>
                 </div>
@@ -94,7 +95,7 @@
 
                     @foreach($media as $item)
                         <div class="flex-none w-[280px] md:w-[350px] snap-center">
-                            <div class="group relative aspect-[9/16] bg-surface-variant/20 rounded-2xl overflow-hidden shadow-2xl border border-outline/5">
+                            <div class="group relative aspect-[9/16] bg-surface-variant/20 overflow-hidden shadow-2xl border border-outline/5">
                                 <div class="video-container w-full h-full">
                                     <iframe 
                                         src="https://www.youtube.com/embed/{{ $item['id'] }}?autoplay=0&controls=0&rel=0&loop=1&playlist={{ $item['id'] }}&modestbranding=1" 
@@ -122,12 +123,12 @@
                 <div class="flex flex-col lg:flex-row items-center gap-12 md:gap-20">
                     @if($featuredPost)
                     <div class="w-full lg:w-3/5">
-                        <div class="relative rounded-3xl overflow-hidden shadow-2xl group border border-outline/10">
+                        <div class="relative overflow-hidden shadow-2xl group border border-outline/10">
                             <img class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-1000" 
                                 src="{{ $featuredPost->image_url ?? 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80' }}" 
                                 alt="{{ $featuredPost->title }}">
                             <div class="absolute top-6 left-6">
-                                <span class="px-5 py-2 bg-on-tertiary-container text-white text-[10px] font-black uppercase tracking-[0.3em] rounded-full shadow-lg">
+                                <span class="px-5 py-2 bg-on-tertiary-container text-white text-[10px] font-black uppercase tracking-[0.3em] shadow-lg">
                                     Editorial Choice
                                 </span>
                             </div>
@@ -144,7 +145,7 @@
                             {{ Str::limit(strip_tags($featuredPost->content), 200) }}
                         </p>
                         <div class="flex items-center gap-4 pt-4 border-t border-outline/10">
-                            <div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-black">
+                            <div class="w-12 h-12 bg-primary-container flex items-center justify-center text-on-primary-container font-black">
                                 {{ strtoupper(substr($featuredPost->author, 0, 1)) }}
                             </div>
                             <div>
@@ -160,7 +161,7 @@
                         </a>
                     </div>
                     @else
-                    <div class="w-full text-center py-20 bg-surface-variant/20 rounded-3xl border border-dashed border-outline/30">
+                    <div class="w-full text-center py-20 bg-surface-variant/20 border border-dashed border-outline/30">
                         <p class="text-on-surface-variant font-bold uppercase tracking-widest">No featured entries currently spotlighted.</p>
                     </div>
                     @endif
@@ -176,14 +177,14 @@
                         <span class="text-[10px] md:text-xs font-black tracking-[0.4em] text-primary uppercase block mb-2">Chronicles archive</span>
                         <h2 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface uppercase leading-none">The Archive</h2>
                     </div>
-                    <div class="flex gap-3">
+                    <div class="flex gap-2">
                         <button onclick="document.getElementById('archive-scroll').scrollBy({left: -400, behavior: 'smooth'})" 
-                            class="p-4 rounded-full bg-surface-variant/30 text-on-surface hover:bg-primary hover:text-on-primary transition-all duration-300">
-                            <span class="material-symbols-outlined">arrow_back</span>
+                            class="w-10 h-10 flex items-center justify-center bg-surface-variant/30 text-on-surface hover:bg-primary hover:text-on-primary transition-all duration-300">
+                            <span class="material-symbols-outlined">chevron_left</span>
                         </button>
                         <button onclick="document.getElementById('archive-scroll').scrollBy({left: 400, behavior: 'smooth'})"
-                            class="p-4 rounded-full bg-surface-variant/30 text-on-surface hover:bg-primary hover:text-on-primary transition-all duration-300">
-                            <span class="material-symbols-outlined">arrow_forward</span>
+                            class="w-10 h-10 flex items-center justify-center bg-surface-variant/30 text-on-surface hover:bg-primary hover:text-on-primary transition-all duration-300">
+                            <span class="material-symbols-outlined">chevron_right</span>
                         </button>
                     </div>
                 </div>
@@ -192,7 +193,7 @@
                     @forelse($posts as $post)
                         <x-thamnet.card :post="$post" />
                     @empty
-                        <div class="w-full text-center py-20 bg-surface-variant/10 rounded-3xl border border-dashed border-outline/20 col-span-full">
+                        <div class="w-full text-center py-20 bg-surface-variant/10 border border-dashed border-outline/20 col-span-full">
                             <p class="text-on-surface-variant font-bold uppercase tracking-widest opacity-50">Archive is currently evolving. Check back soon.</p>
                         </div>
                     @endforelse

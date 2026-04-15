@@ -67,14 +67,22 @@
         /* ─── MODERN MOBILE SLIDER (SWIPER REPLACEMENT) ─── */
         .dp-slider {
             display: flex;
-            overflow-x: hidden; /* Only buttons allowed */
+            overflow-x: auto;
             scroll-snap-type: x mandatory;
             gap: 1.25rem;
             padding-bottom: 1.5rem;
             width: 100%;
+            -webkit-overflow-scrolling: touch;
         }
+        .dp-slider::-webkit-scrollbar { display: none; }
+        .dp-slider { -ms-overflow-style: none; scrollbar-width: none; }
+
         @media (min-width: 1024px) {
-            .dp-slider { margin: 0; padding: 0; overflow: visible; }
+            .dp-slider {
+                margin: 0; padding: 0;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+            }
         }
         .dp-slide {
             scroll-snap-align: start;
@@ -125,7 +133,7 @@
         .btn-sec:hover { background: rgba(255,255,255,0.15); }
     </style>
 
-    <div style="width:100%; align-self:stretch; display:flex; flex-direction:column;">
+    <div style="width:100%; align-self:stretch; display:flex; flex-direction:column; overflow-x: hidden;">
 
     {{-- SECTION 1: HERO --}}
     <section class="dp-section">
@@ -135,17 +143,17 @@
             <div style="position:absolute; inset:0; background: linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);"></div>
             <div style="position:absolute; inset:0; background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 40%);"></div>
         </div>
-        <div class="dp-inner mobile-center-stack" style="z-index:1; min-height:100svh; justify-content:center;">
-            <p class="dp-label" style="color:var(--theme-primary-600); opacity:0.8;">Cabinet 2025/2026</p>
+        <div class="dp-inner items-start text-left" style="z-index:1; min-height:100svh; justify-content:center;">
+            <p class="dp-label" style="color:white;">Cabinet 2025/2026</p>
             <h1 class="dp-h1 text-white mb-6 md:mb-8">DHARMANDALA<br>SANDHYAKALA</h1>
-            <p class="dp-body text-white/70 max-w-[85vw] mx-auto md:max-w-xl mb-10 leading-relaxed font-light mt-4 md:mt-0 text-center md:text-left mobile-line-wrap">
+            <p class="dp-body text-white/70 max-w-[85vw] md:max-w-xl mb-10 leading-relaxed font-light mt-4 md:mt-0 text-inherit mobile-line-wrap text-left">
                 <span class="block md:inline">The Digital Ivory Tower.</span> 
                 <span class="block md:inline">Preserving legacy through</span> 
                 <span class="text-white font-medium">modern innovation</span> and 
                 <span class="text-white font-medium">academic excellence</span> 
                 at SMA Unggulan M. H. Thamrin.
             </p>
-            <div style="display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:inherit;">
+            <div style="display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:flex-start;">
                 <a href="#pillars" class="btn-base btn-pri">Explore Cabinet</a>
                 <a href="/thamnet" class="btn-base btn-sec">Official Archive</a>
             </div>

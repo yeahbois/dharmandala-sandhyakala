@@ -6,12 +6,12 @@
         .ql-toolbar.ql-snow {
             border: 1px solid var(--theme-outline);
             background: var(--theme-surface);
-            border-radius: 0.75rem 0.75rem 0 0;
+            border-radius: 0;
         }
         .ql-container.ql-snow {
             border: 1px solid var(--theme-outline);
             background: var(--theme-surface);
-            border-radius: 0 0 0.75rem 0.75rem;
+            border-radius: 0;
             min-height: 500px;
             font-size: 1.125rem;
             color: var(--theme-on-surface);
@@ -31,10 +31,10 @@
                     <p class="text-on-surface-variant font-medium mt-1">Compose your legacy for the Ivory Tower.</p>
                 </div>
                 <div class="flex gap-4">
-                    <button onclick="window.history.back()" class="px-6 py-3 rounded-xl border border-outline/20 text-on-surface text-xs font-black uppercase tracking-widest hover:bg-surface transition-colors">
+                    <button onclick="window.history.back()" class="px-6 py-3 rounded-none border border-outline/20 text-on-surface text-xs font-black uppercase tracking-widest hover:bg-surface transition-colors">
                         Cancel
                     </button>
-                    <button id="submit-btn" class="px-10 py-3 rounded-xl bg-primary text-on-primary text-xs font-black uppercase tracking-widest hover:opacity-90 transition-all shadow-xl shadow-primary/20">
+                    <button id="submit-btn" class="px-10 py-3 rounded-none bg-primary text-on-primary text-xs font-black uppercase tracking-widest hover:opacity-90 transition-all shadow-xl shadow-primary/20">
                         Publish Entry
                     </button>
                 </div>
@@ -48,12 +48,12 @@
                     <div class="space-y-2">
                         <label class="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Entry Title</label>
                         <input type="text" name="title" required placeholder="Nature's Whisper: A Journey..." 
-                            class="w-full bg-surface border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary rounded-xl px-6 py-4 text-on-surface text-lg font-bold placeholder:opacity-30 transition-all">
+                            class="w-full bg-surface border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary rounded-none px-6 py-4 text-on-surface text-lg font-bold placeholder:opacity-30 transition-all">
                     </div>
                     <!-- Category -->
                     <div class="space-y-2">
                         <label class="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Category</label>
-                        <select name="category" required class="w-full bg-surface border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary rounded-xl px-6 py-4 text-on-surface font-bold transition-all">
+                        <select name="category" required class="w-full bg-surface border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary rounded-none px-6 py-4 text-on-surface font-bold transition-all">
                             <option value="Program Kerja">Program Kerja</option>
                             <option value="Prestasi">Prestasi</option>
                             <option value="Cerita">Cerita</option>
@@ -67,19 +67,19 @@
                     <div class="space-y-2">
                         <label class="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Author Name</label>
                         <input type="text" name="author" required placeholder="Janitra Pradipta" 
-                            class="w-full bg-surface border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary rounded-xl px-6 py-4 text-on-surface font-bold placeholder:opacity-30 transition-all">
+                            class="w-full bg-surface border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary rounded-none px-6 py-4 text-on-surface font-bold placeholder:opacity-30 transition-all">
                     </div>
                     <!-- Image URL -->
                     <div class="space-y-2">
                         <label class="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Cover Image URL</label>
                         <input type="url" name="image_url" placeholder="https://unsplash.com/..." 
-                            class="w-full bg-surface border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary rounded-xl px-6 py-4 text-on-surface font-bold placeholder:opacity-30 transition-all">
+                            class="w-full bg-surface border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary rounded-none px-6 py-4 text-on-surface font-bold placeholder:opacity-30 transition-all">
                     </div>
                 </div>
 
                 <!-- Featured Toggle -->
                 <div class="flex items-center gap-4">
-                    <input type="checkbox" name="is_featured" value="1" id="is_featured" class="w-5 h-5 rounded text-primary border-outline focus:ring-primary">
+                    <input type="checkbox" name="is_featured" value="1" id="is_featured" class="w-5 h-5 rounded-none text-primary border-outline focus:ring-primary">
                     <label for="is_featured" class="text-sm font-bold text-on-surface">Mark as Editorial Choice (Hero Spotlight)</label>
                 </div>
 
