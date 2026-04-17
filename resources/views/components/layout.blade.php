@@ -175,9 +175,9 @@
 
 </head>
 
-<body data-barba="wrapper" class="relative page-transition flex flex-1 w-full">
+<body data-barba="wrapper" class="relative page-transition flex flex-col min-h-screen w-full overflow-x-hidden">
   <main id="main" data-barba="container"
-    class="relative bg-background text-on-surface flex flex-col items-center w-full min-h-screen text-center {{ $extra ?? null }}">
+    class="relative bg-background text-on-surface flex flex-col w-full flex-1 overflow-x-hidden {{ $extra ?? null }}">
     <div id="nav_prestasi_circle" class="opacity-0 absolute z-10 top-0 left-0 w-[10px] h-[10px] rounded-full bg-white">
     </div>
 
@@ -278,7 +278,7 @@
       </nav>
     </header>
 
-    <div id="content" class="pt-16 md:pt-20 lg:pt-24">
+    <div id="content" class="w-full max-w-full mx-auto pt-16 md:pt-20 lg:pt-24 flex flex-col items-center overflow-x-hidden">
 
       @if(session()->has('success') || isset($alert))
         <x-alert :alert="session('success') ?? ($alert ?? '')" :forwardLink="$alertForward ?? '/'" />

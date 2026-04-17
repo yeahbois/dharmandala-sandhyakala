@@ -22,19 +22,19 @@
         }
     </style>
 
-    <div class="w-full bg-background min-h-screen py-20 px-8">
-        <div class="max-w-5xl mx-auto space-y-12">
+    <div class="w-full bg-background min-h-screen py-12 md:py-20 px-4 sm:px-8">
+        <div class="w-full max-w-5xl mx-auto space-y-8 md:space-y-12">
             <!-- Header -->
-            <div class="flex items-center justify-between">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
                 <div class="text-left">
-                    <h1 class="text-4xl font-black tracking-tighter text-on-surface">ThamNet Editor</h1>
-                    <p class="text-on-surface-variant font-medium mt-1">Compose your legacy for the Ivory Tower.</p>
+                    <h1 class="text-3xl md:text-4xl font-black tracking-tighter text-on-surface uppercase">ThamNet Editor</h1>
+                    <p class="text-sm md:text-base text-on-surface-variant font-medium mt-1">Compose your legacy for the Ivory Tower.</p>
                 </div>
-                <div class="flex gap-4">
-                    <button onclick="window.history.back()" class="px-6 py-3 rounded-none border border-outline/20 text-on-surface text-xs font-black uppercase tracking-widest hover:bg-surface transition-colors">
+                <div class="flex gap-3 md:gap-4">
+                    <button onclick="window.history.back()" class="flex-1 sm:flex-none px-4 md:px-6 py-3 rounded-none border border-outline/20 text-on-surface text-[10px] md:text-xs font-black uppercase tracking-widest hover:bg-surface transition-colors">
                         Cancel
                     </button>
-                    <button id="submit-btn" class="px-10 py-3 rounded-none bg-primary text-on-primary text-xs font-black uppercase tracking-widest hover:opacity-90 transition-all shadow-xl shadow-primary/20">
+                    <button id="submit-btn" class="flex-1 sm:flex-none px-6 md:px-10 py-3 rounded-none bg-primary text-on-primary text-[10px] md:text-xs font-black uppercase tracking-widest hover:opacity-90 transition-all shadow-xl shadow-primary/20">
                         Publish Entry
                     </button>
                 </div>

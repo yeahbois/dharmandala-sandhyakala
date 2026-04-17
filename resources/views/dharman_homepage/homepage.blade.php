@@ -37,18 +37,22 @@
 
         /* ─── TYPOGRAPHY ────────────────────────────────── */
         .dp-h1 {
-            font-size: clamp(2.2rem, 11vw, 8.5rem);
+            font-size: clamp(2rem, 10vw, 8.5rem);
             font-weight: 900;
-            line-height: 0.78; /* ABSOLUTELY NO GAP */
+            line-height: 0.85;
             letter-spacing: -0.05em;
             text-transform: uppercase;
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
         .dp-h2 {
-            font-size: clamp(1.8rem, 6vw, 5rem);
+            font-size: clamp(1.6rem, 6vw, 5rem);
             font-weight: 950;
-            line-height: 0.9;
+            line-height: 1;
             letter-spacing: -0.04em;
             text-transform: uppercase;
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
         .dp-label {
             font-size: clamp(8px, 1.25vw, 12px);
@@ -208,7 +212,7 @@
                 <div class="w-full">
                     <span class="dp-label" style="color:var(--theme-primary-600);">Graphic Identity</span>
                     <h2 class="dp-h2 mb-10 md:mb-14">HERALDIC SYMBOLISM</h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 justify-items-center">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 md:gap-4 justify-items-center">
                         @foreach([
                             ['shield','The Golden Shield','Protection of student interests.'],
                             ['auto_stories','The Open Codex','Commitment to academic legacy.'],
