@@ -24,11 +24,11 @@
         <div class="mt-16 flex flex-col sm:flex-row gap-4">
             <a href="/"
                class="px-10 py-4 bg-primary text-on-primary text-[10px] md:text-xs font-black uppercase tracking-[0.3em] shadow-2xl hover:brightness-110 transition-all active:scale-95 text-center">
-                Refresh Page
+                BERANDA
             </a>
-            <a href="https://instagram.com/osis_mht"
+            <a href="/thamnet"
                class="px-10 py-4 bg-surface-variant text-on-surface-variant text-[10px] md:text-xs font-black uppercase tracking-[0.3em] border border-outline/10 hover:bg-surface transition-all text-center">
-                Follow Updates
+                AKSES THAMNET
             </a>
         </div>
     </div>

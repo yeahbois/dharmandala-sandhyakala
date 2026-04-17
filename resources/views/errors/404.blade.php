@@ -1,27 +1,35 @@
-<x-layout title="OSIS MPK MHT">
+<x-layout title="Coming Soon | OSIS MHT">
     <x-slot:metadesc>
-        <meta name="description" content="Klik sekarang untuk menemukan kegiatan seru, proyek keren, dan cara ikut berkontribusi!">
-        <meta property="og:title" content="Beranda OSIS MPK SMA Negeri Unggulan M. H. Thamrin 2024/2025">
-        <meta property="og:description" content="Cari tahu event terbaru OSIS MPK MHT dan ikut berkontribusi dalam kegiatan sekolah!">
-        <meta property="og:image" content="https://ospkmhthamrin.com/images/potrait/ospkfull.jpg">
+        <meta name="description" content="Coming Soon">
     </x-slot:metadesc>
-    
-        <div class="min-h-dvh w-screen flex flex-col justify-center items-center text-center bg-gray-100 px-4">
-            <img src="{{ asset('images/cryemoji.jpg') }}" alt="Not Found" 
-                class="w-40 h-40 mb-6 mt-10">
 
-            <h1 class="text-7xl font-extrabold">404</h1>
-            <p class="mt-4 text-lg sm:text-xl text-gray-600">
-                Maaf, halaman yang Anda cari tidak ditemukan.
-            </p>
+    <div class="flex flex-col justify-center items-center text-center px-6 py-20 min-h-screen bg-background">
+        <div class="relative mb-12">
+            <div class="absolute inset-0 bg-primary/10 blur-3xl rounded-none opacity-50 scale-150"></div>
+            <img
+                src="{{ asset('images/cryemoji.jpg') }}"
+                alt="Coming Soon"
+                class="w-40 md:w-56 h-auto relative z-10 grayscale brightness-90 contrast-125 transition-all duration-700 hover:grayscale-0"
+            >
+        </div>
 
+        <h1 class="text-5xl md:text-8xl font-black uppercase tracking-tighter text-on-surface mb-6 leading-none">
+            TIDAK DITEMUKAN
+        </h1>
+
+        <p class="text-sm md:text-lg text-on-surface-variant max-w-lg leading-relaxed uppercase tracking-[0.2em] font-medium opacity-60 px-4">
+            Halaman yang Anda cari tidak ditemukan, silahkan periksa kembali penulisan URL Anda.
+        </p>
+
+        <div class="mt-16 flex flex-col sm:flex-row gap-4">
             <a href="/"
-               class="mt-8 px-8 py-3 bg-blue-600 text-white text-lg rounded-xl shadow hover:bg-blue-700 transition">
+               class="px-10 py-4 bg-primary text-on-primary text-[10px] md:text-xs font-black uppercase tracking-[0.3em] shadow-2xl hover:brightness-110 transition-all active:scale-95 text-center">
                 Kembali ke Beranda
             </a>
-
-            <!-- <a href="{{ url('/pudobooth/queue') }}" 
-            class="mt-8 px-8 py-3 bg-blue-600 text-white text-lg rounded-xl shadow-lg hover:bg-blue-700 hover:scale-105 transform transition">
-            </a> -->
+            <a href="/thamnet"
+               class="px-10 py-4 bg-surface-variant text-on-surface-variant text-[10px] md:text-xs font-black uppercase tracking-[0.3em] border border-outline/10 hover:bg-surface transition-all text-center">
+                ThamNet Portal
+            </a>
         </div>
+    </div>
 </x-layout>

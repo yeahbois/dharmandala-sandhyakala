@@ -18,7 +18,7 @@
         </h1>
 
         <p class="text-sm md:text-lg text-on-surface-variant max-w-lg leading-relaxed uppercase tracking-[0.2em] font-medium opacity-60 px-4">
-            Fitur ini sedang dikembangkan oleh tim IT Dharmandala Sandhyakala. Segera hadir untuk mendukung kegiatan akademik Anda.
+            Fitur ini sedang dikembangkan oleh tim IT Dharmandala Sandhyakala. Segera hadir di website ini.
         </p>
 
         <div class="mt-16 flex flex-col sm:flex-row gap-4">
