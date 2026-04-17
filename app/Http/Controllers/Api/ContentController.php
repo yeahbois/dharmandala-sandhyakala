@@ -12,7 +12,7 @@ class ContentController extends Controller
     private function verifySecret(Request $request)
     {
         $secret = $request->header('X-Admin-Secret');
-        if (!$secret || $secret !== env('ADMIN_SECRET')) {
+        if (!$secret || $secret !== config('app.admin_secret')) {
             abort(403, 'Unauthorized');
         }
     }

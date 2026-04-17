@@ -5,6 +5,7 @@ use App\Http\Controllers\FormController;
 use App\Services\GoogleSheetService;
 use App\Http\Controllers\ThamNetController;
 use App\Http\Controllers\Api\ContentController;
+use App\Http\Controllers\Admin\HubController;
 use App\Models\Thalation;
 use App\Models\ProgramKerja;
 use App\Models\Multimedia;
@@ -182,6 +183,14 @@ Route::prefix('api')->group(function () {
     Route::post('/programkerja', [ContentController::class, 'addProgramKerja']);
     Route::delete('/programkerja/{id}', [ContentController::class, 'removeProgramKerja']);
 });
+
+// Admin Hub
+Route::get('/kabinet/hub', [HubController::class, 'index']);
+Route::post('/kabinet/hub/prestasi', [HubController::class, 'storePrestasi']);
+Route::post('/kabinet/hub/programkerja', [HubController::class, 'storeProgramKerja']);
+Route::post('/kabinet/hub/thalation', [HubController::class, 'updateThalation']);
+Route::post('/kabinet/hub/multimedia', [HubController::class, 'storeMultimedia']);
+Route::post('/kabinet/hub/admin', [HubController::class, 'storeAdmin']);
 
 // Shortener Akademis
 Route::get('/prestasimht', function () {
