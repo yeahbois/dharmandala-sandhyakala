@@ -4,6 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
 use App\Services\GoogleSheetService;
 use App\Http\Controllers\ThamNetController;
+use App\Http\Controllers\Api\ContentController;
+use App\Models\Thalation;
+use App\Models\ProgramKerja;
+use App\Models\Multimedia;
+use App\Models\Post;
+use App\Models\Prestasi;
 
 // Remember:
 // Route -> Controllers -> Services -> Models
@@ -21,9 +27,18 @@ PRESTASI -> AMBIL DATA DARI DATABASE
 
 // Home
 Route::get('/', function () {
+    $featuredProkers = ProgramKerja::where('homepage', true)->get();
+    $multimedias = Multimedia::where('homepage', true)->get();
+    $featuredPost = Post::where('is_featured', true)->latest()->first();
+    $prestasis = Prestasi::latest()->take(10)->get();
+
     return view('dharman_homepage.homepage', [
         "alert" => session('success'),
-        "alertForward" => "/"
+        "alertForward" => "/",
+        "featuredProkers" => $featuredProkers,
+        "multimedias" => $multimedias,
+        "featuredPost" => $featuredPost,
+        "prestasis" => $prestasis
     ]);
 });
 
@@ -39,7 +54,16 @@ Route::get('/publikasiprestasi', function () {
     return view('dharman_homepage.publikasiprestasi');
 });
 Route::get('/thalation', function () {
-    return view('dharman_homepage.thalation');
+    $thalation = Thalation::first();
+    if (!$thalation) {
+        $thalation = Thalation::create([
+            'jumlah_pengunjung' => 0,
+            'next_macapi' => '2026-07-22 20:00:00'
+        ]);
+    }
+    $thalation->increment('jumlah_pengunjung');
+
+    return view('dharman_homepage.thalation', compact('thalation'));
 });
 Route::get('/programkerja', function () {
     return view('dharman_homepage.proker');
@@ -70,11 +94,17 @@ Route::get('/kabinet/osis', function () use ($cabinetData) {
 });
 Route::get('/kabinet/osis/ds/seksi/{seksi}', function ($seksi) use ($cabinetData, $cabinetSections) {
     if (!isset($cabinetSections['osis'][$seksi])) abort(404);
+
+    $featured_proker = ProgramKerja::where('division', $seksi)->where('type', 'osis')->where('featured', true)->get();
+    $all_proker = ProgramKerja::where('division', $seksi)->where('type', 'osis')->get();
+
     return view('dharman_kabinet.informasi_seksi', [
         "type" => "osis",
         "slug" => $seksi,
         "data" => $cabinetSections['osis'][$seksi],
-        "theme" => $cabinetData['osis']['theme']
+        "theme" => $cabinetData['osis']['theme'],
+        "featured_proker" => $featured_proker,
+        "all_proker" => $all_proker
     ]);
 });
 Route::get('/kabinet/mpk', function () use ($cabinetData) {
@@ -83,11 +113,16 @@ Route::get('/kabinet/mpk', function () use ($cabinetData) {
 Route::get('/kabinet/mpk/ds/bidang/{bidang}', function ($bidang) use ($cabinetData, $cabinetSections) {
     if (!isset($cabinetSections['mpk'][$bidang])) abort(404);
 
+    $featured_proker = ProgramKerja::where('division', $bidang)->where('type', 'mpk')->where('featured', true)->get();
+    $all_proker = ProgramKerja::where('division', $bidang)->where('type', 'mpk')->get();
+
     return view('dharman_kabinet.informasi_seksi', [
         "type" => "mpk",
         "slug" => $bidang,
         "data" => $cabinetSections['mpk'][$bidang],
-        "theme" => $cabinetData['mpk']['theme']
+        "theme" => $cabinetData['mpk']['theme'],
+        "featured_proker" => $featured_proker,
+        "all_proker" => $all_proker
     ]);
 });
 
@@ -138,6 +173,14 @@ Route::post('/submit-form', function () {
     $googleSheetService = new GoogleSheetService("1oTrcemPt1Amk_8SKj4OnFD6p4PuAv7SXTurXJbrU7kM");
     $formController = new FormController($googleSheetService);
     return $formController->submitForm($request);
+});
+
+// Content API
+Route::prefix('api')->group(function () {
+    Route::post('/prestasi', [ContentController::class, 'addPrestasi']);
+    Route::delete('/prestasi/{id}', [ContentController::class, 'removePrestasi']);
+    Route::post('/programkerja', [ContentController::class, 'addProgramKerja']);
+    Route::delete('/programkerja/{id}', [ContentController::class, 'removeProgramKerja']);
 });
 
 // Shortener Akademis

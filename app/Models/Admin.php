@@ -10,6 +10,9 @@ class Admin extends Authenticatable
         'username',
         'password',
         'type',
+        'name',
+        'instagram',
+        'quotes',
     ];
 
     protected $hidden = [
