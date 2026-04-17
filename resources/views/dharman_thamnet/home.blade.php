@@ -46,7 +46,7 @@
                     <img alt="Seksi Akad Logo" class="h-16 w-16 md:h-24 md:w-24 object-contain grayscale hover:grayscale-0 transition-all duration-500"
                         src="{{ asset('images/logo/osis/akad514.webp') }}">
                 </div>
-                <h1 class="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter text-on-surface mb-6 leading-[0.9]">
+                <h1 class="text-[clamp(2rem,10vw,8rem)] font-black tracking-tighter text-on-surface mb-6 leading-[0.85] break-words uppercase">
                     WELCOME TO<br/>THAMNET
                 </h1>
                 <p class="max-w-2xl mx-auto text-base md:text-xl text-on-surface-variant font-medium leading-relaxed mb-10 px-4">
@@ -119,12 +119,12 @@
 
         <!-- Section 3: Featured Entry -->
         <section class="py-20 md:py-32 bg-surface-variant/10">
-            <div class="max-w-7xl mx-auto px-6 md:px-8">
+            <div class="w-full max-w-7xl mx-auto px-6 md:px-8">
                 <div class="flex flex-col lg:flex-row items-center gap-12 md:gap-20">
                     @if($featuredPost)
                     <div class="w-full lg:w-3/5">
                         <div class="relative overflow-hidden shadow-2xl group border border-outline/10">
-                            <img class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-1000" 
+                            <img class="w-full aspect-video md:aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-1000"
                                 src="{{ $featuredPost->image_url ?? 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80' }}" 
                                 alt="{{ $featuredPost->title }}">
                             <div class="absolute top-6 left-6">
