@@ -233,23 +233,19 @@
                 </div>
             </div>
             <div id="sc-prv" class="dp-slider hide-scrollbar">
-                @foreach([
-                    ['Academic','OCT 20','Thamrin Summit 4.0','Inter-school competition focused on digital diplomacy.'],
-                    ['Culture','NOV 12','Digital Ivory Radio','Monthly podcast exploring traditional values.'],
-                    ['Society','DEC 05','Dharmandala Care','Bridging school and community through social-tech.']
-                ] as [$cat, $date, $name, $desc])
+                @foreach($featuredProkers as $proker)
                 <div class="dp-slide" style="width:clamp(260px, 75vw, 420px); background:var(--theme-background); border:1px solid color-mix(in srgb, var(--theme-outline) 15%, transparent);">
                     <div style="aspect-ratio:16/9; overflow:hidden;">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWJ2UiE2dvcBE77JDYlDyacz6rdS07NHuMEnIsB-VY1K1G3WVD-X2xSkfMxw3SUzwzy4gzQRAJZ3HjRyKkRWIARQ6Ob3BLRGlgxJsiEaAR6QDdgYWFFY3s5S7Ca0Ca6gi3adRGgsC-sYnsiYLy1lbJXUCo-UUnxVrdWs10vAtYpD_gcHExUrpm9Ub5eR85CfVkTa-cxj0ieXkR7cpplpdjHgFhoLY29DmjBkytkLGWiCVRcU--HD8VO9mDSbQWbTZ9vcx2ZGqojFo" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                        <img src="{{ $proker->pictures_urls[0] ?? 'https://lh3.googleusercontent.com/aida-public/AB6AXuCWJ2UiE2dvcBE77JDYlDyacz6rdS07NHuMEnIsB-VY1K1G3WVD-X2xSkfMxw3SUzwzy4gzQRAJZ3HjRyKkRWIARQ6Ob3BLRGlgxJsiEaAR6QDdgYWFFY3s5S7Ca0Ca6gi3adRGgsC-sYnsiYLy1lbJXUCo-UUnxVrdWs10vAtYpD_gcHExUrpm9Ub5eR85CfVkTa-cxj0ieXkR7cpplpdjHgFhoLY29DmjBkytkLGWiCVRcU--HD8VO9mDSbQWbTZ9vcx2ZGqojFo' }}" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
                     </div>
                     <div style="padding:1.5rem;">
                         <div class="flex justify-between items-center mb-4">
-                            <span class="dp-label" style="color:var(--theme-primary-600); margin:0; font-size:7px;">{{ $cat }}</span>
-                            <span style="font-size:9px; font-weight:700; opacity:0.4;">{{ $date }}</span>
+                            <span class="dp-label" style="color:var(--theme-primary-600); margin:0; font-size:7px;">{{ $proker->division }}</span>
+                            <span style="font-size:9px; font-weight:700; opacity:0.4;">{{ $proker->date ? \Carbon\Carbon::parse($proker->date)->format('M d') : '' }}</span>
                         </div>
-                        <h3 style="font-size:clamp(1.1rem, 2vw, 1.4rem); font-weight:950; margin-bottom:8px; letter-spacing:-0.02em;">{{ $name }}</h3>
-                        <p class="text-[10px] opacity-60 mb-6 leading-relaxed">{{ $desc }}</p>
-                        <a href="#" class="inline-flex items-center gap-2 text-[9px] font-black uppercase tracking-widest text-theme-primary">Details <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                        <h3 style="font-size:clamp(1.1rem, 2vw, 1.4rem); font-weight:950; margin-bottom:8px; letter-spacing:-0.02em;">{{ $proker->title }}</h3>
+                        <p class="text-[10px] opacity-60 mb-6 leading-relaxed">{{ Str::limit(strip_tags($proker->content), 120) }}</p>
+                        <a href="/programkerja" class="inline-flex items-center gap-2 text-[9px] font-black uppercase tracking-widest text-theme-primary">Details <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
                     </div>
                 </div>
                 @endforeach
@@ -271,9 +267,9 @@
                 </div>
             </div>
             <div id="sc-rlx" class="dp-slider hide-scrollbar">
-                @foreach (['qGhGDXOk0pY', 'wCqFYdHKIdo', 'wCqFYdHKIdo'] as $vid)
+                @foreach ($multimedias as $media)
                 <div class="dp-slide" style="width:clamp(140px, 22vw, 210px); aspect-ratio:9/16; background:#000; overflow:hidden; border:1px solid rgba(255,255,255,0.05);">
-                    <iframe src="https://www.youtube.com/embed/{{ $vid }}?controls=1&modestbranding=1" class="w-full h-full"></iframe>
+                    <iframe src="{{ str_replace('watch?v=', 'embed/', $media->url) }}?controls=1&modestbranding=1" class="w-full h-full"></iframe>
                 </div>
                 @endforeach
             </div>
@@ -298,6 +294,9 @@
                 </div>
                 
                 {{-- Card: BOTTOM on mobile --}}
+                @if($featuredPost)
+                    <x-thamnet.card :post="$featuredPost" />
+                @else
                 <div class="w-full md:w-1/2 overflow-hidden flex flex-col" style="background:var(--theme-background); border:1px solid color-mix(in srgb, var(--theme-outline) 10%, transparent); position:relative;">
                     <div style="aspect-ratio:16/9; overflow:hidden;" class="flex-shrink">
                         <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9RUJekgSiw5S6tCXqlHvZ3HI8gFb-4-i611Y0_4CTEtGrSAiXPifuv8Djmu5Wu9hroeGqfBjrXiv1udllfPAE4H_wXUD4yRPYbe0cwIMBiWW-NjJb1CZqM3Ewr4YmipUtG6rCWTRXgfUQY9mmsCs05o_OPh5YoZTMrx7E1eSHTo2eW7_6IQnmtTL3EtWZ2mn3d0hL30Uf5tqH6nzFhHuXx4OfwaeycHHZS7AygtJbmEu5v2TGs_B2S3j17i2D9XMeSRiaOOBUdVI" class="w-full h-full object-cover filter transition-transform duration-700 hover:scale-105">
@@ -308,6 +307,7 @@
                         <p class="text-[9px] md:text-[10px] opacity-60 leading-relaxed font-light line-clamp-2">Bridge the gap between tradition and digital speed within the cabinet's internal workflow.</p>
                     </div>
                 </div>
+                @endif
             </div>
         </div>
     </section>
@@ -327,20 +327,16 @@
             </div>
             
             <div id="sc-achx" class="dp-slider hide-scrollbar">
-                @foreach([
-                    ['Sep 2025','1st Place National Robotics','Gold medal in Surabaya sets new record for autonomous fleet navigation.'],
-                    ['Aug 2025','Best Delegate — Global MUN','Diplomacy awards in Singapore represent cabinet excellence.'],
-                    ['Jul 2025','Ivy League Admissions','Class of 2025 achieves record-breaking admission rates.']
-                ] as [$date, $name, $desc])
+                @foreach($prestasis as $prestasi)
                 <div class="dp-slide" style="width:clamp(240px, 78vw, 400px); background:var(--theme-surface); border:1px solid color-mix(in srgb, var(--theme-outline) 12%, transparent); overflow:hidden;">
                     {{-- LANDSCAPE 16:9 CARD --}}
                     <div style="aspect-ratio:16/9; overflow:hidden;">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLWG-f1T_yXJ1d3WzYjnOzL7BMCsQQ7Jp3mzu23IsiqJtZMLyQd2e0MoE88W1-Cx-FA3MOa70C467Oce4qdkdnO1iyQZ5g_5OTHJuE4kDPe2pGiNOzXzGPi2N4KtZPibEp4Iz9FtIU-WMo-MbZGxmoa0MC2OL57lAzTRlC5zQWFEPHxFCk0rc34N5ftqJJqhZd0DabphN9IM2aJZY8ukI6cYgWO-qUB1p3Ad0dkSqf-SBqOz1NOiQ6siCFZ2qHfeTob1BfAlBAAd0" class="w-full h-full object-cover sepia-[0.3] hover:sepia-0 transition-all duration-700">
+                        <img src="{{ $prestasi->pictures_urls[0] ?? 'https://lh3.googleusercontent.com/aida-public/AB6AXuDLWG-f1T_yXJ1d3WzYjnOzL7BMCsQQ7Jp3mzu23IsiqJtZMLyQd2e0MoE88W1-Cx-FA3MOa70C467Oce4qdkdnO1iyQZ5g_5OTHJuE4kDPe2pGiNOzXzGPi2N4KtZPibEp4Iz9FtIU-WMo-MbZGxmoa0MC2OL57lAzTRlC5zQWFEPHxFCk0rc34N5ftqJJqhZd0DabphN9IM2aJZY8ukI6cYgWO-qUB1p3Ad0dkSqf-SBqOz1NOiQ6siCFZ2qHfeTob1BfAlBAAd0' }}" class="w-full h-full object-cover sepia-[0.3] hover:sepia-0 transition-all duration-700">
                     </div>
                     <div style="padding:1.25rem;">
-                        <h4 style="font-size:9px; font-weight:900; color:var(--theme-primary-600); margin-bottom:6px; font-style:italic;">{{ $date }}</h4>
-                        <h3 style="font-size:clamp(1rem, 1.8vw, 1.25rem); font-weight:950; margin-bottom:6px; letter-spacing:-0.03em;">{{ $name }}</h3>
-                        <p class="text-[10px] opacity-60 leading-relaxed font-light line-clamp-2">{{ $desc }}</p>
+                        <h4 style="font-size:9px; font-weight:900; color:var(--theme-primary-600); margin-bottom:6px; font-style:italic;">{{ $prestasi->date ? \Carbon\Carbon::parse($prestasi->date)->format('M Y') : '' }}</h4>
+                        <h3 style="font-size:clamp(1rem, 1.8vw, 1.25rem); font-weight:950; margin-bottom:6px; letter-spacing:-0.03em;">{{ $prestasi->title }}</h3>
+                        <p class="text-[10px] opacity-60 leading-relaxed font-light line-clamp-2">{{ Str::limit(strip_tags($prestasi->content), 120) }}</p>
                     </div>
                 </div>
                 @endforeach

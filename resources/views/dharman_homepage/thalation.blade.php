@@ -196,7 +196,7 @@
                     <p class="text-[10px] font-black uppercase tracking-[0.3em] mb-4 opacity-40">Waktu Hingga Sesi
                         Selanjutnya</p>
                     <div class="flex justify-center lg:justify-start">
-                        <x-countdown date="2026-07-22 20:00:00" />
+                        <x-countdown date="{{ $thalation->next_macapi }}" />
                     </div>
                 </div>
 

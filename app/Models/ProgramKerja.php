@@ -13,6 +13,7 @@ class ProgramKerja extends Model
         'content',
         'pictures_urls',
         'division',
+        'type',
         'featured',
         'homepage'
     ];
