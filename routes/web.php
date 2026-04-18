@@ -58,7 +58,7 @@ Route::get('/thalation', function () {
     if (!$thalation) {
         $thalation = Thalation::create([
             'jumlah_pengunjung' => 0,
-            'next_macapi' => '2026-07-22 20:00:00'
+            'next_macapi' => '2026-07-22 20:00:00' // change to today
         ]);
     }
     $thalation->increment('jumlah_pengunjung');
@@ -137,17 +137,6 @@ Route::get('/debug/get/all_blogs', [ThamNetController::class, 'debug_all_data'])
 Route::post('/thamnet/api/blog/store', [ThamNetController::class, 'store'])->middleware('auth')->name('thamnet.store');
 Route::post('/thamnet/api/login', [ThamNetController::class, 'authenticate']);
 Route::get('/thamnet/api/logout', [ThamNetController::class, 'logout'])->name('logout');
-//Crud API
-Route::get('/thamnet/api/blog/get/{id}', function () {
-    // type=prestasi
-    return 0;
-});
-Route::post('/thamnet/api/blog/update/{id}', function () {
-    return 0;
-});
-Route::delete('/thamnet/api/blog/delete/{id}', function () {
-    return 0;
-});
 
 // Thanos
 Route::get('/thanos', function () {
