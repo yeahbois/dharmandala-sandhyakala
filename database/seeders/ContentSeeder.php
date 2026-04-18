@@ -27,7 +27,7 @@ class ContentSeeder extends Seeder
             'date' => '2025-10-20',
             'content' => 'Inter-school competition focused on digital diplomacy.',
             'pictures_urls' => ['https://lh3.googleusercontent.com/aida-public/AB6AXuCWJ2UiE2dvcBE77JDYlDyacz6rdS07NHuMEnIsB-VY1K1G3WVD-X2xSkfMxw3SUzwzy4gzQRAJZ3HjRyKkRWIARQ6Ob3BLRGlgxJsiEaAR6QDdgYWFFY3s5S7Ca0Ca6gi3adRGgsC-sYnsiYLy1lbJXUCo-UUnxVrdWs10vAtYpD_gcHExUrpm9Ub5eR85CfVkTa-cxj0ieXkR7cpplpdjHgFhoLY29DmjBkytkLGWiCVRcU--HD8VO9mDSbQWbTZ9vcx2ZGqojFo'],
-            'division' => 'Academic',
+            'divisi_id' => \App\Models\Divisi::where('slug', 'akad')->first()?->id,
             'featured' => true,
             'homepage' => true,
         ]);
@@ -60,7 +60,7 @@ class ContentSeeder extends Seeder
             'title' => 'Pudo Documentary',
             'date' => '2025-11-01',
             'content' => 'Documenting the journey of our cabinet.',
-            'division' => 'pudo',
+            'divisi_id' => \App\Models\Divisi::where('slug', 'pudo')->first()?->id,
             'featured' => true,
         ]);
     }

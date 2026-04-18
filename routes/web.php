@@ -95,13 +95,15 @@ Route::get('/kabinet/osis', function () use ($cabinetData) {
 Route::get('/kabinet/osis/ds/seksi/{seksi}', function ($seksi) use ($cabinetData, $cabinetSections) {
     if (!isset($cabinetSections['osis'][$seksi])) abort(404);
 
-    $featured_proker = ProgramKerja::where('division', $seksi)->where('type', 'osis')->where('featured', true)->get();
-    $all_proker = ProgramKerja::where('division', $seksi)->where('type', 'osis')->get();
+    $divisi = \App\Models\Divisi::where('slug', $seksi)->first();
+    $featured_proker = $divisi ? $divisi->programKerjas()->where('featured', true)->get() : collect();
+    $all_proker = $divisi ? $divisi->programKerjas()->get() : collect();
 
     return view('dharman_kabinet.informasi_seksi', [
         "type" => "osis",
         "slug" => $seksi,
         "data" => $cabinetSections['osis'][$seksi],
+        "divisi" => $divisi,
         "theme" => $cabinetData['osis']['theme'],
         "featured_proker" => $featured_proker,
         "all_proker" => $all_proker
@@ -113,13 +115,15 @@ Route::get('/kabinet/mpk', function () use ($cabinetData) {
 Route::get('/kabinet/mpk/ds/bidang/{bidang}', function ($bidang) use ($cabinetData, $cabinetSections) {
     if (!isset($cabinetSections['mpk'][$bidang])) abort(404);
 
-    $featured_proker = ProgramKerja::where('division', $bidang)->where('type', 'mpk')->where('featured', true)->get();
-    $all_proker = ProgramKerja::where('division', $bidang)->where('type', 'mpk')->get();
+    $divisi = \App\Models\Divisi::where('slug', $bidang)->first();
+    $featured_proker = $divisi ? $divisi->programKerjas()->where('featured', true)->get() : collect();
+    $all_proker = $divisi ? $divisi->programKerjas()->get() : collect();
 
     return view('dharman_kabinet.informasi_seksi', [
         "type" => "mpk",
         "slug" => $bidang,
         "data" => $cabinetSections['mpk'][$bidang],
+        "divisi" => $divisi,
         "theme" => $cabinetData['mpk']['theme'],
         "featured_proker" => $featured_proker,
         "all_proker" => $all_proker

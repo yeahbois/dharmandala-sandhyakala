@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('divisis', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('name');
             $table->string('slug')->unique();
-            $table->longText('content');
-            $table->string('author');
-            $table->string('category');
-            $table->text('image_url')->nullable();
-            $table->boolean('is_featured')->default(false);
+            $table->text('about')->nullable();
+            $table->longText('details')->nullable();
+            $table->string('group')->nullable();
+            $table->string('type')->default('osis'); // osis or mpk
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('divisis');
     }
 };

@@ -12,7 +12,7 @@ class ProgramKerja extends Model
         'date',
         'content',
         'pictures_urls',
-        'division',
+        'divisi_id',
         'type',
         'featured',
         'homepage'
@@ -24,4 +24,9 @@ class ProgramKerja extends Model
         'featured' => 'boolean',
         'homepage' => 'boolean'
     ];
+
+    public function divisi()
+    {
+        return $this->belongsTo(Divisi::class);
+    }
 }

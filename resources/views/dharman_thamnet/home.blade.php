@@ -9,156 +9,202 @@
     </x-slot:metadesc>
 
     <style>
-        .glass-panel {
-            backdrop-filter: blur(20px);
-            background-color: var(--theme-surface);
-            opacity: 0.8;
-        }
-
-        .video-container iframe {
+        /* Shared Styles from Homepage */
+        * { border-radius: 0 !important; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        iframe { border: none; }
+        .dp-section {
+            align-self: stretch;
             width: 100%;
-            height: 100%;
-            border: none;
+            min-height: 100svh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
         }
-
-        /* Hide scrollbar for carousel */
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
+        .dp-inner {
+            width: 100%;
+            max-width: 1536px;
+            margin: 0 auto;
+            padding: clamp(2rem, 8vh, 5rem) clamp(1rem, 6vw, 4.5rem);
+            display: flex;
+            flex-direction: column;
         }
-        .scrollbar-hide {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+        .dp-h1 {
+            font-size: clamp(2rem, 10vw, 8.5rem);
+            font-weight: 900;
+            line-height: 0.85;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
+        .dp-h2 {
+            font-size: clamp(1.6rem, 6vw, 5rem);
+            font-weight: 950;
+            line-height: 1;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+        .dp-label {
+            font-size: clamp(8px, 1.25vw, 12px);
+            font-weight: 900;
+            letter-spacing: 0.45em;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .dp-body {
+            font-size: clamp(0.85rem, 1.6vw, 1.15rem);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        .dp-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 1.25rem;
+            padding-bottom: 1.5rem;
+            width: 100%;
+            -webkit-overflow-scrolling: touch;
+        }
+        .dp-slider::-webkit-scrollbar { display: none; }
+        .dp-slider { -ms-overflow-style: none; scrollbar-width: none; }
+        @media (min-width: 1024px) {
+            .dp-slider {
+                margin: 0; padding: 0;
+                overflow-x: auto;
+                flex-wrap: nowrap;
+            }
+        }
+        .dp-slide {
+            scroll-snap-align: start;
+            flex-shrink: 0;
+        }
+        .mobile-center-stack { text-align: center; align-items: center; }
+        @media (min-width: 1024px) {
+            .mobile-center-stack { text-align: left; align-items: flex-start; }
+        }
+        .btn-base {
+            padding: 0.9rem 2.2rem; font-size: 9px; font-weight: 950; 
+            letter-spacing: 0.25em; text-transform: uppercase; transition: all 0.3s;
+            display: inline-flex; align-items:center; justify-content:center;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+        .btn-pri { background: #fff; color: #000; }
+        .btn-pri:hover { background: #eee; }
+        .btn-sec { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.25); color: #fff; }
+        .btn-sec:hover { background: rgba(255,255,255,0.15); }
+        .btn-pri-theme { background: var(--theme-primary-600); color: var(--theme-on-primary); }
+        .btn-pri-theme:hover { filter: brightness(1.1); }
+        .btn-sec-theme { background: var(--theme-surface-variant); color: var(--theme-on-surface); border-color: color-mix(in srgb, var(--theme-outline) 15%, transparent); }
+        .btn-sec-theme:hover { background: var(--theme-surface); }
+        .slider-nav-btn {
+            width: 2.5rem; height: 2.5rem;
+            display: flex; align-items: center; justify-content: center;
+            background: color-mix(in srgb, var(--theme-surface-variant) 50%, transparent);
+            color: var(--theme-on-surface);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .slider-nav-btn:hover { background: var(--theme-primary-600); color: var(--theme-on-primary); }
     </style>
 
-    <div class="w-full bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container" id="thamnet-page">
-        <!-- Section 1: Welcome to ThamNet Hero -->
-        <section class="relative min-h-[70vh] md:min-h-[850px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-surface via-surface-variant/10 to-surface px-6">
-            <!-- Abstract Decorative Elements -->
-            <div class="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
-                <div class="absolute top-[-10%] right-[-5%] w-[300px] md:w-[500px] h-[300px] md:h-[500px] rounded-full bg-primary/10 blur-[80px] md:blur-[120px]"></div>
-                <div class="absolute bottom-[-10%] left-[-5%] w-[250px] md:w-[400px] h-[250px] md:h-[400px] rounded-full bg-on-tertiary-container/10 blur-[70px] md:blur-[100px]"></div>
-            </div>
-            <div class="relative z-10 max-w-7xl mx-auto py-20 text-center">
-                <div class="flex items-center justify-center gap-6 md:gap-12 mb-8 md:mb-12 scale-90 md:scale-100">
-                    <img alt="OSIS Emblem" class="h-16 w-16 md:h-24 md:w-24 object-contain grayscale hover:grayscale-0 transition-all duration-500"
-                        src="{{ asset('images/logo/general/osis514.webp') }}">
-                    <img alt="Seksi Akad Logo" class="h-16 w-16 md:h-24 md:w-24 object-contain grayscale hover:grayscale-0 transition-all duration-500"
-                        src="{{ asset('images/logo/osis/akad514.webp') }}">
+    <div style="width:100%; align-self:stretch; display:flex; flex-direction:column; overflow-x: hidden;">
+
+        {{-- SECTION 1: HERO --}}
+        <section class="dp-section" style="background:var(--theme-surface); color:var(--theme-on-surface);">
+            <div class="dp-inner items-start text-left" style="z-index:1; min-height:100svh; justify-content:center;">
+                <div class="flex items-center justify-start gap-4 mb-6 md:mb-8">
+                    <img alt="OSIS Emblem" class="h-10 w-10 md:h-14 md:w-14 object-contain grayscale hover:grayscale-0 transition-all duration-500" src="{{ asset('images/logo/general/osis514.webp') }}">
+                    <img alt="Seksi Akad Logo" class="h-10 w-10 md:h-14 md:w-14 object-contain grayscale hover:grayscale-0 transition-all duration-500" src="{{ asset('images/logo/osis/akad514.webp') }}">
                 </div>
-                <h1 class="text-[clamp(2rem,10vw,8rem)] font-black tracking-tighter text-on-surface mb-6 leading-[0.85] break-words uppercase">
-                    WELCOME TO<br/>THAMNET
-                </h1>
-                <p class="max-w-2xl mx-auto text-base md:text-xl text-on-surface-variant font-medium leading-relaxed mb-10 px-4">
+                <p class="dp-label" style="color:var(--theme-secondary-600);">Digital Heartbeat</p>
+                <h1 class="dp-h1 mb-6 md:mb-8 text-on-surface">WELCOME TO<br>THAMNET</h1>
+                <p class="dp-body text-on-surface-variant max-w-[85vw] md:max-w-xl mb-10 leading-relaxed font-light mt-4 md:mt-0 mobile-line-wrap text-left">
                     The digital heartbeat of Dharmandala Sandhyakala. A curated ecosystem for the elite minds of M.H. Thamrin.
                 </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="/login" class="w-full sm:w-auto px-10 py-4 bg-primary text-on-primary text-[10px] md:text-xs font-black uppercase tracking-[0.3em] rounded-sm hover:opacity-90 transition-all duration-300 shadow-xl shadow-primary/10">
-                        Access Portal
-                    </a>
-                    <a href="{{ route('thamnet.editor') }}" class="w-full sm:w-auto px-10 py-4 bg-surface-variant text-on-surface-variant text-[10px] md:text-xs font-black uppercase tracking-[0.3em] rounded-sm border border-outline/15 hover:bg-surface transition-all duration-300 backdrop-blur-sm">
-                        Compose Legacy
-                    </a>
+                <div style="display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:flex-start;">
+                    <a href="/login" class="btn-base btn-pri-theme">Access Portal</a>
+                    <a href="{{ route('thamnet.editor') }}" class="btn-base btn-sec-theme">Compose Legacy</a>
                 </div>
             </div>
         </section>
 
-        <!-- Section 2: Newest Media -->
-        <section class="py-20 md:py-32 bg-surface overflow-x-hidden">
-        <section class="py-20 md:py-32 bg-surface overflow-x-hidden">
-            <div class="max-w-7xl mx-auto px-6 md:px-8">
-                <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 border-b border-outline/10 pb-8 gap-6">
-                    <div class="text-left">
-                        <span class="text-[10px] md:text-xs font-black tracking-[0.4em] text-secondary uppercase block mb-2">Multimedia Feed</span>
-                        <h2 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface uppercase leading-none">Newest Media</h2>
+        {{-- SECTION 2: NEWEST MEDIA --}}
+        <section class="dp-section" style="background:var(--theme-surface-variant); color:var(--theme-on-surface); border-top:1px solid color-mix(in srgb, var(--theme-outline) 10%, transparent);">
+            <div class="dp-inner">
+                <div class="flex justify-between items-end mb-10 gap-4">
+                    <div class="mobile-center-stack w-full md:w-auto">
+                        <span class="dp-label" style="color:var(--theme-primary-600); opacity:0.75;">Multimedia Feed</span>
+                        <h2 class="dp-h2">NEWEST MEDIA</h2>
                     </div>
                     <div class="flex gap-2">
-                        <button onclick="document.getElementById('media-scroll').scrollBy({left: -400, behavior: 'smooth'})" 
-                            class="w-10 h-10 flex items-center justify-center bg-surface-variant/30 text-on-surface hover:bg-primary hover:text-on-primary transition-all duration-300">
-                            <span class="material-symbols-outlined">chevron_left</span>
-                        </button>
-                        <button onclick="document.getElementById('media-scroll').scrollBy({left: 400, behavior: 'smooth'})"
-                            class="w-10 h-10 flex items-center justify-center bg-surface-variant/30 text-on-surface hover:bg-primary hover:text-on-primary transition-all duration-300">
-                            <span class="material-symbols-outlined">chevron_right</span>
-                        </button>
+                        <button class="slider-nav-btn" onclick="document.getElementById('sc-media').scrollBy({left: -400, behavior: 'smooth'})"><span class="material-symbols-outlined">chevron_left</span></button>
+                        <button class="slider-nav-btn" onclick="document.getElementById('sc-media').scrollBy({left: 400, behavior: 'smooth'})"><span class="material-symbols-outlined">chevron_right</span></button>
                     </div>
                 </div>
-                <div id="media-scroll" class="flex gap-6 md:gap-10 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8">
-                    @php
-                        $media = [
-                            ['type' => 'Shorts', 'title' => 'Student Life: Cabinet Election Behind the Scenes', 'id' => 'gK6_vhwo_Cw'],
-                            ['type' => 'Shorts', 'title' => 'Aesthetics of Excellence: The New Library Wing', 'id' => 'gK6_vhwo_Cw'],
-                            ['type' => 'Shorts', 'title' => 'Documentary: The Legacy of M.H. Thamrin', 'id' => 'gK6_vhwo_Cw'],
-                            ['type' => 'Shorts', 'title' => 'Campus Tour: Digital Ivory Tower', 'id' => 'gK6_vhwo_Cw'],
-                        ];
-                    @endphp
-
-                    @foreach($media as $item)
-                        <div class="flex-none w-[280px] md:w-[350px] snap-center">
-                            <div class="group relative aspect-[9/16] bg-surface-variant/20 overflow-hidden shadow-2xl border border-outline/5">
-                                <div class="video-container w-full h-full">
-                                    <iframe 
-                                        src="https://www.youtube.com/embed/{{ $item['id'] }}?autoplay=0&controls=0&rel=0&loop=1&playlist={{ $item['id'] }}&modestbranding=1" 
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                        allowfullscreen>
-                                    </iframe>
-                                </div>
-                                <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none">
-                                    <div class="flex items-center gap-2 text-white/70 mb-2">
-                                        <span class="material-symbols-outlined text-sm">play_circle</span>
-                                        <span class="text-[9px] font-black tracking-[0.2em] uppercase">{{ $item['type'] }}</span>
-                                    </div>
-                                    <p class="text-white font-black text-lg leading-tight">{{ $item['title'] }}</p>
-                                </div>
-                            </div>
+                <div id="sc-media" class="dp-slider hide-scrollbar">
+                    @foreach($multimedias as $item)
+                    <div class="dp-slide" style="width:clamp(200px, 60vw, 300px); background:var(--theme-surface); border:1px solid color-mix(in srgb, var(--theme-outline) 12%, transparent); overflow:hidden; position:relative;">
+                        <div style="aspect-ratio:9/16; overflow:hidden;" class="w-full">
+                            <iframe 
+                                src="{{ str_replace('watch?v=', 'embed/', $item->url) }}?controls=1&modestbranding=1" 
+                                class="w-full h-full pointer-events-auto"
+                                allowfullscreen>
+                            </iframe>
                         </div>
+                    </div>
                     @endforeach
                 </div>
             </div>
         </section>
 
-        <!-- Section 3: Featured Entry -->
-        <section class="py-20 md:py-32 bg-surface-variant/10">
-            <div class="w-full max-w-7xl mx-auto px-6 md:px-8">
-                <div class="flex flex-col lg:flex-row items-center gap-12 md:gap-20">
+        {{-- SECTION 3: FEATURED ENTRY (SPLIT STACK) --}}
+        <section class="dp-section" style="background:var(--theme-background); color:var(--theme-on-surface); border-top:1px solid color-mix(in srgb, var(--theme-outline) 10%, transparent); max-height:100svh;">
+            <div class="dp-inner h-full py-6 md:py-12">
+                <div class="flex flex-col md:flex-row gap-6 md:gap-16 items-center h-full justify-center">
                     @if($featuredPost)
-                    <div class="w-full lg:w-3/5">
-                        <div class="relative overflow-hidden shadow-2xl group border border-outline/10">
-                            <img class="w-full aspect-video md:aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-1000"
-                                src="{{ $featuredPost->image_url ?? 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80' }}" 
-                                alt="{{ $featuredPost->title }}">
-                            <div class="absolute top-6 left-6">
-                                <span class="px-5 py-2 bg-on-tertiary-container text-white text-[10px] font-black uppercase tracking-[0.3em] shadow-lg">
+                    <div class="w-full md:w-1/2 overflow-hidden flex flex-col" style="background:var(--theme-surface); border:1px solid color-mix(in srgb, var(--theme-outline) 10%, transparent); position:relative;">
+                        <div style="aspect-ratio:16/9; md:aspect-ratio:16/10; overflow:hidden;" class="flex-shrink">
+                            <img src="{{ $featuredPost->image_url ?? 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80' }}" class="w-full h-full object-cover filter transition-transform duration-700 hover:scale-105">
+                            <div style="position:absolute; top:1rem; left:1rem;">
+                                <span style="padding:0.4rem 1rem; background:var(--theme-on-tertiary-container); color:var(--theme-tertiary-container); font-size:7px; font-weight:900; text-transform:uppercase; letter-spacing:0.3em;">
                                     Editorial Choice
                                 </span>
                             </div>
                         </div>
                     </div>
-                    <div class="w-full lg:w-2/5 space-y-8 text-left">
-                        <div class="space-y-4">
-                            <span class="text-[10px] md:text-xs font-black tracking-[0.3em] text-secondary uppercase block">{{ $featuredPost->category }}</span>
-                            <h2 class="text-4xl md:text-6xl font-black tracking-tighter text-on-surface leading-[0.9] uppercase">
-                                {{ $featuredPost->title }}
-                            </h2>
-                        </div>
-                        <p class="text-base md:text-lg text-on-surface-variant leading-relaxed font-medium">
+                    
+                    <div class="mobile-center-stack w-full md:w-1/2 flex-shrink-0">
+                        <span class="dp-label" style="color:var(--theme-secondary-600);">{{ $featuredPost->category }}</span>
+                        <h2 class="dp-h2 mb-4 md:mb-6" style="line-height:0.87;">{{ $featuredPost->title }}</h2>
+                        <p class="dp-body opacity-60 mb-6 md:mb-8 max-w-lg leading-relaxed font-light line-clamp-3 md:line-clamp-4 text-left">
                             {{ Str::limit(strip_tags($featuredPost->content), 200) }}
                         </p>
-                        <div class="flex items-center gap-4 pt-4 border-t border-outline/10">
-                            <div class="w-12 h-12 bg-primary-container flex items-center justify-center text-on-primary-container font-black">
+                        
+                        <div class="flex items-center gap-4 pt-4 border-t w-full" style="border-color:color-mix(in srgb, var(--theme-outline) 15%, transparent); justify-content:inherit;">
+                            <div style="width:3rem; height:3rem; background:var(--theme-primary-container); color:var(--theme-on-primary-container); display:flex; align-items:center; justify-content:center; font-weight:900; border-radius:0;">
                                 {{ strtoupper(substr($featuredPost->author, 0, 1)) }}
                             </div>
-                            <div>
-                                <p class="text-sm font-black text-on-surface uppercase">{{ $featuredPost->author }}</p>
-                                <p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest mt-1">
-                                    {{ $featuredPost->created_at->format('M d, Y') }} • {{ ceil(str_word_count(strip_tags($featuredPost->content)) / 200) }} min read
+                            <div class="text-left">
+                                <p style="font-size:12px; font-weight:900; text-transform:uppercase;">{{ $featuredPost->author }}</p>
+                                <p style="font-size:9px; opacity:0.6; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-top:2px;">
+                                    {{ $featuredPost->created_at->format('M d, Y') }} • {{ ceil(str_word_count(strip_tags($featuredPost->content)) / 200) }} min
                                 </p>
                             </div>
                         </div>
-                        <a href="{{ route('thamnet.show', $featuredPost->slug) }}" class="group flex items-center gap-4 text-primary font-black uppercase tracking-[0.3em] text-[10px] pt-4">
-                            Engage Article
-                            <span class="material-symbols-outlined group-hover:translate-x-3 transition-transform">arrow_right_alt</span>
-                        </a>
+                        <div class="mt-6 w-full text-left md:text-left text-center">
+                            <a href="{{ route('thamnet.show', $featuredPost->slug) }}" class="btn-base btn-sec-theme" style="width:100%;">
+                                Engage Article
+                            </a>
+                        </div>
                     </div>
                     @else
                     <div class="w-full text-center py-20 bg-surface-variant/20 border border-dashed border-outline/30">
@@ -169,36 +215,33 @@
             </div>
         </section>
 
-        <!-- Section 4: The Archive -->
-        <section class="py-20 md:py-32 bg-surface">
-            <div class="max-w-7xl mx-auto px-6 md:px-8">
-                <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 border-b border-outline/10 pb-8 gap-6">
-                    <div class="text-left">
-                        <span class="text-[10px] md:text-xs font-black tracking-[0.4em] text-primary uppercase block mb-2">Chronicles archive</span>
-                        <h2 class="text-3xl md:text-5xl font-black tracking-tighter text-on-surface uppercase leading-none">The Archive</h2>
+        {{-- SECTION 4: THE ARCHIVE (MOBILE SLIDER) --}}
+        <section class="dp-section" style="background:var(--theme-surface); color:var(--theme-on-surface); border-top:1px solid color-mix(in srgb, var(--theme-outline) 10%, transparent);">
+            <div class="dp-inner">
+                <div class="flex justify-between items-end mb-10 gap-4">
+                    <div class="mobile-center-stack w-full md:w-auto">
+                        <span class="dp-label" style="color:var(--theme-primary-600);">Chronicles</span>
+                        <h2 class="dp-h2">THE ARCHIVE</h2>
                     </div>
                     <div class="flex gap-2">
-                        <button onclick="document.getElementById('archive-scroll').scrollBy({left: -400, behavior: 'smooth'})" 
-                            class="w-10 h-10 flex items-center justify-center bg-surface-variant/30 text-on-surface hover:bg-primary hover:text-on-primary transition-all duration-300">
-                            <span class="material-symbols-outlined">chevron_left</span>
-                        </button>
-                        <button onclick="document.getElementById('archive-scroll').scrollBy({left: 400, behavior: 'smooth'})"
-                            class="w-10 h-10 flex items-center justify-center bg-surface-variant/30 text-on-surface hover:bg-primary hover:text-on-primary transition-all duration-300">
-                            <span class="material-symbols-outlined">chevron_right</span>
-                        </button>
+                        <button class="slider-nav-btn" onclick="document.getElementById('sc-arch').scrollBy({left: -400, behavior: 'smooth'})"><span class="material-symbols-outlined">chevron_left</span></button>
+                        <button class="slider-nav-btn" onclick="document.getElementById('sc-arch').scrollBy({left: 400, behavior: 'smooth'})"><span class="material-symbols-outlined">chevron_right</span></button>
                     </div>
                 </div>
                 
-                <div id="archive-scroll" class="flex gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8 items-stretch">
+                <div id="sc-arch" class="dp-slider hide-scrollbar">
                     @forelse($posts as $post)
+                    <div class="dp-slide" style="width:clamp(260px, 75vw, 420px);">
                         <x-thamnet.card :post="$post" />
+                    </div>
                     @empty
-                        <div class="w-full text-center py-20 bg-surface-variant/10 border border-dashed border-outline/20 col-span-full">
-                            <p class="text-on-surface-variant font-bold uppercase tracking-widest opacity-50">Archive is currently evolving. Check back soon.</p>
-                        </div>
+                    <div class="w-full text-center py-20 bg-surface-variant/10 border border-dashed border-outline/20 col-span-full">
+                        <p class="text-on-surface-variant font-bold uppercase tracking-widest opacity-50">Archive is currently evolving. Check back soon.</p>
+                    </div>
                     @endforelse
                 </div>
             </div>
         </section>
+
     </div>
 </x-layout>

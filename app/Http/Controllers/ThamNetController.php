@@ -13,10 +13,11 @@ class ThamNetController extends Controller
      */
     public function index()
     {
-        $featuredPost = Post::where('is_featured', true)->latest()->first() ?? Post::latest()->first();
+        $featuredPost = Post::where('is_featured', true)->latest()->first();
         $posts = Post::latest()->get();
+        $multimedias = \App\Models\Multimedia::latest()->get();
 
-        return view('dharman_thamnet.home', compact('featuredPost', 'posts'));
+        return view('dharman_thamnet.home', compact('featuredPost', 'posts', 'multimedias'));
     }
 
     /**
@@ -52,17 +53,19 @@ class ThamNetController extends Controller
         ]);
 
         $data['slug'] = Str::slug($data['title']) . '-' . rand(1000, 9999);
-        
+
         $post = Post::create($data);
 
         return redirect()->route('thamnet.show', $post->slug)->with('success', 'Blog post published successfully!');
     }
 
-    public function login() {
+    public function login()
+    {
         return view('dharman_thamnet.login');
     }
 
-    public function authenticate(Request $request) {
+    public function authenticate(Request $request)
+    {
         $credentials = $request->validate([
             'username' => 'required',
             'password' => 'required',
@@ -79,7 +82,8 @@ class ThamNetController extends Controller
         ])->onlyInput('username');
     }
 
-    public function logout(Request $request) {
+    public function logout(Request $request)
+    {
         \Illuminate\Support\Facades\Auth::logout();
 
         $request->session()->invalidate();
@@ -88,7 +92,8 @@ class ThamNetController extends Controller
         return redirect()->route('thamnet.login');
     }
 
-    public function debug_all_data() {
+    public function debug_all_data()
+    {
         // return all post data
         return Post::all();
     }

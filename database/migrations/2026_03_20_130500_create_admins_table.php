@@ -16,6 +16,11 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->string('password');
             $table->enum('type', ['normal', 'superadmin'])->default('normal');
+            $table->string('name')->nullable();
+            $table->string('role')->nullable();
+            $table->string('group')->nullable();
+            $table->string('instagram')->nullable();
+            $table->text('quotes')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

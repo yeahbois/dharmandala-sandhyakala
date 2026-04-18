@@ -11,6 +11,8 @@ class Admin extends Authenticatable
         'password',
         'type',
         'name',
+        'role',
+        'group',
         'instagram',
         'quotes',
     ];

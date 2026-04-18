@@ -4,7 +4,7 @@
     "hero": {
       "title": "Dharmandala Sandhyakala",
       "logo": "images/logo/general/osis514.webp",
-      "slogan": "Ferdy Ivory Tower — Cultivating intellectual leadership, cultural preservation, and digital innovation for the future of our institution."
+      "slogan": "Selamat datang di OSIS SMAN Unggulan MH Thamrin Kabinet Dharmandala Sandhyakala Tahun 2025/2026."
     },
     "structure": [
       {
@@ -14,18 +14,18 @@
         "logo": "images/logo/osis/ketua.webp",
         "slug": "bph",
         "members": [
-          {"link": "osis/bph/ega400", "name": "Thomi Budiyanto Ng", "ig": "egaryasatya", "role": "Ketua Umum OSIS", "quote": "Leading with vision, serving with heart."},
-          {"link": "osis/bph/bita400", "name": "Queen Tabriz Tsabita Ng", "ig": "queentabriz", "role": "Ketua Bidang 1", "quote": "Driving structural excellence through collaboration."},
-          {"link": "osis/bph/safira400", "name": "Safira Chairunnisa Wiyono Ng", "ig": "chaifiraa", "role": "Ketua Bidang 2", "quote": "Empowering others to achieve greatness together."},
-          {"link": "osis/bph/adel400", "name": "Adelia Nasywa Ramadhani Ng", "ig": "adelianrd", "role": "Sekretaris 1", "quote": "Precision in every detail, clarity in every word."},
-          {"link": "osis/bph/nazwa400", "name": "Nazwa Syafitri Ng", "ig": "nazwasyaf_", "role": "Sekretaris 2", "quote": "Bridging communication with efficiency."},
-          {"link": "osis/bph/safa400", "name": "Safa Alzena Riszy Ng", "ig": "safalzenaa", "role": "Bendahara 1", "quote": "Transparency and integrity in every transaction."},
-          {"link": "osis/bph/desvita400", "name": "Desvita Putri Zulhijah Ng", "ig": "dsvta.p", "role": "Bendahara 2", "quote": "Guarding the prosperity of our institution."},
-          {"link": "osis/bph/syifa400", "name": "Nabila Asy-Syifa Taufik Ng", "ig": "__syiffa", "role": "Humas 1", "quote": "Amplifying our impact through connection."},
-          {"link": "osis/bph/eddy400", "name": "Eddy Husni Duki Ng", "ig": "eddy.duki", "role": "Humas 2", "quote": "Connecting our community to the world."},
-          {"link": "osis/bph/ara400", "name": "Azkya Zahra Putrilita Ng", "ig": "azkyazahra.p", "role": "Humas 3", "quote": "Engagement is the key to unity."}
+          {"link": "osis/bph/ega400", "name": "Rafif Shafy Safaraz Indratno", "ig": "egaryasatya", "role": "Ketua Umum OSIS", "quote": "Leading with vision, serving with heart."},
+          {"link": "osis/bph/bita400", "name": "Balqis Ruehainah", "ig": "queentabriz", "role": "Ketua Bidang 1", "quote": "Driving structural excellence through collaboration."},
+          {"link": "osis/bph/safira400", "name": "Aurellia Shafina", "ig": "chaifiraa", "role": "Ketua Bidang 2", "quote": "Empowering others to achieve greatness together."},
+          {"link": "osis/bph/adel400", "name": "Nazwa Syafitri", "ig": "adelianrd", "role": "Sekretaris 1", "quote": "Precision in every detail, clarity in every word."},
+          {"link": "osis/bph/nazwa400", "name": "Puan Batrisyia Aimee Yutria Priharmoko", "ig": "nazwasyaf_", "role": "Sekretaris 2", "quote": "Bridging communication with efficiency."},
+          {"link": "osis/bph/safa400", "name": "Desvita Putri Zulhijah", "ig": "safalzenaa", "role": "Bendahara 1", "quote": "Transparency and integrity in every transaction."},
+          {"link": "osis/bph/desvita400", "name": "Hafidz Rasya Putra Permana", "ig": "dsvta.p", "role": "Bendahara 2", "quote": "Guarding the prosperity of our institution."},
+          {"link": "osis/bph/syifa400", "name": "Azkya Zahra Putrilita", "ig": "__syiffa", "role": "Humas 1", "quote": "Amplifying our impact through connection."},
+          {"link": "osis/bph/eddy400", "name": "Khathir Arkananta Irawan", "ig": "eddy.duki", "role": "Humas 2", "quote": "Connecting our community to the world."},
+          {"link": "osis/bph/ara400", "name": "Charlove Aqilah", "ig": "azkyazahra.p", "role": "Humas 3", "quote": "Engagement is the key to unity."}
         ],
-        "about": "The vanguard of strategic leadership and administrative excellence. We harmonize the diverse talents and initiatives of our cabinet to build a cohesive, innovative student body."
+        "about": "Badan Pengurus Harian"
       },
       {
         "type": "container",
@@ -39,16 +39,15 @@
             "logo": "images/logo/osis/pudo.webp",
             "icon": "photo_camera",
             "members": [
-              {"link": "osis/pudo/anin400", "name": "Anindya Zilka Qisthi", "ig": "aninnzq", "role": "Ketua PUDO", "quote": "Capturing moments, telling our story."},
-              {"link": "osis/pudo/erian400", "name": "Erian Ahmad Feriansyah", "ig": "ryanweebs", "role": "Wakil Ketua PUDO", "quote": "Digital storytelling for the modern era."},
-              {"link": "osis/pudo/bintang400", "name": "Bintang Parama Andra Dewanto", "ig": "bintang.dewanto", "role": "Anggota PUDO", "quote": "Designing visual journeys."},
-              {"link": "osis/pudo/izzah400", "name": "Izzah Nayla Fathina", "ig": "izzahnyl", "role": "Anggota PUDO", "quote": "Documenting excellence."},
-              {"link": "osis/pudo/aya400", "name": "Junaya Sabti Legina", "ig": "nnayaww", "role": "Anggota PUDO", "quote": "The lens of our institution."},
-              {"link": "osis/pudo/cua400", "name": "Nasywa Kamilah Hakim", "ig": "nassywahakim", "role": "Anggota PUDO", "quote": "Visualizing our vision."},
-              {"link": "osis/pudo/khanza400", "name": "Adebia Khanza Az-Zahra", "ig": "adebia.k", "role": "Anggota PUDO", "quote": "Crafting every frame with care."},
-              {"link": "osis/pudo/izwa400", "name": "Izwa Cahya Al Ainaa", "ig": "_izwa._.uwu._", "role": "Anggota PUDO", "quote": "Creativity in every click."}
+              {"link": "osis/pudo/anin400", "name": "Nasywa Kamilah Hakim", "ig": "aninnzq", "role": "Ketua PUDO", "quote": "Capturing moments, telling our story."},
+              {"link": "osis/pudo/erian400", "name": "Salomo Dominic Dapotanuli Manullang", "ig": "ryanweebs", "role": "Wakil Ketua PUDO", "quote": "Digital storytelling for the modern era."},
+              {"link": "osis/pudo/bintang400", "name": "Izwa Cahya Al Ainaa", "ig": "bintang.dewanto", "role": "Anggota PUDO", "quote": "Designing visual journeys."},
+              {"link": "osis/pudo/izzah400", "name": "Angkasa Dewa Purnama", "ig": "izzahnyl", "role": "Anggota PUDO", "quote": "Documenting excellence."},
+              {"link": "osis/pudo/aya400", "name": "Luthfah Galbiena Nadhira Damanik", "ig": "nnayaww", "role": "Anggota PUDO", "quote": "The lens of our institution."},
+              {"link": "osis/pudo/cua400", "name": "Hania Benika Putrimulia", "ig": "nassywahakim", "role": "Anggota PUDO", "quote": "Visualizing our vision."},
+              {"link": "osis/pudo/khanza400", "name": "Quinsha Masyitha Riza", "ig": "adebia.k", "role": "Anggota PUDO", "quote": "Crafting every frame with care."}
             ],
-            "about": "Architects of the cabinet's digital narrative and visual identity. We bridge the gap between our initiatives and the community through compelling storytelling and high-fidelity documentation."
+            "about": "Publikasi dan Dokumentasi"
           },
           {
             "slug": "k3or",
@@ -57,15 +56,15 @@
             "logo": "images/logo/osis/k3or.webp",
             "icon": "fitness_center",
             "members": [
-              {"link": "osis/k3or/arrow400", "name": "Arrow Dunatos Pascha Kristian", "ig": "arroeow", "role": "Ketua K3OR", "quote": "Innovating through action."},
-              {"link": "osis/k3or/kim400", "name": "Kimberly Ciputri", "ig": "kimberly.ciputri", "role": "Wakil Ketua K3OR", "quote": "Building skills for the future."},
-              {"link": "osis/k3or/neila400", "name": "Nathaneila Daniyah Rahma", "ig": "nathaneila_daniyah", "role": "Anggota K3OR", "quote": "Entrepreneurial spirit in every soul."},
-              {"link": "osis/k3or/joyce400", "name": "Joyce Eliana Aritonang", "ig": "joy3li", "role": "Anggota K3OR", "quote": "The game plan for success."},
-              {"link": "osis/k3or/kezia400", "name": "Kezia Jovita Ghassani", "ig": "kezia.jovita", "role": "Anggota K3OR", "quote": "Strive for greatness on and off the field."},
-              {"link": "osis/k3or/zaidan400", "name": "Toreno Matthias Sianturi", "ig": "zaidan_zmm", "role": "Anggota K3OR", "quote": "Discipline leads to victory."},
-              {"link": "osis/k3or/toreno400", "name": "Muhammad Zaidan Alfatih Maimun", "ig": "toreno.ms", "role": "Anggota K3OR", "quote": "The power of perseverance."}
+              {"link": "osis/k3or/arrow400", "name": "Kezia Jovita Ghassani", "ig": "arroeow", "role": "Ketua K3OR", "quote": "Innovating through action."},
+              {"link": "osis/k3or/kim400", "name": "Muhammad Zaidan Alfatih Maimun", "ig": "kimberly.ciputri", "role": "Wakil Ketua K3OR", "quote": "Building skills for the future."},
+              {"link": "osis/k3or/neila400", "name": "Teuku Zharif Naraja Jacoeb", "ig": "nathaneila_daniyah", "role": "Anggota K3OR", "quote": "Entrepreneurial spirit in every soul."},
+              {"link": "osis/k3or/joyce400", "name": "Yosa Satrio Ary", "ig": "joy3li", "role": "Anggota K3OR", "quote": "The game plan for success."},
+              {"link": "osis/k3or/kezia400", "name": "Maylaffathiya Alya Mumtazah", "ig": "kezia.jovita", "role": "Anggota K3OR", "quote": "Strive for greatness on and off the field."},
+              {"link": "osis/k3or/zaidan400", "name": "Muhammad Rheyvan Ibrahim", "ig": "zaidan_zmm", "role": "Anggota K3OR", "quote": "Discipline leads to victory."},
+              {"link": "osis/k3or/toreno400", "name": "Gendis Ayu Novita T. D.", "ig": "toreno.ms", "role": "Anggota K3OR", "quote": "The power of perseverance."}
             ],
-            "about": "Igniting the entrepreneurial spirit and physical excellence within our institution. We foster a culture of innovation, tactical leadership, and competitive resilience through skill-building and sports."
+            "about": "Kreativitas, Keterampilan, Kewirausahaan, dan Olahraga"
           },
           {
             "slug": "sasbud",
@@ -74,14 +73,14 @@
             "logo": "images/logo/osis/sasbud.webp",
             "icon": "theater_comedy",
             "members": [
-              {"link": "osis/sasbud/ilfa400", "name": "Ilfariyani Nurfaizah Syahrial", "ig": "ffasollassid0w0", "role": "Ketua Sasbud", "quote": "Preserving heritage, crafting culture."},
-              {"link": "osis/sasbud/nevlin400", "name": "Nevlin Fulvian Rohman", "ig": "grant_ies", "role": "Wakil Ketua Sasbud", "quote": "Expressing our identity through art."},
-              {"link": "osis/sasbud/muti400", "name": "Mutiara Alya Putri", "ig": "mutiaaly__", "role": "Anggota Sasbud", "quote": "The rhythm of our community."},
-              {"link": "osis/sasbud/fadel400", "name": "Fadel Rayyan Fazlullah", "ig": "fryfzl_", "role": "Anggota Sasbud", "quote": "Narrating our shared journey."},
-              {"link": "osis/sasbud/bitha400", "name": "Aisyahbitha Early Ramadhanty", "ig": "ckissed", "role": "Anggota Sasbud", "quote": "Culture is the heartbeat of society."},
-              {"link": "osis/sasbud/balqisr400", "name": "Balqis Ruehainah", "ig": "blqisrueee_", "role": "Anggota Sasbud", "quote": "Finding beauty in every verse."}
+              {"link": "osis/sasbud/ilfa400", "name": "Aisyahbitha Early Ramadhanty", "ig": "ffasollassid0w0", "role": "Ketua Sasbud", "quote": "Preserving heritage, crafting culture."},
+              {"link": "osis/sasbud/nevlin400", "name": "Fadel Rayyan Fazlullah", "ig": "grant_ies", "role": "Wakil Ketua Sasbud", "quote": "Expressing our identity through art."},
+              {"link": "osis/sasbud/muti400", "name": "Nethanya Taurine P. S", "ig": "mutiaaly__", "role": "Anggota Sasbud", "quote": "The rhythm of our community."},
+              {"link": "osis/sasbud/fadel400", "name": "Fiorenza Zalianty", "ig": "fryfzl_", "role": "Anggota Sasbud", "quote": "Narrating our shared journey."},
+              {"link": "osis/sasbud/bitha400", "name": "Acitya Paramesthi Nuswantari", "ig": "ckissed", "role": "Anggota Sasbud", "quote": "Culture is the heartbeat of society."},
+              {"link": "osis/sasbud/balqisr400", "name": "Iftitah Hayati Nafisah", "ig": "blqisrueee_", "role": "Anggota Sasbud", "quote": "Finding beauty in every verse."}
             ],
-            "about": "Custodians of cultural heritage and architects of creative expression. We curate environments where traditional wisdom meets contemporary art, ensuring every voice finds its stage."
+            "about": "Sastra Budaya"
           }
         ]
       },
@@ -97,16 +96,14 @@
             "logo": "images/logo/osis/akad.webp",
             "icon": "architecture",
             "members": [
-              {"link": "osis/akad/coki400", "name": "Arfan Erzananda Dildar", "ig": "arfanerzananda", "role": "Ketua Akademis", "quote": "Pursuing excellence in every lesson."},
-              {"link": "osis/akad/azka400", "name": "Muhammad Azka Ghulam Idrus", "ig": "azkaidrus", "role": "Wakil Ketua Akademis", "quote": "Knowledge is the path to power."},
-              {"link": "osis/akad/airell400", "name": "Airellrakha Ibnu Faiq", "ig": "airellrakha", "role": "Anggota Akademis", "quote": "Innovating our educational journey."},
-              {"link": "osis/akad/lyona400", "name": "Lyona Caithlyn", "ig": "lyonacaithlyn", "role": "Anggota Akademis", "quote": "Learning without limits."},
-              {"link": "osis/akad/syakira400", "name": "Syakira Basalama", "ig": "syakirabasalama", "role": "Anggota Akademis", "quote": "The future is built on facts."},
-              {"link": "osis/akad/aurell400", "name": "Aurellia Shafina", "ig": "aurelliashafina", "role": "Anggota Akademis", "quote": "Academic integrity in all we do."},
-              {"link": "osis/akad/cello400", "name": "Marcello Lienarta", "ig": "lacello.lien", "role": "Anggota Akademis", "quote": "Scaling the heights of knowledge."},
-              {"link": "osis/akad/aurell400", "name": "Aurellia Shafina", "ig": "aurelliashafina", "role": "Anggota Akademis", "quote": "Academic integrity in all we do."}
+              {"link": "osis/akad/coki400", "name": "Marcello Lienarta", "ig": "arfanerzananda", "role": "Ketua Akademis", "quote": "Pursuing excellence in every lesson."},
+              {"link": "osis/akad/azka400", "name": "Muhammad Fakhri Mumtaz", "ig": "azkaidrus", "role": "Wakil Ketua Akademis", "quote": "Knowledge is the path to power."},
+              {"link": "osis/akad/airell400", "name": "Joshua Arya Pandhita Sitorus", "ig": "airellrakha", "role": "Anggota Akademis", "quote": "Innovating our educational journey."},
+              {"link": "osis/akad/lyona400", "name": "Tasnim Mumtaz", "ig": "lyonacaithlyn", "role": "Anggota Akademis", "quote": "Learning without limits."},
+              {"link": "osis/akad/syakira400", "name": "Nadal Rhamdani Mario", "ig": "syakirabasalama", "role": "Anggota Akademis", "quote": "The future is built on facts."},
+              {"link": "osis/akad/aurell400", "name": "Khansa Fiorenza", "ig": "aurelliashafina", "role": "Anggota Akademis", "quote": "Academic integrity in all we do."}
             ],
-            "about": "Stewards of intellectual rigor and lifelong learning. We empower students to scale the heights of knowledge through research, collaborative study, and academic integrity."
+            "about": "Akademis"
           },
           {
             "slug": "dhl",
@@ -115,14 +112,14 @@
             "logo": "images/logo/osis/dhl.webp",
             "icon": "groups",
             "members": [
-              {"link": "osis/dhl/ditha400", "name": "Ditha Candra Ramadhani", "ig": "dithaacandra", "role": "Ketua DHL", "quote": "Advocating for justice and green futures."},
-              {"link": "osis/dhl/fariq400", "name": "Muhammad Fariq Hidayat", "ig": "hidayatfariq", "role": "Wakil Ketua DHL", "quote": "Democracy starts with our voices."},
-              {"link": "osis/dhl/balqis400", "name": "Balqis Aqilla Nada", "ig": "balqissan", "role": "Anggota DHL", "quote": "Safeguarding the rights of all."},
-              {"link": "osis/dhl/joshua400", "name": "Joshua Arya Pandhita Sitorus", "ig": "joshuaaaaps", "role": "Anggota DHL", "quote": "Preserving the world for tomorrow."},
-              {"link": "osis/dhl/ghina400", "name": "Santia Ghina Murtaja", "ig": "santiaghina", "role": "Anggota DHL", "quote": "Sustainable actions, lasting impact."},
-              {"link": "osis/dhl/rafif400", "name": "Rafif Shafy Safaraz Indratno", "ig": "apip1708", "role": "Anggota DHL", "quote": "Equality is our common goal."}
+              {"link": "osis/dhl/ditha400", "name": "Ahmad Fauzan Pratama", "ig": "dithaacandra", "role": "Ketua DHL", "quote": "Advocating for justice and green futures."},
+              {"link": "osis/dhl/fariq400", "name": "Thalia Zalfa Anindita", "ig": "hidayatfariq", "role": "Wakil Ketua DHL", "quote": "Democracy starts with our voices."},
+              {"link": "osis/dhl/balqis400", "name": "Muhammad Syamil Al Haqq", "ig": "balqissan", "role": "Anggota DHL", "quote": "Safeguarding the rights of all."},
+              {"link": "osis/dhl/joshua400", "name": "Fathima Azahra Arubusman", "ig": "joshuaaaaps", "role": "Anggota DHL", "quote": "Preserving the world for tomorrow."},
+              {"link": "osis/dhl/ghina400", "name": "Evan Yosafat", "ig": "santiaghina", "role": "Anggota DHL", "quote": "Sustainable actions, lasting impact."},
+              {"link": "osis/dhl/rafif400", "name": "Amanda Lia Putri Subandi", "ig": "apip1708", "role": "Anggota DHL", "quote": "Equality is our common goal."}
             ],
-            "about": "Advocates for democratic values, human rights, and ecological stewardship. We cultivate a responsible community dedicated to justice, sustainability, and active citizenship."
+            "about": "Demokrasi, HAM, dan Lingkungan"
           },
           {
             "slug": "rohani",
@@ -131,12 +128,12 @@
             "logo": "images/logo/osis/rohani.webp",
             "icon": "architecture",
             "members": [
-              {"link": "osis/rohani/rasyid400", "name": "Ryaas Rasyid Anwar", "ig": "rasyidwar", "role": "Ketua Rohani", "quote": "Guiding our spirits towards unity."},
-              {"link": "osis/rohani/daryl400", "name": "Daryl Togap Winner Marpaung", "ig": "darylmarpaung_", "role": "Wakil Ketua Rohani", "quote": "Strength in faith, wisdom in action."},
-              {"link": "osis/rohani/kemal400", "name": "Muhammad Kemal Sakhi", "ig": "mks.oul_16", "role": "Anggota Rohani", "quote": "Nurturing the soul of our community."},
-              {"link": "osis/rohani/yofi400", "name": "Yofiana Freya Aprilia Siahaan", "ig": "yofiana_s", "role": "Anggota Rohani", "quote": "Harmony in spiritual diversity."}
+              {"link": "osis/rohani/rasyid400", "name": "Faqih Labib", "ig": "rasyidwar", "role": "Ketua Rohani", "quote": "Guiding our spirits towards unity."},
+              {"link": "osis/rohani/daryl400", "name": "Toreno Matthias Sianturi", "ig": "darylmarpaung_", "role": "Wakil Ketua Rohani", "quote": "Strength in faith, wisdom in action."},
+              {"link": "osis/rohani/kemal400", "name": "Ahmad Zulfan Auliya", "ig": "mks.oul_16", "role": "Anggota Rohani", "quote": "Nurturing the soul of our community."},
+              {"link": "osis/rohani/yofi400", "name": "Dasha Oriana Geraldine Michelle", "ig": "yofiana_s", "role": "Anggota Rohani", "quote": "Harmony in spiritual diversity."}
             ],
-            "about": "Nurturers of spiritual harmony and moral leadership. We foster a diverse community connected by faith, wisdom, and a shared commitment to ethical excellence."
+            "about": "Rohani"
           }
         ]
       }
@@ -147,7 +144,7 @@
     "hero": {
       "title": "Majelis Perwakilan Kelas",
       "logo": "images/logo/mpk/ketua.webp",
-      "slogan": "Guardian of Aspirations — Ensuring transparency, accountability, and the voice of every student in our educational journey."
+      "slogan": "Selamat datang di MPK SMAN Unggulan MH Thamrin Kabinet Dharmandala Sandhyakala Tahun 2025/2026."
     },
     "structure": [
       {
@@ -157,16 +154,16 @@
         "logo": "images/logo/mpk/bph.webp",
         "slug": "mpk-bph",
         "members": [
-          {"link": "mpk/bph/fazel400", "name": "Al Fazel Muhammad Mukhtar", "ig": "fazelmukhtar", "role": "Ketua MPK", "quote": "Upholding the standard of excellence through integrity."},
-          {"link": "mpk/bph/tata400", "name": "Talitha Aziza", "ig": "talitzhaa", "role": "Wakil Ketua MPK", "quote": "Empowering every voice for a better tomorrow."},
-          {"link": "mpk/bph/shafa400", "name": "Aqila Shafa Apsarita Suryanto", "ig": "shafapsarita", "role": "Sekrehara 1", "quote": "Organization is the foundation of effective leadership."},
-          {"link": "mpk/bph/hasmi400", "name": "Hasmiranda Puspita Sari Pohan", "ig": "hasmirandaa", "role": "Sekrehara 2", "quote": "Clarity and accountability in every action."},
-          {"link": "mpk/bph/arsen400", "name": "Arseneo Fawwaz Bevin Sanfa", "ig": "arfabesa_", "role": "Humas 1", "quote": "Building bridges between dreams and reality."},
-          {"link": "mpk/bph/gisel400", "name": "Gisella Frizy Putri Valianda", "ig": "giselafrizy_", "role": "Humas 2", "quote": "Connecting visions with community voices."},
-          {"link": "mpk/bph/nazma400", "name": "Nazma Syifa Aulia Rendaputri", "ig": "nzm.syf_", "role": "Perangkat Aspirasi 1", "quote": "Guardian of the student body's voice."},
-          {"link": "mpk/bph/famela400", "name": "Famela Malika Syifa Kamila", "ig": "fmlllaa", "role": "Perangkat Aspirasi 2", "quote": "Ensuring every aspiration is heard and valued."}
+          {"link": "mpk/bph/fazel400", "name": "Gisella Frizy Putri Valianda", "ig": "fazelmukhtar", "role": "Ketua MPK", "quote": "Upholding the standard of excellence through integrity."},
+          {"link": "mpk/bph/tata400", "name": "Bagas Saputra", "ig": "talitzhaa", "role": "Wakil Ketua MPK", "quote": "Empowering every voice for a better tomorrow."},
+          {"link": "mpk/bph/shafa400", "name": "Santia Ghina Murtaja", "ig": "shafapsarita", "role": "Sekrehara 1", "quote": "Organization is the foundation of effective leadership."},
+          {"link": "mpk/bph/hasmi400", "name": "Naila Raisha Mulyanto P.", "ig": "hasmirandaa", "role": "Sekrehara 2", "quote": "Clarity and accountability in every action."},
+          {"link": "mpk/bph/arsen400", "name": "Diandra Kanaya Putri", "ig": "arfabesa_", "role": "Humas 1", "quote": "Building bridges between dreams and reality."},
+          {"link": "mpk/bph/gisel400", "name": "Najla' Hitana Dermawan", "ig": "giselafrizy_", "role": "Humas 2", "quote": "Connecting visions with community voices."},
+          {"link": "mpk/bph/nazma400", "name": "Kenzie Nabil Riefala", "ig": "nzm.syf_", "role": "Perangkat Aspirasi 1", "quote": "Guardian of the student body's voice."},
+          {"link": "mpk/bph/famela400", "name": "Nadaura Kayyisah", "ig": "fmlllaa", "role": "Perangkat Aspirasi 2", "quote": "Ensuring every aspiration is heard and valued."}
         ],
-        "about": "The vanguard of legislative integrity and administrative excellence. We harmonize the diverse talents and initiatives of our cabinet to build a cohesive, innovative student response."
+        "about": "Badan Pengurus Harian"
       },
       {
         "type": "container",
@@ -180,13 +177,12 @@
             "logo": "images/logo/mpk/kom_a.webp",
             "icon": "gavel",
             "members": [
-              {"link": "mpk/kom_a/adzra400", "name": "Adzra Syafikah", "ig": "adzrasyafikah", "role": "Ketua Komisi A", "quote": "Leading with purpose, serving with passion."},
-              {"link": "mpk/kom_a/amel400", "name": "Amelia Febriani Rachman", "ig": "rameliach", "role": "Anggota Komisi A", "quote": "Dedicated to the growth of our community."},
-              {"link": "mpk/kom_a/kayana400", "name": "Danisha Phuti Kayana Suyudi", "ig": "kvyanah", "role": "Anggota Komisi A", "quote": "Consistency is the key to lasting change."},
-              {"link": "mpk/kom_a/kefa400", "name": "Kenzie Rafa Abrash", "ig": "konodinodioda", "role": "Anggota Komisi A", "quote": "Striving for balance in everything we do."},
-              {"link": "mpk/kom_a/kecang400", "name": "Kevin Budiyanto Ng", "ig": "reacherofnothing", "role": "Anggota Komisi A", "quote": "Precision and focus lead to results."}
+              {"link": "mpk/kom_a/adzra400", "name": "Danisha Phuti Kayana Suyudi", "ig": "adzrasyafikah", "role": "Ketua Komisi A", "quote": "Leading with purpose, serving with passion."},
+              {"link": "mpk/kom_a/amel400", "name": "Naura Aulia Putri", "ig": "rameliach", "role": "Anggota Komisi A", "quote": "Dedicated to the growth of our community."},
+              {"link": "mpk/kom_a/kayana400", "name": "Saut Bartholomeus J. S", "ig": "kvyanah", "role": "Anggota Komisi A", "quote": "Consistency is the key to lasting change."},
+              {"link": "mpk/kom_a/kefa400", "name": "Nabil Pradana Ramaditya S.", "ig": "konodinodioda", "role": "Anggota Komisi A", "quote": "Striving for balance in everything we do."}
             ],
-            "about": "Stewards of legislative integrity and constitutional oversight. We ensure the student body's aspirations are channeled through transparent and accountable governance."
+            "about": "Komisi A"
           },
           {
             "slug": "komisi-b",
@@ -195,12 +191,12 @@
             "logo": "images/logo/mpk/kom_b.webp",
             "icon": "monitoring",
             "members": [
-              {"link": "mpk/kom_b/kevin400", "name": "Kevin Mangara Doloksaribu", "ig": "kevin_mangara", "role": "Ketua Komisi B", "quote": "Innovation stems from collective effort."},
-              {"link": "mpk/kom_b/gio400", "name": "Muhammad Giovany Subhan", "ig": "giovaanny._", "role": "Anggota Komisi B", "quote": "Driven by vision, guided by results."},
-              {"link": "mpk/kom_b/kebil400", "name": "Kenzie Nabil Riefala", "ig": "kenznr_", "role": "Anggota Komisi B", "quote": "Progress is a journey we take together."},
-              {"link": "mpk/kom_b/amira400", "name": "Amira Althafunnisa", "ig": "amiraltha_fy", "role": "Anggota Komisi B", "quote": "Committed to excellence in representation."}
+              {"link": "mpk/kom_b/kevin400", "name": "Amira Althafunnisa", "ig": "kevin_mangara", "role": "Ketua Komisi B", "quote": "Innovation stems from collective effort."},
+              {"link": "mpk/kom_b/gio400", "name": "Danu Rizky Setiawan", "ig": "giovaanny._", "role": "Anggota Komisi B", "quote": "Driven by vision, guided by results."},
+              {"link": "mpk/kom_b/kebil400", "name": "Muhammad Kiyan Arsali", "ig": "kenznr_", "role": "Anggota Komisi B", "quote": "Progress is a journey we take together."},
+              {"link": "mpk/kom_b/amira400", "name": "Jasmine Anastasya", "ig": "amiraltha_fy", "role": "Anggota Komisi B", "quote": "Committed to excellence in representation."}
             ],
-            "about": "Architects of institutional synergy and internal evaluation. We monitor the strategic alignment of all cabinet programs to ensure maximum impact and efficiency."
+            "about": "Komisi B"
           },
           {
             "slug": "komisi-c",
@@ -209,12 +205,13 @@
             "logo": "images/logo/mpk/kom_c.webp",
             "icon": "public",
             "members": [
-              {"link": "mpk/kom_c/novia400", "name": "Novia Eka Nissrina", "ig": "nanovianissrina", "role": "Ketua Komisi C", "quote": "Nurturing talent, fostering innovation."},
-              {"link": "mpk/kom_c/akhtar400", "name": "Farzan Akhtar Fakhir", "ig": "farzanaf_", "role": "Angota Komisi C", "quote": "Quality in representation matters most."},
-              {"link": "mpk/kom_c/secil400", "name": "Georgina Secillia Maretti Setia Lumban Gaol", "ig": "gsecilliaa", "role": "Anggota Komisi C", "quote": "Harmony and cooperation drive success."},
-              {"link": "mpk/kom_c/bagas400", "name": "Bagas Saputra", "ig": "bngsaptr", "role": "Anggota Komisi C", "quote": "Dedication is the engine of progress."}
+              {"link": "mpk/kom_c/novia400", "name": "Georgina Secillia Maretti Setia Lumban Gaol", "ig": "nanovianissrina", "role": "Ketua Komisi C", "quote": "Nurturing talent, fostering innovation."},
+              {"link": "mpk/kom_c/akhtar400", "name": "Muhammad Farhan", "ig": "farzanaf_", "role": "Angota Komisi C", "quote": "Quality in representation matters most."},
+              {"link": "mpk/kom_c/secil400", "name": "Shakina Arzelia", "ig": "gsecilliaa", "role": "Anggota Komisi C", "quote": "Harmony and cooperation drive success."},
+              {"link": "mpk/kom_c/bagas400", "name": "Azka Ziyad Rifandika", "ig": "bngsaptr", "role": "Anggota Komisi C", "quote": "Dedication is the engine of progress."},
+              {"link": "mpk/kom_c/bagas400", "name": "Amira Nadia Purnama", "ig": "bngsaptr", "role": "Anggota Komisi C", "quote": "Dedication is the engine of progress."}
             ],
-            "about": "Facilitators of public engagement and external relations. We amplify the voice of our institution while forging meaningful connections with the wider global community."
+            "about": "Komisi C"
           }
         ]
       }

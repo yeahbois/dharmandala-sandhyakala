@@ -18,7 +18,8 @@ return new class extends Migration
             $table->date('date')->nullable();
             $table->longText('content')->nullable();
             $table->json('pictures_urls')->nullable();
-            $table->string('division')->nullable();
+            $table->foreignId('divisi_id')->nullable()->constrained('divisis')->onDelete('cascade');
+            $table->string('type')->default('osis'); // osis or mpk
             $table->boolean('featured')->default(false);
             $table->boolean('homepage')->default(false);
             $table->timestamps();

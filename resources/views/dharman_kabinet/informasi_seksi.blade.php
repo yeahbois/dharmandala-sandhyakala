@@ -42,11 +42,16 @@
                     {{ $data['group'] }}
                 </div>
                 <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-[0.9] text-on-surface uppercase">
-                    {{ $data['name'] }}
+                    {{ $divisi->name ?? $data['name'] }}
                 </h1>
                 <p class="text-sm md:text-lg text-on-surface-variant leading-relaxed max-w-xl italic opacity-60">
-                    "{{ $data['about'] }}"
+                    "{{ $divisi->about ?? $data['about'] }}"
                 </p>
+                @if($divisi && $divisi->details)
+                <div class="text-sm text-on-surface-variant leading-relaxed max-w-xl">
+                    {!! $divisi->details !!}
+                </div>
+                @endif
                 <div class="flex justify-center md:justify-start gap-8 pt-6">
                     <div class="flex flex-col">
                         <span class="text-3xl md:text-4xl font-black text-on-surface leading-none tracking-tighter">{{ count($data['members'] ?? []) }}</span>
