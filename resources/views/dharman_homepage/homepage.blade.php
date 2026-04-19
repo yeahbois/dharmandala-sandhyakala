@@ -117,10 +117,80 @@
             display: inline-flex; align-items:center; justify-content:center;
             border: 1px solid transparent;
         }
-        .btn-pri { background: #fff; color: #000; }
-        .btn-pri:hover { background: #eee; }
-        .btn-sec { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.25); color: #fff; }
-        .btn-sec:hover { background: rgba(255,255,255,0.15); }
+        .btn-pri { 
+            background: var(--theme-primary-600); 
+            color: var(--theme-on-primary); 
+        }
+        .btn-pri:hover { 
+            opacity: 0.95;
+            filter: brightness(1.1);
+        }
+        .btn-sec { 
+            background: var(--theme-surface-variant); 
+            border-color: color-mix(in srgb, var(--theme-outline) 20%, transparent); 
+            color: var(--theme-on-surface); 
+        }
+        .btn-sec:hover { 
+            background: var(--theme-primary-container); 
+            color: var(--theme-on-primary-container);
+            border-color: transparent;
+        }
+
+        /* Expandable Text Styles */
+        .truncate-text {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .expanded .truncate-text {
+            display: block;
+            -webkit-line-clamp: unset;
+        }
+        .read-more-btn {
+            font-size: 8px;
+            font-weight: 950;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--theme-primary-600);
+            margin-top: 8px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .read-more-btn::after {
+            content: 'expand_more';
+            font-family: 'Material Symbols Outlined';
+            font-size: 12px;
+        }
+        .expanded .read-more-btn::after {
+            content: 'expand_less';
+        }
+
+        /* Logo Grid Expansion */
+        .logo-item.is-hidden {
+            display: none !important;
+        }
+        .logo-desc {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .expanded-logos .logo-desc {
+            display: block;
+            -webkit-line-clamp: unset;
+        }
+        .expanded-logos .logo-item.is-hidden {
+            display: flex !important;
+        }
+
     </style>
 
     <div style="width:100%; align-self:stretch; display:flex; flex-direction:column; overflow-x: hidden;">
@@ -165,9 +235,12 @@
             {{-- Cards are UNIFORM - no special middle border --}}
             <div id="pillar-slider" class="dp-slider pillar-grid hide-scrollbar">
                 @foreach([
-                    ['PEMBINA OSIS', 'Ika Rahayu Afriniani', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAJY9rrwRnC5qO0RMjHxfErG-5VlD0TTkbjHA_8WmHthAQmmtPTp4dCMmKLqP5NLKVwRg2h08J9Mk45EIshiVRHEAxnKi_mR9LLaS-ZzbYt6Wmtd1IaaVHV_hcUhjQDZlllGkGcmZdjfl4Sw6YCft2_w6WjhFJyjnIe5YrEtuezucx39mqNMY_iKtsfpO0m1a0VL_9eIdSgz2xEN0IsC-XWQvz_FM7uD2TlaBIrtx0DURnmAP3aoKY6hb1fkOR5svZYWHn2u9b4KsE', 'The foundational values of the tower begin with leadership and academic integrity. 1'],
-                    ['KETUA OSIS', 'Rafif Shafy Safaraz Indratno', 'https://lh3.googleusercontent.com/aida-public/AB6AXuBj0KfS1h4VoNMQCn5yi0Hw9Q4HtlC0qxSxX7A_mw_mPp5OXnWLtIqMU2lVkBYtG_wFAJaTXU3A98KmiaP0dEj3AmObCOx6e6N_kZbNWu5y9eEEAXTHMkdImxmdzH2XwU4hpSQ-02D40dyK0kXF-wosDuF_0wX_RlU0MENx8WKjd6MZ33NSt9GaXibambP8ymB3Ind7S0cCiNd-BOfKwXvdwEDvp2QzGvwRgTuxO6ScNmvJwbY1Nm3ev_-er2SZRHh76S3cr3K0Mz8', 'The foundational values of the tower begin with leadership and academic integrity. 2'],
-                    ['KETUA MPK', 'Gisella Frizy Putri Valianda', 'https://lh3.googleusercontent.com/aida-public/AB6AXuBCpQHV0yq30oSYBDafnNAYFsog9qL7CEKsiSa34Zk7mPqlZ-PRZGyoP6Fur1JXzjt_1CMFGNyX9nj-DoXzXjxmlxq6kg0CE4fJ4oPeerXUtvwFH2VMXkNq5fCde9BMvAhrwhooOROyRzBCdCyOudvilCGazuXOuCX92YqA7Dz-FOCbZsi7u_enGX1f662vzdQw4_mA3yYpz2yqMe8z28lg1viHXV7uMWilXoivi5NVlZ0H_CS9iLqkxIoNg_uwB2il7o76ARxKE4Y', 'The foundational values of the tower begin with leadership and academic integrity. 3']
+                    ['PEMBINA OSIS', 'Ika Rahayu Afriniani', asset('images/potrait/osis/k3or/toreno400.webp'), 
+                        "Kepemimpinan di lingkungan sekolah bukan sekadar tentang memberikan perintah, melainkan tentang bagaimana kita mampu menginspirasi dan memberdayakan setiap individu untuk mencapai potensi terbaik mereka. Sebagai pembina, saya melihat OSIS sebagai wadah krusial bagi siswa untuk mengasah karakter, integritas, dan semangat pengabdian.\n\nKami berkomitmen untuk terus mendampingi Dharmandala Sandhyakala dalam mewujudkan visi-visi inovatif mereka, memastikan bahwa setiap program kerja tidak hanya sukses secara eksekusi, tetapi juga memberikan dampak nyata bagi pengembangan soft skills dan kemajuan akademik seluruh siswa. Kepemimpinan di lingkungan sekolah bukan sekadar tentang memberikan perintah, melainkan tentang bagaimana kita mampu menginspirasi dan memberdayakan setiap individu untuk mencapai potensi terbaik mereka. Sebagai pembina, saya melihat OSIS sebagai wadah krusial bagi siswa untuk mengasah karakter, integritas, dan semangat pengabdian.\n\nKami berkomitmen untuk terus mendampingi Dharmandala Sandhyakala dalam mewujudkan visi-visi inovatif mereka, memastikan bahwa setiap program kerja tidak hanya sukses secara eksekusi, tetapi juga memberikan dampak nyata bagi pengembangan soft skills dan kemajuan akademik seluruh siswa. Kepemimpinan di lingkungan sekolah bukan sekadar tentang memberikan perintah, melainkan tentang bagaimana kita mampu menginspirasi dan memberdayakan setiap individu untuk mencapai potensi terbaik mereka. Sebagai pembina, saya melihat OSIS sebagai wadah krusial bagi siswa untuk mengasah karakter, integritas, dan semangat pengabdian.\n\nKami berkomitmen untuk terus mendampingi Dharmandala Sandhyakala dalam mewujudkan visi-visi inovatif mereka, memastikan bahwa setiap program kerja tidak hanya sukses secara eksekusi, tetapi juga memberikan dampak nyata bagi pengembangan soft skills dan kemajuan akademik seluruh siswa."],
+                    ['KETUA OSIS', 'Rafif Shafy Safaraz Indratno', asset('images/potrait/osis/k3or/toreno400.webp'), 
+                        "Dharmandala Sandhyakala lahir dari semangat untuk menjembatani tradisi keunggulan dengan inovasi digital yang relevan. Kami percaya bahwa OSIS harus menjadi lebih dari sekadar pelaksana kegiatan; kami harus menjadi pendorong perubahan yang transformatif bagi seluruh keluarga besar M.H. Thamrin.\n\nFokus utama kami adalah menciptakan ekosistem sekolah yang kolaboratif dan transparan, di mana setiap suara siswa dihargai and setiap bakat didukung penuh. Mari kita berjalan bersama dalam harmoni untuk menciptakan legasi yang tak terlupakan bagi sekolah tercinta kita."],
+                    ['KETUA MPK', 'Gisella Frizy Putri Valianda', asset('images/potrait/osis/k3or/toreno400.webp'), 
+                        "Sebagai badan legislatif siswa, MPK memegang tanggung jawab besar dalam memastikan tata kelola organisasi yang sehat dan akuntabel. Kami berfungsi sebagai pengawas sekaligus mitra strategis bagi OSIS, memastikan bahwa setiap aspirasi siswa disalurkan dengan tepat dan setiap kebijakan diambil demi kepentingan bersama.\n\nIntegritas dan transparansi adalah pilar utama kerja kami tahun ini. Kami berupaya membangun sistem komunikasi yang lebih efektif antara siswa dan sekolah, sehingga sinergi yang tercipta dapat membawa kita menuju pencapaian yang lebih tinggi lagi dalam berbagai bidang."]
                 ] as [$title, $name, $img, $text])
                 <div class="dp-slide pillar-card" style="background:var(--theme-surface-variant); border:1px solid color-mix(in srgb, var(--theme-outline) 15%, transparent); padding:min(1rem, 3vw);">
                     <div style="aspect-ratio:3/4.8; overflow:hidden; margin-bottom:1rem;">
@@ -175,7 +248,10 @@
                     </div>
                     <p class="dp-label" style="color:var(--theme-secondary-600); font-size:7px; margin-bottom:4px; letter-spacing:0.25em;">{{ $title }}</p>
                     <h3 style="font-size:clamp(0.85rem, 1.5vw, 1rem); font-weight:950; margin-bottom:6px; letter-spacing:-0.01em;">{{ $name }}</h3>
-                    <p class="line-clamp-3 text-[9px] opacity-60 leading-relaxed font-light">{{ $text }}</p>
+                    <div class="expandable-container">
+                        <p class="truncate-text text-[9px] opacity-60 leading-relaxed font-light whitespace-pre-line">{{ $text }}</p>
+                        <button onclick="toggleText(this)" class="read-more-btn">Read More</button>
+                    </div>
                 </div>
                 @endforeach
             </div>
@@ -198,21 +274,24 @@
                     <h2 class="dp-h2 mb-10 md:mb-14">MAKNA LOGO</h2>
                     <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 md:gap-4 justify-items-center">
                         @foreach([
-                            ['shield','The Golden Shield','Protection of student interests.'],
-                            ['auto_stories','The Open Codex','Commitment to academic legacy.'],
-                            ['stars','The Twin Stars','Growth and synergy.'],
-                            ['diamond','Resilience','Unbreakable Thamrin spirit.'],
-                            ['balance','Justice','Integrity within governance.'],
-                            ['hub','Connectivity','Bridging digital frontiers.']
+                            ['shield','Palu','Palu sidang melambangkan MPK sebagai badan legislatif yang memiliki peran penting dalam musyawarah, pengambilan keputusan, serta pengawasan terhadap kinerja OSIS. Simbol ini menunjukkan kewibawaan, keadilan, serta ketegasan dalam menjalankan fungsi pengawasan dan evaluasi.'],
+                            ['auto_stories','Kompas','Kompas dengan arah utara sebagai sanggaan melambangkan arah dan pedoman bagi MPK dalam menegakkan aturan, mengambil keputusan, and memastikan organisasi berjalan sesuai dengan visi dan misi yang telah ditentukan.'],
+                            ['stars','Timbangan','Timbangan menjadi simbol keadilan dan keseimbangan, yang menggambarkan MPK dalam menyalurkan aspirasi siswa serta menilai kebijakan OSIS secara objektif, tidak berat sebelah, and mengutamakan kepentingan bersama.'],
+                            ['diamond','Perisai di Dada','Perisai menunjukkan perlindungan, kekuatan, and tanggung jawab. Letaknya di dada burung elang menandakan bahwa MPK berfungsi menjaga kesejahteraan siswa dengan penuh integritas, sekaligus menjadi benteng bagi keberlangsungan organisasi.'],
+                            ['balance','Matahari dan Garis Panjang ke Bawah','Matahari menjadi sumber energi and kehidupan, dengan garis panjang ke bawah yang melambangkan Badan Pengurus Harian MPK sebagai fondasi utama organisasi. Garis ini menegaskan bahwa BPH adalah penghubung yang menjaga sinergi antara MPK.'],
+                            ['hub','Tiga Bintang','Tiga bintang di atas perisai merepresentasikan tiga komisi dalam MPK, masing-masing memiliki fokus and tanggung jawab berbeda namun tetap bekerja sama demi tujuan yang sama. Keterangan Logo: menegaskan bahwa BPH adalah penghubung yang menjaga sinergi antara MPK. Selain itu, bintang juga menjadi simbol harapan and cita-cita yang ingin dicapai oleh MPK.']
                         ] as [$icon, $title, $desc])
-                        <div style="display:flex; gap:1rem; padding:1.25rem; background:color-mix(in srgb, var(--theme-surface-variant) 45%, transparent); border:1px solid color-mix(in srgb, var(--theme-outline) 15%, transparent); width:100%; max-width:320px;">
+                        <div class="logo-item @if($loop->index >= 4) is-hidden @endif" style="display:flex; gap:1rem; padding:1.25rem; background:color-mix(in srgb, var(--theme-surface-variant) 45%, transparent); border:1px solid color-mix(in srgb, var(--theme-outline) 15%, transparent); width:100%; max-width:320px;">
                             <span class="material-symbols-outlined shrink-0" style="color:var(--theme-primary-600); font-size:1.6rem;">{{ $icon }}</span>
                             <div>
                                 <h4 style="font-size:13px; md:font-size:11px; font-weight:950; margin-bottom:3px; letter-spacing:-0.01em;">{{ $title }}</h4>
-                                <p style="font-size:11px; md:font-size:10px; opacity:0.8; line-height:1.4;">{{ $desc }}</p>
+                                <p class="logo-desc" style="font-size:11px; md:font-size:10px; opacity:0.8; line-height:1.4;">{{ $desc }}</p>
                             </div>
                         </div>
                         @endforeach
+                    </div>
+                    <div class="flex justify-center mt-8">
+                        <button id="show-all-logos" onclick="toggleLogos(this)" class="btn-base btn-sec">Lihat Semua</button>
                     </div>
                 </div>
             </div>
@@ -236,7 +315,7 @@
                 @foreach($featuredProkers as $proker)
                 <div class="dp-slide" style="width:clamp(260px, 75vw, 420px); background:var(--theme-background); border:1px solid color-mix(in srgb, var(--theme-outline) 15%, transparent);">
                     <div style="aspect-ratio:16/9; overflow:hidden;">
-                        <img src="{{ $proker->pictures_urls[0] ?? 'https://lh3.googleusercontent.com/aida-public/AB6AXuCWJ2UiE2dvcBE77JDYlDyacz6rdS07NHuMEnIsB-VY1K1G3WVD-X2xSkfMxw3SUzwzy4gzQRAJZ3HjRyKkRWIARQ6Ob3BLRGlgxJsiEaAR6QDdgYWFFY3s5S7Ca0Ca6gi3adRGgsC-sYnsiYLy1lbJXUCo-UUnxVrdWs10vAtYpD_gcHExUrpm9Ub5eR85CfVkTa-cxj0ieXkR7cpplpdjHgFhoLY29DmjBkytkLGWiCVRcU--HD8VO9mDSbQWbTZ9vcx2ZGqojFo' }}" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                        <img src="{{ isset($proker->pictures_urls[0]) ? asset($proker->pictures_urls[0]) : asset('images/logo/osis/akad514.webp') }}" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
                     </div>
                     <div style="padding:1.5rem;">
                         <div class="flex justify-between items-center mb-4">
@@ -277,9 +356,9 @@
     </section>
 
     {{-- SECTION 6: THAMNET (MOBILE STACK) --}}
-    <section class="dp-section" style="background:var(--theme-surface); color:var(--theme-on-surface); border-top:1px solid color-mix(in srgb, var(--theme-outline) 15%, transparent); max-height:100svh;">
-        <div class="dp-inner h-full py-6 md:py-12">
-            <div class="flex flex-col md:flex-row gap-6 md:gap-16 items-center h-full justify-center">
+    <section class="dp-section" style="background:var(--theme-surface); color:var(--theme-on-surface); border-top:1px solid color-mix(in srgb, var(--theme-outline) 15%, transparent);">
+        <div class="dp-inner py-6 md:py-12">
+            <div class="flex flex-col md:flex-row gap-6 md:gap-16 items-center justify-center">
                 {{-- Main Text: TOP on mobile --}}
                 <div class="mobile-center-stack w-full md:w-1/2 flex-shrink-0">
                     <span class="dp-label" style="color:var(--theme-primary-600);">Inovasi</span>
@@ -345,4 +424,25 @@
     </section>
 
     </div>
+
+    <script>
+        function toggleText(btn) {
+            const container = btn.parentElement;
+            container.classList.toggle('expanded');
+            btn.textContent = container.classList.contains('expanded') ? 'Read Less' : 'Read More';
+        }
+
+        function toggleLogos(btn) {
+            const inner = btn.closest('.dp-inner');
+            inner.classList.toggle('expanded-logos');
+            const isExpanded = inner.classList.contains('expanded-logos');
+            btn.textContent = isExpanded ? 'Sembunyikan' : 'Lihat Semua';
+        }
+
+        function scrollSlider(id, dir) {
+            const el = document.getElementById(id);
+            const scrollAmt = el.offsetWidth * 0.8;
+            el.scrollBy({ left: scrollAmt * dir, behavior: 'smooth' });
+        }
+    </script>
 </x-layout>

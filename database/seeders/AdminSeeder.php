@@ -65,31 +65,25 @@ class AdminSeeder extends Seeder
 
             foreach ($group['members'] as $member) {
                 $name = $member['name'];
-                
-                // Get username: first name + second name, lowercase, no space, no special chars
-                $parts = explode(' ', $name);
-                $usernameRaw = strtolower($parts[0] ?? '');
-                if (isset($parts[1])) {
-                    $usernameRaw .= strtolower($parts[1]);
-                }
-                $username = preg_replace('/[^a-z0-9]/', '', $usernameRaw);
-                
-                // Get password: full name, lowercase, no space, no special chars
-                $passwordRaw = strtolower(str_replace(' ', '', $name));
-                $password = preg_replace('/[^a-z0-9]/', '', $passwordRaw);
+                $username = $member['username'];
+                $password = $member['password'];
+                $instagram = $member['ig'] ?? null;
+                $quotes = $member['quote'] ?? null;
 
                 $type = ($name === 'Marcello Lienarta') ? 'superadmin' : 'normal';
 
-                Admin::create([
-                    'username' => $username,
-                    'password' => $password,
-                    'type' => $type,
-                    'name' => $name,
-                    'role' => $member['role'] ?? null,
-                    'group' => $group['slug'] ?? null,
-                    'instagram' => null,
-                    'quotes' => null,
-                ]);
+                Admin::updateOrCreate(
+                    ['username' => $username],
+                    [
+                        'password' => Hash::make($password),
+                        'type' => $type,
+                        'name' => $name,
+                        'role' => $member['role'] ?? null,
+                        'group' => $group['slug'] ?? null,
+                        'instagram' => $instagram,
+                        'quotes' => $quotes,
+                    ]
+                );
             }
         }
     }

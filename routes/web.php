@@ -10,6 +10,7 @@ use App\Models\ProgramKerja;
 use App\Models\Multimedia;
 use App\Models\Post;
 use App\Models\Prestasi;
+use App\Models\Admin;
 
 // Remember:
 // Route -> Controllers -> Services -> Models
@@ -51,7 +52,12 @@ Route::get('/coming_soon', function () {
 
 // Nav
 Route::get('/publikasiprestasi', function () {
-    return view('dharman_homepage.publikasiprestasi');
+    $prestasis = \App\Models\Prestasi::latest()->get();
+    return view('dharman_homepage.publikasiprestasi', compact('prestasis'));
+});
+Route::get('/publikasiprestasi/{id}', function ($id) {
+    $prestasi = \App\Models\Prestasi::findOrFail($id);
+    return view('dharman_homepage.prestasi_detail', compact('prestasi'));
 });
 Route::get('/thalation', function () {
     $thalation = Thalation::first();
@@ -66,7 +72,14 @@ Route::get('/thalation', function () {
     return view('dharman_homepage.thalation', compact('thalation'));
 });
 Route::get('/programkerja', function () {
-    return view('dharman_homepage.proker');
+    $total_prokers = \App\Models\ProgramKerja::count();
+    $osis_divisis = \App\Models\Divisi::where('type', 'osis')->with('programKerjas')->get();
+    $mpk_divisis = \App\Models\Divisi::where('type', 'mpk')->with('programKerjas')->get();
+    return view('dharman_homepage.proker', compact('total_prokers', 'osis_divisis', 'mpk_divisis'));
+});
+Route::get('/programkerja/{id}', function ($id) {
+    $proker = \App\Models\ProgramKerja::findOrFail($id);
+    return view('dharman_homepage.proker_detail', compact('proker'));
 });
 Route::get('/merchandise', function () {
     return redirect('/coming_soon');
@@ -89,11 +102,53 @@ foreach (['osis', 'mpk'] as $inst) {
         }
     }
 }
-Route::get('/kabinet/osis', function () use ($cabinetData) {
+
+// Helper to sync JSON data with Database
+$syncCabinetWithDb = function(&$data) {
+    try {
+        $admins = Admin::all()->keyBy('name');
+        
+        $processMembers = function(&$members) use ($admins) {
+            foreach ($members as &$member) {
+                if (isset($admins[$member['name']])) {
+                    $admin = $admins[$member['name']];
+                    $member['ig'] = $admin->instagram ?? $member['ig'];
+                    $member['quote'] = $admin->quotes ?? $member['quote'];
+                }
+            }
+        };
+
+        if (isset($data['structure'])) {
+            foreach ($data['structure'] as &$item) {
+                if ($item['type'] === 'bidang') {
+                    $processMembers($item['members']);
+                } elseif ($item['type'] === 'container') {
+                    foreach ($item['sections'] as &$seksi) {
+                        $processMembers($seksi['members']);
+                    }
+                }
+            }
+        } else {
+            // It's a single seksi/bidang data
+            if (isset($data['members'])) {
+                $processMembers($data['members']);
+            }
+        }
+    } catch (\Exception $e) {
+        // Fallback to JSON if DB fails
+    }
+};
+
+Route::get('/kabinet/osis', function () use ($cabinetData, $syncCabinetWithDb) {
+    $syncCabinetWithDb($cabinetData['osis']);
     return view('dharman_kabinet.osis', ['data' => $cabinetData['osis']]);
 });
-Route::get('/kabinet/osis/ds/seksi/{seksi}', function ($seksi) use ($cabinetData, $cabinetSections) {
+
+Route::get('/kabinet/osis/ds/seksi/{seksi}', function ($seksi) use ($cabinetData, $cabinetSections, $syncCabinetWithDb) {
     if (!isset($cabinetSections['osis'][$seksi])) abort(404);
+
+    $data = $cabinetSections['osis'][$seksi];
+    $syncCabinetWithDb($data);
 
     $divisi = \App\Models\Divisi::where('slug', $seksi)->first();
     $featured_proker = $divisi ? $divisi->programKerjas()->where('featured', true)->get() : collect();
@@ -102,18 +157,24 @@ Route::get('/kabinet/osis/ds/seksi/{seksi}', function ($seksi) use ($cabinetData
     return view('dharman_kabinet.informasi_seksi', [
         "type" => "osis",
         "slug" => $seksi,
-        "data" => $cabinetSections['osis'][$seksi],
+        "data" => $data,
         "divisi" => $divisi,
         "theme" => $cabinetData['osis']['theme'],
         "featured_proker" => $featured_proker,
         "all_proker" => $all_proker
     ]);
 });
-Route::get('/kabinet/mpk', function () use ($cabinetData) {
+
+Route::get('/kabinet/mpk', function () use ($cabinetData, $syncCabinetWithDb) {
+    $syncCabinetWithDb($cabinetData['mpk']);
     return view('dharman_kabinet.mpk', ['data' => $cabinetData['mpk']]);
 });
-Route::get('/kabinet/mpk/ds/bidang/{bidang}', function ($bidang) use ($cabinetData, $cabinetSections) {
+
+Route::get('/kabinet/mpk/ds/bidang/{bidang}', function ($bidang) use ($cabinetData, $cabinetSections, $syncCabinetWithDb) {
     if (!isset($cabinetSections['mpk'][$bidang])) abort(404);
+
+    $data = $cabinetSections['mpk'][$bidang];
+    $syncCabinetWithDb($data);
 
     $divisi = \App\Models\Divisi::where('slug', $bidang)->first();
     $featured_proker = $divisi ? $divisi->programKerjas()->where('featured', true)->get() : collect();
@@ -122,7 +183,7 @@ Route::get('/kabinet/mpk/ds/bidang/{bidang}', function ($bidang) use ($cabinetDa
     return view('dharman_kabinet.informasi_seksi', [
         "type" => "mpk",
         "slug" => $bidang,
-        "data" => $cabinetSections['mpk'][$bidang],
+        "data" => $data,
         "divisi" => $divisi,
         "theme" => $cabinetData['mpk']['theme'],
         "featured_proker" => $featured_proker,
