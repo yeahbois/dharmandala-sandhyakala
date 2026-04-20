@@ -229,6 +229,22 @@ Route::post('/submit-form', function () {
     return $formController->submitForm($request);
 });
 
+// Dashboard
+use App\Http\Controllers\DashboardController;
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::post('/dashboard/admin/update', [DashboardController::class, 'updateAdmin'])->name('dashboard.admin.update');
+    Route::post('/dashboard/divisi/{divisi}/update', [DashboardController::class, 'updateDivisi'])->name('dashboard.divisi.update');
+    Route::post('/dashboard/programkerja', [DashboardController::class, 'storeProgramKerja'])->name('dashboard.programkerja.store');
+    Route::delete('/dashboard/programkerja/{programKerja}', [DashboardController::class, 'deleteProgramKerja'])->name('dashboard.programkerja.delete');
+    Route::post('/dashboard/multimedia', [DashboardController::class, 'storeMultimedia'])->name('dashboard.multimedia.store');
+    Route::delete('/dashboard/multimedia/{multimedia}', [DashboardController::class, 'deleteMultimedia'])->name('dashboard.multimedia.delete');
+    Route::post('/dashboard/thalation/update', [DashboardController::class, 'updateThalation'])->name('dashboard.thalation.update');
+    Route::post('/dashboard/prestasi', [DashboardController::class, 'storePrestasi'])->name('dashboard.prestasi.store');
+    Route::delete('/dashboard/prestasi/{prestasi}', [DashboardController::class, 'deletePrestasi'])->name('dashboard.prestasi.delete');
+    Route::delete('/dashboard/post/{post}', [DashboardController::class, 'deletePost'])->name('dashboard.post.delete');
+});
+
 // Content API
 Route::prefix('api')->group(function () {
     Route::post('/prestasi', [ContentController::class, 'addPrestasi']);
