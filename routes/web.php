@@ -64,7 +64,7 @@ Route::get('/thalation', function () {
     if (!$thalation) {
         $thalation = Thalation::create([
             'jumlah_pengunjung' => 0,
-            'next_macapi' => '2026-07-22 20:00:00' // change to today
+            'next_macapi' => '2027-07-22 20:00:00' // change to today
         ]);
     }
     $thalation->increment('jumlah_pengunjung');

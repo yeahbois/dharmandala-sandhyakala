@@ -54,10 +54,11 @@
                     <div class="space-y-2">
                         <label class="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Category</label>
                         <select name="category" required class="w-full bg-surface border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary rounded-none px-6 py-4 text-on-surface font-bold transition-all">
-                            <option value="Program Kerja">Program Kerja</option>
-                            <option value="Prestasi">Prestasi</option>
+                            <option value="Beasiswa">Beasiswa</option>
+                            <option value="Lomba">Lomba</option>
                             <option value="Cerita">Cerita</option>
                             <option value="Ilmu">Ilmu</option>
+                            <option value="Lainnya">Lainnya</option>
                         </select>
                     </div>
                 </div>

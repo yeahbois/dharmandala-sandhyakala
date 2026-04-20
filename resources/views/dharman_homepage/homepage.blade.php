@@ -218,7 +218,7 @@
         </div>
     </section>
 
-    {{-- SECTION 2: PILLARS --}}
+    {{-- SECTION 2: PILLARS
     <section id="pillars" class="dp-section" style="background:var(--theme-surface); color:var(--theme-on-surface); border-top:1px solid color-mix(in srgb, var(--theme-outline) 15%, transparent);">
         <div class="dp-inner">
             <div class="flex justify-between items-end mb-10 md:mb-14">
@@ -232,7 +232,6 @@
                 </div>
             </div>
             
-            {{-- Cards are UNIFORM - no special middle border --}}
             <div id="pillar-slider" class="dp-slider pillar-grid hide-scrollbar">
                 @foreach([
                     ['PEMBINA OSIS', 'Ika Rahayu Afriniani', asset('images/potrait/osis/rohani/toreno.webp'), 
@@ -257,6 +256,7 @@
             </div>
         </div>
     </section>
+    --}}
 
     {{-- SECTION 3: HERALDIC (EXPANDED) --}}
     <section class="dp-section" style="background:var(--theme-background); color:var(--theme-on-surface); border-top:1px solid color-mix(in srgb, var(--theme-outline) 10%, transparent);">

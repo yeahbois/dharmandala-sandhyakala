@@ -131,8 +131,12 @@
                     Thamnet adalah platform media sosial berbasis blog/artikel untuk semua orang.
                 </p>
                 <div style="display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:flex-start;">
-                    <a href="/login" class="btn-base btn-pri-theme">Access Portal</a>
-                    <a href="{{ route('thamnet.editor') }}" class="btn-base btn-sec-theme">Compose Legacy</a>
+                    @guest
+                        <a href="/login" class="btn-base btn-pri-theme">Login</a>
+                    @else
+                        <a href="{{ route('dashboard') }}" class="btn-base btn-pri-theme">Access Dashboard</a>
+                    @endguest
+                    <a href="{{ route('thamnet.editor') }}" class="btn-base btn-sec-theme">Create a Blog</a>
                 </div>
             </div>
         </section>

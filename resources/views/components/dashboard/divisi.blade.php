@@ -87,8 +87,14 @@
                         </div>
                     </div>
                     <div class="space-y-2">
-                        <label class="text-[10px] font-black uppercase tracking-widest opacity-40">Description Content (HTML allowed)</label>
-                        <textarea name="content" rows="4" class="w-full bg-surface border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary px-6 py-3 text-on-surface font-bold transition-all"></textarea>
+                        <label class="text-[10px] font-black uppercase tracking-widest opacity-40">Image URL (Optional)</label>
+                        <p class="text-[8px] font-bold text-primary uppercase tracking-wider mb-1">Harus CDN (e.g. Google Drive / Unsplash)</p>
+                        <input type="url" name="pictures_urls[]" placeholder="https://..." class="w-full bg-surface border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary px-6 py-3 text-on-surface font-bold transition-all">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-black uppercase tracking-widest opacity-40">Description Content (Rich Text)</label>
+                        <input type="hidden" name="content" class="proker-content-input">
+                        <div class="proker-editor-container bg-surface"></div>
                     </div>
                     <div class="flex flex-wrap gap-8">
                         <div class="flex items-center gap-3">
@@ -110,3 +116,31 @@
         @endforeach
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const prokerContainers = document.querySelectorAll('.proker-editor-container');
+        prokerContainers.forEach((container, index) => {
+            var quill = new Quill(container, {
+                theme: 'snow',
+                modules: {
+                    toolbar: [
+                        [{ 'header': [1, 2, false] }],
+                        ['bold', 'italic', 'underline'],
+                        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                        ['link', 'clean']
+                    ]
+                },
+                placeholder: 'Detail program kerja...'
+            });
+
+            // Find the parent form
+            const form = container.closest('form');
+            const hiddenInput = form.querySelector('.proker-content-input');
+            
+            form.addEventListener('submit', function() {
+                hiddenInput.value = quill.root.innerHTML;
+            });
+        });
+    });
+</script>

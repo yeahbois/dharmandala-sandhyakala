@@ -63,7 +63,15 @@ class DashboardController extends Controller
         $validated = $request->validate([
             'instagram' => 'nullable|string|max:255',
             'quotes' => 'nullable|string',
+            'password' => 'nullable|string|min:8',
         ]);
+
+        if (!empty($validated['password'])) {
+            $validated['password'] = \Illuminate\Support\Facades\Hash::make($validated['password']);
+        } else {
+            unset($validated['password']);
+        }
+
         $user->update($validated);
         return back()->with('success', 'Profile updated successfully!');
     }

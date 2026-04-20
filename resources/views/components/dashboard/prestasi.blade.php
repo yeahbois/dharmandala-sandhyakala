@@ -18,13 +18,12 @@
                 @forelse($prestasis as $prestasi)
                 <div class="flex-shrink-0 w-80 bg-background border border-outline/10 overflow-hidden">
                     <div class="aspect-video bg-surface-variant overflow-hidden">
-                        @if(isset($prestasi->pictures_urls[0]))
-                            <img src="{{ asset($prestasi->pictures_urls[0]) }}" class="w-full h-full object-cover">
-                        @else
-                            <div class="w-full h-full flex items-center justify-center opacity-20">
-                                <span class="material-symbols-outlined text-5xl">trophy</span>
-                            </div>
-                        @endif
+                        @php
+                            $imageUrl = (isset($prestasi->pictures_urls) && is_array($prestasi->pictures_urls) && count($prestasi->pictures_urls) > 0) 
+                                ? $prestasi->pictures_urls[0] 
+                                : asset('images/logo/osis/akad.webp');
+                        @endphp
+                        <img src="{{ $imageUrl }}" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-4">
@@ -64,8 +63,14 @@
                         </div>
                     </div>
                     <div class="space-y-2">
-                        <label class="text-[10px] font-black uppercase tracking-widest opacity-40">Description (HTML allowed)</label>
-                        <textarea name="content" rows="4" class="w-full bg-surface border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary px-6 py-3 text-on-surface font-bold transition-all"></textarea>
+                        <label class="text-[10px] font-black uppercase tracking-widest opacity-40">Image URL (Optional)</label>
+                        <p class="text-[8px] font-bold text-primary uppercase tracking-wider mb-1">Harus CDN (e.g. Google Drive / Unsplash)</p>
+                        <input type="url" name="pictures_urls[]" placeholder="https://..." class="w-full bg-surface border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary px-6 py-3 text-on-surface font-bold transition-all">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-black uppercase tracking-widest opacity-40">Description (Rich Text)</label>
+                        <input type="hidden" name="content" id="prestasi-content">
+                        <div id="prestasi-editor" class="bg-surface"></div>
                     </div>
                     <div class="flex items-center gap-3">
                         <input type="checkbox" name="important" value="1" id="p-imp" class="w-4 h-4 rounded-none text-primary border-outline">
@@ -79,3 +84,25 @@
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var quillPrestasi = new Quill('#prestasi-editor', {
+            theme: 'snow',
+            modules: {
+                toolbar: [
+                    [{ 'header': [1, 2, false] }],
+                    ['bold', 'italic', 'underline'],
+                    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                    ['link', 'clean']
+                ]
+            },
+            placeholder: 'Detail achievement...'
+        });
+
+        const form = document.querySelector('form[action="{{ route('dashboard.prestasi.store') }}"]');
+        form.addEventListener('submit', function() {
+            document.querySelector('#prestasi-content').value = quillPrestasi.root.innerHTML;
+        });
+    });
+</script>

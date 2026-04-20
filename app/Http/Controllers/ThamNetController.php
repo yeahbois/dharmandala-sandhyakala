@@ -89,7 +89,7 @@ class ThamNetController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('thamnet.login');
+        return redirect()->route('login');
     }
 
     public function debug_all_data()

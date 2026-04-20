@@ -1,6 +1,8 @@
 <x-layout title="Dashboard Portal">
     <x-slot:metadesc>
         <meta name="description" content="OSIS MPK Management Dashboard" />
+        <!-- Quill.js CSS -->
+        <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     </x-slot:metadesc>
 
     <style>
@@ -21,6 +23,33 @@
         .slider-nav-btn:hover {
             background: var(--theme-primary-600);
             color: var(--theme-on-primary);
+        }
+
+        /* Quill Editor Dashboard Overrides */
+        .ql-toolbar.ql-snow {
+            border: 1px solid var(--theme-outline);
+            background: var(--theme-surface);
+            border-radius: 0;
+            border-bottom: none;
+        }
+        .ql-container.ql-snow {
+            border: 1px solid var(--theme-outline);
+            background: var(--theme-surface);
+            border-radius: 0;
+            min-height: 200px;
+            max-height: 400px;
+            overflow-y: auto;
+            font-family: inherit;
+            font-size: 14px;
+            color: var(--theme-on-surface);
+        }
+        .ql-editor {
+            min-height: 200px;
+        }
+        .ql-editor.ql-blank::before {
+            color: var(--theme-on-surface-variant);
+            opacity: 0.5;
+            font-style: normal;
         }
     </style>
 
@@ -64,4 +93,7 @@
             el.scrollBy({ left: scrollAmt * dir, behavior: 'smooth' });
         }
     </script>
+
+    <!-- Quill.js Script -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
 </x-layout>
