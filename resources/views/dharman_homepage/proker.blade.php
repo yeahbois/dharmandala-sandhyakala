@@ -43,8 +43,8 @@
                     </p>
                 </div>
                 <div class="order-1 md:order-2 flex gap-4 transition-all duration-700 hover:scale-105 justify-center">
-                    <img src="{{ asset('images/logo/general/osis514.webp') }}" class="w-24 h-24 md:w-48 md:h-48 object-contain drop-shadow-2xl grayscale hover:grayscale-0" alt="OSIS Logo">
-                    <img src="{{ asset('images/logo/general/mpk514.webp') }}" class="w-24 h-24 md:w-48 md:h-48 object-contain drop-shadow-2xl grayscale hover:grayscale-0" alt="MPK Logo">
+                    <img src="{{ asset('images/logo/general/osis514.webp') }}" class="w-24 h-24 md:w-48 md:h-48 object-contain drop-shadow-2xl" alt="OSIS Logo">
+                    <img src="{{ asset('images/logo/general/mpk514.webp') }}" class="w-24 h-24 md:w-48 md:h-48 object-contain drop-shadow-2xl" alt="MPK Logo">
                 </div>
             </div>
         </header>
@@ -80,7 +80,7 @@
                                 @foreach($divisi->programKerjas as $proker)
                                 <div class="dp-slide" style="width:clamp(260px, 75vw, 420px); background:var(--theme-background); border:1px solid color-mix(in srgb, var(--theme-outline) 15%, transparent);">
                                     <div style="aspect-ratio:16/9; overflow:hidden;">
-                                        <img src="{{ isset($proker->pictures_urls[0]) ? asset($proker->pictures_urls[0]) : asset('images/logo/osis/akad514.webp') }}" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                                        <img src="{{ isset($proker->pictures_urls[0]) ? asset($proker->pictures_urls[0]) : asset('images/logo/osis/akad514.webp') }}" class="w-full h-full object-cover transition-all duration-500">
                                     </div>
                                     <div style="padding:1.5rem;">
                                         <div class="flex justify-between items-center mb-4">
@@ -130,7 +130,7 @@
                                 @foreach($divisi->programKerjas as $proker)
                                 <div class="dp-slide" style="width:clamp(260px, 75vw, 420px); background:var(--theme-background); border:1px solid color-mix(in srgb, var(--theme-outline) 15%, transparent);">
                                     <div style="aspect-ratio:16/9; overflow:hidden;">
-                                        <img src="{{ isset($proker->pictures_urls[0]) ? asset($proker->pictures_urls[0]) : asset('images/logo/osis/akad514.webp') }}" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                                        <img src="{{ isset($proker->pictures_urls[0]) ? asset($proker->pictures_urls[0]) : asset('images/logo/osis/akad514.webp') }}" class="w-full h-full object-cover transition-all duration-500">
                                     </div>
                                     <div style="padding:1.5rem;">
                                         <div class="flex justify-between items-center mb-4">

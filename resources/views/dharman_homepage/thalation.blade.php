@@ -16,7 +16,7 @@
         </div>
 
         <div class="relative z-10 mb-12 transition-all duration-700 w-full flex flex-col items-center">
-            <img class="w-20 h-20 md:w-32 md:h-32 mx-auto mb-10 grayscale hover:grayscale-0 transition-all duration-700 hover:scale-110"
+            <img class="w-20 h-20 md:w-32 md:h-32 mx-auto mb-10 hover:scale-110 transition-all duration-700"
                 src="{{ asset('images/logo/general/mpk514.webp') }}" alt="MPK Logo" />
             <h1 class="text-6xl sm:text-7xl md:text-9xl font-black tracking-tighter text-on-surface mb-8 leading-[0.85] uppercase">
                 THALATION
@@ -179,7 +179,7 @@
                     <div
                         class="absolute -inset-4 bg-primary/5 rounded-sm group-hover:bg-primary/10 transition-all duration-700">
                     </div>
-                    <img class="w-full h-[500px] md:h-[600px] object-cover rounded-sm shadow-2xl relative z-10 grayscale hover:grayscale-0 transition-all duration-1000"
+                    <img class="w-full h-[500px] md:h-[600px] object-cover rounded-sm shadow-2xl relative z-10 transition-all duration-1000"
                         src="{{ asset('images/macapi_poster.jpeg') }}" alt="MACAPI Discussion" />
                 </div>
             </div>

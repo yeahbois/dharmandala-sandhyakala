@@ -235,16 +235,16 @@
             {{-- Cards are UNIFORM - no special middle border --}}
             <div id="pillar-slider" class="dp-slider pillar-grid hide-scrollbar">
                 @foreach([
-                    ['PEMBINA OSIS', 'Ika Rahayu Afriniani', asset('images/potrait/osis/k3or/toreno400.webp'), 
+                    ['PEMBINA OSIS', 'Ika Rahayu Afriniani', asset('images/potrait/osis/rohani/toreno.webp'), 
                         "Kepemimpinan di lingkungan sekolah bukan sekadar tentang memberikan perintah, melainkan tentang bagaimana kita mampu menginspirasi dan memberdayakan setiap individu untuk mencapai potensi terbaik mereka. Sebagai pembina, saya melihat OSIS sebagai wadah krusial bagi siswa untuk mengasah karakter, integritas, dan semangat pengabdian.\n\nKami berkomitmen untuk terus mendampingi Dharmandala Sandhyakala dalam mewujudkan visi-visi inovatif mereka, memastikan bahwa setiap program kerja tidak hanya sukses secara eksekusi, tetapi juga memberikan dampak nyata bagi pengembangan soft skills dan kemajuan akademik seluruh siswa. Kepemimpinan di lingkungan sekolah bukan sekadar tentang memberikan perintah, melainkan tentang bagaimana kita mampu menginspirasi dan memberdayakan setiap individu untuk mencapai potensi terbaik mereka. Sebagai pembina, saya melihat OSIS sebagai wadah krusial bagi siswa untuk mengasah karakter, integritas, dan semangat pengabdian.\n\nKami berkomitmen untuk terus mendampingi Dharmandala Sandhyakala dalam mewujudkan visi-visi inovatif mereka, memastikan bahwa setiap program kerja tidak hanya sukses secara eksekusi, tetapi juga memberikan dampak nyata bagi pengembangan soft skills dan kemajuan akademik seluruh siswa. Kepemimpinan di lingkungan sekolah bukan sekadar tentang memberikan perintah, melainkan tentang bagaimana kita mampu menginspirasi dan memberdayakan setiap individu untuk mencapai potensi terbaik mereka. Sebagai pembina, saya melihat OSIS sebagai wadah krusial bagi siswa untuk mengasah karakter, integritas, dan semangat pengabdian.\n\nKami berkomitmen untuk terus mendampingi Dharmandala Sandhyakala dalam mewujudkan visi-visi inovatif mereka, memastikan bahwa setiap program kerja tidak hanya sukses secara eksekusi, tetapi juga memberikan dampak nyata bagi pengembangan soft skills dan kemajuan akademik seluruh siswa."],
-                    ['KETUA OSIS', 'Rafif Shafy Safaraz Indratno', asset('images/potrait/osis/k3or/toreno400.webp'), 
+                    ['KETUA OSIS', 'Rafif Shafy Safaraz Indratno', asset('images/potrait/osis/rohani/toreno.webp'), 
                         "Dharmandala Sandhyakala lahir dari semangat untuk menjembatani tradisi keunggulan dengan inovasi digital yang relevan. Kami percaya bahwa OSIS harus menjadi lebih dari sekadar pelaksana kegiatan; kami harus menjadi pendorong perubahan yang transformatif bagi seluruh keluarga besar M.H. Thamrin.\n\nFokus utama kami adalah menciptakan ekosistem sekolah yang kolaboratif dan transparan, di mana setiap suara siswa dihargai and setiap bakat didukung penuh. Mari kita berjalan bersama dalam harmoni untuk menciptakan legasi yang tak terlupakan bagi sekolah tercinta kita."],
-                    ['KETUA MPK', 'Gisella Frizy Putri Valianda', asset('images/potrait/osis/k3or/toreno400.webp'), 
+                    ['KETUA MPK', 'Gisella Frizy Putri Valianda', asset('images/potrait/osis/rohani/toreno.webp'), 
                         "Sebagai badan legislatif siswa, MPK memegang tanggung jawab besar dalam memastikan tata kelola organisasi yang sehat dan akuntabel. Kami berfungsi sebagai pengawas sekaligus mitra strategis bagi OSIS, memastikan bahwa setiap aspirasi siswa disalurkan dengan tepat dan setiap kebijakan diambil demi kepentingan bersama.\n\nIntegritas dan transparansi adalah pilar utama kerja kami tahun ini. Kami berupaya membangun sistem komunikasi yang lebih efektif antara siswa dan sekolah, sehingga sinergi yang tercipta dapat membawa kita menuju pencapaian yang lebih tinggi lagi dalam berbagai bidang."]
                 ] as [$title, $name, $img, $text])
                 <div class="dp-slide pillar-card" style="background:var(--theme-surface-variant); border:1px solid color-mix(in srgb, var(--theme-outline) 15%, transparent); padding:min(1rem, 3vw);">
                     <div style="aspect-ratio:3/4.8; overflow:hidden; margin-bottom:1rem;">
-                        <img src="{{ $img }}" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700">
+                        <img src="{{ $img }}" class="w-full h-full object-cover transition-all duration-700">
                     </div>
                     <p class="dp-label" style="color:var(--theme-secondary-600); font-size:7px; margin-bottom:4px; letter-spacing:0.25em;">{{ $title }}</p>
                     <h3 style="font-size:clamp(0.85rem, 1.5vw, 1rem); font-weight:950; margin-bottom:6px; letter-spacing:-0.01em;">{{ $name }}</h3>
@@ -315,7 +315,7 @@
                 @foreach($featuredProkers as $proker)
                 <div class="dp-slide" style="width:clamp(260px, 75vw, 420px); background:var(--theme-background); border:1px solid color-mix(in srgb, var(--theme-outline) 15%, transparent);">
                     <div style="aspect-ratio:16/9; overflow:hidden;">
-                        <img src="{{ isset($proker->pictures_urls[0]) ? asset($proker->pictures_urls[0]) : asset('images/logo/osis/akad514.webp') }}" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                        <img src="{{ isset($proker->pictures_urls[0]) ? asset($proker->pictures_urls[0]) : asset('images/logo/osis/akad514.webp') }}" class="w-full h-full object-cover transition-all duration-500">
                     </div>
                     <div style="padding:1.5rem;">
                         <div class="flex justify-between items-center mb-4">

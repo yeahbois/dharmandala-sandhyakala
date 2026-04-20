@@ -8,7 +8,7 @@
 
         <div class="relative z-10 w-full max-w-md">
             <div class="flex flex-col items-center mb-8">
-                <img alt="Seksi Akad Logo" class="h-16 w-16 md:h-20 md:w-20 object-contain mb-6 grayscale hover:grayscale-0 transition-all duration-500"
+                <img alt="Seksi Akad Logo" class="h-16 w-16 md:h-20 md:w-20 object-contain mb-6 transition-all duration-500"
                     src="{{ asset('images/logo/osis/akad514.webp') }}">
                 <h1 class="text-3xl md:text-4xl font-black tracking-tighter text-on-surface uppercase text-center leading-none">
                     ThamNet<br/><span class="text-primary text-xl md:text-2xl tracking-[0.3em]">Access Portal</span>

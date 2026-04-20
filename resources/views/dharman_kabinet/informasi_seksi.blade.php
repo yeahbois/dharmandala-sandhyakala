@@ -47,7 +47,7 @@
                 <div class="absolute -inset-10 bg-primary/10 blur-[100px] rounded-full opacity-50"></div>
                 <div class="relative bg-surface p-12 md:p-16 border border-outline/10 flex items-center justify-center aspect-square shadow-2xl transition-all duration-700 group-hover:scale-[1.02] overflow-hidden">
                     @if(isset($data['logo']) && $data['logo'])
-                        <img src="{{ asset($data['logo']) }}" class="w-full h-full object-contain drop-shadow-2xl filter grayscale group-hover:grayscale-0 transition-all duration-700" alt="{{ $data['name'] }}">
+                        <img src="{{ asset($data['logo']) }}" class="w-full h-full object-contain drop-shadow-2xl transition-all duration-700" alt="{{ $data['name'] }}">
                     @else
                         <span class="material-symbols-outlined text-[100px] md:text-[140px] text-primary/40 group-hover:text-primary transition-colors duration-700">{{ $data['icon'] ?? 'groups' }}</span>
                     @endif
@@ -101,7 +101,7 @@
                     @foreach($featured_proker as $proker)
                     <div class="dp-slide" style="width:clamp(280px, 80vw, 450px); background:var(--theme-surface); border:1px solid color-mix(in srgb, var(--theme-outline) 15%, transparent); overflow:hidden; transition:all 0.5s ease;">
                         <div style="aspect-ratio:16/9; overflow:hidden;">
-                            <img src="{{ isset($proker->pictures_urls[0]) ? asset($proker->pictures_urls[0]) : asset('images/logo/osis/akad514.webp') }}" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                            <img src="{{ isset($proker->pictures_urls[0]) ? asset($proker->pictures_urls[0]) : asset('images/logo/osis/akad514.webp') }}" class="w-full h-full object-cover transition-all duration-700">
                         </div>
                         <div style="padding:2rem;">
                             <div class="flex justify-between items-center mb-4">

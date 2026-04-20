@@ -3,7 +3,7 @@
         <meta name="description" content="{{ Str::limit(strip_tags($post->content), 160) }}" />
         <meta property="og:title" content="{{ $post->title }}">
         <meta property="og:description" content="{{ Str::limit(strip_tags($post->content), 160) }}">
-        <meta property="og:image" content="{{ $post->image_url ?? asset('images/logo/osis/akad514.webp') }}">
+        <meta property="og:image" content="{{ $post->image_url ? (Str::startsWith($post->image_url, ['http://', 'https://']) ? $post->image_url : asset($post->image_url)) : asset('images/logo/osis/akad514.webp') }}">
     </x-slot:metadesc>
 
     <style>
@@ -41,7 +41,7 @@
     <article class="w-full article-gradient min-h-screen text-left" id="blog-post-page">
         <!-- Hero Section -->
         <header class="relative w-full h-[60vh] md:h-[70vh] overflow-hidden">
-            <img src="{{ $post->image_url ?? 'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1600&q=80' }}" 
+            <img src="{{ $post->image_url ? (Str::startsWith($post->image_url, ['http://', 'https://']) ? $post->image_url : asset($post->image_url)) : 'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1600&q=80' }}" 
                 class="w-full h-full object-cover" 
                 alt="{{ $post->title }}">
             <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>

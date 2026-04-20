@@ -9,7 +9,7 @@
             <img
                 src="{{ asset('images/web_working.jpg') }}"
                 alt="Coming Soon"
-                class="w-40 md:w-56 h-auto relative z-10 grayscale brightness-90 contrast-125 transition-all duration-700 hover:grayscale-0"
+                class="w-40 md:w-56 h-auto relative z-10 brightness-90 contrast-125 transition-all duration-700"
             >
         </div>
 

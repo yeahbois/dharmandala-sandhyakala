@@ -122,13 +122,13 @@
         <section class="dp-section" style="background:var(--theme-surface); color:var(--theme-on-surface);">
             <div class="dp-inner items-start text-left" style="z-index:1; min-height:100svh; justify-content:center;">
                 <div class="flex items-center justify-start gap-4 mb-6 md:mb-8">
-                    <img alt="OSIS Emblem" class="h-10 w-10 md:h-14 md:w-14 object-contain grayscale hover:grayscale-0 transition-all duration-500" src="{{ asset('images/logo/general/osis514.webp') }}">
-                    <img alt="Seksi Akad Logo" class="h-10 w-10 md:h-14 md:w-14 object-contain grayscale hover:grayscale-0 transition-all duration-500" src="{{ asset('images/logo/osis/akad514.webp') }}">
+                    <img alt="OSIS Emblem" class="h-10 w-10 md:h-14 md:w-14 object-contain transition-all duration-500" src="{{ asset('images/logo/general/osis514.webp') }}">
+                    <img alt="Seksi Akad Logo" class="h-10 w-10 md:h-14 md:w-14 object-contain transition-all duration-500" src="{{ asset('images/logo/osis/akad514.webp') }}">
                 </div>
-                <p class="dp-label" style="color:var(--theme-secondary-600);">Digital Heartbeat</p>
+                <p class="dp-label" style="color:var(--theme-secondary-600);">Home Thamnet</p>
                 <h1 class="dp-h1 mb-6 md:mb-8 text-on-surface">WELCOME TO<br>THAMNET</h1>
                 <p class="dp-body text-on-surface-variant max-w-[85vw] md:max-w-xl mb-10 leading-relaxed font-light mt-4 md:mt-0 mobile-line-wrap text-left">
-                    The digital heartbeat of Dharmandala Sandhyakala. A curated ecosystem for the elite minds of M.H. Thamrin.
+                    Thamnet adalah platform media sosial berbasis blog/artikel untuk semua orang.
                 </p>
                 <div style="display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:flex-start;">
                     <a href="/login" class="btn-base btn-pri-theme">Access Portal</a>
