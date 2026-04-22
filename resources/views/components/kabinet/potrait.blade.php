@@ -16,35 +16,18 @@
     </div>
 
     {{-- Info --}}
-    <div class="p-4 text-left flex-1 flex flex-col">
+    <div class="p-4 text-left">
         <h4 class="text-sm md:text-base font-black tracking-tight mb-0.5 truncate text-on-surface">
             {{ $name }}
         </h4>
         
-        <a href="https://instagram.com/{{ ltrim($ig, '@') }}" target="_blank" class="flex items-center text-primary text-[10px] font-bold mb-2 hover:underline w-fit">
+        <div class="flex items-center text-primary text-[10px] font-bold mb-2">
             <span class="material-symbols-outlined text-[10px] mr-1">alternate_email</span>
             <span class="truncate">{{ $ig }}</span>
-        </a>
-
-        <div class="flex-1 flex flex-col quote-container">
-            <p class="text-on-surface-variant text-[10px] italic leading-relaxed transition-all duration-300 line-clamp-2 quote-text">
-                "{{ $quote }}"
-            </p>
-            @if(strlen($quote) > 60)
-            <button onclick="
-                    const text = this.previousElementSibling;
-                    if (text.classList.contains('line-clamp-2')) {
-                        text.classList.remove('line-clamp-2');
-                        this.textContent = 'View Less';
-                    } else {
-                        text.classList.add('line-clamp-2');
-                        this.textContent = 'View All';
-                    }
-                "
-                class="text-primary text-[8px] font-black uppercase tracking-widest mt-2 hover:opacity-70 transition-opacity self-start">
-                View All
-            </button>
-            @endif
         </div>
+
+        <p class="text-on-surface-variant text-[10px] italic leading-relaxed line-clamp-2">
+            "{{ $quote }}"
+        </p>
     </div>
 </div>
