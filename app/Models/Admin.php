@@ -45,12 +45,14 @@ class Admin extends Authenticatable
             case 'media':
                 return str_contains($role, 'humas');
             case 'macapi':
-                return $group === 'mpk-bph' ||
-                       collect(['ketua', 'wakil', 'sekrehara', 'humas', 'perangkat aspirasi'])->contains(fn($r) => str_contains($role, $r));
+                return $group === 'bph-mpk' ||
+                       collect(['ketua mpk', 'wakil ketua mpk', 'sekrehara 1', 'sekrehara 2', 'humas 1', 'humas 2', 'perangkat aspirasi 1', 'perangkat aspirasi 2'])->contains(fn($r) => str_contains($role, $r));
             case 'prestasi':
-                return collect(['ketua', 'waketua', 'akademis', 'humas osis', 'komisi c'])->contains(fn($r) => str_contains($role, $r));
+                return $group === 'akad' ||
+                       collect(['ketua akademis', 'wakil ketua akademis', 'anggota akademis'])->contains(fn($r) => str_contains($role, $r));
             case 'thamnet':
-                return collect(['ketua', 'waketua', 'akademis', 'komisi c'])->contains(fn($r) => str_contains($role, $r));
+                return $group === 'akad' ||
+                       collect(['ketua akademis', 'wakil ketua akademis', 'anggota akademis'])->contains(fn($r) => str_contains($role, $r));
             default:
                 return false;
         }
