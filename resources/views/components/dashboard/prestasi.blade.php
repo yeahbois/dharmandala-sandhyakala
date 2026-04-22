@@ -73,7 +73,7 @@
                         <div id="prestasi-editor" class="bg-surface"></div>
                     </div>
                     <div class="flex items-center gap-3">
-                        <input type="checkbox" name="important" value="1" id="p-imp" class="w-4 h-4 rounded-none accent-primary bg-surface-variant border-outline">
+                        <input type="checkbox" name="important" value="1" id="p-imp" class="w-4 h-4 rounded-none text-primary border-outline">
                         <label for="p-imp" class="text-[10px] font-bold uppercase tracking-widest">Mark as Major Achievement</label>
                     </div>
                     <button type="submit" class="px-8 py-3 bg-primary text-on-primary text-[10px] font-black uppercase tracking-widest hover:opacity-90 transition-all">

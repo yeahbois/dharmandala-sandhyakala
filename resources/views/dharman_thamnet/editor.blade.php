@@ -80,7 +80,7 @@
 
                 <!-- Featured Toggle -->
                 <div class="flex items-center gap-4">
-                    <input type="checkbox" name="is_featured" value="1" id="is_featured" class="w-5 h-5 rounded-none accent-primary bg-surface-variant border-outline focus:ring-primary">
+                    <input type="checkbox" name="is_featured" value="1" id="is_featured" class="w-5 h-5 rounded-none text-primary border-outline focus:ring-primary">
                     <label for="is_featured" class="text-sm font-bold text-on-surface">Mark as Editorial Choice (Hero Spotlight)</label>
                 </div>
 
