@@ -18,7 +18,7 @@
                 @forelse($multimedias as $item)
                 <div class="flex-shrink-0 w-64 bg-background border border-outline/10 group relative">
                     <div class="aspect-[9/16] overflow-hidden">
-                        <iframe src="{{ str_replace('watch?v=', 'embed/', $item->url) }}" class="w-full h-full pointer-events-none" frameborder="0"></iframe>
+                        <iframe src="{{ $item->embed_url }}" class="w-full h-full pointer-events-none" frameborder="0"></iframe>
                     </div>
                     <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center p-6 text-center">
                         <div class="space-y-4">
@@ -53,11 +53,11 @@
                     </div>
                     <div class="flex gap-8">
                         <div class="flex items-center gap-3">
-                            <input type="checkbox" name="homepage" value="1" id="m-home" class="w-4 h-4 rounded-none text-primary border-outline">
+                            <input type="checkbox" name="homepage" value="1" id="m-home" class="w-4 h-4 rounded-none accent-primary bg-surface-variant border-outline">
                             <label for="m-home" class="text-[10px] font-bold uppercase tracking-widest">Homepage Spotlight</label>
                         </div>
                         <div class="flex items-center gap-3">
-                            <input type="checkbox" name="thamnet" value="1" id="m-thamnet" class="w-4 h-4 rounded-none text-primary border-outline">
+                            <input type="checkbox" name="thamnet" value="1" id="m-thamnet" class="w-4 h-4 rounded-none accent-primary bg-surface-variant border-outline">
                             <label for="m-thamnet" class="text-[10px] font-bold uppercase tracking-widest">ThamNet Feed</label>
                         </div>
                     </div>

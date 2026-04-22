@@ -32,17 +32,17 @@
                         <div class="space-y-2">
                             <label class="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Instagram Username</label>
                             <input type="text" name="instagram" value="{{ $user->instagram }}" placeholder="e.g. janesmith"
-                                class="w-full bg-surface-variant border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary px-6 py-4 text-on-surface font-bold transition-all">
+                                class="w-full bg-surface-variant border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary px-6 py-4 text-on-surface font-bold transition-all placeholder:text-on-surface-variant/50">
                         </div>
                         <div class="space-y-2">
                             <label class="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Personal Quote</label>
                             <textarea name="quotes" rows="4" placeholder="Your inspirational message..."
-                                class="w-full bg-surface-variant border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary px-6 py-4 text-on-surface font-bold transition-all">{{ $user->quotes }}</textarea>
+                                class="w-full bg-surface-variant border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary px-6 py-4 text-on-surface font-bold transition-all placeholder:text-on-surface-variant/50">{{ $user->quotes }}</textarea>
                         </div>
                         <div class="space-y-2">
                             <label class="text-[10px] font-black uppercase tracking-[0.2em] text-primary">New Password (leave blank to keep current)</label>
                             <input type="password" name="password" placeholder="••••••••"
-                                class="w-full bg-surface-variant border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary px-6 py-4 text-on-surface font-bold transition-all">
+                                class="w-full bg-surface-variant border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary px-6 py-4 text-on-surface font-bold transition-all placeholder:text-on-surface-variant/50">
                         </div>
                     </div>
                     <button type="submit" class="px-10 py-4 bg-primary text-on-primary text-[10px] font-black uppercase tracking-widest hover:opacity-90 transition-all shadow-xl shadow-primary/20">
