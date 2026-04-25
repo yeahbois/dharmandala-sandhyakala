@@ -36,12 +36,28 @@
         .prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
         .prose ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 1.5rem; }
         .prose strong { color: var(--theme-on-surface); font-weight: 700; }
+
+        .dp-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 1.25rem;
+            padding-bottom: 1.5rem;
+            width: 100%;
+            -webkit-overflow-scrolling: touch;
+        }
+        .dp-slider::-webkit-scrollbar { display: none; }
+        .dp-slider { -ms-overflow-style: none; scrollbar-width: none; }
+        .dp-slide {
+            scroll-snap-align: start;
+            flex-shrink: 0;
+        }
     </style>
 
     <article class="w-full article-gradient min-h-screen text-left" id="prestasi-detail-page">
         <!-- Hero Section -->
         <header class="relative w-full h-[60vh] md:h-[70vh] overflow-hidden">
-            <img src="{{ $prestasi->pictures_urls[0] ?? 'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1600&q=80' }}" 
+            <img src="{{ isset($prestasi->pictures_urls[0]) ? (Str::startsWith($prestasi->pictures_urls[0], 'http') ? $prestasi->pictures_urls[0] : asset($prestasi->pictures_urls[0])) : asset('images/logo/osis/akad514.webp') }}"
                 class="w-full h-full object-cover" 
                 alt="{{ $prestasi->title }}">
             <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
@@ -68,6 +84,34 @@
                 </div>
             </div>
         </header>
+
+        <!-- Section 2: Image Carousel -->
+        @if(isset($prestasi->pictures_urls) && count($prestasi->pictures_urls) > 0)
+        <section class="py-12 bg-surface-variant/5 border-b border-outline/5">
+            <div class="max-w-7xl mx-auto px-8 md:px-20">
+                <div class="flex justify-between items-end mb-8">
+                    <div>
+                        <span class="text-[10px] font-black tracking-[0.4em] text-primary uppercase">Gallery</span>
+                        <h2 class="text-2xl font-black tracking-tighter mt-2 uppercase text-on-surface">Dokumentasi Kegiatan</h2>
+                    </div>
+                    <div class="flex gap-2">
+                        <button class="slider-nav-btn" onclick="scrollSlider('prestasi-gallery', -1)"><span class="material-symbols-outlined">chevron_left</span></button>
+                        <button class="slider-nav-btn" onclick="scrollSlider('prestasi-gallery', 1)"><span class="material-symbols-outlined">chevron_right</span></button>
+                    </div>
+                </div>
+
+                <div id="prestasi-gallery" class="dp-slider hide-scrollbar">
+                    @foreach($prestasi->pictures_urls as $url)
+                    <div class="dp-slide w-[300px] md:w-[450px] aspect-video bg-surface-variant overflow-hidden">
+                        <img src="{{ Str::startsWith($url, 'http') ? $url : asset($url) }}"
+                             class="w-full h-full object-cover"
+                             alt="Gallery Image {{ $loop->iteration }}">
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+        @endif
 
         <!-- Content Section -->
         <main class="max-w-4xl mx-auto px-8 py-20">

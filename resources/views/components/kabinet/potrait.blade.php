@@ -16,18 +16,43 @@
     </div>
 
     {{-- Info --}}
-    <div class="p-4 text-left">
+    <div class="p-4 text-left flex flex-col flex-1">
         <h4 class="text-sm md:text-base font-black tracking-tight mb-0.5 truncate text-on-surface">
             {{ $name }}
         </h4>
         
-        <div class="flex items-center text-primary text-[10px] font-bold mb-2">
+        <a href="https://instagram.com/{{ ltrim($ig, '@') }}" target="_blank" class="flex items-center text-primary text-[10px] font-bold mb-2 hover:opacity-70 transition-opacity">
             <span class="material-symbols-outlined text-[10px] mr-1">alternate_email</span>
             <span class="truncate">{{ $ig }}</span>
-        </div>
+        </a>
 
-        <p class="text-on-surface-variant text-[10px] italic leading-relaxed line-clamp-2">
-            "{{ $quote }}"
-        </p>
+        <div class="quote-container flex flex-col flex-1">
+            <p class="quote-text text-on-surface-variant text-[10px] italic leading-relaxed {{ strlen($quote) > 100 ? 'line-clamp-2' : '' }}">
+                "{{ $quote }}"
+            </p>
+            @if(strlen($quote) > 100)
+                <button onclick="toggleQuote(this)" class="read-more-btn self-start text-[8px] font-black uppercase tracking-widest text-primary mt-2 flex items-center gap-1">
+                    Read More <span class="material-symbols-outlined text-[10px]">expand_more</span>
+                </button>
+            @endif
+        </div>
     </div>
 </div>
+
+<script>
+    if (typeof toggleQuote !== 'function') {
+        window.toggleQuote = function(btn) {
+            const container = btn.closest('.quote-container');
+            const text = container.querySelector('.quote-text');
+            const isExpanded = text.classList.contains('line-clamp-2');
+
+            if (isExpanded) {
+                text.classList.remove('line-clamp-2');
+                btn.innerHTML = 'Read Less <span class="material-symbols-outlined text-[10px]">expand_less</span>';
+            } else {
+                text.classList.add('line-clamp-2');
+                btn.innerHTML = 'Read More <span class="material-symbols-outlined text-[10px]">expand_more</span>';
+            }
+        }
+    }
+</script>

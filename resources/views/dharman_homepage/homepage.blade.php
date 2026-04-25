@@ -348,7 +348,7 @@
             <div id="sc-rlx" class="dp-slider hide-scrollbar">
                 @foreach ($multimedias as $media)
                 <div class="dp-slide" style="width:clamp(140px, 22vw, 210px); aspect-ratio:9/16; background:#000; overflow:hidden; border:1px solid rgba(255,255,255,0.05);">
-                    <iframe src="{{ str_replace('watch?v=', 'embed/', $media->url) }}?controls=1&modestbranding=1" class="w-full h-full"></iframe>
+                    <iframe src="{{ $media->embed_url }}?controls=1&modestbranding=1" class="w-full h-full"></iframe>
                 </div>
                 @endforeach
             </div>
