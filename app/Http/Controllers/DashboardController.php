@@ -50,10 +50,14 @@ class DashboardController extends Controller
         $showThamNet = $user->hasBoardAccess('thamnet');
         $posts = $showThamNet ? Post::latest()->get() : collect();
 
+        // 7. Thanos Board
+        $showThanos = $user->group === 'akad' || $isSuper;
+        $thanosEvent = $showThanos ? \App\Models\ThanosEvent::with('responders')->first() : null;
+
         return view('dashboard', compact(
             'user', 'isSuper', 'divisis', 'showMedia', 'multimedias',
             'showMacapi', 'thalation', 'showPrestasi', 'prestasis',
-            'showThamNet', 'posts'
+            'showThamNet', 'posts', 'showThanos', 'thanosEvent'
         ));
     }
 

@@ -204,29 +204,13 @@ Route::post('/thamnet/api/login', [ThamNetController::class, 'authenticate']);
 Route::get('/thamnet/api/logout', [ThamNetController::class, 'logout'])->name('logout');
 
 // Thanos
-Route::get('/thanos', function () {
-    return view('dharman_thanos.thanos');
-});
-Route::post('/submit-form', function () {
-    $datetime = date('Y-m-d H:i:s');
-    $name = request('name');
-    $answer = request('question');
-    $payment = request('payment');
-    $paymentNumber = request('paymentNumber');
-    $phone = request('usnig');
-
-    $request = new \Illuminate\Http\Request([
-        'datetime' => $datetime,
-        'name' => $name,
-        'question' => $answer,
-        'payment' => $payment,
-        'paymentNumber' => $paymentNumber,
-        'username ig' => $phone,
-    ]);
-
-    $googleSheetService = new GoogleSheetService("1oTrcemPt1Amk_8SKj4OnFD6p4PuAv7SXTurXJbrU7kM");
-    $formController = new FormController($googleSheetService);
-    return $formController->submitForm($request);
+use App\Http\Controllers\ThanosController;
+Route::get('/thanos', [ThanosController::class, 'publicIndex'])->name('thanos.index');
+Route::post('/submit-form', [ThanosController::class, 'submitResponse'])->name('thanos.submit');
+Route::middleware('auth')->group(function () {
+    Route::get('/admin/makethanos', [ThanosController::class, 'create'])->name('thanos.create');
+    Route::post('/thanosevent', [ThanosController::class, 'store'])->name('thanos.store');
+    Route::delete('/admin/thanos/delete', [ThanosController::class, 'delete'])->name('thanos.delete');
 });
 
 // Dashboard

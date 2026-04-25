@@ -159,7 +159,7 @@
                     <div class="dp-slide" style="width:clamp(200px, 60vw, 300px); background:var(--theme-surface); border:1px solid color-mix(in srgb, var(--theme-outline) 12%, transparent); overflow:hidden; position:relative;">
                         <div style="aspect-ratio:9/16; overflow:hidden;" class="w-full">
                             <iframe 
-                                src="{{ str_replace('watch?v=', 'embed/', $item->url) }}?controls=1&modestbranding=1" 
+                                src="{{ $item->embed_url }}?controls=1&modestbranding=1"
                                 class="w-full h-full pointer-events-auto"
                                 allowfullscreen>
                             </iframe>
