@@ -51,6 +51,14 @@
             opacity: 0.5;
             font-style: normal;
         }
+
+        /* Checkbox Theme Fix */
+        input[type="checkbox"] {
+            accent-color: var(--theme-primary-600);
+            background-color: var(--theme-surface-variant);
+            border: 1px solid var(--theme-outline);
+            cursor: pointer;
+        }
     </style>
 
     <main class="min-h-screen bg-surface w-full">

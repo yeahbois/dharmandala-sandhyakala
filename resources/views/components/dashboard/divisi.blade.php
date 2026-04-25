@@ -98,11 +98,11 @@
                     </div>
                     <div class="flex flex-wrap gap-8">
                         <div class="flex items-center gap-3">
-                            <input type="checkbox" name="featured" value="1" id="feat-{{ $divisi->id }}" class="w-4 h-4 rounded-none text-primary border-outline">
+                            <input type="checkbox" name="featured" value="1" id="feat-{{ $divisi->id }}" class="w-4 h-4 rounded-none border-outline">
                             <label for="feat-{{ $divisi->id }}" class="text-[10px] font-bold uppercase tracking-widest">Featured in Divisi</label>
                         </div>
                         <div class="flex items-center gap-3">
-                            <input type="checkbox" name="homepage" value="1" id="home-{{ $divisi->id }}" class="w-4 h-4 rounded-none text-primary border-outline">
+                            <input type="checkbox" name="homepage" value="1" id="home-{{ $divisi->id }}" class="w-4 h-4 rounded-none border-outline">
                             <label for="home-{{ $divisi->id }}" class="text-[10px] font-bold uppercase tracking-widest">Show on Homepage</label>
                         </div>
                     </div>
