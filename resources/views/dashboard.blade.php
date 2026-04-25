@@ -65,6 +65,12 @@
         <!-- Hero Section -->
         <x-dashboard.hero :divisis="$divisis" :showMedia="$showMedia" :showMacapi="$showMacapi" :showPrestasi="$showPrestasi" :showThamNet="$showThamNet" />
 
+        @if($showThanos)
+            <div class="max-w-[1536px] mx-auto px-4 md:px-12 py-8">
+                <x-dashboard.thanos :event="$thanosEvent" />
+            </div>
+        @endif
+
         <!-- Info Board -->
         <x-dashboard.info :user="$user" />
 

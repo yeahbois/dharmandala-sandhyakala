@@ -1,5 +1,43 @@
-PHP Warning:  require(/app/vendor/autoload.php): Failed to open stream: No such file or directory in /app/artisan on line 9
-PHP Fatal error:  Uncaught Error: Failed opening required '/app/vendor/autoload.php' (include_path='.:/usr/share/php') in /app/artisan:9
-Stack trace:
-#0 {main}
-  thrown in /app/artisan on line 9
+
+   INFO  Server running on [http://127.0.0.1:8000].
+
+  Press Ctrl+C to stop the server
+
+  2026-04-25 14:40:13 /thanos .......................................... ~ 2s
+  2026-04-25 14:40:17 /login ..................................... ~ 500.62ms
+
+   INFO  Environment modified. Restarting server...
+
+   INFO  Server running on [http://127.0.0.1:8000].
+
+  Press Ctrl+C to stop the server
+
+
+   INFO  Environment modified. Restarting server...
+
+   INFO  Server running on [http://127.0.0.1:8000].
+
+  Press Ctrl+C to stop the server
+
+
+   INFO  Environment modified. Restarting server...
+
+   INFO  Server running on [http://127.0.0.1:8000].
+
+  Press Ctrl+C to stop the server
+
+  2026-04-25 14:41:53 /thanos .......................................... ~ 1s
+  2026-04-25 14:41:55 /login ..................................... ~ 500.78ms
+  2026-04-25 14:42:48 /thanos ...................................... ~ 0.16ms
+  2026-04-25 14:42:48 /build/assets/app-BQsYViYS.css ............... ~ 0.10ms
+  2026-04-25 14:42:48 /images/logo/general/ospk384.webp ............ ~ 0.52ms
+  2026-04-25 14:42:48 /build/assets/app-h3fPSbDR.js ................ ~ 0.94ms
+  2026-04-25 14:42:48 /login ....................................... ~ 0.17ms
+  2026-04-25 14:42:49 /build/assets/app-BQsYViYS.css ............... ~ 0.10ms
+  2026-04-25 14:42:49 /images/logo/general/ospk384.webp ............ ~ 0.61ms
+  2026-04-25 14:42:49 /images/logo/osis/akad514.webp ............... ~ 1.05ms
+  2026-04-25 14:42:49 /build/assets/app-h3fPSbDR.js ................ ~ 1.64ms
+  2026-04-25 14:43:21 /thanos ...................................... ~ 0.31ms
+  2026-04-25 14:43:21 /build/assets/app-BQsYViYS.css ............... ~ 0.29ms
+  2026-04-25 14:43:21 /images/logo/general/ospk384.webp ............ ~ 1.49ms
+  2026-04-25 14:43:21 /build/assets/app-h3fPSbDR.js ................ ~ 6.66ms
