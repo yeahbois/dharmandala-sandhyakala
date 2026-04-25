@@ -34,10 +34,10 @@
                         <div class="space-y-2">
                             <label class="text-[10px] font-black uppercase tracking-widest opacity-40">Set New Date & Time</label>
                             <input type="datetime-local" name="next_macapi" value="{{ $thalation->next_macapi ? \Carbon\Carbon::parse($thalation->next_macapi)->format('Y-m-d\TH:i') : '' }}" required
-                                class="w-full bg-surface-variant border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary px-6 py-4 text-on-surface font-bold transition-all">
+                                class="w-full bg-surface-variant border-none ring-1 ring-outline/40 focus:ring-2 focus:ring-primary px-6 py-4 text-on-surface font-bold transition-all">
                         </div>
                     </div>
-                    <button type="submit" class="w-full py-4 bg-on-surface text-surface text-[10px] font-black uppercase tracking-widest hover:opacity-90 transition-all">
+                    <button type="submit" class="w-full py-4 bg-primary text-on-primary text-[10px] font-black uppercase tracking-widest hover:opacity-90 transition-all">
                         Update Countdown
                     </button>
                 </form>

@@ -4,7 +4,7 @@
         <img alt="MPK Emblem" class="h-12 w-12 md:h-16 md:w-16 object-contain" src="{{ asset('images/logo/general/mpk514.webp') }}">
     </div>
     <p class="text-[10px] font-black tracking-[0.4em] text-primary uppercase mb-4">Internal Management Portal</p>
-    <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-none text-on-surface uppercase mb-12">
+    <h1 class="text-4xl md:text-7xl font-black tracking-tighter leading-none text-on-surface uppercase mb-12">
         OSIS MPK Dashboard
     </h1>
 

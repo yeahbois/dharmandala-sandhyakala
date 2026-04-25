@@ -22,14 +22,14 @@
                 @csrf
                 <div class="space-y-2">
                     <label class="text-[10px] font-black uppercase tracking-[0.2em] text-primary">About Divisi (Short)</label>
-                    <textarea name="about" rows="3" class="w-full bg-surface border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary px-6 py-4 text-on-surface font-bold transition-all">{{ $divisi->about }}</textarea>
+                    <textarea name="about" rows="3" class="w-full bg-surface-variant/50 border-none ring-1 ring-outline/40 focus:ring-2 focus:ring-primary px-6 py-4 text-on-surface font-bold transition-all">{{ $divisi->about }}</textarea>
                 </div>
                 <div class="space-y-2">
                     <label class="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Details (Long/HTML)</label>
-                    <textarea name="details" rows="3" class="w-full bg-surface border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary px-6 py-4 text-on-surface font-bold transition-all">{{ $divisi->details }}</textarea>
+                    <textarea name="details" rows="3" class="w-full bg-surface-variant/50 border-none ring-1 ring-outline/40 focus:ring-2 focus:ring-primary px-6 py-4 text-on-surface font-bold transition-all">{{ $divisi->details }}</textarea>
                 </div>
                 <div class="md:col-span-2">
-                    <button type="submit" class="px-8 py-3 bg-on-surface text-surface text-[10px] font-black uppercase tracking-widest hover:opacity-90 transition-all">
+                    <button type="submit" class="px-8 py-3 bg-primary text-on-primary text-[10px] font-black uppercase tracking-widest hover:opacity-90 transition-all">
                         Save Divisi Info
                     </button>
                 </div>

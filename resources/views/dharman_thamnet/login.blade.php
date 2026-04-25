@@ -3,7 +3,7 @@
         <!-- Abstract Decorative Elements -->
         <div class="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
             <div class="absolute top-[-10%] right-[-5%] w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-primary/10 blur-[80px] md:blur-[120px] rounded-none"></div>
-            <div class="absolute bottom-[-10%] left-[-5%] w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-on-tertiary-container/10 blur-[70px] md:blur-[100px] rounded-none"></div>
+            <div class="absolute bottom-[-10%] left-[-5%] w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-secondary/10 blur-[70px] md:blur-[100px] rounded-none"></div>
         </div>
 
         <div class="relative z-10 w-full max-w-md">
@@ -31,14 +31,14 @@
                     <div class="space-y-2">
                         <label for="username" class="text-[10px] font-black tracking-[0.2em] text-secondary uppercase block">Admin Identifier</label>
                         <input type="text" id="username" name="username" value="{{ old('username') }}" required autofocus
-                            class="w-full bg-surface-variant/50 border border-outline/30 px-4 py-3 text-on-surface font-semibold focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder:text-on-surface-variant/50"
+                            class="w-full bg-surface-variant/50 border border-outline/50 px-4 py-3 text-on-surface font-semibold focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder:text-on-surface-variant/50"
                             placeholder="Enter username">
                     </div>
 
                     <div class="space-y-2">
                         <label for="password" class="text-[10px] font-black tracking-[0.2em] text-secondary uppercase block">Passcode</label>
                         <input type="password" id="password" name="password" required
-                            class="w-full bg-surface-variant/50 border border-outline/30 px-4 py-3 text-on-surface font-semibold focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder:text-on-surface-variant/50"
+                            class="w-full bg-surface-variant/50 border border-outline/50 px-4 py-3 text-on-surface font-semibold focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder:text-on-surface-variant/50"
                             placeholder="Enter password">
                     </div>
 
