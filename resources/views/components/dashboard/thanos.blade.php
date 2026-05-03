@@ -18,7 +18,7 @@
                 <button onclick="toggleThanosAllRespondersModal()" class="btn-base bg-surface-variant text-on-surface flex items-center gap-2 border border-outline/20">
                     <span class="material-symbols-outlined text-sm">list_alt</span> All Responders
                 </button>
-                <a href="{{ route('thanos.create') }}" class="btn-base btn-sec flex items-center gap-2">
+                <a href="{{ route('thanos') }}" class="btn-base btn-sec flex items-center gap-2">
                     <span class="material-symbols-outlined text-sm">edit</span> Edit Event
                 </a>
                 <button onclick="toggleThanosDeleteModal()" class="btn-base bg-error text-on-error flex items-center gap-2">
