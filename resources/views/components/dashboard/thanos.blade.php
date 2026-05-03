@@ -7,7 +7,7 @@
             <h2 class="text-4xl font-black uppercase tracking-tighter text-on-surface">THANOS BOARD</h2>
         </div>
         <div class="flex gap-3 flex-wrap">
-            <a href="{{ route('thanos') }}" class="btn-base btn-pri flex items-center gap-2" target="_blank">
+            <a href="{{ route('thanos.index') }}" class="btn-base btn-pri flex items-center gap-2" target="_blank">
                 <span class="material-symbols-outlined text-sm">open_in_new</span> Public Page
             </a>
             @if(!$event)
