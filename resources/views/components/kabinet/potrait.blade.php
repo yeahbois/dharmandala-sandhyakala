@@ -17,7 +17,7 @@
 
     {{-- Info --}}
     <div class="p-4 text-left flex flex-col flex-1">
-        <h4 class="text-sm md:text-base font-black tracking-tight mb-0.5 truncate text-on-surface">
+        <h4 class="text-[11px] sm:text-xs md:text-sm font-black tracking-tight mb-0.5 text-on-surface leading-tight">
             {{ $name }}
         </h4>
         

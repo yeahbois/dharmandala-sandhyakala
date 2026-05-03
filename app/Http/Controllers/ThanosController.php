@@ -32,7 +32,7 @@ class ThanosController extends Controller
             'deadline' => 'required|date',
             'questions.*' => 'nullable|image|max:2048',
             'question_urls' => 'nullable|string',
-            'right_answer' => 'required|string|in:a,b,c,d,e',
+            'right_answer' => 'required|string',
         ]);
 
         $event = ThanosEvent::first();
@@ -128,7 +128,7 @@ class ThanosController extends Controller
 
     public function publicIndex()
     {
-        $event = ThanosEvent::first();
+        $event = ThanosEvent::latest()->first();
         return view('dharman_thanos.thanos', compact('event'));
     }
 
@@ -138,7 +138,7 @@ class ThanosController extends Controller
 
         $request->validate([
             'name' => 'required|string|max:255',
-            'question' => 'required|string|in:a,b,c,d,e',
+            'question' => 'required|string',
             'payment' => 'required|string',
             'paymentNumber' => 'required|string',
             'usnig' => 'required|string',

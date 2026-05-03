@@ -120,15 +120,8 @@
                         @csrf
 
                         <div>
-                            <label class="dp-label !text-[10px] !mb-4">Select your answer</label>
-                            <div class="grid grid-cols-1 sm:grid-cols-5 gap-3">
-                                @foreach(['a', 'b', 'c', 'd', 'e'] as $choice)
-                                <label class="choice-btn">
-                                    <input type="radio" name="question" value="{{ $choice }}" class="hidden" required>
-                                    <span class="uppercase font-black text-xl">{{ $choice }}</span>
-                                </label>
-                                @endforeach
-                            </div>
+                            <label class="dp-label !text-[10px] !mb-4">Your answer</label>
+                            <input type="text" name="question" class="form-input" required placeholder="Type your answer here...">
                         </div>
 
                         <div class="space-y-4">

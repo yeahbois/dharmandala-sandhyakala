@@ -25,6 +25,9 @@
         @if($showThamNet)
             <a href="#thamnet-board" class="px-4 py-2 bg-surface-variant text-on-surface text-[10px] font-black uppercase tracking-widest border border-outline/10 hover:bg-primary hover:text-on-primary transition-all">ThamNet</a>
         @endif
+        @if($showThanos ?? false)
+            <a href="#thanos-board" class="px-4 py-2 bg-surface-variant text-on-surface text-[10px] font-black uppercase tracking-widest border border-outline/10 hover:bg-primary hover:text-on-primary transition-all">Thanos</a>
+        @endif
         <a href="{{ route('logout') }}" class="px-4 py-2 bg-red-500/10 text-red-500 text-[10px] font-black uppercase tracking-widest border border-red-500/20 hover:bg-red-500 hover:text-white transition-all">Logout</a>
     </div>
 </section>

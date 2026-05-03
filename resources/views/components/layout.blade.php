@@ -124,7 +124,7 @@
         '--theme-on-surface-variant': '#A0A0A0',
         '--theme-background': '#000000',
         '--theme-outline': '#333333',
-        '--theme-secondary-600': '#222222',
+        '--theme-secondary-600': '#A0A0A0',
       },
       'pastel-blue-purple': {
         '--theme-primary-600': '#A5B4FC',

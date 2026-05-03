@@ -63,16 +63,17 @@
 
     <main class="min-h-screen bg-surface w-full">
         <!-- Hero Section -->
-        <x-dashboard.hero :divisis="$divisis" :showMedia="$showMedia" :showMacapi="$showMacapi" :showPrestasi="$showPrestasi" :showThamNet="$showThamNet" />
-
-        @if($showThanos)
-            <div class="max-w-[1536px] mx-auto px-4 md:px-12 py-8">
-                <x-dashboard.thanos :event="$thanosEvent" />
-            </div>
-        @endif
+        <x-dashboard.hero :divisis="$divisis" :showMedia="$showMedia" :showMacapi="$showMacapi" :showPrestasi="$showPrestasi" :showThamNet="$showThamNet" :showThanos="$showThanos" />
 
         <!-- Info Board -->
         <x-dashboard.info :user="$user" />
+
+        <!-- Thanos Board -->
+        @if($showThanos)
+            <div id="thanos-board" class="max-w-[1536px] mx-auto px-4 md:px-12 py-8">
+                <x-dashboard.thanos :event="$thanosEvent" />
+            </div>
+        @endif
 
         <!-- Divisi Board -->
         @if($divisis->count() > 0)
