@@ -65,15 +65,11 @@
                 </div>
 
                 <div class="space-y-2">
-                    <label for="right_answer" class="text-xs font-black uppercase tracking-widest text-secondary-600">Right Answer</label>
-                    <select name="right_answer" id="right_answer" required
-                        class="w-full bg-surface-variant/50 border border-outline/40 p-4 text-on-surface focus:ring-2 focus:ring-primary outline-none transition-all">
-                        <option value="a" {{ old('right_answer', $event->right_answer ?? '') == 'a' ? 'selected' : '' }}>A</option>
-                        <option value="b" {{ old('right_answer', $event->right_answer ?? '') == 'b' ? 'selected' : '' }}>B</option>
-                        <option value="c" {{ old('right_answer', $event->right_answer ?? '') == 'c' ? 'selected' : '' }}>C</option>
-                        <option value="d" {{ old('right_answer', $event->right_answer ?? '') == 'd' ? 'selected' : '' }}>D</option>
-                        <option value="e" {{ old('right_answer', $event->right_answer ?? '') == 'e' ? 'selected' : '' }}>E</option>
-                    </select>
+                    <label for="right_answer" class="text-xs font-black uppercase tracking-widest text-secondary-600">Right Answer(s)</label>
+                    <p class="text-[10px] text-on-surface-variant mb-1">Separate multiple correct answers with commas (e.g. 0.67, 0,67, 2/3)</p>
+                    <input type="text" name="right_answer" id="right_answer" value="{{ old('right_answer', $event->right_answer ?? '') }}" required
+                        class="w-full bg-surface-variant/50 border border-outline/40 p-4 text-on-surface focus:ring-2 focus:ring-primary outline-none transition-all"
+                        placeholder="e.g. 0.67, 0,67">
                 </div>
 
                 @if($event)

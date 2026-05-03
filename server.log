@@ -3,8 +3,9 @@
 
   Press Ctrl+C to stop the server
 
-  2026-04-25 14:40:13 /thanos .......................................... ~ 2s
-  2026-04-25 14:40:17 /login ..................................... ~ 500.62ms
+  2026-05-03 15:59:21 /thanos .......................................... ~ 2s
+  2026-05-03 15:59:55 /login ..................................... ~ 500.46ms
+  2026-05-03 16:00:53 /thanos ...................................... ~ 0.17ms
 
    INFO  Environment modified. Restarting server...
 
@@ -12,32 +13,35 @@
 
   Press Ctrl+C to stop the server
 
-
-   INFO  Environment modified. Restarting server...
-
-   INFO  Server running on [http://127.0.0.1:8000].
-
-  Press Ctrl+C to stop the server
-
-
-   INFO  Environment modified. Restarting server...
-
-   INFO  Server running on [http://127.0.0.1:8000].
-
-  Press Ctrl+C to stop the server
-
-  2026-04-25 14:41:53 /thanos .......................................... ~ 1s
-  2026-04-25 14:41:55 /login ..................................... ~ 500.78ms
-  2026-04-25 14:42:48 /thanos ...................................... ~ 0.16ms
-  2026-04-25 14:42:48 /build/assets/app-BQsYViYS.css ............... ~ 0.10ms
-  2026-04-25 14:42:48 /images/logo/general/ospk384.webp ............ ~ 0.52ms
-  2026-04-25 14:42:48 /build/assets/app-h3fPSbDR.js ................ ~ 0.94ms
-  2026-04-25 14:42:48 /login ....................................... ~ 0.17ms
-  2026-04-25 14:42:49 /build/assets/app-BQsYViYS.css ............... ~ 0.10ms
-  2026-04-25 14:42:49 /images/logo/general/ospk384.webp ............ ~ 0.61ms
-  2026-04-25 14:42:49 /images/logo/osis/akad514.webp ............... ~ 1.05ms
-  2026-04-25 14:42:49 /build/assets/app-h3fPSbDR.js ................ ~ 1.64ms
-  2026-04-25 14:43:21 /thanos ...................................... ~ 0.31ms
-  2026-04-25 14:43:21 /build/assets/app-BQsYViYS.css ............... ~ 0.29ms
-  2026-04-25 14:43:21 /images/logo/general/ospk384.webp ............ ~ 1.49ms
-  2026-04-25 14:43:21 /build/assets/app-h3fPSbDR.js ................ ~ 6.66ms
+  2026-05-03 16:02:42 /thanos .................................... ~ 500.43ms
+  2026-05-03 16:02:42 /build/assets/app-BQsYViYS.css ............... ~ 0.08ms
+  2026-05-03 16:02:42 /images/logo/general/ospk384.webp ............ ~ 0.52ms
+  2026-05-03 16:02:42 /build/assets/app-h3fPSbDR.js ................ ~ 1.03ms
+  2026-05-03 16:02:43 /login ....................................... ~ 0.14ms
+  2026-05-03 16:02:43 /build/assets/app-BQsYViYS.css ............... ~ 0.09ms
+  2026-05-03 16:02:43 /images/logo/general/ospk384.webp ............ ~ 0.56ms
+  2026-05-03 16:02:43 /images/logo/osis/akad514.webp ............... ~ 0.93ms
+  2026-05-03 16:02:43 /build/assets/app-h3fPSbDR.js ................ ~ 1.43ms
+  2026-05-03 16:02:43 /thamnet/api/login ......................... ~ 500.46ms
+  2026-05-03 16:02:43 /thamnet ..................................... ~ 0.09ms
+  2026-05-03 16:02:43 /build/assets/app-BQsYViYS.css ............... ~ 0.09ms
+  2026-05-03 16:02:43 /images/logo/general/osis514.webp ............ ~ 0.52ms
+  2026-05-03 16:02:43 /images/logo/general/ospk384.webp ............ ~ 0.92ms
+  2026-05-03 16:02:43 /build/assets/app-h3fPSbDR.js ................ ~ 1.40ms
+  2026-05-03 16:02:43 /images/logo/osis/akad514.webp ............... ~ 0.05ms
+  2026-05-03 16:04:17 /thanos ...................................... ~ 0.16ms
+  2026-05-03 16:04:17 /build/assets/app-BQsYViYS.css ............... ~ 0.08ms
+  2026-05-03 16:04:17 /images/logo/general/ospk384.webp ............ ~ 0.57ms
+  2026-05-03 16:04:17 /build/assets/app-h3fPSbDR.js ................ ~ 0.93ms
+  2026-05-03 16:04:18 /login ....................................... ~ 0.05ms
+  2026-05-03 16:04:18 /build/assets/app-BQsYViYS.css ............... ~ 0.15ms
+  2026-05-03 16:04:18 /images/logo/general/ospk384.webp ............ ~ 0.63ms
+  2026-05-03 16:04:18 /images/logo/osis/akad514.webp ............... ~ 1.00ms
+  2026-05-03 16:04:18 /build/assets/app-h3fPSbDR.js ................ ~ 1.50ms
+  2026-05-03 16:04:18 /thamnet/api/login ........................... ~ 0.33ms
+  2026-05-03 16:04:18 /thamnet ..................................... ~ 0.05ms
+  2026-05-03 16:04:18 /build/assets/app-BQsYViYS.css ............... ~ 0.19ms
+  2026-05-03 16:04:18 /images/logo/general/osis514.webp ............ ~ 0.66ms
+  2026-05-03 16:04:18 /images/logo/general/ospk384.webp ............ ~ 1.10ms
+  2026-05-03 16:04:18 /build/assets/app-h3fPSbDR.js ................ ~ 1.48ms
+  2026-05-03 16:04:18 /images/logo/osis/akad514.webp ............... ~ 0.06ms

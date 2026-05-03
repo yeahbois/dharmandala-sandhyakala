@@ -6,12 +6,18 @@
             <span class="text-xs font-black uppercase tracking-[0.3em] text-secondary-600 block mb-1">Akademis Control</span>
             <h2 class="text-4xl font-black uppercase tracking-tighter text-on-surface">THANOS BOARD</h2>
         </div>
-        <div class="flex gap-3">
+        <div class="flex gap-3 flex-wrap">
+            <a href="{{ route('thanos.public') }}" class="btn-base btn-pri flex items-center gap-2" target="_blank">
+                <span class="material-symbols-outlined text-sm">open_in_new</span> Public Page
+            </a>
             @if(!$event)
                 <a href="{{ route('thanos.create') }}" class="btn-base btn-pri flex items-center gap-2">
                     <span class="material-symbols-outlined text-sm">add</span> Create Event
                 </a>
             @else
+                <button onclick="toggleThanosAllRespondersModal()" class="btn-base bg-surface-variant text-on-surface flex items-center gap-2 border border-outline/20">
+                    <span class="material-symbols-outlined text-sm">list_alt</span> All Responders
+                </button>
                 <a href="{{ route('thanos.create') }}" class="btn-base btn-sec flex items-center gap-2">
                     <span class="material-symbols-outlined text-sm">edit</span> Edit Event
                 </a>
@@ -35,48 +41,97 @@
             </div>
 
             <div class="lg:col-span-2 bg-surface-variant/30 border border-outline/20 p-6 overflow-hidden flex flex-col">
-                <span class="text-[10px] font-black uppercase tracking-widest opacity-60 block mb-4">Responders Feed</span>
+                <span class="text-[10px] font-black uppercase tracking-widest opacity-60 block mb-4">Top 5 Winners</span>
                 <div class="overflow-x-auto">
                     <table class="w-full text-left text-xs">
                         <thead>
                             <tr class="border-b border-outline/10">
                                 <th class="pb-3 font-black uppercase tracking-widest opacity-60">Name</th>
                                 <th class="pb-3 font-black uppercase tracking-widest opacity-60 text-center">Answer</th>
-                                <th class="pb-3 font-black uppercase tracking-widest opacity-60 text-center">Correct?</th>
-                                <th class="pb-3 font-black uppercase tracking-widest opacity-60 text-right">Time</th>
+                                <th class="pb-3 font-black uppercase tracking-widest opacity-60 text-right">Time (WIB)</th>
                             </tr>
                         </thead>
                         <tbody>
                             @php
-                                $responders = $event->responders->map(function($r) use ($event) {
-                                    $r->is_correct = strtolower($r->answer) === strtolower($event->right_answer);
+                                $rightAnswers = array_map('trim', explode(',', strtolower($event->right_answer)));
+                                $responders = $event->responders->map(function($r) use ($rightAnswers) {
+                                    $r->is_correct = in_array(strtolower(trim($r->answer)), $rightAnswers);
                                     return $r;
-                                })->sort(function($a, $b) {
-                                    if ($a->is_correct && !$b->is_correct) return -1;
-                                    if (!$a->is_correct && $b->is_correct) return 1;
-                                    return $a->created_at <=> $b->created_at;
-                                })->take(10);
+                                })->filter(fn($r) => $r->is_correct)
+                                  ->sortBy('created_at')
+                                  ->take(5);
                             @endphp
                             @foreach($responders as $responder)
                             <tr class="border-b border-outline/5 last:border-0">
                                 <td class="py-3 font-bold uppercase">{{ $responder->name }}</td>
                                 <td class="py-3 text-center uppercase">{{ $responder->answer }}</td>
-                                <td class="py-3 text-center">
+                                <td class="py-3 text-right opacity-60">{{ $responder->created_at->timezone('Asia/Jakarta')->format('H:i:s') }}</td>
+                            </tr>
+                            @endforeach
+                            @if($responders->count() === 0)
+                                <tr>
+                                    <td colspan="3" class="py-10 text-center opacity-30 uppercase tracking-widest">No correct responders yet</td>
+                                </tr>
+                            @endif
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        {{-- All Responders Modal --}}
+        <div id="thanos-all-responders-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+            <div class="bg-surface border border-outline/20 p-8 max-w-5xl w-full max-h-[90vh] flex flex-col">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-black uppercase tracking-tighter">All Responders</h3>
+                    <button onclick="toggleThanosAllRespondersModal()" class="material-symbols-outlined">close</button>
+                </div>
+
+                <div class="overflow-auto flex-1 border border-outline/10">
+                    <table class="w-full text-left text-xs">
+                        <thead class="sticky top-0 bg-surface-variant">
+                            <tr>
+                                <th class="p-3 font-black uppercase tracking-widest opacity-60">Name</th>
+                                <th class="p-3 font-black uppercase tracking-widest opacity-60">Answer</th>
+                                <th class="p-3 font-black uppercase tracking-widest opacity-60 text-center">Correct?</th>
+                                <th class="p-3 font-black uppercase tracking-widest opacity-60">Payment</th>
+                                <th class="p-3 font-black uppercase tracking-widest opacity-60">Payment No</th>
+                                <th class="p-3 font-black uppercase tracking-widest opacity-60">IG</th>
+                                <th class="p-3 font-black uppercase tracking-widest opacity-60 text-right">Time (WIB)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-outline/5">
+                            @php
+                                $rightAnswers = array_map('trim', explode(',', strtolower($event->right_answer)));
+                                $allResponders = $event->responders->map(function($r) use ($rightAnswers) {
+                                    $r->is_correct = in_array(strtolower(trim($r->answer)), $rightAnswers);
+                                    return $r;
+                                })->sort(function($a, $b) {
+                                    if ($a->is_correct && !$b->is_correct) return -1;
+                                    if (!$a->is_correct && $b->is_correct) return 1;
+                                    return $a->created_at <=> $b->created_at;
+                                });
+                            @endphp
+                            @foreach($allResponders as $responder)
+                            <tr class="hover:bg-surface-variant/20 transition-colors">
+                                <td class="p-3 font-bold uppercase">{{ $responder->name }}</td>
+                                <td class="p-3 uppercase">{{ $responder->answer }}</td>
+                                <td class="p-3 text-center">
                                     @if($responder->is_correct)
                                         <span class="text-success material-symbols-outlined text-sm">check_circle</span>
                                     @else
                                         <span class="text-error material-symbols-outlined text-sm">cancel</span>
                                     @endif
                                 </td>
-                                <td class="py-3 text-right opacity-60">{{ $responder->created_at->format('H:i:s') }}</td>
+                                <td class="p-3 opacity-60">{{ $responder->payment }}</td>
+                                <td class="p-3 opacity-60 font-mono">{{ $responder->payment_number }}</td>
+                                <td class="p-3 opacity-60">{{ $responder->phone }}</td>
+                                <td class="p-3 text-right opacity-60">{{ $responder->created_at->timezone('Asia/Jakarta')->format('Y-m-d H:i:s') }}</td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
                 </div>
-                @if($event->responders->count() > 10)
-                    <p class="mt-4 text-[9px] opacity-40 uppercase tracking-widest text-center">Showing top 10 fastest & correct responders</p>
-                @endif
             </div>
         </div>
 
@@ -106,6 +161,11 @@
 <script>
     function toggleThanosDeleteModal() {
         const modal = document.getElementById('thanos-delete-modal');
+        modal.classList.toggle('hidden');
+        modal.classList.toggle('flex');
+    }
+    function toggleThanosAllRespondersModal() {
+        const modal = document.getElementById('thanos-all-responders-modal');
         modal.classList.toggle('hidden');
         modal.classList.toggle('flex');
     }
