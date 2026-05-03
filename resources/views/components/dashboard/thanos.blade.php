@@ -7,7 +7,7 @@
             <h2 class="text-4xl font-black uppercase tracking-tighter text-on-surface">THANOS BOARD</h2>
         </div>
         <div class="flex gap-3 flex-wrap">
-            <a href="{{ route('thanos.public') }}" class="btn-base btn-pri flex items-center gap-2" target="_blank">
+            <a href="{{ route('thanos') }}" class="btn-base btn-pri flex items-center gap-2" target="_blank">
                 <span class="material-symbols-outlined text-sm">open_in_new</span> Public Page
             </a>
             @if(!$event)
@@ -18,7 +18,7 @@
                 <button onclick="toggleThanosAllRespondersModal()" class="btn-base bg-surface-variant text-on-surface flex items-center gap-2 border border-outline/20">
                     <span class="material-symbols-outlined text-sm">list_alt</span> All Responders
                 </button>
-                <a href="{{ route('thanos') }}" class="btn-base btn-sec flex items-center gap-2">
+                <a href="{{ route('thanos.create') }}" class="btn-base btn-sec flex items-center gap-2">
                     <span class="material-symbols-outlined text-sm">edit</span> Edit Event
                 </a>
                 <button onclick="toggleThanosDeleteModal()" class="btn-base bg-error text-on-error flex items-center gap-2">
