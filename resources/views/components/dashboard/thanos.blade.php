@@ -53,7 +53,7 @@
                         </thead>
                         <tbody>
                             @php
-                                $rightAnswers = array_map('trim', explode(',', strtolower($event->right_answer)));
+                                $rightAnswers = array_map('trim', explode('|', strtolower($event->right_answer)));
                                 $responders = $event->responders->map(function($r) use ($rightAnswers) {
                                     $r->is_correct = in_array(strtolower(trim($r->answer)), $rightAnswers);
                                     return $r;

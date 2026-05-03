@@ -66,10 +66,10 @@
 
                 <div class="space-y-2">
                     <label for="right_answer" class="text-xs font-black uppercase tracking-widest text-secondary-600">Right Answer(s)</label>
-                    <p class="text-[10px] text-on-surface-variant mb-1">Separate multiple correct answers with commas (e.g. 0.67, 0,67, 2/3)</p>
+                    <p class="text-[10px] text-on-surface-variant mb-1">Separate multiple correct answers with | (e.g. 0.67|0,67|2/3)</p>
                     <input type="text" name="right_answer" id="right_answer" value="{{ old('right_answer', $event->right_answer ?? '') }}" required
                         class="w-full bg-surface-variant/50 border border-outline/40 p-4 text-on-surface focus:ring-2 focus:ring-primary outline-none transition-all"
-                        placeholder="e.g. 0.67, 0,67">
+                        placeholder="e.g. 0.67|0,67">
                 </div>
 
                 @if($event)
