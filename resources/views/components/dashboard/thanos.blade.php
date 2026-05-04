@@ -81,14 +81,14 @@
 
         {{-- All Responders Modal --}}
         <div id="thanos-all-responders-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-            <div class="bg-surface border border-outline/20 p-8 max-w-5xl w-full max-h-[90vh] flex flex-col">
+            <div class="bg-surface border border-outline/20 p-4 md:p-8 max-w-5xl w-full max-h-[90vh] flex flex-col">
                 <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-2xl font-black uppercase tracking-tighter">All Responders</h3>
+                    <h3 class="text-xl md:text-2xl font-black uppercase tracking-tighter">All Responders</h3>
                     <button onclick="toggleThanosAllRespondersModal()" class="material-symbols-outlined">close</button>
                 </div>
 
                 <div class="overflow-auto flex-1 border border-outline/10">
-                    <table class="w-full text-left text-xs">
+                    <table class="w-full min-w-max text-left text-xs whitespace-nowrap">
                         <thead class="sticky top-0 bg-surface-variant">
                             <tr>
                                 <th class="p-3 font-black uppercase tracking-widest opacity-60">Name</th>
@@ -102,7 +102,7 @@
                         </thead>
                         <tbody class="divide-y divide-outline/5">
                             @php
-                                $rightAnswers = array_map('trim', explode(',', strtolower($event->right_answer)));
+                                $rightAnswers = array_map('trim', explode('|', strtolower($event->right_answer)));
                                 $allResponders = $event->responders->map(function($r) use ($rightAnswers) {
                                     $r->is_correct = in_array(strtolower(trim($r->answer)), $rightAnswers);
                                     return $r;
