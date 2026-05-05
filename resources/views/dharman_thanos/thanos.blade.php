@@ -127,7 +127,7 @@
                         <div class="space-y-4">
                             <div>
                                 <label class="text-[10px] font-black uppercase tracking-widest opacity-60 mb-2 block">Full Name</label>
-                                <input type="text" name="name" class="form-input" required placeholder="John Doe">
+                                <input type="text" name="name" class="form-input" required placeholder="Joshua Perico">
                             </div>
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
