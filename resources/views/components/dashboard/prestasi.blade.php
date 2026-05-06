@@ -65,7 +65,7 @@
                     <div class="space-y-2">
                         <label class="text-[10px] font-black uppercase tracking-widest opacity-40">Image URL (Optional)</label>
                         <p class="text-[8px] font-bold text-primary uppercase tracking-wider mb-1">Harus CDN (e.g. Google Drive / Unsplash)</p>
-                        <input type="url" name="pictures_urls[]" placeholder="https://..." class="w-full bg-surface border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary px-6 py-3 text-on-surface font-bold transition-all">
+                        <input type="text" name="pictures_urls[]" placeholder="https://..." class="w-full bg-surface border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary px-6 py-3 text-on-surface font-bold transition-all">
                     </div>
                     <div class="space-y-2">
                         <label class="text-[10px] font-black uppercase tracking-widest opacity-40">Description (Rich Text)</label>
