@@ -114,6 +114,21 @@ class DashboardController extends Controller
             }
         }
 
+        if (isset($validated['pictures_urls'])) {
+            $processedUrls = [];
+            foreach ($validated['pictures_urls'] as $input) {
+                // Split by whitespace to handle multiple URLs pasted together
+                $splitUrls = preg_split('/\s+/', $input);
+                foreach ($splitUrls as $url) {
+                    $url = trim($url);
+                    if (!empty($url)) {
+                        $processedUrls[] = $url;
+                    }
+                }
+            }
+            $validated['pictures_urls'] = $processedUrls;
+        }
+
         ProgramKerja::create($validated);
         return back()->with('success', 'Program Kerja added!');
     }

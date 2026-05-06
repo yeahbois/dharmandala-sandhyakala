@@ -36,6 +36,22 @@
         .prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
         .prose ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 1.5rem; }
         .prose strong { color: var(--theme-on-surface); font-weight: 700; }
+
+        .dp-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 1.25rem;
+            padding-bottom: 1.5rem;
+            width: 100%;
+            -webkit-overflow-scrolling: touch;
+        }
+        .dp-slider::-webkit-scrollbar { display: none; }
+        .dp-slider { -ms-overflow-style: none; scrollbar-width: none; }
+        .dp-slide {
+            scroll-snap-align: start;
+            flex-shrink: 0;
+        }
     </style>
 
     <article class="w-full article-gradient min-h-screen text-left" id="proker-detail-page">
@@ -68,6 +84,34 @@
                 </div>
             </div>
         </header>
+
+        <!-- Section 2: Image Carousel -->
+        @if(isset($proker->pictures_urls) && count($proker->pictures_urls) > 0)
+        <section class="py-12 bg-surface-variant/5 border-b border-outline/5">
+            <div class="max-w-7xl mx-auto px-8 md:px-20">
+                <div class="flex justify-between items-end mb-8">
+                    <div>
+                        <span class="text-[10px] font-black tracking-[0.4em] text-primary uppercase">Gallery</span>
+                        <h2 class="text-2xl font-black tracking-tighter mt-2 uppercase text-on-surface">Dokumentasi Kegiatan</h2>
+                    </div>
+                    <div class="flex gap-2">
+                        <button class="slider-nav-btn" onclick="scrollSlider('proker-gallery', -1)"><span class="material-symbols-outlined">chevron_left</span></button>
+                        <button class="slider-nav-btn" onclick="scrollSlider('proker-gallery', 1)"><span class="material-symbols-outlined">chevron_right</span></button>
+                    </div>
+                </div>
+
+                <div id="proker-gallery" class="dp-slider hide-scrollbar">
+                    @foreach($proker->pictures_urls as $url)
+                    <div class="dp-slide w-[300px] md:w-[450px] aspect-video bg-surface-variant overflow-hidden">
+                        <img src="{{ Str::startsWith($url, 'http') ? $url : asset($url) }}"
+                             class="w-full h-full object-cover"
+                             alt="Gallery Image {{ $loop->iteration }}">
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+        @endif
 
         <!-- Content Section -->
         <main class="max-w-4xl mx-auto px-8 py-20">
