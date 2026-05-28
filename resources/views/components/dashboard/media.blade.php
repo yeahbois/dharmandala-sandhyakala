@@ -48,7 +48,7 @@
                         </div>
                         <div class="space-y-2">
                             <label class="text-[10px] font-black uppercase tracking-widest opacity-40">App Name</label>
-                            <input type="text" name="app" placeholder="e.g. YouTube Reels" class="w-full bg-surface border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary px-6 py-3 text-on-surface font-bold transition-all">
+                            <input type="text" name="app" placeholder="e.g. youtube, instagram, tiktok" class="w-full bg-surface border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary px-6 py-3 text-on-surface font-bold transition-all">
                         </div>
                     </div>
                     <div class="flex gap-8">

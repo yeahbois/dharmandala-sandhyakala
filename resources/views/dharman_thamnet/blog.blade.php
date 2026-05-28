@@ -39,41 +39,78 @@
     </style>
 
     <article class="w-full article-gradient min-h-screen text-left" id="blog-post-page">
-        <!-- Hero Section -->
-        <header class="relative w-full h-[60vh] md:h-[70vh] overflow-hidden">
-            <img src="{{ $post->image_url ? (Str::startsWith($post->image_url, ['http://', 'https://']) ? $post->image_url : asset($post->image_url)) : 'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1600&q=80' }}" 
-                class="w-full h-full object-cover" 
-                alt="{{ $post->title }}">
-            <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
-            
-            <div class="absolute bottom-0 left-0 w-full pb-16 px-8 md:px-20">
-                <div class="max-w-4xl mx-auto space-y-6">
-                    <span class="px-4 py-2 bg-primary text-on-primary text-xs font-black uppercase tracking-widest">
-                        {{ $post->category }}
-                    </span>
-                    <h1 class="text-4xl md:text-7xl font-black tracking-tighter text-on-surface leading-tight">
-                        {{ $post->title }}
-                    </h1>
-                    <div class="flex items-center gap-6 pt-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-primary-container flex items-center justify-center text-on-primary-container font-bold text-sm">
-                                {{ strtoupper(substr($post->author, 0, 1)) }}
-                            </div>
-                            <div class="text-left">
-                                <p class="text-sm font-bold text-on-surface">{{ $post->author }}</p>
-                                <p class="text-xs text-on-surface-variant font-medium">{{ $post->created_at->format('M d, Y') }} • {{ ceil(str_word_count(strip_tags($post->content)) / 200) }} min read</p>
+        @if($post->category === 'ThamsUp')
+            <!-- ThamsUp Gallery View -->
+            <header class="relative w-full min-h-screen flex flex-col items-center justify-center py-20 px-8">
+                <div class="max-w-6xl w-full space-y-12 text-center">
+                    <div class="space-y-4">
+                        <span class="px-4 py-2 bg-primary text-on-primary text-xs font-black uppercase tracking-widest">
+                            {{ $post->category }}
+                        </span>
+                        <h1 class="text-4xl md:text-7xl font-black tracking-tighter text-on-surface leading-tight uppercase">
+                            {{ $post->title }}
+                        </h1>
+                        <p class="text-sm font-bold text-on-surface-variant uppercase tracking-widest">by {{ $post->author }} • {{ $post->created_at->format('M d, Y') }}</p>
+                    </div>
+
+                    <div class="w-full aspect-[4/3] md:aspect-video bg-surface-variant overflow-hidden shadow-2xl border border-outline/10">
+                        <img src="{{ $post->image_url ? (Str::startsWith($post->image_url, ['http://', 'https://']) ? $post->image_url : asset($post->image_url)) : 'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1600&q=80' }}"
+                            class="w-full h-full object-contain"
+                            alt="{{ $post->title }}">
+                    </div>
+
+                    @if($post->content && strip_tags($post->content) !== '')
+                    <button onclick="document.getElementById('content-section').scrollIntoView({behavior: 'smooth'})"
+                        class="px-10 py-4 bg-primary text-on-primary text-xs font-black uppercase tracking-widest hover:opacity-90 transition-all shadow-xl shadow-primary/20">
+                        Read Article
+                    </button>
+                    @endif
+                </div>
+            </header>
+
+            <main id="content-section" class="max-w-4xl mx-auto px-8 py-20">
+                @if($post->content && strip_tags($post->content) !== '')
+                <div class="prose max-w-none">
+                    {!! $post->content !!}
+                </div>
+                @endif
+        @else
+            <!-- Standard Blog View -->
+            <header class="relative w-full h-[60vh] md:h-[70vh] overflow-hidden">
+                <img src="{{ $post->image_url ? (Str::startsWith($post->image_url, ['http://', 'https://']) ? $post->image_url : asset($post->image_url)) : 'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1600&q=80' }}"
+                    class="w-full h-full object-cover"
+                    alt="{{ $post->title }}">
+                <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+
+                <div class="absolute bottom-0 left-0 w-full pb-16 px-8 md:px-20">
+                    <div class="max-w-4xl mx-auto space-y-6">
+                        <span class="px-4 py-2 bg-primary text-on-primary text-xs font-black uppercase tracking-widest">
+                            {{ $post->category }}
+                        </span>
+                        <h1 class="text-4xl md:text-7xl font-black tracking-tighter text-on-surface leading-tight">
+                            {{ $post->title }}
+                        </h1>
+                        <div class="flex items-center gap-6 pt-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-primary-container flex items-center justify-center text-on-primary-container font-bold text-sm">
+                                    {{ strtoupper(substr($post->author, 0, 1)) }}
+                                </div>
+                                <div class="text-left">
+                                    <p class="text-sm font-bold text-on-surface">{{ $post->author }}</p>
+                                    <p class="text-xs text-on-surface-variant font-medium">{{ $post->created_at->format('M d, Y') }} • {{ ceil(str_word_count(strip_tags($post->content)) / 200) }} min read</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </header>
+            </header>
 
-        <!-- Content Section -->
-        <main class="max-w-4xl mx-auto px-8 py-20">
-            <div class="prose max-w-none">
-                {!! $post->content !!}
-            </div>
+            <!-- Content Section -->
+            <main class="max-w-4xl mx-auto px-8 py-20">
+                <div class="prose max-w-none">
+                    {!! $post->content !!}
+                </div>
+        @endif
 
             <!-- Footer Meta -->
             <footer class="mt-24 pt-12 border-t border-outline/10">

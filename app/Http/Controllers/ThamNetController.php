@@ -47,10 +47,14 @@ class ThamNetController extends Controller
             'title' => 'required|string|max:255',
             'category' => 'required|string',
             'image_url' => 'nullable|url',
-            'content' => 'required|string',
+            'content' => $request->category === 'ThamsUp' ? 'nullable|string' : 'required|string',
             'author' => 'required|string',
             'is_featured' => 'boolean'
         ]);
+
+        if ($data['category'] === 'ThamsUp') {
+            $data['is_featured'] = false;
+        }
 
         $data['slug'] = Str::slug($data['title']) . '-' . rand(1000, 9999);
 

@@ -53,11 +53,12 @@
                     <!-- Category -->
                     <div class="space-y-2">
                         <label class="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Category</label>
-                        <select name="category" required class="w-full bg-surface border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary rounded-none px-6 py-4 text-on-surface font-bold transition-all">
+                        <select name="category" id="category-select" required class="w-full bg-surface border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary rounded-none px-6 py-4 text-on-surface font-bold transition-all">
                             <option value="Beasiswa">Beasiswa</option>
                             <option value="Lomba">Lomba</option>
                             <option value="Cerita">Cerita</option>
                             <option value="Ilmu">Ilmu</option>
+                            <option value="ThamsUp">ThamsUp</option>
                             <option value="Lainnya">Lainnya</option>
                         </select>
                     </div>
@@ -72,14 +73,15 @@
                     </div>
                     <!-- Image URL -->
                     <div class="space-y-2">
-                        <label class="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Cover Image URL</label>
+                        <label id="image-url-label" class="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Cover Image URL</label>
                         <input type="url" name="image_url" placeholder="https://unsplash.com/..." 
                             class="w-full bg-surface border-none ring-1 ring-outline/20 focus:ring-2 focus:ring-primary rounded-none px-6 py-4 text-on-surface font-bold placeholder:opacity-30 transition-all">
+                        <p id="thamsup-desc" class="hidden text-[10px] font-medium text-on-surface-variant mt-2">Use https://celloportfolio.vercel.app/tools/drivecdn to convert google drive link to cdn</p>
                     </div>
                 </div>
 
                 <!-- Featured Toggle -->
-                <div class="flex items-center gap-4">
+                <div id="featured-toggle-container" class="flex items-center gap-4">
                     <input type="checkbox" name="is_featured" value="1" id="is_featured" class="w-5 h-5 rounded-none text-primary border-outline focus:ring-primary">
                     <label for="is_featured" class="text-sm font-bold text-on-surface">Mark as Editorial Choice (Hero Spotlight)</label>
                 </div>
@@ -117,13 +119,36 @@
         const form = document.querySelector('#blog-form');
         const submitBtn = document.querySelector('#submit-btn');
         const contentInput = document.querySelector('#content-input');
+        const categorySelect = document.querySelector('#category-select');
+        const imageUrlLabel = document.querySelector('#image-url-label');
+        const thamsupDesc = document.querySelector('#thamsup-desc');
+        const featuredToggleContainer = document.querySelector('#featured-toggle-container');
+        const isFeaturedCheckbox = document.querySelector('#is_featured');
+
+        categorySelect.addEventListener('change', function() {
+            if (this.value === 'ThamsUp') {
+                imageUrlLabel.textContent = 'ThamsUp URL';
+                thamsupDesc.classList.remove('hidden');
+                featuredToggleContainer.classList.add('hidden');
+                isFeaturedCheckbox.checked = false;
+            } else {
+                imageUrlLabel.textContent = 'Cover Image URL';
+                thamsupDesc.classList.add('hidden');
+                featuredToggleContainer.classList.remove('hidden');
+            }
+        });
+
+        // Trigger change on load if editing or pre-selected
+        if (categorySelect.value === 'ThamsUp') {
+            categorySelect.dispatchEvent(new Event('change'));
+        }
 
         submitBtn.addEventListener('click', function() {
             // Get content from Quill
             contentInput.value = quill.root.innerHTML;
             
             // Basic validation
-            if (quill.getText().trim().length === 0) {
+            if (categorySelect.value !== 'ThamsUp' && quill.getText().trim().length === 0) {
                 alert('Article content cannot be empty.');
                 return;
             }
