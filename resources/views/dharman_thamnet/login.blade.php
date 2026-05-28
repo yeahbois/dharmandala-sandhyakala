@@ -31,14 +31,14 @@
                     <div class="space-y-2">
                         <label for="username" class="text-[10px] font-black tracking-[0.2em] text-secondary uppercase block">Admin Identifier</label>
                         <input type="text" id="username" name="username" value="{{ old('username') }}" required autofocus
-                            class="w-full bg-surface-variant/50 border border-outline/30 px-4 py-3 text-on-surface font-semibold focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder:text-on-surface-variant/50"
+                            class="w-full bg-surface-variant border border-outline/30 px-4 py-3 text-on-surface font-semibold focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder:text-on-surface-variant/50 !text-on-surface"
                             placeholder="Enter username">
                     </div>
 
                     <div class="space-y-2">
                         <label for="password" class="text-[10px] font-black tracking-[0.2em] text-secondary uppercase block">Passcode</label>
                         <input type="password" id="password" name="password" required
-                            class="w-full bg-surface-variant/50 border border-outline/30 px-4 py-3 text-on-surface font-semibold focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder:text-on-surface-variant/50"
+                            class="w-full bg-surface-variant border border-outline/30 px-4 py-3 text-on-surface font-semibold focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300 placeholder:text-on-surface-variant/50 !text-on-surface"
                             placeholder="Enter password">
                     </div>
 
