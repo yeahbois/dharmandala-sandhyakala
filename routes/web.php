@@ -43,6 +43,13 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/jvlyn', function () {
+    return view('jvlyn.index');
+});
+Route::get('/jvlyn/ticket', function () {
+    return view('jvlyn.ticket');
+});
+
 Route::get('/maintenance', function () {
     return view('dharman_homepage.maintenance');
 });
@@ -104,11 +111,11 @@ foreach (['osis', 'mpk'] as $inst) {
 }
 
 // Helper to sync JSON data with Database
-$syncCabinetWithDb = function(&$data) {
+$syncCabinetWithDb = function (&$data) {
     try {
         $admins = Admin::all()->keyBy('name');
-        
-        $processMembers = function(&$members) use ($admins) {
+
+        $processMembers = function (&$members) use ($admins) {
             foreach ($members as &$member) {
                 if (isset($admins[$member['name']])) {
                     $admin = $admins[$member['name']];
@@ -145,7 +152,8 @@ Route::get('/kabinet/osis', function () use ($cabinetData, $syncCabinetWithDb) {
 });
 
 Route::get('/kabinet/osis/ds/seksi/{seksi}', function ($seksi) use ($cabinetData, $cabinetSections, $syncCabinetWithDb) {
-    if (!isset($cabinetSections['osis'][$seksi])) abort(404);
+    if (!isset($cabinetSections['osis'][$seksi]))
+        abort(404);
 
     $data = $cabinetSections['osis'][$seksi];
     $syncCabinetWithDb($data);
@@ -171,7 +179,8 @@ Route::get('/kabinet/mpk', function () use ($cabinetData, $syncCabinetWithDb) {
 });
 
 Route::get('/kabinet/mpk/ds/bidang/{bidang}', function ($bidang) use ($cabinetData, $cabinetSections, $syncCabinetWithDb) {
-    if (!isset($cabinetSections['mpk'][$bidang])) abort(404);
+    if (!isset($cabinetSections['mpk'][$bidang]))
+        abort(404);
 
     $data = $cabinetSections['mpk'][$bidang];
     $syncCabinetWithDb($data);

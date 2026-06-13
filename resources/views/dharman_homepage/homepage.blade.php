@@ -136,6 +136,74 @@
             border-color: transparent;
         }
 
+        /* Rainbow Shining Button */
+        .btn-rainbow-wrapper {
+            position: relative;
+            display: inline-flex;
+        }
+        .btn-rainbow-glow {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, #ff2a5f, #ff7e40, #ffeb3b, #2bf076, #00f0ff, #3a86ff, #8338ec, #ff2a5f);
+            background-size: 200% 200%;
+            animation: rainbow-shift 6s ease infinite;
+            filter: blur(15px);
+            opacity: 0.65;
+            transition: opacity 0.3s ease, filter 0.3s ease;
+            pointer-events: none;
+        }
+        .btn-rainbow {
+            position: relative;
+            background: linear-gradient(90deg, #ff2a5f, #ff7e40, #ffeb3b, #2bf076, #00f0ff, #3a86ff, #8338ec, #ff2a5f);
+            background-size: 200% 200%;
+            animation: rainbow-shift 6s ease infinite;
+            color: #ffffff !important;
+            border: none;
+            overflow: hidden;
+            z-index: 1;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .btn-rainbow::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.3) 30%,
+                rgba(255, 255, 255, 0.75) 50%,
+                rgba(255, 255, 255, 0.3) 70%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: skewX(-20deg);
+            animation: shine 4s ease-in-out infinite;
+        }
+        .btn-rainbow:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        .btn-rainbow:hover ~ .btn-rainbow-glow {
+            opacity: 0.95;
+            filter: blur(20px);
+        }
+        .btn-rainbow:active {
+            transform: translateY(1px);
+        }
+        @keyframes rainbow-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes shine {
+            0% { left: -100%; }
+            20% { left: 100%; }
+            100% { left: 100%; }
+        }
+
         /* Expandable Text Styles */
         .truncate-text {
             display: -webkit-box;
@@ -211,9 +279,13 @@
                 <span class="block md:inline">Resmi OSIS Sekolah</span> 
                 <span class="text-white font-medium">SMAN Unggulan M.H. Thamrin</span>.
             </p>
-            <div style="display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:flex-start;">
+            <div style="display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:flex-start; align-items: center;">
                 <a href="/programkerja" class="btn-base btn-pri">Program Kerja</a>
-                <a href="/publikasiprestasi" class="btn-base btn-sec">Publikasi Prestasi</a>
+                <!-- <a href="/publikasiprestasi" class="btn-base btn-sec">Publikasi Prestasi</a> -->
+                <div class="btn-rainbow-wrapper">
+                    <div class="btn-rainbow-glow"></div>
+                    <a href="/jvlyn" class="btn-base btn-rainbow">J V L Y N  X</a>
+                </div>
             </div>
         </div>
     </section>
