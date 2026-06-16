@@ -3,4 +3,5 @@
 
   Press Ctrl+C to stop the server
 
-  2026-06-16 08:13:39 /jvlyn/entry_pass ................................ ~ 1s
+  2026-06-16 08:25:49 /jvlyn/entry_pass ................................ ~ 1s
+  Failed to listen on 127.0.0.1:8001 (reason: Address already in use)
