@@ -51,16 +51,17 @@ Route::get('/jvlyn/entry_pass', function () {
 });
 Route::get('/jvlyn/checkout', function () {
     return view('jvlyn.checkout');
-});
+})->name('jvlyn.checkout');
+Route::post('/jvlyn/checkout/store', [JVLYNController::class, 'storeOrder'])->name('jvlyn.checkout.store');
+Route::get('/jvlyn/summary/{order_id}', [JVLYNController::class, 'summary'])->name('jvlyn.summary');
 
-Route::get('/jvlyn/panit/scanner', function () {
-    return view('jvlyn.scanner');
-});
-Route::get('/jvlyn/panit/checker', function () {
-    return view('jvlyn.checker');
-});
-Route::get('/jvlyn/panit/dashboard', function () {
-    return view('jvlyn.dashboard');
+Route::middleware('auth')->group(function () {
+    Route::get('/jvlyn/panit/scanner', function () {
+        return view('jvlyn.scanner');
+    });
+    Route::get('/jvlyn/panit/checker', [JVLYNController::class, 'checker'])->name('jvlyn.panit.checker');
+    Route::get('/jvlyn/panit/dashboard', [JVLYNController::class, 'dashboard'])->name('jvlyn.panit.dashboard');
+    Route::post('/jvlyn/panit/status/update', [JVLYNController::class, 'updateOrderStatus'])->name('jvlyn.panit.status.update');
 });
 
 Route::get('/jvlyn/api/data', [JVLYNController::class, 'data'])->name('jvlyn.api.data');
