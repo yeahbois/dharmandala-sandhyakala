@@ -119,6 +119,12 @@ class JVLYNController extends Controller
             'order_status' => 'pending',
         ]);
 
+        // Fetch all categories first to get their current "selled" count
+        $categoriesData = $this->supabase->from('ticket_categories')->select('*') ?: [];
+        $categories = collect($categoriesData)->keyBy(function($cat) {
+            return strtolower($cat['category_name'] ?? '');
+        })->toArray();
+
         foreach ($tickets as $ticketData) {
             $seatNumber = $ticketData['seat_number'];
             unset($ticketData['seat_number']);
@@ -129,9 +135,22 @@ class JVLYNController extends Controller
                 $this->supabase->from('vip_seats')->update(['status' => 'sold'], 'seat_number', $seatNumber);
             }
 
-            // Decrement quota in ticket_categories
+            // Increment "selled" in ticket_categories (Available quota is already decremented when added to cart)
             $quotaSearch = $ticketData['ticket_type'] === 'vip-seat' ? 'vip seat' : ($ticketData['ticket_type'] === 'vip-random' ? 'vip random' : 'festival');
-            $this->supabase->rpc('adjust_quota', ['cat_key' => $quotaSearch, 'delta' => -1]);
+            $quotaSearchLower = strtolower($quotaSearch);
+
+            if (isset($categories[$quotaSearchLower])) {
+                $cat = $categories[$quotaSearchLower];
+                $newSelled = ($cat['selled'] ?? 0) + 1;
+                
+                // Update local array for subsequent tickets of the same category in the loop
+                $categories[$quotaSearchLower]['selled'] = $newSelled;
+
+                // Persist the updated "selled" count to Supabase
+                $this->supabase->from('ticket_categories')->update([
+                    'selled' => $newSelled
+                ], 'id', $cat['id']);
+            }
         }
 
         // Clear Supabase Cart

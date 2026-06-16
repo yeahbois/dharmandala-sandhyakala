@@ -88,23 +88,27 @@ class SupabaseService
      */
     public function storage(string $bucket)
     {
-        return new class ($this->url, $this->client(), $bucket) {
+        return new class ($this->url, $this->key, $bucket) {
             private string $url;
-            private $client;
+            private string $key;
             private string $bucket;
 
-            public function __construct($url, $client, $bucket)
+            public function __construct($url, $key, $bucket)
             {
                 $this->url = $url;
-                $this->client = $client;
+                $this->key = $key;
                 $this->bucket = $bucket;
             }
 
             public function upload(string $path, $file)
             {
-                $response = $this->client->withHeaders([
-                    'Content-Type' => $file->getMimeType(),
-                ])->post("{$this->url}/storage/v1/object/{$this->bucket}/{$path}", file_get_contents($file->getRealPath()));
+                $response = Http::withHeaders([
+                    'apikey' => $this->key,
+                    'Authorization' => 'Bearer ' . $this->key,
+                ])->withBody(
+                    file_get_contents($file->getRealPath()),
+                    $file->getMimeType()
+                )->post("{$this->url}/storage/v1/object/{$this->bucket}/{$path}");
 
                 return $response->json();
             }
