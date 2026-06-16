@@ -100,26 +100,47 @@
             const sbClient = (typeof window.supabase !== 'undefined' && sbUrl && sbKey) ? window.supabase.createClient(sbUrl, sbKey) : null;
 
             if (sbClient) {
-                // Subscribe to VIP Seats
-                sbClient.channel('dashboard-seats')
-                    .on('postgres_changes', { event: '*', schema: 'public', table: 'vip_seats' }, async () => {
-                        const { data } = await sbClient.from('vip_seats').select('id, status');
-                        if (data) {
-                            const available = data.filter(s => s.status === 'available').length;
+                async function fetchAndRenderStats() {
+                    try {
+                        const { data: seats } = await sbClient.from('vip_seats').select('seat_number, status');
+                        const { data: carts } = await sbClient.from('cart_items').select('items');
+
+                        const locked = new Set();
+                        if (carts) {
+                            carts.forEach(c => {
+                                (c.items || []).forEach(item => {
+                                    if (item.category === 'vip-seat' && item.seat_number) {
+                                        locked.add(item.seat_number);
+                                    }
+                                });
+                            });
+                        }
+
+                        if (seats) {
+                            const available = seats.filter(s => {
+                                const code = s.seat_number || s.seat_code || s.id;
+                                return s.status === 'available' && !locked.has(code);
+                            }).length;
                             document.getElementById('realtime-vip').innerText = available;
                         }
-                    })
+
+                        if (carts) {
+                            const active = carts.filter(c => c.items && c.items.length > 0).length;
+                            document.getElementById('realtime-carts').innerText = active;
+                        }
+                    } catch (e) {
+                        console.error("Dashboard Stats Fetch Error:", e);
+                    }
+                }
+
+                // Subscribe to VIP Seats
+                sbClient.channel('dashboard-seats')
+                    .on('postgres_changes', { event: '*', schema: 'public', table: 'vip_seats' }, fetchAndRenderStats)
                     .subscribe();
 
                 // Subscribe to Cart Changes
                 sbClient.channel('dashboard-carts')
-                    .on('postgres_changes', { event: '*', schema: 'public', table: 'cart_items' }, async () => {
-                        const { data } = await sbClient.from('cart_items').select('items');
-                        if (data) {
-                            const active = data.filter(c => c.items && c.items.length > 0).length;
-                            document.getElementById('realtime-carts').innerText = active;
-                        }
-                    })
+                    .on('postgres_changes', { event: '*', schema: 'public', table: 'cart_items' }, fetchAndRenderStats)
                     .subscribe();
             }
         })();

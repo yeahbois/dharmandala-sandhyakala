@@ -221,11 +221,23 @@ class JVLYNController extends Controller
         $allOrders = Order::with('tickets')->latest()->get();
 
         // Real-time Supabase Data
-        $vipSeats = $this->supabase->from('vip_seats')->select('id, status');
-        $availableVIP = collect($vipSeats)->where('status', 'available')->count();
+        $vipSeats = $this->supabase->from('vip_seats')->select('seat_number, status') ?: [];
+        $activeCarts = $this->supabase->from('cart_items')->select('items') ?: [];
 
-        $activeCarts = $this->supabase->from('cart_items')->select('session_id, items');
-        $cartsCount = collect($activeCarts)->filter(fn($c) => !empty($c['items']))->count();
+        $lockedSeats = collect($activeCarts)
+            ->flatMap(fn($cart) => $cart['items'] ?? [])
+            ->filter(fn($item) => ($item['category'] ?? '') === 'vip-seat' && !empty($item['seat_number']))
+            ->pluck('seat_number')
+            ->unique()
+            ->toArray();
+
+        $availableVIP = collect($vipSeats)
+            ->filter(fn($seat) => ($seat['status'] ?? '') === 'available' && !in_array($seat['seat_number'] ?? '', $lockedSeats))
+            ->count();
+
+        $cartsCount = collect($activeCarts)
+            ->filter(fn($c) => !empty($c['items']))
+            ->count();
 
         return view('jvlyn.dashboard', compact(
             'totalOrders', 'ordersByStatus', 'ticketsByStatus', 'ticketsByType',
