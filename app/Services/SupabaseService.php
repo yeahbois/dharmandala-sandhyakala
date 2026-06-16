@@ -38,6 +38,7 @@ class SupabaseService
             private string $url;
             private $client;
             private string $table;
+            private array $query = [];
 
             public function __construct($url, $client, $table)
             {
@@ -46,9 +47,16 @@ class SupabaseService
                 $this->table = $table;
             }
 
+            public function eq(string $column, $value)
+            {
+                $this->query[] = "{$column}=eq.{$value}";
+                return $this;
+            }
+
             public function select(string $columns = '*')
             {
-                $response = $this->client->get("{$this->url}/rest/v1/{$this->table}?select={$columns}");
+                $queryString = !empty($this->query) ? '&' . implode('&', $this->query) : '';
+                $response = $this->client->get("{$this->url}/rest/v1/{$this->table}?select={$columns}{$queryString}");
                 return $response->json();
             }
 
@@ -62,6 +70,48 @@ class SupabaseService
             {
                 $response = $this->client->patch("{$this->url}/rest/v1/{$this->table}?{$column}=eq.{$value}", $data);
                 return $response->json();
+            }
+        };
+    }
+
+    /**
+     * Memanggil RPC (Stored Procedure) di Supabase
+     */
+    public function rpc(string $function, array $params = [])
+    {
+        $response = $this->client()->post("{$this->url}/rest/v1/rpc/{$function}", $params);
+        return $response->json();
+    }
+
+    /**
+     * Akses ke Supabase Storage
+     */
+    public function storage(string $bucket)
+    {
+        return new class ($this->url, $this->client(), $bucket) {
+            private string $url;
+            private $client;
+            private string $bucket;
+
+            public function __construct($url, $client, $bucket)
+            {
+                $this->url = $url;
+                $this->client = $client;
+                $this->bucket = $bucket;
+            }
+
+            public function upload(string $path, $file)
+            {
+                $response = $this->client->withHeaders([
+                    'Content-Type' => $file->getMimeType(),
+                ])->post("{$this->url}/storage/v1/object/{$this->bucket}/{$path}", file_get_contents($file->getRealPath()));
+
+                return $response->json();
+            }
+
+            public function getPublicUrl(string $path)
+            {
+                return "{$this->url}/storage/v1/object/public/{$this->bucket}/{$path}";
             }
         };
     }

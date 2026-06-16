@@ -155,24 +155,8 @@
                                 </div>
                                 <div class="border border-outline/10 bg-surface-variant/10 p-5 flex flex-col items-center justify-center space-y-3">
                                     <h4 class="text-xs font-black uppercase tracking-widest text-secondary">Scan QRIS Payment</h4>
-                                    <div class="bg-white p-2 w-32 h-32 flex items-center justify-center shadow-md border border-outline/10">
-                                        <svg class="w-full h-full text-black" viewBox="0 0 100 100">
-                                            <rect width="100" height="100" fill="white" />
-                                            <rect x="5" y="5" width="20" height="20" fill="black" />
-                                            <rect x="10" y="10" width="10" height="10" fill="white" />
-                                            <rect x="75" y="5" width="20" height="20" fill="black" />
-                                            <rect x="80" y="10" width="10" height="10" fill="white" />
-                                            <rect x="5" y="75" width="20" height="20" fill="black" />
-                                            <rect x="10" y="80" width="10" height="10" fill="white" />
-                                            <rect x="30" y="15" width="5" height="15" fill="black" />
-                                            <rect x="40" y="5" width="10" height="10" fill="black" />
-                                            <rect x="60" y="25" width="15" height="5" fill="black" />
-                                            <rect x="45" y="45" width="10" height="10" fill="black" />
-                                            <rect x="30" y="60" width="5" height="20" fill="black" />
-                                            <rect x="70" y="70" width="20" height="5" fill="black" />
-                                            <rect x="80" y="80" width="15" height="15" fill="black" />
-                                            <rect x="40" y="80" width="10" height="5" fill="black" />
-                                        </svg>
+                                    <div class="bg-white p-2 w-32 h-32 flex items-center justify-center shadow-md border border-outline/10 overflow-hidden">
+                                        <img src="{{ asset('image/qris.jpg') }}" alt="QRIS" class="w-full h-full object-contain">
                                     </div>
                                     <span class="text-[9px] uppercase tracking-wider text-on-surface-variant">Instant Settlement Payment</span>
                                 </div>
@@ -569,107 +553,37 @@
             btnNext.disabled = true;
             btnNext.innerText = "Processing...";
 
-            const orderId = "ORD-" + Math.floor(100000 + Math.random() * 900000);
-            const ticketCount = state.cart.length;
-            
-            // Calculate prices and discounts
-            let subtotal = 0;
-            let discount = 0;
-            state.cart.forEach(item => {
-                subtotal += item.price;
-                if (item.category === 'festival' && item.referral_code === 'PROMO10') {
-                    discount += (item.price * 0.1);
+            const formData = new FormData();
+            formData.append('buyer_name', state.personalInfo.name);
+            formData.append('buyer_email', state.personalInfo.email);
+            formData.append('buyer_phone', state.personalInfo.phone);
+            formData.append('session_id', state.sessionId);
+            formData.append('payment_proof', state.paymentProof);
+
+            try {
+                const response = await fetch('/jvlyn/checkout/store', {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    window.location.href = `/jvlyn/summary/${result.order_id}`;
+                } else {
+                    showNotification(result.message || "Failed to submit order", "warning");
+                    btnNext.disabled = false;
+                    btnNext.innerText = "Complete Order";
                 }
-            });
-            const grandTotal = subtotal - discount;
-
-            document.getElementById('success-order-id').innerText = `#${orderId}`;
-            document.getElementById('success-total-price').innerText = `IDR ${grandTotal.toLocaleString('id-ID')}`;
-            
-            const categoryLabels = state.cart.map(item => {
-                if (item.category === 'festival') return 'Festival';
-                if (item.category === 'vip-seat') return `VIP Seat ${item.seat_number}`;
-                return 'VIP Random';
-            });
-            document.getElementById('success-ticket-types').innerText = categoryLabels.join(', ');
-
-            if (supabaseClient) {
-                try {
-                    // 1. Insert order details to database
-                    const { data: orderData, error: orderErr } = await supabaseClient
-                        .from('orders')
-                        .insert([{
-                            buyer_name: state.personalInfo.name,
-                            buyer_email: state.personalInfo.email,
-                            buyer_phone: state.personalInfo.phone,
-                            price: grandTotal,
-                            payment_proof: state.paymentProof.name || 'uploaded_receipt.jpg',
-                            total_tickets: ticketCount,
-                            order_status: 'pending'
-                        }])
-                        .select();
-
-                    if (!orderErr && orderData) {
-                        const newOrderId = orderData[0].id;
-
-                        // 2. Generate tickets inside jvlyn_tickets
-                        for (let i = 0; i < state.cart.length; i++) {
-                            const item = state.cart[i];
-                            let typeLabel = '';
-                            if (item.category === 'festival') typeLabel = 'Festival';
-                            else if (item.category === 'vip-seat') typeLabel = 'VIP Seat';
-                            else typeLabel = 'VIP Random';
-
-                            await supabaseClient
-                                .from('jvlyn_tickets')
-                                .insert([{
-                                    order_id: newOrderId,
-                                    ticket_type: typeLabel,
-                                    ticket_status: 'pending_delivery',
-                                    is_scanned: false,
-                                    referral_code: item.referral_code || null,
-                                    ticket_id: `TKT-${item.category.toUpperCase()}-${item.seat_number ? item.seat_number + '-' : ''}${Math.floor(10000 + Math.random() * 90000)}`
-                                }]);
-
-                            // Update VIP Seat status to sold if applicable
-                            if (item.category === 'vip-seat' && item.seat_number) {
-                                await supabaseClient
-                                    .from('vip_seats')
-                                    .update({ status: 'sold' })
-                                    .eq('seat_number', item.seat_number);
-                            }
-
-                            // 3. Update category quotas
-                            const quotaSearch = item.category === 'vip-seat' ? 'VIP Seat' : (item.category === 'vip-random' ? 'VIP Random' : 'Festival');
-                            const { data: catData } = await supabaseClient
-                                .from('ticket_categories')
-                                .select('id, available_quota')
-                                .ilike('category_name', `%${quotaSearch}%`);
-
-                            if (catData && catData.length > 0) {
-                                const catId = catData[0].id;
-                                const newQuota = Math.max(0, catData[0].available_quota - 1);
-                                await supabaseClient
-                                    .from('ticket_categories')
-                                    .update({ available_quota: newQuota })
-                                    .eq('id', catId);
-                            }
-                        }
-
-                        // 4. Delete the active cart record for this session
-                        await supabaseClient
-                            .from('cart_items')
-                            .delete()
-                            .eq('session_id', state.sessionId);
-                    }
-                } catch (e) {
-                    console.error("Database Transmission Error:", e);
-                }
+            } catch (error) {
+                console.error("Submission Error:", error);
+                showNotification("An error occurred during submission", "warning");
+                btnNext.disabled = false;
+                btnNext.innerText = "Complete Order";
             }
-
-            state.currentStep = 4;
-            updateStepperUI();
-            showNotification("Order submitted successfully!", "success");
         }
 
         // ==========================================
