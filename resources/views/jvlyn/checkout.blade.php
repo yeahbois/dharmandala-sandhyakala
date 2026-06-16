@@ -389,6 +389,9 @@
 
             state.cart.forEach(item => {
                 subtotal += item.price;
+
+                // For PROMO10, it's a percentage off.
+                // Special codes already have adjusted prices in cart.
                 let itemDiscount = 0;
                 if (item.category === 'festival' && item.referral_code === 'PROMO10') {
                     itemDiscount = item.price * 0.1;

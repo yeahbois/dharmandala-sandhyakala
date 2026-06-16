@@ -871,18 +871,31 @@
 
             // Validate referral code if entered
             let referral = null;
-            if (state.selectedTicket === 'festival' && code === 'PROMO10') {
-                referral = code;
-            } else if (state.selectedTicket === 'festival' && code !== '') {
-                showNotification("Invalid referral code.", "warning");
-                return;
+            let finalPrice = prices[state.selectedTicket];
+
+            if (state.selectedTicket === 'festival') {
+                if (code === 'JVLYNXALUMNI') {
+                    referral = code;
+                    finalPrice = 85000;
+                } else if (code === 'JVLYNXMHT18') {
+                    referral = code;
+                    finalPrice = 132000;
+                } else if (code !== '') {
+                    // For PROMO10 or others, we can keep existing logic or just reject if not these specific ones
+                    if (code === 'PROMO10') {
+                        referral = code;
+                    } else {
+                        showNotification("Invalid referral code.", "warning");
+                        return;
+                    }
+                }
             }
 
             const item = {
                 id: 'cart-' + Math.random().toString(36).substring(2, 9),
                 category: state.selectedTicket,
                 seat_number: null,
-                price: prices[state.selectedTicket],
+                price: finalPrice,
                 referral_code: referral
             };
 
@@ -958,7 +971,9 @@
             state.cart.forEach(item => {
                 subtotal += item.price;
 
-                // 10% discount on Festival pass with PROMO10 code
+                // Handle discounts.
+                // If it's the special codes, the price is already adjusted in addFestivalToCart.
+                // But for PROMO10, it's a percentage off.
                 let itemDiscount = 0;
                 if (item.category === 'festival' && item.referral_code === 'PROMO10') {
                     itemDiscount = item.price * 0.1;
