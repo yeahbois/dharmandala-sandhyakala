@@ -12,8 +12,8 @@ class SupabaseService
     public function __construct()
     {
         // Mengambil data dari file .env
-        $this->url = rtrim(config('services.supabase.url'), '/');
-        $this->key = config('services.supabase.key');
+        $this->url = rtrim(config('services.supabase.url', ''), '/');
+        $this->key = config('services.supabase.key', '');
     }
 
     /**
