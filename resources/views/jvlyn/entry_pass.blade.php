@@ -364,6 +364,7 @@
     </div>
 
     <script>
+        (function() {
         // Supabase Connection Settings
         const supabaseUrl = "https://gckklfoszosvhkyickis.supabase.co";
         const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdja2tsZm9zem9zdmhreWlja2lzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE0OTg2NzcsImV4cCI6MjA5NzA3NDY3N30.ieXaIliTQo5MTpSMx9n68cupJlyibsg5Q1usGl8R5EM";
@@ -1160,5 +1161,15 @@
                 }, 4000);
             }
         }
+
+        // Expose functions to global scope for onclick attributes
+        window.selectTicket = selectTicket;
+        window.selectSeat = selectSeat;
+        window.addFestivalToCart = addFestivalToCart;
+        window.addSeatToCart = addSeatToCart;
+        window.removeCartItem = removeCartItem;
+        window.proceedToCheckout = proceedToCheckout;
+        window.closeAlertModal = closeAlertModal;
+        })();
     </script>
 </x-layout>

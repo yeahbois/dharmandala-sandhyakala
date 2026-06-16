@@ -94,29 +94,35 @@
 
     <script>
         // Supabase Real-time Sync
-        const supabaseUrl = "{{ config('services.supabase.url') }}";
-        const supabaseKey = "{{ config('services.supabase.key') }}";
-        const supabase = supabaseUrl && supabaseKey ? window.supabase.createClient(supabaseUrl, supabaseKey) : null;
+        (function() {
+            const sbUrl = "{{ config('services.supabase.url') }}";
+            const sbKey = "{{ config('services.supabase.key') }}";
+            const sbClient = (typeof window.supabase !== 'undefined' && sbUrl && sbKey) ? window.supabase.createClient(sbUrl, sbKey) : null;
 
-        if (supabase) {
-            // Subscribe to VIP Seats
-            supabase.channel('dashboard-seats')
-                .on('postgres_changes', { event: '*', schema: 'public', table: 'vip_seats' }, async () => {
-                    const { data } = await supabase.from('vip_seats').select('id, status');
-                    const available = data.filter(s => s.status === 'available').length;
-                    document.getElementById('realtime-vip').innerText = available;
-                })
-                .subscribe();
+            if (sbClient) {
+                // Subscribe to VIP Seats
+                sbClient.channel('dashboard-seats')
+                    .on('postgres_changes', { event: '*', schema: 'public', table: 'vip_seats' }, async () => {
+                        const { data } = await sbClient.from('vip_seats').select('id, status');
+                        if (data) {
+                            const available = data.filter(s => s.status === 'available').length;
+                            document.getElementById('realtime-vip').innerText = available;
+                        }
+                    })
+                    .subscribe();
 
-            // Subscribe to Cart Changes
-            supabase.channel('dashboard-carts')
-                .on('postgres_changes', { event: '*', schema: 'public', table: 'cart_items' }, async () => {
-                    const { data } = await supabase.from('cart_items').select('items');
-                    const active = data.filter(c => c.items && c.items.length > 0).length;
-                    document.getElementById('realtime-carts').innerText = active;
-                })
-                .subscribe();
-        }
+                // Subscribe to Cart Changes
+                sbClient.channel('dashboard-carts')
+                    .on('postgres_changes', { event: '*', schema: 'public', table: 'cart_items' }, async () => {
+                        const { data } = await sbClient.from('cart_items').select('items');
+                        if (data) {
+                            const active = data.filter(c => c.items && c.items.length > 0).length;
+                            document.getElementById('realtime-carts').innerText = active;
+                        }
+                    })
+                    .subscribe();
+            }
+        })();
 
         function exportToCSV() {
             // Simple CSV export logic can be implemented here

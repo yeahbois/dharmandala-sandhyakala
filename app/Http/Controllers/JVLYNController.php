@@ -20,7 +20,18 @@ class JVLYNController extends Controller
 
     public function data()
     {
-        return response()->json([JvlynTicket::all(), Order::all()]);
+        return response()->json([
+            JvlynTicket::all()->map(function($ticket) {
+                return collect($ticket->toArray())->map(function($value) {
+                    return is_string($value) ? mb_convert_encoding($value, 'UTF-8', 'UTF-8') : $value;
+                });
+            }),
+            Order::all()->map(function($order) {
+                return collect($order->toArray())->map(function($value) {
+                    return is_string($value) ? mb_convert_encoding($value, 'UTF-8', 'UTF-8') : $value;
+                });
+            })
+        ]);
     }
 
     public function storeOrder(Request $request)
