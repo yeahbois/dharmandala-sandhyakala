@@ -1,7 +1,7 @@
 <x-layout title="J V L Y N | Jakarta Festival by Thamrin X">
     <x-slot:metadesc>
         <meta name="description"
-            content="Official info portal of J V L Y N - Jakarta Festival by Thamrin X: An Intimate Concert, as the closing event of Thamrin Olympiad and Cup X.">
+            content="Official info portal of JVLYN - Jakarta Festival by Thamrin X: An Intimate Concert, as the closing event of Thamrin Olympiad and Cup X.">
     </x-slot:metadesc>
 
     <style>
@@ -162,9 +162,9 @@
 
         {{-- HERO SECTION --}}
         <section
-            class="mt-15 md:mt-32 relative w-full min-h-[85svh] flex flex-col justify-center items-center text-center overflow-hidden py-16 px-4 md:px-8">
+            class="relative w-full min-h-[85svh] flex flex-col justify-center items-center text-center overflow-hidden py-16 px-4 md:px-8">
             <div class="absolute inset-0 z-0">
-                <img src="{{ asset('images/jon.png') }}" class="w-full h-full object-cover brightness-[0.35]"
+                <img src="{{ asset('images/JVLYNBANNER.JPG') }}" class="w-full h-full object-cover brightness-[0.35]"
                     alt="JVLYN Hero Background">
                 <div class="absolute inset-0 hero-banner-overlay"></div>
             </div>
@@ -189,7 +189,7 @@
                 <div class="flex flex-wrap gap-4 justify-center">
                     <div class="btn-rainbow-wrapper">
                         <div class="btn-rainbow-glow"></div>
-                        <a href="/jvlyn/ticket" class="btn-base btn-rainbow px-10 py-4">Get Tickets</a>
+                        <a href="/jvlyn/entry_pass" class="btn-base btn-rainbow px-10 py-4">Get Tickets</a>
                     </div>
                     <a href="#about"
                         class="btn-base bg-white/10 hover:bg-white/20 text-white border border-white/20 px-10 py-4 transition-all">
@@ -210,7 +210,7 @@
                         class="text-[9px] md:text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-6 text-center">
                         THE SPECTACLE BEGINS IN
                     </span>
-                    <x-countdown date="2026-07-19 15:00:00" />
+                    <x-countdown date="2026-07-18 15:10:00" />
                 </div>
             </div>
         </section>
@@ -244,7 +244,7 @@
                 <div class="absolute -inset-2 bg-gradient-to-tr from-primary/10 to-secondary-600/10 blur-2xl"></div>
                 <div
                     class="relative aspect-[4/3] w-full bg-surface-variant border border-outline/10 shadow-xl overflow-hidden">
-                    <img src="{{ asset('images/potrait/ospkfull.jpg') }}"
+                    <img src="{{ asset('images/JVLYNBANNER.JPG') }}"
                         class="w-full h-full object-cover sepia-[0.2] hover:sepia-0 transition-all duration-700"
                         alt="Concert Atmosphere">
                 </div>
@@ -265,16 +265,16 @@
                     <div
                         class="artist-card flex flex-col bg-surface border border-outline/10 overflow-hidden shadow-sm group">
                         <div class="aspect-square w-full overflow-hidden relative">
-                            <img src="{{ asset('images/potrait/ospkfull.jpg') }}"
+                            <img src="{{ asset('images/changcuters.jpg') }}"
                                 class="artist-img w-full h-full object-cover transition-transform duration-700"
-                                alt="Hindia">
+                                alt="Changcuters">
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity">
                             </div>
                             <div class="absolute bottom-6 left-6 text-left">
                                 <span
                                     class="text-[9px] font-bold tracking-[0.3em] uppercase text-primary mb-1 block">Headliner</span>
-                                <h3 class="text-2xl font-black tracking-tight text-white uppercase">Andra Sitompul</h3>
+                                <h3 class="text-2xl font-black tracking-tight text-white uppercase">The Changcuters</h3>
                             </div>
                         </div>
                         <div class="p-6 text-left flex-grow">
@@ -294,9 +294,9 @@
                     <div
                         class="artist-card flex flex-col bg-surface border border-outline/10 overflow-hidden shadow-sm group">
                         <div class="aspect-square w-full overflow-hidden relative">
-                            <img src="{{ asset('images/potrait/ospkfull.jpg') }}"
+                            <img src="{{ asset('images/rarasudirman.jpg') }}"
                                 class="artist-img w-full h-full object-cover transition-transform duration-700"
-                                alt="Nadin Amizah">
+                                alt="Rara Sudirman">
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity">
                             </div>
@@ -304,7 +304,7 @@
                                 <span
                                     class="text-[9px] font-bold tracking-[0.3em] uppercase text-primary mb-1 block">Special
                                     Performance</span>
-                                <h3 class="text-2xl font-black tracking-tight text-white uppercase">Lancelot Junior</h3>
+                                <h3 class="text-2xl font-black tracking-tight text-white uppercase">Rara Sudirman</h3>
                             </div>
                         </div>
                         <div class="p-6 text-left flex-grow">
@@ -324,17 +324,17 @@
                     <div
                         class="artist-card flex flex-col bg-surface border border-outline/10 overflow-hidden shadow-sm group">
                         <div class="aspect-square w-full overflow-hidden relative">
-                            <img src="{{ asset('images/potrait/ospkfull.jpg') }}"
+                            <img src="{{ asset('images/atharalikhwan.jpg') }}"
                                 class="artist-img w-full h-full object-cover transition-transform duration-700"
-                                alt="Kunto Aji">
+                                alt="Athar Alikhwan">
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity">
                             </div>
                             <div class="absolute bottom-6 left-6 text-left">
                                 <span
-                                    class="text-[9px] font-bold tracking-[0.3em] uppercase text-primary mb-1 block">Special
-                                    Performance</span>
-                                <h3 class="text-2xl font-black tracking-tight text-white uppercase">Joshua Sitorus</h3>
+                                    class="text-[9px] font-bold tracking-[0.3em] uppercase text-primary mb-1 block">Our
+                                    MC</span>
+                                <h3 class="text-2xl font-black tracking-tight text-white uppercase">Athar Alikhwan</h3>
                             </div>
                         </div>
                         <div class="p-6 text-left flex-grow">
@@ -357,17 +357,17 @@
                         exceptional performances by</h4>
                     <div class="flex flex-wrap justify-center gap-8 md:gap-16 text-center">
                         <div>
-                            <span class="text-lg font-black text-on-surface uppercase">THALAMUS</span>
+                            <span class="text-lg font-black text-on-surface uppercase">Bandfeat 1</span>
                             <span
-                                class="text-[9px] block font-bold uppercase tracking-widest text-on-surface-variant opacity-60 mt-1">MH
-                                Joshua House Band</span>
+                                class="text-[9px] block font-bold uppercase tracking-widest text-on-surface-variant opacity-60 mt-1">Bandfeat
+                                1</span>
                         </div>
                         <div class="w-px h-10 bg-outline/20 hidden sm:block"></div>
                         <div>
-                            <span class="text-lg font-black text-on-surface uppercase">THAMRIN DANCE CREW</span>
+                            <span class="text-lg font-black text-on-surface uppercase">Bandfeat 2</span>
                             <span
-                                class="text-[9px] block font-bold uppercase tracking-widest text-on-surface-variant opacity-60 mt-1">Theatrical
-                                Joshua Performance</span>
+                                class="text-[9px] block font-bold uppercase tracking-widest text-on-surface-variant opacity-60 mt-1">Bandfeat
+                                2</span>
                         </div>
                     </div>
                 </div>
@@ -393,7 +393,7 @@
                                 <h4
                                     class="text-xs font-black uppercase tracking-widest text-on-surface-variant opacity-50 mb-1">
                                     Date</h4>
-                                <p class="text-lg font-black text-on-surface uppercase">Sunday, 19 July 2026</p>
+                                <p class="text-lg font-black text-on-surface uppercase">Saturday, 18 July 2026</p>
                             </div>
                         </div>
 
@@ -403,8 +403,8 @@
                                 <h4
                                     class="text-xs font-black uppercase tracking-widest text-on-surface-variant opacity-50 mb-1">
                                     Time</h4>
-                                <p class="text-lg font-black text-on-surface uppercase">15:00 - 22:00 WIB (Gate opens
-                                    14:00)</p>
+                                <p class="text-lg font-black text-on-surface uppercase">15:10 - 22:30 WIB (Gate opens
+                                    15:00)</p>
                             </div>
                         </div>
 
@@ -414,8 +414,8 @@
                                 <h4
                                     class="text-xs font-black uppercase tracking-widest text-on-surface-variant opacity-50 mb-1">
                                     Venue</h4>
-                                <p class="text-lg font-black text-on-surface uppercase">Asrama Putra SMAN Unggulan MH
-                                    Thamrin Kamar 107</p>
+                                <p class="text-lg font-black text-on-surface uppercase">Lapangan Hijau SMAN Unggulan
+                                    M.H. Thamrin</p>
                                 <p class="text-sm text-on-surface-variant opacity-80 mt-1">Jl. Bambu Apus Raya No. 17,
                                     Cipayung, East Jakarta</p>
                             </div>
@@ -434,35 +434,36 @@
                     <div class="space-y-4 mb-8">
                         <div class="flex justify-between items-center py-3 border-b border-outline/10">
                             <div>
-                                <h5 class="text-xs font-black uppercase tracking-wider text-on-surface">PRESALE 1</h5>
-                                <span class="text-[9px] text-on-surface-variant font-light uppercase opacity-60">Very
-                                    Limited Slots</span>
+                                <h5 class="text-xs font-black uppercase tracking-wider text-on-surface">Festival</h5>
+                                <span
+                                    class="text-[9px] text-on-surface-variant font-light uppercase opacity-60">Discount
+                                    for alumni and MHT 18 via referral code.</span>
                             </div>
-                            <span class="text-sm font-black text-primary uppercase">IDR 125K</span>
+                            <span class="text-sm font-black text-primary uppercase">IDR 150k</span>
                         </div>
 
                         <div class="flex justify-between items-center py-3 border-b border-outline/10">
                             <div>
-                                <h5 class="text-xs font-black uppercase tracking-wider text-on-surface">PRESALE 2</h5>
-                                <span
-                                    class="text-[9px] text-on-surface-variant font-light uppercase opacity-60">Available
-                                    June 25</span>
+                                <h5 class="text-xs font-black uppercase tracking-wider text-on-surface">VIP (Choose
+                                    seat)</h5>
+                                <span class="text-[9px] text-on-surface-variant font-light uppercase opacity-60">Select
+                                    your own seat (available 102 seat)</span>
                             </div>
-                            <span class="text-sm font-black text-primary uppercase">IDR 150K</span>
+                            <span class="text-sm font-black text-primary uppercase">IDR 325k</span>
                         </div>
 
                         <div class="flex justify-between items-center py-3">
                             <div>
-                                <h5 class="text-xs font-black uppercase tracking-wider text-on-surface">NORMAL / ON THE
-                                    SPOT</h5>
-                                <span class="text-[9px] text-on-surface-variant font-light uppercase opacity-60">Subject
-                                    to Capacity</span>
+                                <h5 class="text-xs font-black uppercase tracking-wider text-on-surface">VIP (Random
+                                    seat)</h5>
+                                <span class="text-[9px] text-on-surface-variant font-light uppercase opacity-60">No seat
+                                    selection available.</span>
                             </div>
-                            <span class="text-sm font-black text-primary uppercase">IDR 185K</span>
+                            <span class="text-sm font-black text-primary uppercase">IDR 300k</span>
                         </div>
                     </div>
 
-                    <a href="/jvlyn/ticket"
+                    <a href="/jvlyn/entry_pass"
                         class="w-full text-center block bg-primary text-on-primary text-[10px] font-black uppercase tracking-[0.3em] py-4 shadow-md hover:brightness-110 transition-all">
                         Buy Tickets Now
                     </a>

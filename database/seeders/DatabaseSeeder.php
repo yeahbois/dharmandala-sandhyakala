@@ -14,6 +14,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             AdminSeeder::class,
             ContentSeeder::class,
+            JvlynTicketSeeder::class,
+            MailboxCounterSeeder::class,
         ]);
     }
 }

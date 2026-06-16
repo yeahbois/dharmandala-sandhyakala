@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\TicketController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FormController;
-use App\Services\GoogleSheetService;
+use App\Http\Controllers\JVLYNController;
 use App\Http\Controllers\ThamNetController;
 use App\Http\Controllers\Api\ContentController;
 use App\Models\Thalation;
@@ -46,9 +46,25 @@ Route::get('/', function () {
 Route::get('/jvlyn', function () {
     return view('jvlyn.index');
 });
-Route::get('/jvlyn/ticket', function () {
-    return view('jvlyn.ticket');
+Route::get('/jvlyn/entry_pass', function () {
+    return view('jvlyn.entry_pass');
 });
+Route::get('/jvlyn/checkout', function () {
+    return view('jvlyn.checkout');
+});
+
+Route::get('/jvlyn/panit/scanner', function () {
+    return view('jvlyn.scanner');
+});
+Route::get('/jvlyn/panit/checker', function () {
+    return view('jvlyn.checker');
+});
+Route::get('/jvlyn/panit/dashboard', function () {
+    return view('jvlyn.dashboard');
+});
+
+Route::get('/jvlyn/api/data', [JVLYNController::class, 'data'])->name('jvlyn.api.data');
+Route::get('/jvlyn/api/datareal', [TicketController::class, 'getLiveQuota'])->name('jvlyn.api.data');
 
 Route::get('/maintenance', function () {
     return view('dharman_homepage.maintenance');

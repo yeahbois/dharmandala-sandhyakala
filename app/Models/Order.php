@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+class Order extends Model
+{
+    protected $fillable = [
+        'buyer_name',
+        'buyer_email',
+        'buyer_phone',
+        'price',
+        'total_tickets',
+        'payment_proof',
+        'order_status',
+    ];
+
+    /**
+     * Get the tickets for this order.
+     */
+    public function tickets(): HasMany
+    {
+        return $this->hasMany(JvlynTicket::class);
+    }
+}
