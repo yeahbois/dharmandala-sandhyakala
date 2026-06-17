@@ -195,7 +195,7 @@
                                         Payment</h4>
                                     <div
                                         class="bg-white p-2 w-32 h-32 flex items-center justify-center shadow-md border border-outline/10 overflow-hidden">
-                                        <img src="{{ asset('image/qris.jpeg') }}" alt="QRIS"
+                                        <img src="{{ asset('image/qrisscan.jpeg') }}" alt="QRIS"
                                             class="w-full h-full object-contain">
                                     </div>
                                     <span class="text-[9px] uppercase tracking-wider text-on-surface-variant">Instant
