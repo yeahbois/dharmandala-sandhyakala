@@ -17,6 +17,7 @@ class JvlynTicket extends Model
         'referral_code',
         'ticket_id',
         'seat_number',
+        'price',
     ];
 
     protected $casts = [

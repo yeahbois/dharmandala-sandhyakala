@@ -111,6 +111,7 @@ class JVLYNController extends Controller
                 'ticket_id' => $ticketId,
                 'is_scanned' => false,
                 'seat_number' => $item['seat_number'] ?? null,
+                'price' => $price,
             ];
         }
 
