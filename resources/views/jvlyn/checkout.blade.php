@@ -1,7 +1,6 @@
 <x-layout title="Checkout Tickets | J V L Y N">
     <x-slot:metadesc>
-        <meta name="description"
-            content="Provide details and complete payment for your J V L Y N concert tickets.">
+        <meta name="description" content="Provide details and complete payment for your J V L Y N concert tickets.">
     </x-slot:metadesc>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -16,6 +15,7 @@
                 opacity: 0;
                 transform: translateY(10px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -26,7 +26,8 @@
     <div class="w-full max-w-7xl mx-auto py-8 px-4 sm:px-6">
         <!-- Title Header -->
         <div class="flex flex-col items-center text-center mb-10 w-full">
-            <span class="text-[11px] font-black tracking-[0.4em] uppercase text-primary mb-3 block">Concert Registration</span>
+            <span class="text-[11px] font-black tracking-[0.4em] uppercase text-primary mb-3 block">Concert
+                Registration</span>
             <h1 class="text-3xl md:text-5xl font-black tracking-tight uppercase mb-2 text-on-surface">
                 CHECKOUT TICKETS
             </h1>
@@ -37,57 +38,70 @@
 
         <!-- 3-Column Layout -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start w-full">
-            
+
             <!-- Column 1: Progress Tracker & Timer (Left) -->
             <aside class="lg:col-span-3 xl:col-span-2 flex flex-col gap-6 w-full">
                 <!-- Countdown Timer -->
                 <div class="bg-surface border border-outline/10 p-5 text-center flex flex-col gap-2">
-                    <p class="text-[9px] uppercase tracking-widest font-black text-on-surface-variant">Time Remaining</p>
+                    <p class="text-[9px] uppercase tracking-widest font-black text-on-surface-variant">Time Remaining
+                    </p>
                     <div class="text-primary flex items-center justify-center gap-1.5">
                         <span class="material-symbols-outlined text-lg">timer</span>
                         <span class="text-2xl font-black font-mono text-primary" id="countdown-display">10:00</span>
                     </div>
-                    <p class="text-[10px] text-on-surface-variant/70 mt-1" id="timer-status">Complete checkout before timeout</p>
+                    <p class="text-[10px] text-on-surface-variant/70 mt-1" id="timer-status">Complete checkout before
+                        timeout</p>
                 </div>
 
                 <!-- Stepper -->
                 <nav class="bg-surface border border-outline/10 p-6 flex flex-col gap-6 relative">
-                    <h3 class="text-xs font-black uppercase tracking-[0.2em] text-on-surface border-b border-outline/10 pb-3">Progress</h3>
+                    <h3
+                        class="text-xs font-black uppercase tracking-[0.2em] text-on-surface border-b border-outline/10 pb-3">
+                        Progress</h3>
                     <div class="space-y-8 relative">
-                        <div class="absolute left-[15px] top-4 bottom-4 w-0.5 bg-outline/10 z-0" id="stepper-line"></div>
-                        
+                        <div class="absolute left-[15px] top-4 bottom-4 w-0.5 bg-outline/10 z-0" id="stepper-line">
+                        </div>
+
                         <!-- Step 1 Dot -->
                         <div class="flex items-center gap-4 relative z-10">
-                            <div id="step-dot-1" class="w-8 h-8 bg-secondary text-on-primary border border-secondary/20 text-xs font-black flex items-center justify-center transition-all">
+                            <div id="step-dot-1"
+                                class="w-8 h-8 bg-secondary text-on-primary border border-secondary/20 text-xs font-black flex items-center justify-center transition-all">
                                 <span class="material-symbols-outlined text-sm font-black">check</span>
                             </div>
                             <div>
-                                <h4 class="text-xs font-bold text-on-surface uppercase tracking-wider">Select Ticket</h4>
+                                <h4 class="text-xs font-bold text-on-surface uppercase tracking-wider">Select Ticket
+                                </h4>
                                 <p class="text-[10px] text-on-surface-variant">Completed</p>
                             </div>
                         </div>
-                        
+
                         <!-- Step 2 Dot -->
                         <div class="flex items-center gap-4 relative z-10">
-                            <div id="step-dot-2" class="w-8 h-8 bg-primary text-on-primary border border-primary/20 text-xs font-black flex items-center justify-center transition-all">2</div>
+                            <div id="step-dot-2"
+                                class="w-8 h-8 bg-primary text-on-primary border border-primary/20 text-xs font-black flex items-center justify-center transition-all">
+                                2</div>
                             <div>
                                 <h4 class="text-xs font-bold text-on-surface uppercase tracking-wider">Information</h4>
                                 <p class="text-[10px] text-on-surface-variant">Details Form</p>
                             </div>
                         </div>
-                        
+
                         <!-- Step 3 Dot -->
                         <div class="flex items-center gap-4 relative z-10">
-                            <div id="step-dot-3" class="w-8 h-8 bg-surface-variant text-on-surface-variant border border-outline/20 text-xs font-black flex items-center justify-center transition-all">3</div>
+                            <div id="step-dot-3"
+                                class="w-8 h-8 bg-surface-variant text-on-surface-variant border border-outline/20 text-xs font-black flex items-center justify-center transition-all">
+                                3</div>
                             <div>
                                 <h4 class="text-xs font-bold text-on-surface uppercase tracking-wider">Payment</h4>
                                 <p class="text-[10px] text-on-surface-variant">Verification</p>
                             </div>
                         </div>
-                        
+
                         <!-- Step 4 Dot -->
                         <div class="flex items-center gap-4 relative z-10">
-                            <div id="step-dot-4" class="w-8 h-8 bg-surface-variant text-on-surface-variant border border-outline/20 text-xs font-black flex items-center justify-center transition-all">4</div>
+                            <div id="step-dot-4"
+                                class="w-8 h-8 bg-surface-variant text-on-surface-variant border border-outline/20 text-xs font-black flex items-center justify-center transition-all">
+                                4</div>
                             <div>
                                 <h4 class="text-xs font-bold text-on-surface uppercase tracking-wider">Confirm</h4>
                                 <p class="text-[10px] text-on-surface-variant">Order Done</p>
@@ -99,28 +113,42 @@
 
             <!-- Column 2: Checkout Content Panel (Middle) -->
             <section class="lg:col-span-6 xl:col-span-7 flex flex-col gap-6 w-full">
-                <div class="bg-surface border border-outline/10 p-6 md:p-8 flex flex-col justify-between min-h-[550px] relative">
+                <div
+                    class="bg-surface border border-outline/10 p-6 md:p-8 flex flex-col justify-between min-h-[550px] relative">
                     <div class="relative z-10 flex-grow">
-                        
+
                         <!-- Step 2: Personal details input -->
                         <div id="step-2" class="step-content space-y-6">
                             <div>
-                                <h3 class="text-xl font-black uppercase tracking-tight text-on-surface">Contact Information</h3>
-                                <p class="text-xs text-on-surface-variant">Provide your active contact details. Tickets will be sent to this email.</p>
+                                <h3 class="text-xl font-black uppercase tracking-tight text-on-surface">Contact
+                                    Information</h3>
+                                <p class="text-xs text-on-surface-variant">Provide your active contact details. Tickets
+                                    will be sent to this email.</p>
                             </div>
-                            
+
                             <div class="space-y-4 max-w-xl">
                                 <div>
-                                    <label class="block text-xs uppercase tracking-wider font-bold mb-2 text-on-surface">Full Name</label>
-                                    <input type="text" id="input-name" oninput="validateStep()" placeholder="John Doe" class="w-full bg-background border border-outline/20 px-4 py-3 text-sm focus:outline-none focus:border-primary transition-all text-on-surface">
+                                    <label
+                                        class="block text-xs uppercase tracking-wider font-bold mb-2 text-on-surface">Full
+                                        Name</label>
+                                    <input type="text" id="input-name" oninput="validateStep()" placeholder="John Doe"
+                                        class="w-full bg-background border border-outline/20 px-4 py-3 text-sm focus:outline-none focus:border-primary transition-all text-on-surface">
                                 </div>
                                 <div>
-                                    <label class="block text-xs uppercase tracking-wider font-bold mb-2 text-on-surface">Email Address</label>
-                                    <input type="email" id="input-email" oninput="validateStep()" placeholder="johndoe@email.com" class="w-full bg-background border border-outline/20 px-4 py-3 text-sm focus:outline-none focus:border-primary transition-all text-on-surface">
+                                    <label
+                                        class="block text-xs uppercase tracking-wider font-bold mb-2 text-on-surface">Email
+                                        Address</label>
+                                    <input type="email" id="input-email" oninput="validateStep()"
+                                        placeholder="johndoe@email.com"
+                                        class="w-full bg-background border border-outline/20 px-4 py-3 text-sm focus:outline-none focus:border-primary transition-all text-on-surface">
                                 </div>
                                 <div>
-                                    <label class="block text-xs uppercase tracking-wider font-bold mb-2 text-on-surface">WhatsApp / Phone Number</label>
-                                    <input type="tel" id="input-phone" oninput="validateStep()" placeholder="0812XXXXXXXX" class="w-full bg-background border border-outline/20 px-4 py-3 text-sm focus:outline-none focus:border-primary transition-all text-on-surface">
+                                    <label
+                                        class="block text-xs uppercase tracking-wider font-bold mb-2 text-on-surface">WhatsApp
+                                        / Phone Number</label>
+                                    <input type="tel" id="input-phone" oninput="validateStep()"
+                                        placeholder="0812XXXXXXXX"
+                                        class="w-full bg-background border border-outline/20 px-4 py-3 text-sm focus:outline-none focus:border-primary transition-all text-on-surface">
                                 </div>
                             </div>
                         </div>
@@ -128,53 +156,76 @@
                         <!-- Step 3: QRIS instructions and image upload -->
                         <div id="step-3" class="step-content space-y-6 hidden">
                             <div>
-                                <h3 class="text-xl font-black uppercase tracking-tight text-on-surface">Payment & Verification</h3>
-                                <p class="text-xs text-on-surface-variant">Transfer the exact total amount to our bank account or scan the QRIS code.</p>
+                                <h3 class="text-xl font-black uppercase tracking-tight text-on-surface">Payment &
+                                    Verification</h3>
+                                <p class="text-xs text-on-surface-variant">Transfer the exact total amount to our bank
+                                    account or scan the QRIS code.</p>
                             </div>
-                            
+
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div class="border border-outline/10 bg-surface-variant/10 p-5 space-y-4">
-                                    <h4 class="text-xs font-black uppercase tracking-widest text-primary">Bank Account Details</h4>
+                                    <h4 class="text-xs font-black uppercase tracking-widest text-primary">Bank Account
+                                        Details</h4>
                                     <div class="space-y-3">
                                         <div>
-                                            <div class="text-[10px] text-on-surface-variant uppercase tracking-wider">Bank Name</div>
-                                            <div class="text-sm font-bold text-on-surface">Bank Mandiri</div>
+                                            <div class="text-[10px] text-on-surface-variant uppercase tracking-wider">
+                                                Bank Name</div>
+                                            <div class="text-sm font-bold text-on-surface">Bank BCA</div>
                                         </div>
                                         <div>
-                                            <div class="text-[10px] text-on-surface-variant uppercase tracking-wider">Account Number</div>
+                                            <div class="text-[10px] text-on-surface-variant uppercase tracking-wider">
+                                                Account Number</div>
                                             <div class="flex items-center gap-2 mt-1">
-                                                <span id="account-num" class="text-base font-black tracking-widest text-on-surface">1660099988877</span>
-                                                <button onclick="copyToClipboard('1660099988877')" class="text-[10px] bg-primary text-on-primary hover:bg-primary-container px-2 py-1 transition-colors uppercase font-bold">Copy</button>
+                                                <span id="account-num"
+                                                    class="text-base font-black tracking-widest text-on-surface">4142725731</span>
+                                                <button onclick="copyToClipboard('4142725731')"
+                                                    class="text-[10px] bg-primary text-on-primary hover:bg-primary-container px-2 py-1 transition-colors uppercase font-bold">Copy</button>
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="text-[10px] text-on-surface-variant uppercase tracking-wider">Account Holder</div>
-                                            <div class="text-sm font-bold text-on-surface">OSIS PK MHT</div>
+                                            <div class="text-[10px] text-on-surface-variant uppercase tracking-wider">
+                                                Account Holder</div>
+                                            <div class="text-sm font-bold text-on-surface">Shakina Arzelia</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="border border-outline/10 bg-surface-variant/10 p-5 flex flex-col items-center justify-center space-y-3">
-                                    <h4 class="text-xs font-black uppercase tracking-widest text-secondary">Scan QRIS Payment</h4>
-                                    <div class="bg-white p-2 w-32 h-32 flex items-center justify-center shadow-md border border-outline/10 overflow-hidden">
-                                        <img src="{{ asset('image/qris.jpg') }}" alt="QRIS" class="w-full h-full object-contain">
+                                <div
+                                    class="border border-outline/10 bg-surface-variant/10 p-5 flex flex-col items-center justify-center space-y-3">
+                                    <h4 class="text-xs font-black uppercase tracking-widest text-secondary">Scan QRIS
+                                        Payment</h4>
+                                    <div
+                                        class="bg-white p-2 w-32 h-32 flex items-center justify-center shadow-md border border-outline/10 overflow-hidden">
+                                        <img src="{{ asset('image/qris.jpeg') }}" alt="QRIS"
+                                            class="w-full h-full object-contain">
                                     </div>
-                                    <span class="text-[9px] uppercase tracking-wider text-on-surface-variant">Instant Settlement Payment</span>
+                                    <span class="text-[9px] uppercase tracking-wider text-on-surface-variant">Instant
+                                        Settlement Payment</span>
                                 </div>
                             </div>
                             <div class="space-y-3">
-                                <label class="block text-xs uppercase tracking-wider font-bold text-on-surface">Upload Payment Proof</label>
-                                <div id="drop-zone" class="border-2 border-dashed border-outline/20 hover:border-primary/50 transition-all p-8 flex flex-col items-center justify-center text-center cursor-pointer relative bg-surface-variant/10">
-                                    <input type="file" id="file-payment-proof" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer">
-                                    <span class="material-symbols-outlined text-4xl text-primary mb-2">cloud_upload</span>
-                                    <span class="text-xs text-on-surface font-bold" id="upload-status-text">Drag & drop your transfer receipt image here</span>
-                                    <span class="text-[10px] text-on-surface-variant mt-1">Supports PNG, JPG, or JPEG (Max 5MB)</span>
+                                <label class="block text-xs uppercase tracking-wider font-bold text-on-surface">Upload
+                                    Payment Proof</label>
+                                <div id="drop-zone"
+                                    class="border-2 border-dashed border-outline/20 hover:border-primary/50 transition-all p-8 flex flex-col items-center justify-center text-center cursor-pointer relative bg-surface-variant/10">
+                                    <input type="file" id="file-payment-proof" accept="image/*"
+                                        class="absolute inset-0 opacity-0 cursor-pointer">
+                                    <span
+                                        class="material-symbols-outlined text-4xl text-primary mb-2">cloud_upload</span>
+                                    <span class="text-xs text-on-surface font-bold" id="upload-status-text">Drag & drop
+                                        your transfer receipt image here</span>
+                                    <span class="text-[10px] text-on-surface-variant mt-1">Supports PNG, JPG, or JPEG
+                                        (Max 5MB)</span>
                                 </div>
-                                <div id="proof-preview-container" class="hidden border border-outline/10 p-3 flex items-center justify-between bg-surface-variant/20">
+                                <div id="proof-preview-container"
+                                    class="hidden border border-outline/10 p-3 flex items-center justify-between bg-surface-variant/20">
                                     <div class="flex items-center gap-3">
-                                        <img id="proof-img-preview" src="" class="w-12 h-12 object-cover border border-outline/10" alt="Proof Preview">
-                                        <span id="proof-filename" class="text-xs text-on-surface font-bold truncate max-w-xs">filename.jpg</span>
+                                        <img id="proof-img-preview" src=""
+                                            class="w-12 h-12 object-cover border border-outline/10" alt="Proof Preview">
+                                        <span id="proof-filename"
+                                            class="text-xs text-on-surface font-bold truncate max-w-xs">filename.jpg</span>
                                     </div>
-                                    <button onclick="removeUploadedFile()" class="text-primary hover:text-on-surface transition-colors">
+                                    <button onclick="removeUploadedFile()"
+                                        class="text-primary hover:text-on-surface transition-colors">
                                         <span class="material-symbols-outlined">delete</span>
                                     </button>
                                 </div>
@@ -182,43 +233,60 @@
                         </div>
 
                         <!-- Step 4: Final order success summary page -->
-                        <div id="step-4" class="step-content space-y-8 flex flex-col items-center justify-center py-8 text-center hidden">
-                            <div class="w-16 h-16 bg-secondary/20 text-secondary border border-secondary/30 flex items-center justify-center shadow-sm">
+                        <div id="step-4"
+                            class="step-content space-y-8 flex flex-col items-center justify-center py-8 text-center hidden">
+                            <div
+                                class="w-16 h-16 bg-secondary/20 text-secondary border border-secondary/30 flex items-center justify-center shadow-sm">
                                 <span class="material-symbols-outlined text-4xl">check_circle</span>
                             </div>
                             <div>
-                                <h2 class="text-2xl font-black uppercase text-on-surface tracking-tight">Order Registered Successfully!</h2>
+                                <h2 class="text-2xl font-black uppercase text-on-surface tracking-tight">Order
+                                    Registered Successfully!</h2>
                                 <p class="text-xs text-on-surface-variant max-w-md mx-auto mt-2 leading-relaxed">
-                                    Thank you for your purchase. We are currently verifying your payment. Your ticket details have been logged and will be dispatched.
+                                    Thank you for your purchase. We are currently verifying your payment. Your ticket
+                                    details have been logged and will be dispatched.
                                 </p>
                             </div>
-                            <div class="w-full max-w-md border border-outline/10 bg-surface-variant/10 p-5 text-left space-y-4">
+                            <div
+                                class="w-full max-w-md border border-outline/10 bg-surface-variant/10 p-5 text-left space-y-4">
                                 <div class="flex justify-between items-center pb-3 border-b border-outline/10">
-                                    <span class="text-[10px] uppercase text-on-surface-variant tracking-wider">Order ID</span>
-                                    <span id="success-order-id" class="text-xs font-black text-on-surface">#TKT-99120831</span>
+                                    <span class="text-[10px] uppercase text-on-surface-variant tracking-wider">Order
+                                        ID</span>
+                                    <span id="success-order-id"
+                                        class="text-xs font-black text-on-surface">#TKT-99120831</span>
                                 </div>
                                 <div class="space-y-3">
                                     <div>
-                                        <span class="text-[10px] uppercase text-on-surface-variant tracking-wider">Ticket Types Purchased</span>
-                                        <div id="success-ticket-types" class="text-sm font-bold text-on-surface">VIP Seat, Festival</div>
+                                        <span
+                                            class="text-[10px] uppercase text-on-surface-variant tracking-wider">Ticket
+                                            Types Purchased</span>
+                                        <div id="success-ticket-types" class="text-sm font-bold text-on-surface">VIP
+                                            Seat, Festival</div>
                                     </div>
                                     <div class="grid grid-cols-2 gap-4">
                                         <div>
-                                            <span class="text-[10px] uppercase text-on-surface-variant tracking-wider">Total Paid</span>
-                                            <div id="success-total-price" class="text-sm font-black text-on-surface">IDR 300,000</div>
+                                            <span
+                                                class="text-[10px] uppercase text-on-surface-variant tracking-wider">Total
+                                                Paid</span>
+                                            <div id="success-total-price" class="text-sm font-black text-on-surface">IDR
+                                                300,000</div>
                                         </div>
                                         <div>
-                                            <span class="text-[10px] uppercase text-on-surface-variant tracking-wider">Delivery Status</span>
+                                            <span
+                                                class="text-[10px] uppercase text-on-surface-variant tracking-wider">Delivery
+                                                Status</span>
                                             <div class="text-sm font-bold text-secondary">Pending Verification</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="flex gap-4">
-                                <a href="/jvlyn" class="text-xs font-black uppercase tracking-widest bg-surface border border-outline/10 hover:bg-surface-variant/30 text-on-surface px-6 py-3 transition-colors">
+                                <a href="/jvlyn"
+                                    class="text-xs font-black uppercase tracking-widest bg-surface border border-outline/10 hover:bg-surface-variant/30 text-on-surface px-6 py-3 transition-colors">
                                     Event Homepage
                                 </a>
-                                <a href="/jvlyn/entry_pass" class="text-xs font-black uppercase tracking-widest bg-primary text-on-primary px-6 py-3 transition-colors hover:opacity-90">
+                                <a href="/jvlyn/entry_pass"
+                                    class="text-xs font-black uppercase tracking-widest bg-primary text-on-primary px-6 py-3 transition-colors hover:opacity-90">
                                     Purchase More Tickets
                                 </a>
                             </div>
@@ -227,11 +295,15 @@
                     </div>
 
                     <!-- Step Controls -->
-                    <div class="relative z-10 flex justify-between items-center pt-8 border-t border-outline/10 mt-8" id="nav-controls">
-                        <button onclick="prevStep()" id="btn-back" class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1">
+                    <div class="relative z-10 flex justify-between items-center pt-8 border-t border-outline/10 mt-8"
+                        id="nav-controls">
+                        <button onclick="prevStep()" id="btn-back"
+                            class="text-xs font-black uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1">
                             <span class="material-symbols-outlined text-sm">arrow_back</span> Back
                         </button>
-                        <button onclick="nextStep()" id="btn-next" class="bg-primary text-on-primary text-xs font-black uppercase tracking-widest px-8 py-3.5 hover:opacity-90 transition-all flex items-center gap-1 opacity-50 cursor-not-allowed" disabled>
+                        <button onclick="nextStep()" id="btn-next"
+                            class="bg-primary text-on-primary text-xs font-black uppercase tracking-widest px-8 py-3.5 hover:opacity-90 transition-all flex items-center gap-1 opacity-50 cursor-not-allowed"
+                            disabled>
                             Next <span class="material-symbols-outlined text-sm">arrow_forward</span>
                         </button>
                     </div>
@@ -242,7 +314,9 @@
             <aside class="lg:col-span-3 flex flex-col gap-6 w-full">
                 <!-- Summary Card -->
                 <div class="bg-surface border border-outline/10 p-6 flex flex-col gap-4">
-                    <h3 class="text-xs font-black uppercase tracking-[0.2em] text-on-surface border-b border-outline/10 pb-3">Order Items</h3>
+                    <h3
+                        class="text-xs font-black uppercase tracking-[0.2em] text-on-surface border-b border-outline/10 pb-3">
+                        Order Items</h3>
                     <div class="space-y-3 max-h-60 overflow-y-auto custom-scrollbar" id="cart-items-list">
                         <!-- Loaded dynamically -->
                     </div>
@@ -251,12 +325,12 @@
                             <span class="text-on-surface-variant opacity-80">Subtotal</span>
                             <span id="summary-subtotal" class="font-bold text-on-surface">IDR 0</span>
                         </div>
-                        
+
                         <div id="summary-discount-row" class="hidden justify-between text-xs text-secondary font-bold">
                             <span>Referral Discount</span>
                             <span id="summary-discount">- IDR 0</span>
                         </div>
-                        
+
                         <div class="flex justify-between text-sm pt-3 border-t border-outline/10">
                             <span class="font-black uppercase tracking-wider text-on-surface">Grand Total</span>
                             <span id="summary-total" class="font-black text-primary text-base">IDR 0</span>
@@ -269,21 +343,26 @@
     </div>
 
     <!-- Timeout Alert Modal -->
-    <div id="alert-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm hidden">
-        <div class="bg-surface p-6 max-w-sm w-full mx-4 border border-outline/10 text-center space-y-4 shadow-2xl relative">
+    <div id="alert-modal"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm hidden">
+        <div
+            class="bg-surface p-6 max-w-sm w-full mx-4 border border-outline/10 text-center space-y-4 shadow-2xl relative">
             <span class="material-symbols-outlined text-brand-red text-5xl">warning</span>
-            <h4 id="alert-modal-title" class="text-lg font-black uppercase text-on-surface tracking-tight">Checkout Timeout</h4>
+            <h4 id="alert-modal-title" class="text-lg font-black uppercase text-on-surface tracking-tight">Checkout
+                Timeout</h4>
             <p id="alert-modal-message" class="text-xs text-on-surface-variant leading-relaxed">
                 Your booking session has expired. You will be redirected back to the ticketing map.
             </p>
-            <button onclick="window.location.href='/jvlyn/entry_pass'" class="w-full bg-primary hover:opacity-90 text-on-primary font-black text-xs uppercase tracking-widest py-3 transition-all">
+            <button onclick="window.location.href='/jvlyn/entry_pass'"
+                class="w-full bg-primary hover:opacity-90 text-on-primary font-black text-xs uppercase tracking-widest py-3 transition-all">
                 OK, Paham
             </button>
         </div>
     </div>
 
     <!-- Toast alerts -->
-    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-surface border border-outline/20 p-4 shadow-2xl flex items-center gap-3 text-on-surface max-w-sm hidden">
+    <div id="toast"
+        class="fixed bottom-6 right-6 z-50 bg-surface border border-outline/20 p-4 shadow-2xl flex items-center gap-3 text-on-surface max-w-sm hidden">
         <span class="material-symbols-outlined text-secondary" id="toast-icon">check_circle</span>
         <div class="text-xs">
             <div class="font-bold" id="toast-title">Success</div>
@@ -402,7 +481,7 @@
 
                 const row = document.createElement('div');
                 row.className = "p-3 bg-surface-variant/30 border border-outline/10 flex justify-between items-start";
-                
+
                 let label = '';
                 let subtitle = '';
                 if (item.category === 'festival') {
