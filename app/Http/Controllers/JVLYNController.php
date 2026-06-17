@@ -57,16 +57,6 @@ class JVLYNController extends Controller
         $totalPrice = 0;
         $tickets = [];
 
-        // Check for global referral codes
-        $globalReferrals = [];
-        foreach ($items as $it) {
-            if (!empty($it['referral_code'])) {
-                $globalReferrals[] = strtoupper($it['referral_code']);
-            }
-        }
-        $isVipFree = in_array('DONASIVIP', $globalReferrals) || in_array('JOSHUAS1T0RU5', $globalReferrals);
-        $isFestFree = in_array('DONASIFEST', $globalReferrals) || in_array('JOSHUAS1T0RU5', $globalReferrals);
-
         foreach ($items as $item) {
             $price = 0;
             $catPrefix = '';
@@ -75,8 +65,9 @@ class JVLYNController extends Controller
 
             if ($item['category'] === 'festival') {
                 $catPrefix = 'FEST';
-                if ($isFestFree) {
+                if ($itemRef === 'DONASIFEST' || $itemRef === 'JOSHUAS1T0RU5') {
                     $price = 0;
+                    $typePrefix = 'DONA';
                 } elseif ($itemRef === 'JVLYNXALUMNI') {
                     $price = 85000;
                     $typePrefix = 'ALUM';
@@ -91,8 +82,9 @@ class JVLYNController extends Controller
                 $price = 325000;
             } elseif ($item['category'] === 'vip-random') {
                 $catPrefix = 'VIP2';
-                if ($isVipFree) {
+                if ($itemRef === 'DONASIVIP' || $itemRef === 'JOSHUAS1T0RU5') {
                     $price = 0;
+                    $typePrefix = 'DONA';
                 } else {
                     $price = 300000;
                 }
