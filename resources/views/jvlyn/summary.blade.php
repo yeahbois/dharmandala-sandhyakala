@@ -57,6 +57,8 @@
                         <tr class="border-b border-outline/10">
                             <th class="py-3 uppercase tracking-widest font-black">Ticket ID</th>
                             <th class="py-3 uppercase tracking-widest font-black">Type</th>
+                            <th class="py-3 uppercase tracking-widest font-black">Referral</th>
+                            <th class="py-3 uppercase tracking-widest font-black">Price</th>
                             <th class="py-3 uppercase tracking-widest font-black">Status</th>
                         </tr>
                     </thead>
@@ -64,7 +66,9 @@
                         @foreach($order->tickets as $ticket)
                             <tr>
                                 <td class="py-4 font-mono font-bold">{{ $ticket->ticket_id }}</td>
-                                <td class="py-4 uppercase">{{ $ticket->ticket_type }}</td>
+                                <td class="py-4 uppercase text-[10px]">{{ $ticket->ticket_type }}</td>
+                                <td class="py-4 uppercase text-[10px] font-bold text-secondary">{{ $ticket->referral_code ?? '-' }}</td>
+                                <td class="py-4 font-bold">IDR {{ number_format($ticket->price, 0, ',', '.') }}</td>
                                 <td class="py-4">
                                     <span class="px-2 py-0.5 font-bold uppercase tracking-tighter text-[9px] {{ $ticket->ticket_status === 'pending_delivery' ? 'bg-secondary/10 text-secondary border border-secondary/20' : 'bg-primary/10 text-primary border border-primary/20' }}">
                                         {{ $ticket->ticket_status }}

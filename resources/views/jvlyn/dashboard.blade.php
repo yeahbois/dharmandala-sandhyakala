@@ -72,7 +72,9 @@
                                     <div class="flex flex-col gap-1">
                                         @foreach($order->tickets as $ticket)
                                             <div class="flex items-center gap-1">
-                                                <span class="text-[9px] font-mono font-bold px-1.5 py-0.5 bg-background border border-outline/5 rounded-sm">{{ $ticket->ticket_id }} ({{ $ticket->ticket_type }})</span>
+                                                <span class="text-[9px] font-mono font-bold px-1.5 py-0.5 bg-background border border-outline/5 rounded-sm" title="Price: IDR {{ number_format($ticket->price, 0) }} | Ref: {{ $ticket->referral_code ?? '-' }}">
+                                                    {{ $ticket->ticket_id }} ({{ $ticket->ticket_type }}) - IDR {{ number_format($ticket->price, 0, ',', '.') }}
+                                                </span>
                                                 <form action="{{ route('jvlyn.panit.ticket.delete', $ticket->id) }}" method="POST" onsubmit="return confirm('Hapus tiket ini?')">
                                                     @csrf @method('DELETE')
                                                     <button type="submit" class="text-[10px] text-brand-red hover:underline">Delete</button>
