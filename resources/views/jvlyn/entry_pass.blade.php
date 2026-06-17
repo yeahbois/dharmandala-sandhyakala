@@ -23,6 +23,10 @@
                 transform: translate(-50%, 0);
             }
         }
+
+        .grid-cols-14 {
+            grid-template-columns: repeat(14, minmax(0, 1fr));
+        }
     </style>
 
     <div class="w-full max-w-7xl mx-auto py-8 px-4 sm:px-6">
@@ -203,7 +207,7 @@
                             </div>
                         </div>
 
-                        <!-- 102 VIP Seating Map Section -->
+                        <!-- 108 VIP Seating Map Section -->
                         <div id="vip-seat-map-container"
                             class="hidden border border-outline/10 bg-surface-variant/10 p-6 space-y-6">
                             <div class="flex flex-col items-center">
@@ -213,7 +217,7 @@
                                 </div>
                                 <!-- Seat map scroll container for small viewports -->
                                 <div class="w-full overflow-x-auto custom-scrollbar pb-3">
-                                    <div class="grid grid-cols-7 gap-3 min-w-[380px] max-w-lg mx-auto select-none"
+                                    <div class="grid grid-cols-14 gap-2 min-w-[500px] max-w-2xl mx-auto select-none"
                                         id="seat-grid">
                                         <!-- Seat items generated via Javascript -->
                                     </div>
@@ -595,10 +599,11 @@
         }
 
         function generateMockSeats() {
-            const rowChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q'];
+            const rowChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
             rowChars.forEach(row => {
-                for (let i = 1; i <= 6; i++) {
-                    const code = `${row}0${i}`;
+                for (let i = 1; i <= 12; i++) {
+                    const num = i < 10 ? `0${i}` : i;
+                    const code = `${row}${num}`;
                     if (!state.vipSeats[code]) {
                         state.vipSeats[code] = (Math.random() < 0.1) ? 'locked' : 'available';
                     }
@@ -659,15 +664,22 @@
             if (!grid) return;
             grid.innerHTML = '';
 
-            const rowChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q'];
+            const rowChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
             rowChars.forEach(row => {
                 const rowLabel = document.createElement('div');
                 rowLabel.className = "text-xs font-black text-on-surface opacity-40 flex items-center justify-center";
                 rowLabel.innerText = row;
                 grid.appendChild(rowLabel);
 
-                for (let i = 1; i <= 6; i++) {
-                    const code = `${row}0${i}`;
+                for (let i = 1; i <= 12; i++) {
+                    if (i === 7) {
+                        const divider = document.createElement('div');
+                        divider.className = "w-px h-full bg-outline/20 mx-auto";
+                        grid.appendChild(divider);
+                    }
+
+                    const num = i < 10 ? `0${i}` : i;
+                    const code = `${row}${num}`;
                     const status = state.vipSeats[code] || 'available';
 
                     const inOwnCart = state.cart.some(item => item.category === 'vip-seat' && item.seat_number === code);
@@ -740,7 +752,7 @@
                 document.getElementById('popup-fest-price').innerText = price;
 
                 const refContainer = document.getElementById('popup-referral-container');
-                if (tier === 'festival') {
+                if (tier === 'festival' || tier === 'vip-random') {
                     refContainer.classList.remove('hidden');
                 } else {
                     refContainer.classList.add('hidden');

@@ -369,6 +369,13 @@
                                 class="text-[9px] block font-bold uppercase tracking-widest text-on-surface-variant opacity-60 mt-1">Bandfeat
                                 2</span>
                         </div>
+                        <div class="w-px h-10 bg-outline/20 hidden sm:block"></div>
+                        <div>
+                            <span class="text-lg font-black text-on-surface uppercase">Bandfeat 3</span>
+                            <span
+                                class="text-[9px] block font-bold uppercase tracking-widest text-on-surface-variant opacity-60 mt-1">Bandfeat
+                                3</span>
+                        </div>
                     </div>
                 </div>
             </div>

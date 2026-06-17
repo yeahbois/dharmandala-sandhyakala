@@ -16,6 +16,7 @@ class JvlynTicket extends Model
         'is_scanned',
         'referral_code',
         'ticket_id',
+        'seat_number',
     ];
 
     protected $casts = [

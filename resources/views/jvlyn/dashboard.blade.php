@@ -71,7 +71,13 @@
                                 <td class="p-4">
                                     <div class="flex flex-col gap-1">
                                         @foreach($order->tickets as $ticket)
-                                            <span class="text-[9px] font-mono font-bold px-1.5 py-0.5 bg-background border border-outline/5 rounded-sm">{{ $ticket->ticket_id }} ({{ $ticket->ticket_type }})</span>
+                                            <div class="flex items-center gap-1">
+                                                <span class="text-[9px] font-mono font-bold px-1.5 py-0.5 bg-background border border-outline/5 rounded-sm">{{ $ticket->ticket_id }} ({{ $ticket->ticket_type }})</span>
+                                                <form action="{{ route('jvlyn.panit.ticket.delete', $ticket->id) }}" method="POST" onsubmit="return confirm('Hapus tiket ini?')">
+                                                    @csrf @method('DELETE')
+                                                    <button type="submit" class="text-[10px] text-brand-red hover:underline">Delete</button>
+                                                </form>
+                                            </div>
                                         @endforeach
                                     </div>
                                 </td>
@@ -82,13 +88,24 @@
                                     </span>
                                 </td>
                                 <td class="p-4">
-                                    <a href="{{ route('jvlyn.summary', $order->id) }}" class="text-primary font-bold hover:underline">Details</a>
+                                    <div class="flex items-center gap-3">
+                                        <a href="{{ route('jvlyn.summary', $order->id) }}" class="text-primary font-bold hover:underline">Details</a>
+                                        <form action="{{ route('jvlyn.panit.order.delete', $order->id) }}" method="POST" onsubmit="return confirm('Hapus seluruh order ini?')">
+                                            @csrf @method('DELETE')
+                                            <button type="submit" class="text-brand-red font-bold hover:underline">Delete Order</button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
             </div>
+            @if($allOrders->hasPages())
+                <div class="p-6 border-t border-outline/10">
+                    {{ $allOrders->links() }}
+                </div>
+            @endif
         </div>
     </div>
 
