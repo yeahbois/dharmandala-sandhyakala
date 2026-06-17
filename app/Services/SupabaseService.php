@@ -71,6 +71,12 @@ class SupabaseService
                 $response = $this->client->patch("{$this->url}/rest/v1/{$this->table}?{$column}=eq.{$value}", $data);
                 return $response->json();
             }
+
+            public function delete(string $column, $value)
+            {
+                $response = $this->client->delete("{$this->url}/rest/v1/{$this->table}?{$column}=eq.{$value}");
+                return $response->json();
+            }
         };
     }
 
@@ -116,6 +122,16 @@ class SupabaseService
             public function getPublicUrl(string $path)
             {
                 return "{$this->url}/storage/v1/object/public/{$this->bucket}/{$path}";
+            }
+
+            public function delete(string $path)
+            {
+                $response = Http::withHeaders([
+                    'apikey' => $this->key,
+                    'Authorization' => 'Bearer ' . $this->key,
+                ])->delete("{$this->url}/storage/v1/object/{$this->bucket}/{$path}");
+
+                return $response->json();
             }
         };
     }

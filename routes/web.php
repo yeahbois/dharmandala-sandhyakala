@@ -49,6 +49,8 @@ Route::get('/jvlyn', function () {
 Route::get('/jvlyn/entry_pass', function () {
     return view('jvlyn.entry_pass');
 });
+Route::get('/jvlyn/entry_pass/check', [JVLYNController::class, 'checkView'])->name('jvlyn.entry_pass.check');
+Route::post('/jvlyn/entry_pass/check', [JVLYNController::class, 'checkEntryPass'])->name('jvlyn.entry_pass.check.post');
 Route::get('/jvlyn/checkout', function () {
     return view('jvlyn.checkout');
 })->name('jvlyn.checkout');
@@ -62,6 +64,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/jvlyn/panit/checker', [JVLYNController::class, 'checker'])->name('jvlyn.panit.checker');
     Route::get('/jvlyn/panit/dashboard', [JVLYNController::class, 'dashboard'])->name('jvlyn.panit.dashboard');
     Route::post('/jvlyn/panit/status/update', [JVLYNController::class, 'updateOrderStatus'])->name('jvlyn.panit.status.update');
+    Route::delete('/jvlyn/panit/order/{id}', [JVLYNController::class, 'deleteOrder'])->name('jvlyn.panit.order.delete');
+    Route::delete('/jvlyn/panit/ticket/{id}', [JVLYNController::class, 'deleteTicket'])->name('jvlyn.panit.ticket.delete');
+    Route::get('/jvlyn/api/scan', [JVLYNController::class, 'scanTicket'])->name('jvlyn.api.scan');
 });
 
 Route::get('/jvlyn/api/data', [JVLYNController::class, 'data'])->name('jvlyn.api.data');
