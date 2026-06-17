@@ -454,7 +454,7 @@
                                 <h5 class="text-xs font-black uppercase tracking-wider text-on-surface">VIP (Choose
                                     seat)</h5>
                                 <span class="text-[9px] text-on-surface-variant font-light uppercase opacity-60">Select
-                                    your own seat (available 102 seat)</span>
+                                    your own seat (available 108 seat)</span>
                             </div>
                             <span class="text-sm font-black text-primary uppercase">IDR 325k</span>
                         </div>

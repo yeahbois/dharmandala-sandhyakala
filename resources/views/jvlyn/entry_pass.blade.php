@@ -752,7 +752,7 @@
                 document.getElementById('popup-fest-price').innerText = price;
 
                 const refContainer = document.getElementById('popup-referral-container');
-                if (tier === 'festival' || tier === 'vip-random') {
+                if (tier === 'festival') {
                     refContainer.classList.remove('hidden');
                 } else {
                     refContainer.classList.add('hidden');
@@ -878,48 +878,56 @@
             updateCartUI();
         }
 
+        async function addGenericToCart(category, price, referral = null) {
+            const item = {
+                id: 'cart-' + Math.random().toString(36).substring(2, 9),
+                category: category,
+                seat_number: null,
+                price: price,
+                referral_code: referral
+            };
+            state.cart.push(item);
+            await adjustQuota(category, -1);
+            await saveCart();
+            showNotification(`${category} added to cart!`, "success");
+        }
+
         async function addFestivalToCart() {
             const codeInput = document.getElementById('referral-input');
             const code = codeInput ? codeInput.value.trim().toUpperCase() : '';
 
-            // Validate referral code if entered
-            let referral = null;
-            let finalPrice = prices[state.selectedTicket];
-
             if (state.selectedTicket === 'festival') {
-                if (code === 'JVLYNXALUMNI') {
-                    referral = code;
-                    finalPrice = 85000;
-                } else if (code === 'JVLYNXMHT18') {
-                    referral = code;
-                    finalPrice = 132000;
-                } else if (code !== '') {
-                    // For PROMO10 or others, we can keep existing logic or just reject if not these specific ones
-                    if (code === 'PROMO10') {
+                if (code === 'DONASIVIP') {
+                    await addGenericToCart('vip-random', 0, 'DONASIVIP');
+                } else if (code === 'DONASIFEST') {
+                    await addGenericToCart('festival', 0, 'DONASIFEST');
+                } else if (code === 'JOSHUAS1T0RU5') {
+                    await addGenericToCart('festival', 0, 'JOSHUAS1T0RU5');
+                    await addGenericToCart('vip-random', 0, 'JOSHUAS1T0RU5');
+                } else {
+                    let referral = null;
+                    let finalPrice = prices['festival'];
+                    if (code === 'JVLYNXALUMNI') {
                         referral = code;
-                    } else {
+                        finalPrice = 85000;
+                    } else if (code === 'JVLYNXMHT18') {
+                        referral = code;
+                        finalPrice = 132000;
+                    } else if (code === 'PROMO10') {
+                        referral = code;
+                    } else if (code !== '') {
                         showNotification("Invalid referral code.", "warning");
                         return;
                     }
+                    await addGenericToCart('festival', finalPrice, referral);
                 }
+            } else {
+                // VIP Random without referral
+                await addGenericToCart('vip-random', prices['vip-random']);
             }
 
-            const item = {
-                id: 'cart-' + Math.random().toString(36).substring(2, 9),
-                category: state.selectedTicket,
-                seat_number: null,
-                price: finalPrice,
-                referral_code: referral
-            };
-
-            state.cart.push(item);
-            await adjustQuota(state.selectedTicket, -1); // Decrement available quota in real-time
-            await saveCart();
-
-            // Clean inputs & hide popup
             if (codeInput) codeInput.value = '';
             document.getElementById('festival-selection-popup').classList.add('hidden');
-            showNotification(`${state.selectedTicket === 'festival' ? 'Festival' : 'VIP Random'} added to cart!`, "success");
         }
 
         async function addSeatToCart() {
