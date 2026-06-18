@@ -216,8 +216,8 @@
                                     CONCERT STAGE
                                 </div>
                                 <!-- Seat map scroll container for small viewports -->
-                                <div class="w-full overflow-auto custom-scrollbar pb-3 max-h-[60vh]">
-                                    <div class="grid grid-cols-14 gap-2 md:gap-2 min-w-[600px] md:min-w-[500px] max-w-2xl mx-auto select-none"
+                                <div class="w-full overflow-auto custom-scrollbar pb-3 max-h-[70vh] md:max-h-[60vh] border border-outline/5">
+                                    <div class="grid grid-cols-14 gap-4 md:gap-2 min-w-[800px] md:min-w-[500px] max-w-4xl mx-auto select-none p-4"
                                         id="seat-grid">
                                         <!-- Seat items generated via Javascript -->
                                     </div>
@@ -688,8 +688,8 @@
                     const seatBtn = document.createElement('button');
                     seatBtn.id = `seat-${code}`;
                     // Mobile: larger boxes via min-width/height or padding.
-                    // Added h-12 w-12 for mobile specifically (approx 3x larger than default text-based size)
-                    seatBtn.className = "aspect-square h-12 w-12 md:h-auto md:w-auto text-[11px] md:text-[9px] font-black border flex items-center justify-center transition-all duration-300";
+                    // Added h-14 w-14 for mobile specifically to ensure text doesn't overlap and easy to click
+                    seatBtn.className = "aspect-square h-14 w-14 md:h-auto md:w-auto text-[12px] md:text-[9px] font-black border flex items-center justify-center transition-all duration-300 shrink-0";
 
                     if (status === 'sold' || status === 'locked' || inOthersCart) {
                         seatBtn.className += " bg-surface-variant border-outline/20 text-on-surface-variant/30 cursor-not-allowed opacity-30";
