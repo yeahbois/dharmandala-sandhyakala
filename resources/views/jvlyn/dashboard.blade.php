@@ -43,6 +43,59 @@
             </div>
         </div>
 
+        <!-- Sale Management -->
+        <div class="bg-surface border border-outline/10 shadow-sm mb-8 p-6">
+            <h3 class="text-lg font-black uppercase tracking-tight text-on-surface mb-6">Sale Management</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                @foreach(['Festival', 'VIP Seat', 'VIP Random'] as $cat)
+                    <div class="p-4 border border-outline/10 bg-surface-variant/5">
+                        <p class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-4">{{ $cat }}</p>
+                        <div class="flex gap-2">
+                            <form action="{{ route('jvlyn.panit.toggle-sale') }}" method="POST" class="flex-1">
+                                @csrf
+                                <input type="hidden" name="category" value="{{ $cat }}">
+                                <input type="hidden" name="action" value="close">
+                                <button type="submit" class="w-full py-2 bg-brand-red text-white text-[9px] font-black uppercase tracking-widest hover:opacity-90 transition-all">Close Sale</button>
+                            </form>
+                            <form action="{{ route('jvlyn.panit.toggle-sale') }}" method="POST" class="flex-1">
+                                @csrf
+                                <input type="hidden" name="category" value="{{ $cat }}">
+                                <input type="hidden" name="action" value="open">
+                                <button type="submit" class="w-full py-2 bg-secondary text-white text-[9px] font-black uppercase tracking-widest hover:opacity-90 transition-all">Open Sale</button>
+                            </form>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
+        <!-- Mailbox Usage -->
+        <div class="bg-surface border border-outline/10 shadow-sm mb-8 overflow-hidden">
+            <div class="p-6 border-b border-outline/10">
+                <h3 class="text-lg font-black uppercase tracking-tight text-on-surface">Mailbox Usage</h3>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs whitespace-nowrap">
+                    <thead>
+                        <tr class="bg-surface-variant/10 border-b border-outline/10">
+                            <th class="p-4 uppercase font-black tracking-widest">Email</th>
+                            <th class="p-4 uppercase font-black tracking-widest">Current Usage</th>
+                            <th class="p-4 uppercase font-black tracking-widest">Last Reset</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-outline/5">
+                        @foreach($mailboxCounters as $counter)
+                            <tr class="hover:bg-surface-variant/5 transition-colors">
+                                <td class="p-4 font-bold text-on-surface">{{ $counter->mailbox_email }}</td>
+                                <td class="p-4 text-on-surface-variant">{{ $counter->current_usage }}</td>
+                                <td class="p-4 text-on-surface-variant">{{ $counter->last_reset->format('d/m/Y') }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
         <!-- Main Data Table -->
         <div class="bg-surface border border-outline/10 shadow-sm overflow-hidden">
             <div class="p-6 border-b border-outline/10 flex justify-between items-center">
@@ -72,7 +125,7 @@
                                     <div class="flex flex-col gap-1">
                                         @foreach($order->tickets as $ticket)
                                             <div class="flex items-center gap-1">
-                                                <span class="text-[9px] font-mono font-bold px-1.5 py-0.5 bg-background border border-outline/5 rounded-sm" title="Price: IDR {{ number_format($ticket->price, 0) }} | Ref: {{ $ticket->referral_code ?? '-' }}">
+                                                <span class="text-[9px] font-mono font-bold px-1.5 py-0.5 bg-background border {{ $ticket->ticket_status === 'sent' ? 'border-green-500' : 'border-black' }} rounded-sm" title="Price: IDR {{ number_format($ticket->price, 0) }} | Ref: {{ $ticket->referral_code ?? '-' }}">
                                                     {{ $ticket->ticket_id }} ({{ $ticket->ticket_type }}) - IDR {{ number_format($ticket->price, 0, ',', '.') }}
                                                 </span>
                                                 <form action="{{ route('jvlyn.panit.ticket.delete', $ticket->id) }}" method="POST" onsubmit="return confirm('Hapus tiket ini?')">

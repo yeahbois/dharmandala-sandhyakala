@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\JvlynTicket;
 use App\Models\Order;
+use App\Models\MailboxCounter;
 use App\Services\SupabaseService;
 use Illuminate\Support\Str;
 
@@ -302,6 +303,7 @@ class JVLYNController extends Controller
         $ticketsByType = JvlynTicket::selectRaw('ticket_type, count(*) as count')->groupBy('ticket_type')->pluck('count', 'ticket_type');
 
         $allOrders = Order::with('tickets')->latest()->paginate(20);
+        $mailboxCounters = MailboxCounter::all();
 
         // Real-time Supabase Data
         $vipSeats = $this->supabase->from('vip_seats')->select('seat_number, status') ?: [];
@@ -324,8 +326,31 @@ class JVLYNController extends Controller
 
         return view('jvlyn.dashboard', compact(
             'totalOrders', 'ordersByStatus', 'ticketsByStatus', 'ticketsByType',
-            'allOrders', 'availableVIP', 'cartsCount'
+            'allOrders', 'availableVIP', 'cartsCount', 'mailboxCounters'
         ));
+    }
+
+    public function toggleSale(Request $request)
+    {
+        $validated = $request->validate([
+            'category' => 'required|string',
+            'action' => 'required|in:open,close',
+        ]);
+
+        $category = strtolower($validated['category']);
+        $quota = 0;
+
+        if ($validated['action'] === 'open') {
+            if ($category === 'festival') $quota = 700;
+            elseif ($category === 'vip seat') $quota = 108;
+            elseif ($category === 'vip random') $quota = 108;
+        }
+
+        $this->supabase->from('ticket_categories')->update([
+            'available_quota' => $quota
+        ], 'category_name', $validated['category']);
+
+        return back()->with('success', 'Sale for ' . $validated['category'] . ' ' . $validated['action'] . 'ed successfully');
     }
 
     public function checkView()
@@ -360,10 +385,14 @@ class JVLYNController extends Controller
             return response()->json(['status' => 'error', 'message' => 'QR Code tidak terbaca'], 400);
         }
 
-        $ticket = JvlynTicket::where('ticket_id', $qrString)->first();
+        $ticket = JvlynTicket::with('order')->where('ticket_id', $qrString)->first();
 
         if (!$ticket) {
             return response()->json(['status' => 'error', 'message' => 'Tiket tidak ditemukan di database'], 404);
+        }
+
+        if ($ticket->ticket_status === 'fail_order') {
+            return response()->json(['status' => 'error', 'message' => 'Ticket gagal di scan [error: ticket_status = fail_order]'], 400);
         }
 
         if ($ticket->is_scanned) {
@@ -374,7 +403,15 @@ class JVLYNController extends Controller
 
         return response()->json([
             'status' => 'berhasil',
-            'message' => 'Check-in Berhasil! Silakan masuk.'
+            'message' => 'Check-in Berhasil! Silakan masuk.',
+            'order_info' => [
+                'name' => $ticket->order->buyer_name,
+                'email' => $ticket->order->buyer_email,
+                'phone' => $ticket->order->buyer_phone,
+                'ticket_type' => $ticket->ticket_type,
+                'referral_code' => $ticket->referral_code ?? '-',
+                'ticket_id' => $ticket->ticket_id
+            ]
         ]);
     }
 }

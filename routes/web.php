@@ -66,6 +66,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/jvlyn/panit/status/update', [JVLYNController::class, 'updateOrderStatus'])->name('jvlyn.panit.status.update');
     Route::delete('/jvlyn/panit/order/{id}', [JVLYNController::class, 'deleteOrder'])->name('jvlyn.panit.order.delete');
     Route::delete('/jvlyn/panit/ticket/{id}', [JVLYNController::class, 'deleteTicket'])->name('jvlyn.panit.ticket.delete');
+    Route::post('/jvlyn/panit/toggle-sale', [JVLYNController::class, 'toggleSale'])->name('jvlyn.panit.toggle-sale');
     Route::get('/jvlyn/api/scan', [JVLYNController::class, 'scanTicket'])->name('jvlyn.api.scan');
 });
 
