@@ -265,7 +265,7 @@
                     <div
                         class="artist-card flex flex-col bg-surface border border-outline/10 overflow-hidden shadow-sm group">
                         <div class="aspect-square w-full overflow-hidden relative">
-                            <img src="{{ asset('images/changcuters.jpg') }}"
+                            <img src="{{ asset('images/changcuters.JPG') }}"
                                 class="artist-img w-full h-full object-cover transition-transform duration-700"
                                 alt="Changcuters">
                             <div
@@ -279,13 +279,14 @@
                         </div>
                         <div class="p-6 text-left flex-grow">
                             <p class="text-xs text-on-surface-variant leading-relaxed font-light">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio praesentium reiciendis
-                                sapiente, suscipit tenetur consectetur velit! Vitae recusandae excepturi aspernatur
-                                laboriosam aut laudantium earum blanditiis, consectetur porro reprehenderit! Cumque,
-                                vel.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, ea a. Inventore
-                                velit odio pariatur culpa eligendi quis, atque repellat deleniti dolorem! Quidem
-                                officiis in pariatur iure. Ipsam, quas magni!
+                                The Changcuters merupakan band rock asal Bandung yang telah menjadi salah satu ikon
+                                musik Indonesia sejak 2004. Dikenal lewat aksi panggung yang energik dan menghibur,
+                                mereka berhasil meraih penghargaan Pendatang Baru Terbaik Anugerah Musik Indonesia (AMI
+                                Awards) 2009 melalui lagu “Racun Dunia”. Lagu-lagu hits seperti “Racun Dunia”, “Main
+                                Serong”, “Hijrah ke London”, “Parampampam”, dan “Pria Idaman Wanita” menjadikan The
+                                Changcuters sebagai salah satu band favorit lintas generasi. Dengan karakter musik yang
+                                khas dan interaksi panggung yang selalu meriah, The Changcuters siap menghadirkan
+                                penampilan yang penuh energi dan tak terlupakan.
                             </p>
                         </div>
                     </div>
@@ -294,7 +295,7 @@
                     <div
                         class="artist-card flex flex-col bg-surface border border-outline/10 overflow-hidden shadow-sm group">
                         <div class="aspect-square w-full overflow-hidden relative">
-                            <img src="{{ asset('images/rarasudirman.jpg') }}"
+                            <img src="{{ asset('images/rarasudirman.jpeg') }}"
                                 class="artist-img w-full h-full object-cover transition-transform duration-700"
                                 alt="Rara Sudirman">
                             <div
@@ -309,13 +310,17 @@
                         </div>
                         <div class="p-6 text-left flex-grow">
                             <p class="text-xs text-on-surface-variant leading-relaxed font-light">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio praesentium reiciendis
-                                sapiente, suscipit tenetur consectetur velit! Vitae recusandae excepturi aspernatur
-                                laboriosam aut laudantium earum blanditiis, consectetur porro reprehenderit! Cumque,
-                                vel.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, ea a. Inventore
-                                velit odio pariatur culpa eligendi quis, atque repellat deleniti dolorem! Quidem
-                                officiis in pariatur iure. Ipsam, quas magni!
+                                Rara Sudirman merupakan penyanyi dan aktris muda Indonesia yang memulai perjalanan
+                                kariernya sejak usia dini melalui berbagai kompetisi seni dan musik. Salah satu prestasi
+                                awalnya adalah meraih Juara 1 Vokal Solo FLS2N tingkat DKI Jakarta dan Juara Harapan 1
+                                FLS2N tingkat Nasional saat masih bersekolah di SMP. Setelah itu, bakatnya semakin
+                                dikenal ketika ia memerankan Sherina kecil dalam teater musikal Petualangan Sherina pada
+                                tahun 2022 serta mengisi soundtrack film animasi Nussa. Berkat kemampuan vokal dan
+                                pengalamannya di dunia pertunjukan, Rara terus mengembangkan karier di industri hiburan
+                                hingga akhirnya meraih perhatian publik secara nasional melalui ajang Indonesian Idol
+                                Season XIII pada tahun 2025, di mana ia berhasil menembus babak Top 8. Dengan berbagai
+                                pencapaian di bidang musik, teater, dan kompetisi vokal, Rara dikenal sebagai salah satu
+                                talenta muda Indonesia yang berprestasi dan memiliki potensi besar di industri hiburan.
                             </p>
                         </div>
                     </div>
@@ -324,7 +329,7 @@
                     <div
                         class="artist-card flex flex-col bg-surface border border-outline/10 overflow-hidden shadow-sm group">
                         <div class="aspect-square w-full overflow-hidden relative">
-                            <img src="{{ asset('images/atharalikhwan.jpg') }}"
+                            <img src="{{ asset('images/atharxgienari.jpeg') }}"
                                 class="artist-img w-full h-full object-cover transition-transform duration-700"
                                 alt="Athar Alikhwan">
                             <div
@@ -334,18 +339,22 @@
                                 <span
                                     class="text-[9px] font-bold tracking-[0.3em] uppercase text-primary mb-1 block">Our
                                     MC</span>
-                                <h3 class="text-2xl font-black tracking-tight text-white uppercase">Athar Alikhwan</h3>
+                                <h3 class="text-2xl font-black tracking-tight text-white uppercase">Athar Alikhwan &
+                                    Gienarie Kaysha</h3>
                             </div>
                         </div>
                         <div class="p-6 text-left flex-grow">
                             <p class="text-xs text-on-surface-variant leading-relaxed font-light">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio praesentium reiciendis
-                                sapiente, suscipit tenetur consectetur velit! Vitae recusandae excepturi aspernatur
-                                laboriosam aut laudantium earum blanditiis, consectetur porro reprehenderit! Cumque,
-                                vel.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, ea a. Inventore
-                                velit odio pariatur culpa eligendi quis, atque repellat deleniti dolorem! Quidem
-                                officiis in pariatur iure. Ipsam, quas magni!
+                                Athar Alikhwan adalah content creator, pembicara, presenter, dan MC yang dikenal melalui
+                                seri konten eksplorasi sekolah dan kampus Catatan Anak Sekolah di Instagram dan TikTok.
+                                Ia aktif membawakan berbagai acara pelajar, pendidikan, hingga kegiatan kampus, serta
+                                sering menjadi pembicara muda di berbagai institusi pendidikan.
+                                =======================================================================
+                                Gienarie Kaysha adalah pelajar, aktivis, content creator, dan MC yang aktif dalam
+                                berbagai kegiatan kepemudaan. Ia merupakan Finalis GADIS Sampul 2023 perwakilan SMA
+                                Labschool Kebayoran Jakarta serta pernah menjadi Student Ambassador KOMPeK FEB UI.
+                                Selain aktif di dunia organisasi dan pengembangan diri, Gienarie juga kerap terlibat
+                                dalam berbagai acara sebagai pembawa acara
                             </p>
                         </div>
                     </div>
@@ -359,22 +368,23 @@
                         <div>
                             <span class="text-lg font-black text-on-surface uppercase">Bandfeat 1</span>
                             <span
-                                class="text-[9px] block font-bold uppercase tracking-widest text-on-surface-variant opacity-60 mt-1">Bandfeat
-                                1</span>
+                                class="text-[9px] block font-bold uppercase tracking-widest text-on-surface-variant opacity-60 mt-1">X-FEST
+                            </span>
                         </div>
                         <div class="w-px h-10 bg-outline/20 hidden sm:block"></div>
                         <div>
                             <span class="text-lg font-black text-on-surface uppercase">Bandfeat 2</span>
                             <span
-                                class="text-[9px] block font-bold uppercase tracking-widest text-on-surface-variant opacity-60 mt-1">Bandfeat
-                                2</span>
+                                class="text-[9px] block font-bold uppercase tracking-widest text-on-surface-variant opacity-60 mt-1">Hellforge
+                            </span>
                         </div>
                         <div class="w-px h-10 bg-outline/20 hidden sm:block"></div>
                         <div>
                             <span class="text-lg font-black text-on-surface uppercase">Bandfeat 3</span>
                             <span
-                                class="text-[9px] block font-bold uppercase tracking-widest text-on-surface-variant opacity-60 mt-1">Bandfeat
-                                3</span>
+                                class="text-[9px] block font-bold uppercase tracking-widest text-on-surface-variant opacity-60 mt-1">LSPR
+                                Band
+                            </span>
                         </div>
                     </div>
                 </div>
