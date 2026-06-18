@@ -22,7 +22,10 @@
                         <div class="p-5 border-b border-outline/10 flex justify-between items-start">
                             <div>
                                 <h3 class="text-base font-black text-on-surface uppercase">{{ $order->buyer_name }}</h3>
-                                <p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-wider">{{ $order->created_at->format('d M Y, H:i') }}</p>
+                                <div class="flex items-center gap-2">
+                                    <p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-wider">{{ $order->created_at->format('d M Y, H:i') }}</p>
+                                    <a href="{{ route('jvlyn.summary', $order->id) }}" class="text-[10px] text-primary font-black uppercase hover:underline tracking-widest">Details</a>
+                                </div>
                             </div>
                             <span class="bg-primary/10 text-primary border border-primary/20 px-2 py-0.5 text-[9px] font-black uppercase tracking-widest">Pending</span>
                         </div>

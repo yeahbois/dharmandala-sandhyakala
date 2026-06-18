@@ -216,8 +216,8 @@
                                     CONCERT STAGE
                                 </div>
                                 <!-- Seat map scroll container for small viewports -->
-                                <div class="w-full overflow-x-auto custom-scrollbar pb-3">
-                                    <div class="grid grid-cols-14 gap-2 min-w-[500px] max-w-2xl mx-auto select-none"
+                                <div class="w-full overflow-auto custom-scrollbar pb-3 max-h-[60vh]">
+                                    <div class="grid grid-cols-14 gap-2 md:gap-2 min-w-[600px] md:min-w-[500px] max-w-2xl mx-auto select-none"
                                         id="seat-grid">
                                         <!-- Seat items generated via Javascript -->
                                     </div>
@@ -667,7 +667,7 @@
             const rowChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
             rowChars.forEach(row => {
                 const rowLabel = document.createElement('div');
-                rowLabel.className = "text-xs font-black text-on-surface opacity-40 flex items-center justify-center";
+                rowLabel.className = "text-xs md:text-xs font-black text-on-surface opacity-40 flex items-center justify-center";
                 rowLabel.innerText = row;
                 grid.appendChild(rowLabel);
 
@@ -687,7 +687,9 @@
 
                     const seatBtn = document.createElement('button');
                     seatBtn.id = `seat-${code}`;
-                    seatBtn.className = "aspect-square text-[9px] font-black border flex items-center justify-center transition-all duration-300";
+                    // Mobile: larger boxes via min-width/height or padding.
+                    // Added h-12 w-12 for mobile specifically (approx 3x larger than default text-based size)
+                    seatBtn.className = "aspect-square h-12 w-12 md:h-auto md:w-auto text-[11px] md:text-[9px] font-black border flex items-center justify-center transition-all duration-300";
 
                     if (status === 'sold' || status === 'locked' || inOthersCart) {
                         seatBtn.className += " bg-surface-variant border-outline/20 text-on-surface-variant/30 cursor-not-allowed opacity-30";

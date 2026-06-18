@@ -49,9 +49,37 @@
                 </select>
             </div>
 
-            <div id="last-scanned-container" class="hidden bg-[#0F172A] border border-blue-900 rounded-2xl p-4">
-                <p class="text-xs text-blue-300 mb-1">Terakhir di Scan</p>
-                <p id="last-scanned-text" class="font-mono text-sm break-words text-blue-100"></p>
+            <div id="last-scanned-container" class="hidden bg-[#0F172A] border border-blue-900 rounded-2xl p-4 space-y-4">
+                <div>
+                    <p class="text-[10px] uppercase font-bold text-blue-400 tracking-widest mb-1">Ticket ID</p>
+                    <p id="last-scanned-text" class="font-mono text-sm break-words text-blue-100 font-bold"></p>
+                </div>
+                <div id="order-details-container" class="hidden space-y-3 pt-3 border-t border-blue-900/50">
+                    <div>
+                        <p class="text-[9px] uppercase text-blue-300/60 font-bold tracking-wider">Buyer Name</p>
+                        <p id="info-name" class="text-xs font-semibold text-white"></p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div>
+                            <p class="text-[9px] uppercase text-blue-300/60 font-bold tracking-wider">Email</p>
+                            <p id="info-email" class="text-[10px] font-medium text-blue-100 truncate"></p>
+                        </div>
+                        <div>
+                            <p class="text-[9px] uppercase text-blue-300/60 font-bold tracking-wider">Phone</p>
+                            <p id="info-phone" class="text-[10px] font-medium text-blue-100"></p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div>
+                            <p class="text-[9px] uppercase text-blue-300/60 font-bold tracking-wider">Type</p>
+                            <p id="info-type" class="text-[10px] font-medium text-blue-100 uppercase"></p>
+                        </div>
+                        <div>
+                            <p class="text-[9px] uppercase text-blue-300/60 font-bold tracking-wider">Referral</p>
+                            <p id="info-referral" class="text-[10px] font-medium text-blue-100"></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </aside>
     </main>
@@ -81,6 +109,14 @@
         }
 
         async function handlePresent(decodedText) {
+            const orderDetailsContainer = document.getElementById('order-details-container');
+            const lastScannedContainer = document.getElementById('last-scanned-container');
+            const lastScannedText = document.getElementById('last-scanned-text');
+
+            orderDetailsContainer.classList.add('hidden');
+            lastScannedContainer.classList.add('hidden');
+            lastScannedText.innerText = decodedText;
+
             try {
                 const res = await fetch(`/jvlyn/api/scan?qrString=${encodeURIComponent(decodedText)}`);
                 const data = await res.json();
@@ -88,7 +124,19 @@
                 if (data.status === 'berhasil') {
                     successAudio.play().catch(() => {});
                     showAlert('success', data.message);
+                    lastScannedContainer.classList.remove('hidden');
+
+                    if (data.order_info) {
+                        lastScannedText.innerText = data.order_info.ticket_id;
+                        document.getElementById('info-name').innerText = data.order_info.name;
+                        document.getElementById('info-email').innerText = data.order_info.email;
+                        document.getElementById('info-phone').innerText = data.order_info.phone;
+                        document.getElementById('info-type').innerText = data.order_info.ticket_type;
+                        document.getElementById('info-referral').innerText = data.order_info.referral_code;
+                        orderDetailsContainer.classList.remove('hidden');
+                    }
                 } else {
+                    lastScannedContainer.classList.remove('hidden');
                     errorAudio.play().catch(() => {});
                     showAlert('error', data.message);
                 }

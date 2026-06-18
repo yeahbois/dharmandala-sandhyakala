@@ -56,19 +56,39 @@
                                     <p class="text-sm font-black text-primary">IDR {{ number_format($order->price, 0, ',', '.') }}</p>
                                 </div>
                             </div>
-                            <div class="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                @foreach($order->tickets as $ticket)
-                                    <div class="flex flex-col items-center text-center p-4 border border-outline/5 bg-background">
-                                        <div class="mb-4 p-2 bg-white rounded-lg">
-                                            {!! QrCode::size(150)->generate($ticket->ticket_id) !!}
-                                        </div>
-                                        <p class="text-[10px] font-black uppercase tracking-tighter text-on-surface">{{ $ticket->ticket_type }}</p>
-                                        <p class="text-xs font-mono font-bold text-primary mt-1">{{ $ticket->ticket_id }}</p>
-                                        @if($ticket->seat_number)
-                                            <p class="text-[9px] font-black bg-secondary/10 text-secondary px-2 py-0.5 mt-2 rounded-full border border-secondary/20">SEAT {{ $ticket->seat_number }}</p>
-                                        @endif
+                            <div class="p-6">
+                                @if($order->order_status === 'pending')
+                                    <div class="py-12 text-center">
+                                        <span class="material-symbols-outlined text-4xl text-primary mb-3">hourglass_empty</span>
+                                        <p class="text-sm font-black uppercase tracking-widest text-on-surface">Order waiting for confirmation</p>
+                                        <p class="text-[10px] text-on-surface-variant mt-2 uppercase tracking-tight">Your payment is being reviewed by our team.</p>
                                     </div>
-                                @endforeach
+                                @elseif($order->order_status === 'declined')
+                                    <div class="py-12 text-center">
+                                        <span class="material-symbols-outlined text-4xl text-brand-red mb-3">error</span>
+                                        <p class="text-sm font-black uppercase tracking-widest text-brand-red">Order Declined</p>
+                                        <p class="text-[10px] text-on-surface-variant mt-2 uppercase tracking-tight">Please contact our contact person for more information.</p>
+                                    </div>
+                                @elseif($order->order_status === 'paid')
+                                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                        @foreach($order->tickets as $ticket)
+                                            <div class="flex flex-col items-center text-center p-4 border border-outline/5 bg-background">
+                                                <div class="mb-4 p-2 bg-white rounded-lg">
+                                                    {!! QrCode::size(150)->generate($ticket->ticket_id) !!}
+                                                </div>
+                                                <p class="text-[10px] font-black uppercase tracking-tighter text-on-surface">{{ $ticket->ticket_type }}</p>
+                                                <p class="text-xs font-mono font-bold text-primary mt-1">{{ $ticket->ticket_id }}</p>
+                                                @if($ticket->seat_number)
+                                                    <p class="text-[9px] font-black bg-secondary/10 text-secondary px-2 py-0.5 mt-2 rounded-full border border-secondary/20">SEAT {{ $ticket->seat_number }}</p>
+                                                @endif
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                @else
+                                    <div class="py-12 text-center">
+                                        <p class="text-sm font-black uppercase tracking-widest text-on-surface">Status: {{ $order->order_status }}</p>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     @endforeach
