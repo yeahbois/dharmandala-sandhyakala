@@ -43,6 +43,30 @@
             </div>
         </div>
 
+        <!-- Ticket Lifecycle Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div class="bg-surface border border-outline/10 p-6 shadow-sm border-l-4 border-l-secondary">
+                <p class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Ticket Sent</p>
+                <h3 class="text-3xl font-black text-secondary">{{ $ticketsSent }}/{{ $totalTickets }}</h3>
+                <p class="text-[9px] text-on-surface-variant mt-2 uppercase font-bold tracking-widest">Email Delivered</p>
+            </div>
+            <div class="bg-surface border border-outline/10 p-6 shadow-sm border-l-4 border-l-primary">
+                <p class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Ticket Scanned</p>
+                <h3 class="text-3xl font-black text-primary">{{ $ticketsScanned }}/{{ $totalTickets }}</h3>
+                <p class="text-[9px] text-on-surface-variant mt-2 uppercase font-bold tracking-widest">Venue Entry</p>
+            </div>
+            <div class="bg-surface border border-outline/10 p-6 shadow-sm border-l-4 border-l-yellow-500">
+                <p class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Ticket Pending Email</p>
+                <h3 class="text-3xl font-black text-yellow-600">{{ $ticketsPending }}/{{ $totalTickets }}</h3>
+                <p class="text-[9px] text-on-surface-variant mt-2 uppercase font-bold tracking-widest">Waiting in Queue</p>
+            </div>
+            <div class="bg-surface border border-outline/10 p-6 shadow-sm border-l-4 border-l-brand-red">
+                <p class="text-[10px] font-black uppercase tracking-widest text-on-surface-variant mb-2">Ticket Failed</p>
+                <h3 class="text-3xl font-black text-brand-red">{{ $ticketsFailed }}/{{ $totalTickets }}</h3>
+                <p class="text-[9px] text-on-surface-variant mt-2 uppercase font-bold tracking-widest">Delivery Failures</p>
+            </div>
+        </div>
+
         <!-- Sale Management -->
         <div class="bg-surface border border-outline/10 shadow-sm mb-8 p-6">
             <h3 class="text-lg font-black uppercase tracking-tight text-on-surface mb-6">Sale Management</h3>
@@ -125,7 +149,7 @@
                                     <div class="flex flex-col gap-1">
                                         @foreach($order->tickets as $ticket)
                                             <div class="flex items-center gap-1">
-                                                <span class="text-[9px] font-mono font-bold px-1.5 py-0.5 bg-background border {{ $ticket->ticket_status === 'sent' ? 'border-green-500' : 'border-black' }} rounded-sm" title="Price: IDR {{ number_format($ticket->price, 0) }} | Ref: {{ $ticket->referral_code ?? '-' }}">
+                                                <span class="text-[9px] font-mono font-bold px-1.5 py-0.5 bg-background border {{ $ticket->ticket_status === 'sent' ? 'border-green-500' : ($ticket->ticket_status === 'pending_delivery' ? 'border-yellow-500' : (in_array($ticket->ticket_status, ['failed', 'fail_order']) ? 'border-red-500' : 'border-black')) }} rounded-sm" title="Price: IDR {{ number_format($ticket->price, 0) }} | Ref: {{ $ticket->referral_code ?? '-' }}">
                                                     {{ $ticket->ticket_id }} ({{ $ticket->ticket_type }}) - IDR {{ number_format($ticket->price, 0, ',', '.') }}
                                                 </span>
                                                 <form action="{{ route('jvlyn.panit.ticket.delete', $ticket->id) }}" method="POST" onsubmit="return confirm('Hapus tiket ini?')">

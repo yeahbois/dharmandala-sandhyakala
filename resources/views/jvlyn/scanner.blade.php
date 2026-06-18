@@ -79,6 +79,11 @@
                             <p id="info-referral" class="text-[10px] font-medium text-blue-100"></p>
                         </div>
                     </div>
+                    <div class="pt-2 border-t border-blue-900/30">
+                        <p class="text-[9px] uppercase text-blue-300/60 font-bold tracking-wider">Scanned At</p>
+                        <p id="info-scanned-at" class="text-[10px] font-medium text-blue-100"></p>
+                        <p id="info-scanned-relative" class="text-[9px] italic text-blue-400 mt-0.5"></p>
+                    </div>
                 </div>
             </div>
         </aside>
@@ -133,10 +138,23 @@
                         document.getElementById('info-phone').innerText = data.order_info.phone;
                         document.getElementById('info-type').innerText = data.order_info.ticket_type;
                         document.getElementById('info-referral').innerText = data.order_info.referral_code;
+                        document.getElementById('info-scanned-at').innerText = data.order_info.scanned_at;
+                        document.getElementById('info-scanned-relative').innerText = data.order_info.scanned_relative;
                         orderDetailsContainer.classList.remove('hidden');
                     }
                 } else {
                     lastScannedContainer.classList.remove('hidden');
+                    if (data.order_info) {
+                        lastScannedText.innerText = data.order_info.ticket_id;
+                        document.getElementById('info-name').innerText = data.order_info.name;
+                        document.getElementById('info-email').innerText = data.order_info.email;
+                        document.getElementById('info-phone').innerText = data.order_info.phone;
+                        document.getElementById('info-type').innerText = data.order_info.ticket_type;
+                        document.getElementById('info-referral').innerText = data.order_info.referral_code;
+                        document.getElementById('info-scanned-at').innerText = data.order_info.scanned_at;
+                        document.getElementById('info-scanned-relative').innerText = data.order_info.scanned_relative;
+                        orderDetailsContainer.classList.remove('hidden');
+                    }
                     errorAudio.play().catch(() => {});
                     showAlert('error', data.message);
                 }

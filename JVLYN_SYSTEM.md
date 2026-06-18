@@ -30,7 +30,7 @@ Stores individual ticket details linked to an order.
 - `order_id`: Foreign key to `orders`.
 - `ticket_type`: Category of the ticket (`festival`, `vip-seat`, `vip-random`).
 - `ticket_status`: Status of the individual ticket (`pending_delivery`, `sent`, `failed`, `fail_order`).
-- `is_scanned`: Boolean indicating if the ticket has been used at the venue.
+- `is_scanned`: Timestamp indicating when the ticket was scanned at the venue (null if not yet scanned).
 - `referral_code`: The code used to obtain a discount or special ticket.
 - `ticket_id`: Unique alphanumeric ID (e.g., `FESTALUM12ABC`).
 - `seat_number`: Assigned seat (for VIP Seat category).
@@ -97,4 +97,5 @@ To add or edit referral codes, modify the logic in `app/Http/Controllers/JVLYNCo
 The `/jvlyn/panit/dashboard` provides several controls:
 - **Order Checker:** Review pending orders and approve/decline them based on payment proof.
 - **Sale Toggle:** Admins can "Close Sale" or "Open Sale" for any category. Closing a sale sets the `available_quota` in Supabase to `0`, which disables the selection on the frontend.
-- **Scanner:** Real-time QR code scanning for venue entry. It validates `ticket_status` and ensures tickets aren't scanned twice.
+- **Scanner:** Real-time QR code scanning for venue entry. It validates `ticket_status` and ensures tickets aren't scanned twice by checking the `is_scanned` timestamp. It displays detailed buyer and scan info.
+- **Lifecycle Stats:** Real-time tracking of ticket states (Sent, Scanned, Pending Email, Failed) to monitor delivery and event entry progress.

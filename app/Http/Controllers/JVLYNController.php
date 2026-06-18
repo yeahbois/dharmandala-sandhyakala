@@ -302,6 +302,12 @@ class JVLYNController extends Controller
         $ticketsByStatus = JvlynTicket::selectRaw('ticket_status, count(*) as count')->groupBy('ticket_status')->pluck('count', 'ticket_status');
         $ticketsByType = JvlynTicket::selectRaw('ticket_type, count(*) as count')->groupBy('ticket_type')->pluck('count', 'ticket_type');
 
+        $totalTickets = JvlynTicket::count();
+        $ticketsSent = JvlynTicket::where('ticket_status', 'sent')->count();
+        $ticketsScanned = JvlynTicket::whereNotNull('is_scanned')->count();
+        $ticketsPending = JvlynTicket::where('ticket_status', 'pending_delivery')->count();
+        $ticketsFailed = JvlynTicket::whereIn('ticket_status', ['failed', 'fail_order'])->count();
+
         $allOrders = Order::with('tickets')->latest()->paginate(20);
         $mailboxCounters = MailboxCounter::all();
 
@@ -326,7 +332,8 @@ class JVLYNController extends Controller
 
         return view('jvlyn.dashboard', compact(
             'totalOrders', 'ordersByStatus', 'ticketsByStatus', 'ticketsByType',
-            'allOrders', 'availableVIP', 'cartsCount', 'mailboxCounters'
+            'allOrders', 'availableVIP', 'cartsCount', 'mailboxCounters',
+            'totalTickets', 'ticketsSent', 'ticketsScanned', 'ticketsPending', 'ticketsFailed'
         ));
     }
 
@@ -396,10 +403,25 @@ class JVLYNController extends Controller
         }
 
         if ($ticket->is_scanned) {
-            return response()->json(['status' => 'error', 'message' => 'Tiket sudah pernah di-scan sebelumnya!'], 400);
+            $scannedAt = \Carbon\Carbon::parse($ticket->is_scanned);
+            return response()->json([
+                'status' => 'error',
+                'message' => 'The ticket is already scanned',
+                'order_info' => [
+                    'name' => $ticket->order->buyer_name,
+                    'email' => $ticket->order->buyer_email,
+                    'phone' => $ticket->order->buyer_phone,
+                    'ticket_type' => $ticket->ticket_type,
+                    'referral_code' => $ticket->referral_code ?? '-',
+                    'ticket_id' => $ticket->ticket_id,
+                    'scanned_at' => $scannedAt->format('d M Y, H:i:s'),
+                    'scanned_relative' => $scannedAt->diffForHumans()
+                ]
+            ], 400);
         }
 
-        $ticket->update(['is_scanned' => true]);
+        $now = now();
+        $ticket->update(['is_scanned' => $now]);
 
         return response()->json([
             'status' => 'berhasil',
@@ -410,7 +432,9 @@ class JVLYNController extends Controller
                 'phone' => $ticket->order->buyer_phone,
                 'ticket_type' => $ticket->ticket_type,
                 'referral_code' => $ticket->referral_code ?? '-',
-                'ticket_id' => $ticket->ticket_id
+                'ticket_id' => $ticket->ticket_id,
+                'scanned_at' => $now->format('d M Y, H:i:s'),
+                'scanned_relative' => $now->diffForHumans()
             ]
         ]);
     }
