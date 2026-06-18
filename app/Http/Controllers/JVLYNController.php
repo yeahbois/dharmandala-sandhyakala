@@ -102,7 +102,7 @@ class JVLYNController extends Controller
                 'ticket_status' => 'pending_delivery',
                 'referral_code' => $item['referral_code'] ?? null,
                 'ticket_id' => $ticketId,
-                'is_scanned' => false,
+                'is_scanned' => '0',
                 'seat_number' => $item['seat_number'] ?? null,
                 'price' => $price,
             ];
@@ -304,7 +304,7 @@ class JVLYNController extends Controller
 
         $totalTickets = JvlynTicket::count();
         $ticketsSent = JvlynTicket::where('ticket_status', 'sent')->count();
-        $ticketsScanned = JvlynTicket::whereNotNull('is_scanned')->count();
+        $ticketsScanned = JvlynTicket::where('is_scanned', '!=', '0')->count();
         $ticketsPending = JvlynTicket::where('ticket_status', 'pending_delivery')->count();
         $ticketsFailed = JvlynTicket::whereIn('ticket_status', ['failed', 'fail_order'])->count();
 
@@ -402,7 +402,7 @@ class JVLYNController extends Controller
             return response()->json(['status' => 'error', 'message' => 'Ticket gagal di scan [error: ticket_status = fail_order]'], 400);
         }
 
-        if ($ticket->is_scanned) {
+        if ($ticket->is_scanned && $ticket->is_scanned !== '0') {
             $scannedAt = \Carbon\Carbon::parse($ticket->is_scanned);
             return response()->json([
                 'status' => 'error',
@@ -421,7 +421,7 @@ class JVLYNController extends Controller
         }
 
         $now = now();
-        $ticket->update(['is_scanned' => $now]);
+        $ticket->update(['is_scanned' => $now->toDateTimeString()]);
 
         return response()->json([
             'status' => 'berhasil',

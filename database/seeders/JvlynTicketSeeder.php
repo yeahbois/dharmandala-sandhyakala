@@ -32,7 +32,7 @@ class JvlynTicketSeeder extends Seeder
             ],
             [
                 'ticket_status' => 'pending_delivery',
-                'is_scanned' => false,
+                'is_scanned' => '0',
                 'referral_code' => 'SAVIOURLY10',
                 'ticket_id' => 'TKT-VIP-0001',
             ]

@@ -21,7 +21,6 @@ class JvlynTicket extends Model
     ];
 
     protected $casts = [
-        'is_scanned' => 'datetime',
     ];
 
     /**
