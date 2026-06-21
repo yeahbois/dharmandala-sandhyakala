@@ -189,7 +189,7 @@
                 <div class="flex flex-wrap gap-4 justify-center">
                     <div class="btn-rainbow-wrapper">
                         <div class="btn-rainbow-glow"></div>
-                        <a href="/jvlyn/entry_pass" class="btn-base btn-rainbow px-10 py-4">Get Tickets</a>
+                        <a href="/jvlyn/entry_pass" class="btn-base btn-rainbow px-10 py-4">Get Entry Pass</a>
                     </div>
                     <a href="#about"
                         class="btn-base bg-white/10 hover:bg-white/20 text-white border border-white/20 px-10 py-4 transition-all">
@@ -444,8 +444,9 @@
                 <div class="bg-surface border border-outline/10 p-8 text-left shadow-sm relative">
                     <h3 class="text-lg font-black uppercase tracking-tight mb-4">CONCERT ADMISSIONS</h3>
                     <p class="text-xs text-on-surface-variant leading-relaxed font-light mb-8">
-                        Make sure to secure your pass before tickets sell out. Standard terms & conditions apply. Keep
-                        updated with our official Instagram account for offline ticketing and voucher distributions.
+                        Make sure to secure your pass before entry passes sell out. Standard terms & conditions apply.
+                        Keep
+                        updated with our official Instagram account for offline passes and voucher distributions.
                     </p>
 
                     <div class="space-y-4 mb-8">
@@ -482,7 +483,7 @@
 
                     <a href="/jvlyn/entry_pass"
                         class="w-full text-center block bg-primary text-on-primary text-[10px] font-black uppercase tracking-[0.3em] py-4 shadow-md hover:brightness-110 transition-all">
-                        Buy Tickets Now
+                        Buy Entry Pass Now
                     </a>
                 </div>
 

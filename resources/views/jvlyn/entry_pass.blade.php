@@ -1,7 +1,7 @@
-<x-layout title="Get Tickets | J V L Y N">
+<x-layout title="Get Entry Pass | J V L Y N">
     <x-slot:metadesc>
         <meta name="description"
-            content="Secure your ticket pass for J V L Y N - Jakarta Festival by Thamrin X. Festival and VIP options available.">
+            content="Secure your entry pass for J V L Y N - Jakarta Festival by Thamrin X. Festival and VIP options available.">
     </x-slot:metadesc>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -35,7 +35,7 @@
             <span class="text-[11px] font-black tracking-[0.4em] uppercase text-primary mb-3 block">Concert
                 Registration</span>
             <h1 class="text-3xl md:text-5xl font-black tracking-tight uppercase mb-2 text-on-surface">
-                SELECT YOUR PASS
+                SELECT YOUR ENTRY PASS TYPE
             </h1>
             <p class="text-xs uppercase tracking-widest text-on-surface-variant opacity-75">
                 Jakarta Festival by Thamrin X: An Intimate Concert Experience
@@ -55,7 +55,7 @@
                         <span class="material-symbols-outlined text-lg">timer</span>
                         <span class="text-2xl font-black font-mono text-primary" id="countdown-display">10:00</span>
                     </div>
-                    <p class="text-[10px] text-on-surface-variant/70 mt-1" id="timer-status">Select ticket to start
+                    <p class="text-[10px] text-on-surface-variant/70 mt-1" id="timer-status">Select entry pass to start
                         session</p>
                 </div>
 
@@ -75,7 +75,7 @@
                                 class="w-8 h-8 bg-primary text-on-primary border border-primary/20 text-xs font-black flex items-center justify-center transition-all">
                                 1</div>
                             <div>
-                                <h4 class="text-xs font-bold text-on-surface uppercase tracking-wider">Select Ticket
+                                <h4 class="text-xs font-bold text-on-surface uppercase tracking-wider">Select Entry Pass
                                 </h4>
                                 <p class="text-[10px] text-on-surface-variant">Active Step</p>
                             </div>
@@ -123,9 +123,11 @@
                     class="bg-surface border border-outline/10 p-6 md:p-8 flex flex-col justify-between min-h-[550px] relative">
                     <div class="relative z-10 flex-grow space-y-8">
                         <div>
-                            <h3 class="text-xl font-black uppercase tracking-tight text-on-surface">Choose Ticket Type
+                            <h3 class="text-xl font-black uppercase tracking-tight text-on-surface">Choose Entry Pass
+                                Type
                             </h3>
-                            <p class="text-xs text-on-surface-variant">Select a ticket category to add to your cart or
+                            <p class="text-xs text-on-surface-variant">Select a entry pass category to add to your cart
+                                or
                                 view seating selections.</p>
                         </div>
 
@@ -216,7 +218,8 @@
                                     CONCERT STAGE
                                 </div>
                                 <!-- Seat map scroll container for small viewports -->
-                                <div class="w-full overflow-auto custom-scrollbar pb-3 max-h-[70vh] md:max-h-[60vh] border border-outline/5">
+                                <div
+                                    class="w-full overflow-auto custom-scrollbar pb-3 max-h-[70vh] md:max-h-[60vh] border border-outline/5">
                                     <div class="grid grid-cols-14 gap-4 md:gap-2 min-w-[800px] md:min-w-[500px] max-w-4xl mx-auto select-none p-4"
                                         id="seat-grid">
                                         <!-- Seat items generated via Javascript -->
@@ -233,7 +236,7 @@
                             <div>
                                 <span
                                     class="text-[9px] uppercase font-black tracking-widest text-on-surface-variant">Selected
-                                    Ticket</span>
+                                    Entry Pass</span>
                                 <h4 class="font-black text-primary text-base" id="popup-fest-title">Festival Pass</h4>
                             </div>
                             <span class="font-black text-on-surface text-base" id="popup-fest-price">IDR 150,000</span>
@@ -263,6 +266,14 @@
                                 <h4 class="font-black text-primary text-base" id="popup-seat-id">Seat A01</h4>
                             </div>
                             <span class="font-black text-on-surface text-base">IDR 325,000</span>
+                        </div>
+                        <!-- Optional referral input (VIP Seat) -->
+                        <div id="popup-seat-referral-container" class="space-y-1.5">
+                            <label
+                                class="block text-[9px] font-bold uppercase tracking-wider text-on-surface-variant">Referral
+                                Code (Optional)</label>
+                            <input type="text" id="seat-referral-input" placeholder="Enter Code"
+                                class="w-full bg-background border border-outline/20 px-3 py-2 text-xs focus:outline-none focus:border-primary uppercase text-on-surface tracking-widest">
                         </div>
                         <button onclick="addSeatToCart()"
                             class="w-full bg-primary text-on-primary font-black uppercase text-xs tracking-widest py-3 hover:opacity-90 transition-all">
@@ -368,660 +379,690 @@
     </div>
 
     <script>
-        (function() {
-        // Supabase Connection Settings
-        const supabaseUrl = "https://gckklfoszosvhkyickis.supabase.co";
-        const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdja2tsZm9zem9zdmhreWlja2lzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE0OTg2NzcsImV4cCI6MjA5NzA3NDY3N30.ieXaIliTQo5MTpSMx9n68cupJlyibsg5Q1usGl8R5EM";
+        (function () {
+            // Supabase Connection Settings
+            const supabaseUrl = "https://gckklfoszosvhkyickis.supabase.co";
+            const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdja2tsZm9zem9zdmhreWlja2lzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE0OTg2NzcsImV4cCI6MjA5NzA3NDY3N30.ieXaIliTQo5MTpSMx9n68cupJlyibsg5Q1usGl8R5EM";
 
-        let supabaseClient = null;
-        if (supabaseUrl && supabaseKey && window.supabase) {
-            supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey);
-        }
-
-        // State variables
-        const state = {
-            selectedTicket: null,
-            selectedSeat: null,
-            cart: [],
-            timeRemaining: 600, // 10 minutes (600 seconds)
-            timerStarted: false,
-            timerInterval: null,
-            quota: { 'festival': 0, 'vip-seat': 0, 'vip-random': 0 },
-            vipSeats: {},
-            sessionId: null
-        };
-
-        const prices = {
-            'festival': 150000,
-            'vip-seat': 325000,
-            'vip-random': 300000
-        };
-
-        const lockedSeats = new Set();
-
-        // Maps internal category key to the DB-searchable keyword
-        const catKeyMap = {
-            'festival': 'festival',
-            'vip-seat': 'vip seat',
-            'vip-random': 'vip random'
-        };
-
-        /**
-         * Atomically adjusts available_quota for a ticket category via RPC.
-         * delta = -1 when adding to cart, +1 when removing / restoring.
-         */
-        async function adjustQuota(category, delta) {
-            if (!supabaseClient) return;
-            const catKey = catKeyMap[category] || category;
-            try {
-                const { error } = await supabaseClient.rpc('adjust_quota', { cat_key: catKey, delta });
-                if (error) console.warn('adjustQuota error:', error);
-            } catch (e) {
-                console.warn('adjustQuota exception:', e);
+            let supabaseClient = null;
+            if (supabaseUrl && supabaseKey && window.supabase) {
+                supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey);
             }
-        }
 
-        window.addEventListener('DOMContentLoaded', () => {
-            initSession();
-            initializeRealtimeData();
-        });
+            // State variables
+            const state = {
+                selectedTicket: null,
+                selectedSeat: null,
+                cart: [],
+                timeRemaining: 600, // 10 minutes (600 seconds)
+                timerStarted: false,
+                timerInterval: null,
+                quota: { 'festival': 0, 'vip-seat': 0, 'vip-random': 0 },
+                vipSeats: {},
+                sessionId: null
+            };
 
-        function initSession() {
-            let sessionId = localStorage.getItem('jvlyn_session_id');
-            if (!sessionId) {
-                sessionId = 'sess-' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-                localStorage.setItem('jvlyn_session_id', sessionId);
+            const prices = {
+                'festival': 150000,
+                'vip-seat': 325000,
+                'vip-random': 300000
+            };
+
+            const lockedSeats = new Set();
+
+            // Maps internal category key to the DB-searchable keyword
+            const catKeyMap = {
+                'festival': 'festival',
+                'vip-seat': 'vip seat',
+                'vip-random': 'vip random'
+            };
+
+            /**
+             * Atomically adjusts available_quota for a ticket category via RPC.
+             * delta = -1 when adding to cart, +1 when removing / restoring.
+             */
+            async function adjustQuota(category, delta) {
+                if (!supabaseClient) return;
+                const catKey = catKeyMap[category] || category;
+                try {
+                    const { error } = await supabaseClient.rpc('adjust_quota', { cat_key: catKey, delta });
+                    if (error) console.warn('adjustQuota error:', error);
+                } catch (e) {
+                    console.warn('adjustQuota exception:', e);
+                }
             }
-            state.sessionId = sessionId;
-        }
 
-        async function initializeRealtimeData() {
-            await fetchQuota();
-            await fetchVIPSeats();
-            await fetchLockedSeats();
-            // Clean all expired carts globally first, then load our own
-            await purgeExpiredCarts();
-            await fetchCart();
-            subscribeToQuotaChanges();
-            subscribeToSeatChanges();
-            subscribeToCartChanges();
-        }
+            window.addEventListener('DOMContentLoaded', () => {
+                initSession();
+                initializeRealtimeData();
+            });
 
-        /**
-         * Deletes ALL cart_items rows older than 10 minutes.
-         * Restores quota for every item in those expired carts first.
-         */
-        async function purgeExpiredCarts() {
-            if (!supabaseClient) return;
-            try {
-                const cutoff = new Date(Date.now() - 10 * 60 * 1000).toISOString();
+            function initSession() {
+                let sessionId = localStorage.getItem('jvlyn_session_id');
+                if (!sessionId) {
+                    sessionId = 'sess-' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+                    localStorage.setItem('jvlyn_session_id', sessionId);
+                }
+                state.sessionId = sessionId;
+            }
 
-                // 1. Fetch all expired cart rows first
-                const { data: expiredCarts, error: fetchErr } = await supabaseClient
-                    .from('cart_items')
-                    .select('items')
-                    .lt('created_at', cutoff);
+            async function initializeRealtimeData() {
+                await fetchQuota();
+                await fetchVIPSeats();
+                await fetchLockedSeats();
+                // Clean all expired carts globally first, then load our own
+                await purgeExpiredCarts();
+                await fetchCart();
+                subscribeToQuotaChanges();
+                subscribeToSeatChanges();
+                subscribeToCartChanges();
+            }
 
-                if (!fetchErr && expiredCarts && expiredCarts.length > 0) {
-                    // 2. Aggregate how many tickets per category need to be restored
-                    const restoration = {};
-                    expiredCarts.forEach(row => {
-                        (row.items || []).forEach(item => {
-                            restoration[item.category] = (restoration[item.category] || 0) + 1;
+            /**
+             * Deletes ALL cart_items rows older than 10 minutes.
+             * Restores quota for every item in those expired carts first.
+             */
+            async function purgeExpiredCarts() {
+                if (!supabaseClient) return;
+                try {
+                    const cutoff = new Date(Date.now() - 10 * 60 * 1000).toISOString();
+
+                    // 1. Fetch all expired cart rows first
+                    const { data: expiredCarts, error: fetchErr } = await supabaseClient
+                        .from('cart_items')
+                        .select('items')
+                        .lt('created_at', cutoff);
+
+                    if (!fetchErr && expiredCarts && expiredCarts.length > 0) {
+                        // 2. Aggregate how many tickets per category need to be restored
+                        const restoration = {};
+                        expiredCarts.forEach(row => {
+                            (row.items || []).forEach(item => {
+                                restoration[item.category] = (restoration[item.category] || 0) + 1;
+                            });
                         });
-                    });
-                    // 3. Restore quota for each category
-                    for (const [cat, count] of Object.entries(restoration)) {
-                        await adjustQuota(cat, count);
-                    }
-                }
-
-                // 4. Now delete all expired rows
-                const { error: delErr } = await supabaseClient
-                    .from('cart_items')
-                    .delete()
-                    .lt('created_at', cutoff);
-                if (delErr) console.warn('Purge expired carts delete error:', delErr);
-            } catch (e) {
-                console.warn('purgeExpiredCarts exception:', e);
-            }
-        }
-
-        // ==========================================
-        // A. QUOTA AND SEAT DATA FETCH & SYNC
-        // ==========================================
-        async function fetchQuota() {
-            if (!supabaseClient) {
-                state.quota = { 'festival': 120, 'vip-seat': 30, 'vip-random': 50 };
-                updateQuotaUI();
-                return;
-            }
-            try {
-                const { data, error } = await supabaseClient
-                    .from('ticket_categories')
-                    .select('category_name, available_quota');
-
-                if (data && !error) {
-                    data.forEach(item => {
-                        const name = item.category_name.toLowerCase();
-                        if (name.includes('festival')) state.quota['festival'] = item.available_quota;
-                        else if (name.includes('vip seat')) state.quota['vip-seat'] = item.available_quota;
-                        else if (name.includes('vip random')) state.quota['vip-random'] = item.available_quota;
-                    });
-                }
-            } catch (e) {
-                console.error("Quota Fetch Error:", e);
-            }
-            updateQuotaUI();
-        }
-
-        function subscribeToQuotaChanges() {
-            if (!supabaseClient) return;
-            supabaseClient
-                .channel('realtime-quota')
-                .on('postgres_changes', { event: 'UPDATE', schema: 'public', table: 'ticket_categories' }, payload => {
-                    const item = payload.new;
-                    const name = item.category_name.toLowerCase();
-                    if (name.includes('festival')) state.quota['festival'] = item.available_quota;
-                    else if (name.includes('vip seat')) state.quota['vip-seat'] = item.available_quota;
-                    else if (name.includes('vip random')) state.quota['vip-random'] = item.available_quota;
-
-                    updateQuotaUI();
-                })
-                .subscribe();
-        }
-
-        function updateQuotaUI() {
-            const festText = document.getElementById('quota-festival');
-            const vipSeatText = document.getElementById('quota-vip-seat');
-            const vipRandText = document.getElementById('quota-vip-random');
-
-            if (festText) festText.innerText = state.quota['festival'];
-            if (vipSeatText) vipSeatText.innerText = state.quota['vip-seat'];
-            if (vipRandText) vipRandText.innerText = state.quota['vip-random'];
-
-            toggleQuotaCardState('card-festival', state.quota['festival']);
-            toggleQuotaCardState('card-vip-seat', state.quota['vip-seat']);
-            toggleQuotaCardState('card-vip-random', state.quota['vip-random']);
-        }
-
-        function toggleQuotaCardState(cardId, quota) {
-            const card = document.getElementById(cardId);
-            if (!card) return;
-            const badge = card.querySelector('.ticket-badge');
-
-            if (quota <= 0) {
-                card.classList.add('opacity-40', 'pointer-events-none');
-                if (badge) {
-                    badge.innerText = "SOLD OUT";
-                    badge.className = "text-[9px] font-black uppercase tracking-wider text-brand-red mb-1";
-                }
-            } else {
-                card.classList.remove('opacity-40', 'pointer-events-none');
-                if (badge) {
-                    if (cardId === 'card-vip-seat') {
-                        badge.innerText = "Interactive Seat Map";
-                        badge.className = "text-[9px] font-black uppercase tracking-wider text-secondary mb-1";
-                    } else if (cardId === 'card-festival') {
-                        badge.innerText = "Available Now";
-                        badge.className = "text-[9px] font-black uppercase tracking-wider text-primary mb-1";
-                    } else {
-                        badge.innerText = "Assigned Seating";
-                        badge.className = "text-[9px] font-black uppercase tracking-wider text-on-surface-variant/70 mb-1";
-                    }
-                }
-            }
-        }
-
-        async function fetchVIPSeats() {
-            if (!supabaseClient) {
-                generateMockSeats();
-                renderSeatGridMap();
-                return;
-            }
-            try {
-                const { data, error } = await supabaseClient
-                    .from('vip_seats')
-                    .select('*');
-
-                if (data && !error && data.length > 0) {
-                    data.forEach(seat => {
-                        const code = seat.seat_number || seat.seat_code || seat.id;
-                        state.vipSeats[code] = seat.status;
-                    });
-                } else {
-                    generateMockSeats();
-                }
-            } catch (e) {
-                generateMockSeats();
-            }
-            renderSeatGridMap();
-        }
-
-        function generateMockSeats() {
-            const rowChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
-            rowChars.forEach(row => {
-                for (let i = 1; i <= 12; i++) {
-                    const num = i < 10 ? `0${i}` : i;
-                    const code = `${row}${num}`;
-                    if (!state.vipSeats[code]) {
-                        state.vipSeats[code] = (Math.random() < 0.1) ? 'locked' : 'available';
-                    }
-                }
-            });
-        }
-
-        function subscribeToSeatChanges() {
-            if (!supabaseClient) return;
-            supabaseClient
-                .channel('realtime-seats')
-                .on('postgres_changes', { event: '*', schema: 'public', table: 'vip_seats' }, payload => {
-                    const seat = payload.new;
-                    const code = seat.seat_number || seat.seat_code || seat.id;
-                    state.vipSeats[code] = seat.status;
-                    renderSeatGridMap();
-                })
-                .subscribe();
-        }
-
-        async function fetchLockedSeats() {
-            if (!supabaseClient) return;
-            try {
-                const { data, error } = await supabaseClient
-                    .from('cart_items')
-                    .select('session_id, items')
-                    .neq('session_id', state.sessionId);
-
-                lockedSeats.clear();
-                if (data && !error) {
-                    data.forEach(cartRecord => {
-                        const items = cartRecord.items || [];
-                        items.forEach(item => {
-                            if (item.category === 'vip-seat' && item.seat_number) {
-                                lockedSeats.add(item.seat_number);
-                            }
-                        });
-                    });
-                }
-            } catch (e) {
-                console.error("Locked Seats Fetch Error:", e);
-            }
-        }
-
-        function subscribeToCartChanges() {
-            if (!supabaseClient) return;
-            supabaseClient
-                .channel('realtime-cart')
-                .on('postgres_changes', { event: '*', schema: 'public', table: 'cart_items' }, async () => {
-                    await fetchLockedSeats();
-                    renderSeatGridMap();
-                })
-                .subscribe();
-        }
-
-        function renderSeatGridMap() {
-            const grid = document.getElementById('seat-grid');
-            if (!grid) return;
-            grid.innerHTML = '';
-
-            const rowChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
-            rowChars.forEach(row => {
-                const rowLabel = document.createElement('div');
-                rowLabel.className = "text-xs md:text-xs font-black text-on-surface opacity-40 flex items-center justify-center";
-                rowLabel.innerText = row;
-                grid.appendChild(rowLabel);
-
-                for (let i = 1; i <= 12; i++) {
-                    if (i === 7) {
-                        const divider = document.createElement('div');
-                        divider.className = "w-px h-full bg-outline/20 mx-auto";
-                        grid.appendChild(divider);
-                    }
-
-                    const num = i < 10 ? `0${i}` : i;
-                    const code = `${row}${num}`;
-                    const status = state.vipSeats[code] || 'available';
-
-                    const inOwnCart = state.cart.some(item => item.category === 'vip-seat' && item.seat_number === code);
-                    const inOthersCart = lockedSeats.has(code);
-
-                    const seatBtn = document.createElement('button');
-                    seatBtn.id = `seat-${code}`;
-                    // Mobile: larger boxes via min-width/height or padding.
-                    // Added h-14 w-14 for mobile specifically to ensure text doesn't overlap and easy to click
-                    seatBtn.className = "aspect-square h-14 w-14 md:h-auto md:w-auto text-[12px] md:text-[9px] font-black border flex items-center justify-center transition-all duration-300 shrink-0";
-
-                    if (status === 'sold' || status === 'locked' || inOthersCart) {
-                        seatBtn.className += " bg-surface-variant border-outline/20 text-on-surface-variant/30 cursor-not-allowed opacity-30";
-                        seatBtn.disabled = true;
-                    } else if (inOwnCart) {
-                        seatBtn.className += " bg-primary border-primary text-on-primary shadow-lg shadow-primary/20 scale-105";
-                    } else {
-                        seatBtn.className += " bg-secondary/10 border-secondary/30 hover:border-secondary hover:bg-secondary/20 text-secondary";
-                    }
-
-                    seatBtn.innerText = code;
-                    seatBtn.onclick = () => selectSeat(code);
-                    grid.appendChild(seatBtn);
-                }
-            });
-        }
-
-        // ==========================================
-        // B. TICKET & SEAT USER ACTIONS
-        // ==========================================
-        function selectTicket(tier) {
-            state.selectedTicket = tier;
-            state.selectedSeat = null;
-
-            // Clear active status on cards
-            ['festival', 'vip-seat', 'vip-random'].forEach(t => {
-                const card = document.getElementById(`card-${t}`);
-                const icon = document.getElementById(`icon-${t}`);
-                if (card && icon) {
-                    if (t === tier) {
-                        card.className = "cursor-pointer p-5 border border-primary bg-primary-container/20 transition-all flex flex-col justify-between relative group shadow-md";
-                        icon.innerText = "check_circle";
-                    } else {
-                        card.className = "cursor-pointer p-5 border border-outline/10 bg-surface/50 hover:bg-surface-variant/20 hover:border-primary/50 transition-all flex flex-col justify-between relative group";
-                        icon.innerText = "radio_button_unchecked";
-                    }
-                }
-            });
-
-            // Toggle grid map container
-            const mapContainer = document.getElementById('vip-seat-map-container');
-            const seatingLegend = document.getElementById('seating-legend');
-
-            if (tier === 'vip-seat') {
-                mapContainer.classList.remove('hidden');
-                seatingLegend.classList.remove('hidden');
-            } else {
-                mapContainer.classList.add('hidden');
-                seatingLegend.classList.add('hidden');
-            }
-
-            // Hide popups initially
-            document.getElementById('festival-selection-popup').classList.add('hidden');
-            document.getElementById('seat-selection-popup').classList.add('hidden');
-
-            // Show popup overlay for festival or vip-random
-            if (tier === 'festival' || tier === 'vip-random') {
-                const title = tier === 'festival' ? 'Festival Pass' : 'VIP Random Pass';
-                const price = tier === 'festival' ? 'IDR 150,000' : 'IDR 300,000';
-
-                document.getElementById('popup-fest-title').innerText = title;
-                document.getElementById('popup-fest-price').innerText = price;
-
-                const refContainer = document.getElementById('popup-referral-container');
-                if (tier === 'festival') {
-                    refContainer.classList.remove('hidden');
-                } else {
-                    refContainer.classList.add('hidden');
-                }
-
-                document.getElementById('festival-selection-popup').classList.remove('hidden');
-            }
-        }
-
-        function selectSeat(code) {
-            // If the seat is already in our own cart, clicking it toggles removal from cart
-            const inOwnCart = state.cart.some(item => item.category === 'vip-seat' && item.seat_number === code);
-            if (inOwnCart) {
-                const item = state.cart.find(item => item.category === 'vip-seat' && item.seat_number === code);
-                if (item) {
-                    removeCartItem(item.id);
-                    document.getElementById('seat-selection-popup').classList.add('hidden');
-                    return;
-                }
-            }
-
-            state.selectedSeat = code;
-            document.getElementById('popup-seat-id').innerText = `Seat ${code}`;
-            document.getElementById('seat-selection-popup').classList.remove('hidden');
-        }
-
-        // ==========================================
-        // C. CART MANIPULATION & STATE SYNC
-        // ==========================================
-        async function fetchCart() {
-            if (!supabaseClient) {
-                state.cart = [];
-                updateCartUI();
-                return;
-            }
-            try {
-                const { data, error } = await supabaseClient
-                    .from('cart_items')
-                    .select('items, created_at')
-                    .eq('session_id', state.sessionId)
-                    .maybeSingle();
-
-                if (data && !error) {
-                    state.cart = data.items || [];
-
-                    if (state.cart.length > 0 && data.created_at) {
-                        const createdTime = new Date(data.created_at).getTime();
-                        const elapsed = Math.floor((Date.now() - createdTime) / 1000);
-                        const remaining = 600 - elapsed;
-
-                        if (remaining <= 0) {
-                            // Cart already expired — purge and show warning
-                            state.cart = [];
-                            updateCartUI();
-                            await supabaseClient
-                                .from('cart_items')
-                                .delete()
-                                .eq('session_id', state.sessionId);
-                            stopTimer();
-                            showAlertModal(
-                                "Sesi Booking Habis",
-                                "Waktu transaksi Anda (10 menit) telah berakhir. Data kursi dan antrean belanja Anda dilepas kembali demi asas keadilan kuota."
-                            );
-                            return;
+                        // 3. Restore quota for each category
+                        for (const [cat, count] of Object.entries(restoration)) {
+                            await adjustQuota(cat, count);
                         }
-
-                        // Resume timer from the correct remaining time
-                        state.timeRemaining = remaining;
-                        startTimer();
                     }
-                } else {
-                    state.cart = [];
-                }
-            } catch (e) {
-                console.error("Cart Fetch Error:", e);
-                state.cart = [];
-            }
-            updateCartUI();
-        }
 
-        async function saveCart() {
-            if (!supabaseClient) {
-                updateCartUI();
-                return;
-            }
-            try {
-                if (state.cart.length === 0) {
-                    await supabaseClient
+                    // 4. Now delete all expired rows
+                    const { error: delErr } = await supabaseClient
                         .from('cart_items')
                         .delete()
-                        .eq('session_id', state.sessionId);
+                        .lt('created_at', cutoff);
+                    if (delErr) console.warn('Purge expired carts delete error:', delErr);
+                } catch (e) {
+                    console.warn('purgeExpiredCarts exception:', e);
+                }
+            }
 
-                    stopTimer();
+            // ==========================================
+            // A. QUOTA AND SEAT DATA FETCH & SYNC
+            // ==========================================
+            async function fetchQuota() {
+                if (!supabaseClient) {
+                    state.quota = { 'festival': 0, 'vip-seat': 0, 'vip-random': 0 };
+                    updateQuotaUI();
+                    return;
+                }
+                try {
+                    const { data, error } = await supabaseClient
+                        .from('ticket_categories')
+                        .select('category_name, available_quota, selled');
+
+                    if (data && !error) {
+                        let festivalAvailable = 0;
+                        let festivalSelled = 0;
+                        let vipSeatAvailable = 108;
+                        let vipSeatSelled = 0;
+                        let vipRandomSelled = 0;
+
+                        data.forEach(item => {
+                            const name = item.category_name.toLowerCase();
+                            if (name.includes('festival')) {
+                                festivalAvailable = item.available_quota || 0;
+                                festivalSelled = item.selled || 0;
+                            } else if (name.includes('vip seat')) {
+                                vipSeatAvailable = item.available_quota || 108;
+                                vipSeatSelled = item.selled || 0;
+                            } else if (name.includes('vip random')) {
+                                vipRandomSelled = item.selled || 0;
+                            }
+                        });
+
+                        state.quota['festival'] = Math.max(0, festivalAvailable - festivalSelled);
+
+                        const vipQuotaResult = Math.max(0, vipSeatAvailable - (vipSeatSelled + vipRandomSelled));
+                        state.quota['vip-seat'] = vipQuotaResult;
+                        state.quota['vip-random'] = vipQuotaResult;
+                    }
+                } catch (e) {
+                    console.error("Quota Fetch Error:", e);
+                }
+                updateQuotaUI();
+            }
+
+            function subscribeToQuotaChanges() {
+                if (!supabaseClient) return;
+                supabaseClient
+                    .channel('realtime-quota')
+                    .on('postgres_changes', { event: 'UPDATE', schema: 'public', table: 'ticket_categories' }, async () => {
+                        await fetchQuota();
+                    })
+                    .subscribe();
+            }
+
+            function updateQuotaUI() {
+                const festText = document.getElementById('quota-festival');
+                const vipSeatText = document.getElementById('quota-vip-seat');
+                const vipRandText = document.getElementById('quota-vip-random');
+
+                if (festText) festText.innerText = state.quota['festival'];
+                if (vipSeatText) vipSeatText.innerText = state.quota['vip-seat'];
+                if (vipRandText) vipRandText.innerText = state.quota['vip-random'];
+
+                toggleQuotaCardState('card-festival', state.quota['festival']);
+                toggleQuotaCardState('card-vip-seat', state.quota['vip-seat']);
+                toggleQuotaCardState('card-vip-random', state.quota['vip-random']);
+            }
+
+            function toggleQuotaCardState(cardId, quota) {
+                const card = document.getElementById(cardId);
+                if (!card) return;
+                const badge = card.querySelector('.ticket-badge');
+
+                if (quota <= 0) {
+                    card.classList.add('opacity-40', 'pointer-events-none');
+                    if (badge) {
+                        badge.innerText = "SOLD OUT";
+                        badge.className = "text-[9px] font-black uppercase tracking-wider text-brand-red mb-1";
+                    }
                 } else {
-                    // Check if cart already exists for this session to preserve original creation time
-                    const { data: existing } = await supabaseClient
+                    card.classList.remove('opacity-40', 'pointer-events-none');
+                    if (badge) {
+                        if (cardId === 'card-vip-seat') {
+                            badge.innerText = "Interactive Seat Map";
+                            badge.className = "text-[9px] font-black uppercase tracking-wider text-secondary mb-1";
+                        } else if (cardId === 'card-festival') {
+                            badge.innerText = "Available Now";
+                            badge.className = "text-[9px] font-black uppercase tracking-wider text-primary mb-1";
+                        } else {
+                            badge.innerText = "Assigned Seating";
+                            badge.className = "text-[9px] font-black uppercase tracking-wider text-on-surface-variant/70 mb-1";
+                        }
+                    }
+                }
+            }
+
+            async function fetchVIPSeats() {
+                if (!supabaseClient) {
+                    generateMockSeats();
+                    renderSeatGridMap();
+                    return;
+                }
+                try {
+                    const { data, error } = await supabaseClient
+                        .from('vip_seats')
+                        .select('*');
+
+                    if (data && !error && data.length > 0) {
+                        data.forEach(seat => {
+                            const code = seat.seat_number || seat.seat_code || seat.id;
+                            state.vipSeats[code] = seat.status;
+                        });
+                    } else {
+                        generateMockSeats();
+                    }
+                } catch (e) {
+                    generateMockSeats();
+                }
+                renderSeatGridMap();
+            }
+
+            function generateMockSeats() {
+                const rowChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
+                rowChars.forEach(row => {
+                    for (let i = 1; i <= 12; i++) {
+                        const num = i < 10 ? `0${i}` : i;
+                        const code = `${row}${num}`;
+                        if (!state.vipSeats[code]) {
+                            state.vipSeats[code] = (Math.random() < 0.1) ? 'locked' : 'available';
+                        }
+                    }
+                });
+            }
+
+            function subscribeToSeatChanges() {
+                if (!supabaseClient) return;
+                supabaseClient
+                    .channel('realtime-seats')
+                    .on('postgres_changes', { event: '*', schema: 'public', table: 'vip_seats' }, payload => {
+                        const seat = payload.new;
+                        const code = seat.seat_number || seat.seat_code || seat.id;
+                        state.vipSeats[code] = seat.status;
+                        renderSeatGridMap();
+                    })
+                    .subscribe();
+            }
+
+            async function fetchLockedSeats() {
+                if (!supabaseClient) return;
+                try {
+                    const { data, error } = await supabaseClient
                         .from('cart_items')
-                        .select('created_at')
+                        .select('session_id, items')
+                        .neq('session_id', state.sessionId);
+
+                    lockedSeats.clear();
+                    if (data && !error) {
+                        data.forEach(cartRecord => {
+                            const items = cartRecord.items || [];
+                            items.forEach(item => {
+                                if (item.category === 'vip-seat' && item.seat_number) {
+                                    lockedSeats.add(item.seat_number);
+                                }
+                            });
+                        });
+                    }
+                } catch (e) {
+                    console.error("Locked Seats Fetch Error:", e);
+                }
+            }
+
+            function subscribeToCartChanges() {
+                if (!supabaseClient) return;
+                supabaseClient
+                    .channel('realtime-cart')
+                    .on('postgres_changes', { event: '*', schema: 'public', table: 'cart_items' }, async () => {
+                        await fetchLockedSeats();
+                        renderSeatGridMap();
+                    })
+                    .subscribe();
+            }
+
+            function renderSeatGridMap() {
+                const grid = document.getElementById('seat-grid');
+                if (!grid) return;
+                grid.innerHTML = '';
+
+                const rowChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
+                rowChars.forEach(row => {
+                    const rowLabel = document.createElement('div');
+                    rowLabel.className = "text-xs md:text-xs font-black text-on-surface opacity-40 flex items-center justify-center";
+                    rowLabel.innerText = row;
+                    grid.appendChild(rowLabel);
+
+                    for (let i = 1; i <= 12; i++) {
+                        if (i === 7) {
+                            const divider = document.createElement('div');
+                            divider.className = "w-px h-full bg-outline/20 mx-auto";
+                            grid.appendChild(divider);
+                        }
+
+                        const num = i < 10 ? `0${i}` : i;
+                        const code = `${row}${num}`;
+                        const status = state.vipSeats[code] || 'available';
+
+                        const inOwnCart = state.cart.some(item => item.category === 'vip-seat' && item.seat_number === code);
+                        const inOthersCart = lockedSeats.has(code);
+
+                        const seatBtn = document.createElement('button');
+                        seatBtn.id = `seat-${code}`;
+                        // Mobile: larger boxes via min-width/height or padding.
+                        // Added h-14 w-14 for mobile specifically to ensure text doesn't overlap and easy to click
+                        seatBtn.className = "aspect-square h-14 w-14 md:h-auto md:w-auto text-[12px] md:text-[9px] font-black border flex items-center justify-center transition-all duration-300 shrink-0";
+
+                        if (status === 'sold' || status === 'locked' || inOthersCart) {
+                            seatBtn.className += " bg-surface-variant border-outline/20 text-on-surface-variant/30 cursor-not-allowed opacity-30";
+                            seatBtn.disabled = true;
+                        } else if (inOwnCart) {
+                            seatBtn.className += " bg-primary border-primary text-on-primary shadow-lg shadow-primary/20 scale-105";
+                        } else {
+                            seatBtn.className += " bg-secondary/10 border-secondary/30 hover:border-secondary hover:bg-secondary/20 text-secondary";
+                        }
+
+                        seatBtn.innerText = code;
+                        seatBtn.onclick = () => selectSeat(code);
+                        grid.appendChild(seatBtn);
+                    }
+                });
+            }
+
+            // ==========================================
+            // B. TICKET & SEAT USER ACTIONS
+            // ==========================================
+            function selectTicket(tier) {
+                state.selectedTicket = tier;
+                state.selectedSeat = null;
+
+                // Clear active status on cards
+                ['festival', 'vip-seat', 'vip-random'].forEach(t => {
+                    const card = document.getElementById(`card-${t}`);
+                    const icon = document.getElementById(`icon-${t}`);
+                    if (card && icon) {
+                        if (t === tier) {
+                            card.className = "cursor-pointer p-5 border border-primary bg-primary-container/20 transition-all flex flex-col justify-between relative group shadow-md";
+                            icon.innerText = "check_circle";
+                        } else {
+                            card.className = "cursor-pointer p-5 border border-outline/10 bg-surface/50 hover:bg-surface-variant/20 hover:border-primary/50 transition-all flex flex-col justify-between relative group";
+                            icon.innerText = "radio_button_unchecked";
+                        }
+                    }
+                });
+
+                // Toggle grid map container
+                const mapContainer = document.getElementById('vip-seat-map-container');
+                const seatingLegend = document.getElementById('seating-legend');
+
+                if (tier === 'vip-seat') {
+                    mapContainer.classList.remove('hidden');
+                    seatingLegend.classList.remove('hidden');
+                } else {
+                    mapContainer.classList.add('hidden');
+                    seatingLegend.classList.add('hidden');
+                }
+
+                // Hide popups initially
+                document.getElementById('festival-selection-popup').classList.add('hidden');
+                document.getElementById('seat-selection-popup').classList.add('hidden');
+
+                // Show popup overlay for festival or vip-random
+                if (tier === 'festival' || tier === 'vip-random') {
+                    const title = tier === 'festival' ? 'Festival Pass' : 'VIP Random Pass';
+                    const price = tier === 'festival' ? 'IDR 150,000' : 'IDR 300,000';
+
+                    document.getElementById('popup-fest-title').innerText = title;
+                    document.getElementById('popup-fest-price').innerText = price;
+
+                    const refContainer = document.getElementById('popup-referral-container');
+                    if (tier === 'festival') {
+                        refContainer.classList.remove('hidden');
+                    } else {
+                        refContainer.classList.add('hidden');
+                    }
+
+                    document.getElementById('festival-selection-popup').classList.remove('hidden');
+                }
+            }
+
+            function selectSeat(code) {
+                // If the seat is already in our own cart, clicking it toggles removal from cart
+                const inOwnCart = state.cart.some(item => item.category === 'vip-seat' && item.seat_number === code);
+                if (inOwnCart) {
+                    const item = state.cart.find(item => item.category === 'vip-seat' && item.seat_number === code);
+                    if (item) {
+                        removeCartItem(item.id);
+                        document.getElementById('seat-selection-popup').classList.add('hidden');
+                        return;
+                    }
+                }
+
+                state.selectedSeat = code;
+                document.getElementById('popup-seat-id').innerText = `Seat ${code}`;
+
+                // Clear input
+                const seatCodeInput = document.getElementById('seat-referral-input');
+                if (seatCodeInput) seatCodeInput.value = '';
+
+                document.getElementById('seat-selection-popup').classList.remove('hidden');
+            }
+
+            // ==========================================
+            // C. CART MANIPULATION & STATE SYNC
+            // ==========================================
+            async function fetchCart() {
+                if (!supabaseClient) {
+                    state.cart = [];
+                    updateCartUI();
+                    return;
+                }
+                try {
+                    const { data, error } = await supabaseClient
+                        .from('cart_items')
+                        .select('items, created_at')
                         .eq('session_id', state.sessionId)
                         .maybeSingle();
 
-                    const record = {
-                        session_id: state.sessionId,
-                        items: state.cart,
-                        updated_at: new Date().toISOString()
-                    };
+                    if (data && !error) {
+                        state.cart = data.items || [];
 
-                    if (!existing) {
-                        record.created_at = new Date().toISOString();
+                        if (state.cart.length > 0 && data.created_at) {
+                            const createdTime = new Date(data.created_at).getTime();
+                            const elapsed = Math.floor((Date.now() - createdTime) / 1000);
+                            const remaining = 600 - elapsed;
+
+                            if (remaining <= 0) {
+                                // Cart already expired — purge and show warning
+                                state.cart = [];
+                                updateCartUI();
+                                await supabaseClient
+                                    .from('cart_items')
+                                    .delete()
+                                    .eq('session_id', state.sessionId);
+                                stopTimer();
+                                showAlertModal(
+                                    "Sesi Booking Habis",
+                                    "Waktu transaksi Anda (10 menit) telah berakhir. Data kursi dan antrean belanja Anda dilepas kembali demi asas keadilan kuota."
+                                );
+                                return;
+                            }
+
+                            // Resume timer from the correct remaining time
+                            state.timeRemaining = remaining;
+                            startTimer();
+                        }
+                    } else {
+                        state.cart = [];
                     }
-
-                    const { error } = await supabaseClient
-                        .from('cart_items')
-                        .upsert(record, { onConflict: 'session_id' });
-
-                    if (error) console.error("Cart Save Error:", error);
-
-                    startTimer();
+                } catch (e) {
+                    console.error("Cart Fetch Error:", e);
+                    state.cart = [];
                 }
-            } catch (e) {
-                console.error("Cart Save Exception:", e);
+                updateCartUI();
             }
-            updateCartUI();
-        }
 
-        async function addGenericToCart(category, price, referral = null) {
-            const item = {
-                id: 'cart-' + Math.random().toString(36).substring(2, 9),
-                category: category,
-                seat_number: null,
-                price: price,
-                referral_code: referral
-            };
-            state.cart.push(item);
-            await adjustQuota(category, -1);
-            await saveCart();
-            showNotification(`${category} added to cart!`, "success");
-        }
+            async function saveCart() {
+                if (!supabaseClient) {
+                    updateCartUI();
+                    return;
+                }
+                try {
+                    if (state.cart.length === 0) {
+                        await supabaseClient
+                            .from('cart_items')
+                            .delete()
+                            .eq('session_id', state.sessionId);
 
-        async function addFestivalToCart() {
-            const codeInput = document.getElementById('referral-input');
-            const code = codeInput ? codeInput.value.trim().toUpperCase() : '';
+                        stopTimer();
+                    } else {
+                        // Check if cart already exists for this session to preserve original creation time
+                        const { data: existing } = await supabaseClient
+                            .from('cart_items')
+                            .select('created_at')
+                            .eq('session_id', state.sessionId)
+                            .maybeSingle();
 
-            if (state.selectedTicket === 'festival') {
+                        const record = {
+                            session_id: state.sessionId,
+                            items: state.cart,
+                            updated_at: new Date().toISOString()
+                        };
+
+                        if (!existing) {
+                            record.created_at = new Date().toISOString();
+                        }
+
+                        const { error } = await supabaseClient
+                            .from('cart_items')
+                            .upsert(record, { onConflict: 'session_id' });
+
+                        if (error) console.error("Cart Save Error:", error);
+
+                        startTimer();
+                    }
+                } catch (e) {
+                    console.error("Cart Save Exception:", e);
+                }
+                updateCartUI();
+            }
+
+            async function addGenericToCart(category, price, referral = null) {
+                const item = {
+                    id: 'cart-' + Math.random().toString(36).substring(2, 9),
+                    category: category,
+                    seat_number: null,
+                    price: price,
+                    referral_code: referral
+                };
+                state.cart.push(item);
+                await adjustQuota(category, -1);
+                await saveCart();
+                showNotification(`${category} added to cart!`, "success");
+            }
+
+            async function addFestivalToCart() {
+                const codeInput = document.getElementById('referral-input');
+                const code = codeInput ? codeInput.value.trim().toUpperCase() : '';
+
+                if (state.selectedTicket === 'festival') {
+                    if (code === 'DONASIFEST') {
+                        await addGenericToCart('festival', 0, 'DONASIFEST');
+                    } else if (code === 'JOSHUAS1T0RU5') {
+                        await addGenericToCart('festival', 0, 'JOSHUAS1T0RU5');
+                        await addGenericToCart('vip-random', 0, 'JOSHUAS1T0RU5');
+                    } else {
+                        let referral = null;
+                        let finalPrice = prices['festival'];
+                        if (code === 'JVLYNXALUMNI') {
+                            referral = code;
+                            finalPrice = 85000;
+                        } else if (code === 'JVLYNXMHT18') {
+                            referral = code;
+                            finalPrice = 132000;
+                        } else if (code === 'PROMO10') {
+                            referral = code;
+                        } else if (code !== '') {
+                            showNotification("Invalid referral code.", "warning");
+                            return;
+                        }
+                        await addGenericToCart('festival', finalPrice, referral);
+                    }
+                } else {
+                    // VIP Random without referral
+                    await addGenericToCart('vip-random', prices['vip-random']);
+                }
+
+                if (codeInput) codeInput.value = '';
+                document.getElementById('festival-selection-popup').classList.add('hidden');
+            }
+
+            async function addSeatToCart() {
+                if (!state.selectedSeat) return;
+
+                // Recheck locked seats
+                await fetchLockedSeats();
+                if (lockedSeats.has(state.selectedSeat)) {
+                    showNotification(`Seat ${state.selectedSeat} is no longer available.`, "warning");
+                    document.getElementById('seat-selection-popup').classList.add('hidden');
+                    renderSeatGridMap();
+                    return;
+                }
+
+                const codeInput = document.getElementById('seat-referral-input');
+                const code = codeInput ? codeInput.value.trim().toUpperCase() : '';
+
+                let finalPrice = prices['vip-seat'];
+                let referral = null;
+
                 if (code === 'DONASIVIP') {
-                    await addGenericToCart('vip-random', 0, 'DONASIVIP');
-                } else if (code === 'DONASIFEST') {
-                    await addGenericToCart('festival', 0, 'DONASIFEST');
-                } else if (code === 'JOSHUAS1T0RU5') {
-                    await addGenericToCart('festival', 0, 'JOSHUAS1T0RU5');
-                    await addGenericToCart('vip-random', 0, 'JOSHUAS1T0RU5');
-                } else {
-                    let referral = null;
-                    let finalPrice = prices['festival'];
-                    if (code === 'JVLYNXALUMNI') {
-                        referral = code;
-                        finalPrice = 85000;
-                    } else if (code === 'JVLYNXMHT18') {
-                        referral = code;
-                        finalPrice = 132000;
-                    } else if (code === 'PROMO10') {
-                        referral = code;
-                    } else if (code !== '') {
-                        showNotification("Invalid referral code.", "warning");
-                        return;
-                    }
-                    await addGenericToCart('festival', finalPrice, referral);
+                    finalPrice = 0;
+                    referral = 'DONASIVIP';
+                } else if (code !== '') {
+                    showNotification("Invalid referral code.", "warning");
+                    return;
                 }
-            } else {
-                // VIP Random without referral
-                await addGenericToCart('vip-random', prices['vip-random']);
-            }
 
-            if (codeInput) codeInput.value = '';
-            document.getElementById('festival-selection-popup').classList.add('hidden');
-        }
+                const item = {
+                    id: 'cart-' + Math.random().toString(36).substring(2, 9),
+                    category: 'vip-seat',
+                    seat_number: state.selectedSeat,
+                    price: finalPrice,
+                    referral_code: referral
+                };
 
-        async function addSeatToCart() {
-            if (!state.selectedSeat) return;
+                state.cart.push(item);
+                await adjustQuota('vip-seat', -1); // Decrement VIP seat quota in real-time
+                await saveCart();
 
-            // Recheck locked seats
-            await fetchLockedSeats();
-            if (lockedSeats.has(state.selectedSeat)) {
-                showNotification(`Seat ${state.selectedSeat} is no longer available.`, "warning");
+                if (codeInput) codeInput.value = '';
                 document.getElementById('seat-selection-popup').classList.add('hidden');
-                renderSeatGridMap();
-                return;
+                showNotification(`Seat ${state.selectedSeat} added to cart!`, "success");
             }
 
-            const item = {
-                id: 'cart-' + Math.random().toString(36).substring(2, 9),
-                category: 'vip-seat',
-                seat_number: state.selectedSeat,
-                price: prices['vip-seat'],
-                referral_code: null
-            };
-
-            state.cart.push(item);
-            await adjustQuota('vip-seat', -1); // Decrement VIP seat quota in real-time
-            await saveCart();
-
-            document.getElementById('seat-selection-popup').classList.add('hidden');
-            showNotification(`Seat ${state.selectedSeat} added to cart!`, "success");
-        }
-
-        async function removeCartItem(itemId) {
-            const removedItem = state.cart.find(item => item.id === itemId);
-            state.cart = state.cart.filter(item => item.id !== itemId);
-            if (removedItem) await adjustQuota(removedItem.category, 1); // Restore quota
-            await saveCart();
-            showNotification("Item removed from cart.", "success");
-        }
-
-        function updateCartUI() {
-            const list = document.getElementById('cart-items-list');
-            if (!list) return;
-
-            list.innerHTML = '';
-            if (state.cart.length === 0) {
-                list.innerHTML = '<div class="text-xs text-on-surface-variant opacity-60 text-center py-4">Your cart is empty.</div>';
-
-                document.getElementById('summary-subtotal').innerText = 'IDR 0';
-                document.getElementById('summary-discount-row').classList.add('hidden');
-                document.getElementById('summary-total').innerText = 'IDR 0';
-
-                const btn = document.getElementById('checkout-btn');
-                btn.disabled = true;
-                btn.className = "w-full bg-primary text-on-primary font-black uppercase text-xs tracking-widest py-4 hover:opacity-90 transition-all opacity-50 cursor-not-allowed";
-
-                renderSeatGridMap();
-                return;
+            async function removeCartItem(itemId) {
+                const removedItem = state.cart.find(item => item.id === itemId);
+                state.cart = state.cart.filter(item => item.id !== itemId);
+                if (removedItem) await adjustQuota(removedItem.category, 1); // Restore quota
+                await saveCart();
+                showNotification("Item removed from cart.", "success");
             }
 
-            let subtotal = 0;
-            let discount = 0;
+            function updateCartUI() {
+                const list = document.getElementById('cart-items-list');
+                if (!list) return;
 
-            state.cart.forEach(item => {
-                subtotal += item.price;
+                list.innerHTML = '';
+                if (state.cart.length === 0) {
+                    list.innerHTML = '<div class="text-xs text-on-surface-variant opacity-60 text-center py-4">Your cart is empty.</div>';
 
-                // Handle discounts.
-                // If it's the special codes, the price is already adjusted in addFestivalToCart.
-                // But for PROMO10, it's a percentage off.
-                let itemDiscount = 0;
-                if (item.category === 'festival' && item.referral_code === 'PROMO10') {
-                    itemDiscount = item.price * 0.1;
-                    discount += itemDiscount;
+                    document.getElementById('summary-subtotal').innerText = 'IDR 0';
+                    document.getElementById('summary-discount-row').classList.add('hidden');
+                    document.getElementById('summary-total').innerText = 'IDR 0';
+
+                    const btn = document.getElementById('checkout-btn');
+                    btn.disabled = true;
+                    btn.className = "w-full bg-primary text-on-primary font-black uppercase text-xs tracking-widest py-4 hover:opacity-90 transition-all opacity-50 cursor-not-allowed";
+
+                    renderSeatGridMap();
+                    return;
                 }
 
-                const itemTotal = item.price - itemDiscount;
+                let subtotal = 0;
+                let discount = 0;
 
-                const row = document.createElement('div');
-                row.className = "flex justify-between items-start gap-3 p-3 bg-surface-variant/30 border border-outline/10";
+                state.cart.forEach(item => {
+                    subtotal += item.price;
 
-                let label = '';
-                let subtitle = '';
-                if (item.category === 'festival') {
-                    label = 'Festival Pass';
-                    subtitle = item.referral_code ? `Promo Applied (${item.referral_code})` : 'General Admission';
-                } else if (item.category === 'vip-seat') {
-                    label = `VIP Seat ${item.seat_number}`;
-                    subtitle = 'Interactive Selection';
-                } else {
-                    label = 'VIP Random Pass';
-                    subtitle = 'Allocated Seating';
-                }
+                    // Handle discounts.
+                    // If it's the special codes, the price is already adjusted in addFestivalToCart.
+                    // But for PROMO10, it's a percentage off.
+                    let itemDiscount = 0;
+                    if (item.category === 'festival' && item.referral_code === 'PROMO10') {
+                        itemDiscount = item.price * 0.1;
+                        discount += itemDiscount;
+                    }
 
-                row.innerHTML = `
+                    const itemTotal = item.price - itemDiscount;
+
+                    const row = document.createElement('div');
+                    row.className = "flex justify-between items-start gap-3 p-3 bg-surface-variant/30 border border-outline/10";
+
+                    let label = '';
+                    let subtitle = '';
+                    if (item.category === 'festival') {
+                        label = 'Festival Pass';
+                        subtitle = item.referral_code ? `Promo Applied (${item.referral_code})` : 'General Admission';
+                    } else if (item.category === 'vip-seat') {
+                        label = `VIP Seat ${item.seat_number}`;
+                        subtitle = item.referral_code ? `Promo Applied (${item.referral_code})` : 'Interactive Selection';
+                    } else {
+                        label = 'VIP Random Pass';
+                        subtitle = 'Allocated Seating';
+                    }
+
+                    row.innerHTML = `
                     <div class="flex-1">
                         <p class="font-bold text-xs text-on-surface">${label}</p>
                         <p class="text-[10px] text-on-surface-variant opacity-70 mt-0.5">${subtitle}</p>
@@ -1034,164 +1075,164 @@
                         <span class="material-symbols-outlined text-sm font-black">close</span>
                     </button>
                 `;
-                list.appendChild(row);
-            });
+                    list.appendChild(row);
+                });
 
-            const grandTotal = subtotal - discount;
+                const grandTotal = subtotal - discount;
 
-            document.getElementById('summary-subtotal').innerText = `IDR ${subtotal.toLocaleString('id-ID')}`;
-            if (discount > 0) {
-                document.getElementById('summary-discount-row').classList.remove('hidden');
-                document.getElementById('summary-discount').innerText = `- IDR ${discount.toLocaleString('id-ID')}`;
-            } else {
-                document.getElementById('summary-discount-row').classList.add('hidden');
+                document.getElementById('summary-subtotal').innerText = `IDR ${subtotal.toLocaleString('id-ID')}`;
+                if (discount > 0) {
+                    document.getElementById('summary-discount-row').classList.remove('hidden');
+                    document.getElementById('summary-discount').innerText = `- IDR ${discount.toLocaleString('id-ID')}`;
+                } else {
+                    document.getElementById('summary-discount-row').classList.add('hidden');
+                }
+                document.getElementById('summary-total').innerText = `IDR ${grandTotal.toLocaleString('id-ID')}`;
+
+                // Activate checkout button
+                const btn = document.getElementById('checkout-btn');
+                btn.disabled = false;
+                btn.className = "w-full bg-primary text-on-primary font-black uppercase text-xs tracking-widest py-4 hover:opacity-90 transition-all opacity-100";
+
+                renderSeatGridMap();
             }
-            document.getElementById('summary-total').innerText = `IDR ${grandTotal.toLocaleString('id-ID')}`;
 
-            // Activate checkout button
-            const btn = document.getElementById('checkout-btn');
-            btn.disabled = false;
-            btn.className = "w-full bg-primary text-on-primary font-black uppercase text-xs tracking-widest py-4 hover:opacity-90 transition-all opacity-100";
-
-            renderSeatGridMap();
-        }
-
-        async function clearCart() {
-            state.cart = [];
-            await saveCart();
-        }
-
-        function proceedToCheckout() {
-            if (state.cart.length > 0) {
-                window.location.href = '/jvlyn/checkout';
+            async function clearCart() {
+                state.cart = [];
+                await saveCart();
             }
-        }
 
-        // ==========================================
-        // D. TIMEOUT TIMER MANAGEMENT
-        // ==========================================
-        function startTimer() {
-            if (state.timerStarted) return;
-            state.timerStarted = true;
+            function proceedToCheckout() {
+                if (state.cart.length > 0) {
+                    window.location.href = '/jvlyn/checkout';
+                }
+            }
 
-            // Always clear any dangling interval before starting a new one
-            if (state.timerInterval) clearInterval(state.timerInterval);
+            // ==========================================
+            // D. TIMEOUT TIMER MANAGEMENT
+            // ==========================================
+            function startTimer() {
+                if (state.timerStarted) return;
+                state.timerStarted = true;
 
-            const statusText = document.getElementById('timer-status');
-            if (statusText) statusText.innerText = "Complete checkout before timeout";
+                // Always clear any dangling interval before starting a new one
+                if (state.timerInterval) clearInterval(state.timerInterval);
 
-            updateTimerUI(); // Immediately reflect synced time
+                const statusText = document.getElementById('timer-status');
+                if (statusText) statusText.innerText = "Complete checkout before timeout";
 
-            state.timerInterval = setInterval(() => {
-                state.timeRemaining--;
+                updateTimerUI(); // Immediately reflect synced time
+
+                state.timerInterval = setInterval(() => {
+                    state.timeRemaining--;
+                    updateTimerUI();
+
+                    if (state.timeRemaining <= 0) {
+                        clearInterval(state.timerInterval);
+                        state.timerStarted = false;
+                        triggerTimeoutReset();
+                    }
+                }, 1000);
+            }
+
+            function stopTimer() {
+                if (state.timerInterval) clearInterval(state.timerInterval);
+                state.timerStarted = false;
+                state.timeRemaining = 600;
                 updateTimerUI();
+                const statusText = document.getElementById('timer-status');
+                if (statusText) statusText.innerText = "Select ticket to start session";
+            }
 
-                if (state.timeRemaining <= 0) {
-                    clearInterval(state.timerInterval);
-                    state.timerStarted = false;
-                    triggerTimeoutReset();
-                }
-            }, 1000);
-        }
+            function updateTimerUI() {
+                const minutes = Math.floor(state.timeRemaining / 60);
+                const seconds = state.timeRemaining % 60;
+                const displayStr = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 
-        function stopTimer() {
-            if (state.timerInterval) clearInterval(state.timerInterval);
-            state.timerStarted = false;
-            state.timeRemaining = 600;
-            updateTimerUI();
-            const statusText = document.getElementById('timer-status');
-            if (statusText) statusText.innerText = "Select ticket to start session";
-        }
-
-        function updateTimerUI() {
-            const minutes = Math.floor(state.timeRemaining / 60);
-            const seconds = state.timeRemaining % 60;
-            const displayStr = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-
-            const timerEl = document.getElementById('countdown-display');
-            if (timerEl) {
-                timerEl.innerText = displayStr;
-                if (state.timeRemaining <= 60) {
-                    timerEl.className = "text-2xl font-black font-mono text-brand-red animate-pulse";
-                } else {
-                    timerEl.className = "text-2xl font-black font-mono text-primary";
+                const timerEl = document.getElementById('countdown-display');
+                if (timerEl) {
+                    timerEl.innerText = displayStr;
+                    if (state.timeRemaining <= 60) {
+                        timerEl.className = "text-2xl font-black font-mono text-brand-red animate-pulse";
+                    } else {
+                        timerEl.className = "text-2xl font-black font-mono text-primary";
+                    }
                 }
             }
-        }
 
-        async function triggerTimeoutReset() {
-            // Restore quota for every item still in the cart before clearing it
-            for (const item of state.cart) {
-                await adjustQuota(item.category, 1);
-            }
-            showAlertModal(
-                "Sesi Booking Habis",
-                "Waktu transaksi Anda (10 menit) telah berakhir. Data kursi dan antrean belanja Anda dilepas kembali demi asas keadilan kuota."
-            );
-            state.cart = [];
-            updateCartUI();
-            if (supabaseClient) {
-                await supabaseClient
-                    .from('cart_items')
-                    .delete()
-                    .eq('session_id', state.sessionId);
-            }
-        }
-
-        // ==========================================
-        // E. UTILITY INTERFACES
-        // ==========================================
-        function showAlertModal(title, msg) {
-            const modal = document.getElementById('alert-modal');
-            const mTitle = document.getElementById('alert-modal-title');
-            const mMsg = document.getElementById('alert-modal-message');
-
-            if (modal && mTitle && mMsg) {
-                mTitle.innerText = title;
-                mMsg.innerText = msg;
-                modal.classList.remove('hidden');
-            }
-        }
-
-        function closeAlertModal() {
-            const modal = document.getElementById('alert-modal');
-            if (modal) modal.classList.add('hidden');
-        }
-
-        function showNotification(msg, type = "success") {
-            const toast = document.getElementById('toast');
-            const tTitle = document.getElementById('toast-title');
-            const tMsg = document.getElementById('toast-msg');
-            const tIcon = document.getElementById('toast-icon');
-
-            if (toast && tTitle && tMsg && tIcon) {
-                tTitle.innerText = type.toUpperCase();
-                tMsg.innerText = msg;
-                if (type === 'success') {
-                    toast.className = "fixed bottom-6 right-6 z-50 bg-surface border border-secondary/35 p-4 shadow-2xl flex items-center gap-3 text-on-surface max-w-sm";
-                    tIcon.innerText = "check_circle";
-                    tIcon.className = "material-symbols-outlined text-secondary";
-                } else {
-                    toast.className = "fixed bottom-6 right-6 z-50 bg-surface border border-brand-red/35 p-4 shadow-2xl flex items-center gap-3 text-on-surface max-w-sm";
-                    tIcon.innerText = "warning";
-                    tIcon.className = "material-symbols-outlined text-brand-red";
+            async function triggerTimeoutReset() {
+                // Restore quota for every item still in the cart before clearing it
+                for (const item of state.cart) {
+                    await adjustQuota(item.category, 1);
                 }
-
-                toast.classList.remove('hidden');
-                setTimeout(() => {
-                    toast.classList.add('hidden');
-                }, 4000);
+                showAlertModal(
+                    "Sesi Booking Habis",
+                    "Waktu transaksi Anda (10 menit) telah berakhir. Data kursi dan antrean belanja Anda dilepas kembali demi asas keadilan kuota."
+                );
+                state.cart = [];
+                updateCartUI();
+                if (supabaseClient) {
+                    await supabaseClient
+                        .from('cart_items')
+                        .delete()
+                        .eq('session_id', state.sessionId);
+                }
             }
-        }
 
-        // Expose functions to global scope for onclick attributes
-        window.selectTicket = selectTicket;
-        window.selectSeat = selectSeat;
-        window.addFestivalToCart = addFestivalToCart;
-        window.addSeatToCart = addSeatToCart;
-        window.removeCartItem = removeCartItem;
-        window.proceedToCheckout = proceedToCheckout;
-        window.closeAlertModal = closeAlertModal;
+            // ==========================================
+            // E. UTILITY INTERFACES
+            // ==========================================
+            function showAlertModal(title, msg) {
+                const modal = document.getElementById('alert-modal');
+                const mTitle = document.getElementById('alert-modal-title');
+                const mMsg = document.getElementById('alert-modal-message');
+
+                if (modal && mTitle && mMsg) {
+                    mTitle.innerText = title;
+                    mMsg.innerText = msg;
+                    modal.classList.remove('hidden');
+                }
+            }
+
+            function closeAlertModal() {
+                const modal = document.getElementById('alert-modal');
+                if (modal) modal.classList.add('hidden');
+            }
+
+            function showNotification(msg, type = "success") {
+                const toast = document.getElementById('toast');
+                const tTitle = document.getElementById('toast-title');
+                const tMsg = document.getElementById('toast-msg');
+                const tIcon = document.getElementById('toast-icon');
+
+                if (toast && tTitle && tMsg && tIcon) {
+                    tTitle.innerText = type.toUpperCase();
+                    tMsg.innerText = msg;
+                    if (type === 'success') {
+                        toast.className = "fixed bottom-6 right-6 z-50 bg-surface border border-secondary/35 p-4 shadow-2xl flex items-center gap-3 text-on-surface max-w-sm";
+                        tIcon.innerText = "check_circle";
+                        tIcon.className = "material-symbols-outlined text-secondary";
+                    } else {
+                        toast.className = "fixed bottom-6 right-6 z-50 bg-surface border border-brand-red/35 p-4 shadow-2xl flex items-center gap-3 text-on-surface max-w-sm";
+                        tIcon.innerText = "warning";
+                        tIcon.className = "material-symbols-outlined text-brand-red";
+                    }
+
+                    toast.classList.remove('hidden');
+                    setTimeout(() => {
+                        toast.classList.add('hidden');
+                    }, 4000);
+                }
+            }
+
+            // Expose functions to global scope for onclick attributes
+            window.selectTicket = selectTicket;
+            window.selectSeat = selectSeat;
+            window.addFestivalToCart = addFestivalToCart;
+            window.addSeatToCart = addSeatToCart;
+            window.removeCartItem = removeCartItem;
+            window.proceedToCheckout = proceedToCheckout;
+            window.closeAlertModal = closeAlertModal;
         })();
     </script>
 </x-layout>

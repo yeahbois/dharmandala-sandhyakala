@@ -80,7 +80,12 @@ class JVLYNController extends Controller
                 }
             } elseif ($item['category'] === 'vip-seat') {
                 $catPrefix = 'VIP1';
-                $price = 325000;
+                if ($itemRef === 'DONASIVIP') {
+                    $price = 0;
+                    $typePrefix = 'DONA';
+                } else {
+                    $price = 325000;
+                }
             } elseif ($item['category'] === 'vip-random') {
                 $catPrefix = 'VIP2';
                 if ($itemRef === 'DONASIVIP' || $itemRef === 'JOSHUAS1T0RU5') {

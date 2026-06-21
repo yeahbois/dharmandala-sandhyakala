@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JVLYN Scanner | Panitia</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
     </style>
 </head>
+
 <body class="w-screen h-screen flex flex-col bg-[#0B1220] text-white overflow-hidden">
     <!-- NAVBAR -->
     <header class="h-20 flex items-center justify-center bg-[#0F172A] border-b border-blue-900 shrink-0">
         <div class="text-center">
             <h1 class="text-xl font-semibold tracking-wide text-blue-400 uppercase">
-                TICKET SCANNER JVLYN
+                ENTRY PASS SCANNER JVLYN
             </h1>
             <p class="text-sm text-blue-200/70 uppercase tracking-widest">
-                E-TICKETING SYSTEM BY OSPK M.H. THAMRIN
+                ENTRY PASS SYSTEM BY OSPK M.H. THAMRIN
             </p>
         </div>
     </header>
@@ -32,11 +38,14 @@
 
             <!-- SCANNER FRAME -->
             <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div class="w-[70vmin] h-[70vmin] max-w-[90%] max-h-[90%] rounded-2xl border-4 border-blue-500 shadow-[0_0_40px_#3B82F6]"></div>
+                <div
+                    class="w-[70vmin] h-[70vmin] max-w-[90%] max-h-[90%] rounded-2xl border-4 border-blue-500 shadow-[0_0_40px_#3B82F6]">
+                </div>
             </div>
 
             <!-- HOT ALERT -->
-            <div id="scan-alert" class="hidden absolute top-5 left-1/2 -translate-x-1/2 px-6 py-3 rounded-xl text-sm font-semibold shadow-xl z-50">
+            <div id="scan-alert"
+                class="hidden absolute top-5 left-1/2 -translate-x-1/2 px-6 py-3 rounded-xl text-sm font-semibold shadow-xl z-50">
             </div>
         </section>
 
@@ -44,14 +53,16 @@
         <aside class="w-full xl:w-[360px] shrink-0 flex flex-col justify-center gap-6 p-4 bg-[#0B1220]">
             <div class="bg-[#0F172A] border border-blue-900 rounded-2xl p-5">
                 <p class="text-sm text-blue-300 mb-2">Sumber Kamera</p>
-                <select id="camera-select" class="w-full p-3 rounded-xl bg-[#020617] border border-blue-900 outline-none text-white">
+                <select id="camera-select"
+                    class="w-full p-3 rounded-xl bg-[#020617] border border-blue-900 outline-none text-white">
                     <option value="">Loading cameras...</option>
                 </select>
             </div>
 
-            <div id="last-scanned-container" class="hidden bg-[#0F172A] border border-blue-900 rounded-2xl p-4 space-y-4">
+            <div id="last-scanned-container"
+                class="hidden bg-[#0F172A] border border-blue-900 rounded-2xl p-4 space-y-4">
                 <div>
-                    <p class="text-[10px] uppercase font-bold text-blue-400 tracking-widest mb-1">Ticket ID</p>
+                    <p class="text-[10px] uppercase font-bold text-blue-400 tracking-widest mb-1">Entry Pass ID</p>
                     <p id="last-scanned-text" class="font-mono text-sm break-words text-blue-100 font-bold"></p>
                 </div>
                 <div id="order-details-container" class="hidden space-y-3 pt-3 border-t border-blue-900/50">
@@ -106,9 +117,8 @@
 
         function showAlert(type, message) {
             alertEl.innerText = message;
-            alertEl.className = `absolute top-5 left-1/2 -translate-x-1/2 px-6 py-3 rounded-xl text-sm font-semibold shadow-xl z-50 ${
-                type === 'success' ? 'bg-green-600 text-white' : 'bg-red-600 text-white'
-            }`;
+            alertEl.className = `absolute top-5 left-1/2 -translate-x-1/2 px-6 py-3 rounded-xl text-sm font-semibold shadow-xl z-50 ${type === 'success' ? 'bg-green-600 text-white' : 'bg-red-600 text-white'
+                }`;
             alertEl.classList.remove('hidden');
             setTimeout(() => alertEl.classList.add('hidden'), 2500);
         }
@@ -127,7 +137,7 @@
                 const data = await res.json();
 
                 if (data.status === 'berhasil') {
-                    successAudio.play().catch(() => {});
+                    successAudio.play().catch(() => { });
                     showAlert('success', data.message);
                     lastScannedContainer.classList.remove('hidden');
 
@@ -155,18 +165,18 @@
                         document.getElementById('info-scanned-relative').innerText = data.order_info.scanned_relative;
                         orderDetailsContainer.classList.remove('hidden');
                     }
-                    errorAudio.play().catch(() => {});
+                    errorAudio.play().catch(() => { });
                     showAlert('error', data.message);
                 }
             } catch (err) {
-                errorAudio.play().catch(() => {});
+                errorAudio.play().catch(() => { });
                 showAlert('error', "Server error / API unreachable");
             }
         }
 
         async function startScanner(deviceId) {
             if (html5QrCode) {
-                await html5QrCode.stop().catch(() => {});
+                await html5QrCode.stop().catch(() => { });
                 await html5QrCode.clear();
             }
 
@@ -186,7 +196,7 @@
 
                     setTimeout(() => { scanningLock = false; }, 1500);
                 },
-                () => {}
+                () => { }
             );
 
             // Mirror + full cover fix
@@ -221,4 +231,5 @@
         });
     </script>
 </body>
+
 </html>

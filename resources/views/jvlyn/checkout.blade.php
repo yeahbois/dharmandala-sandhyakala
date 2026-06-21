@@ -1,6 +1,6 @@
-<x-layout title="Checkout Tickets | J V L Y N">
+<x-layout title="Checkout Entry Pass | J V L Y N">
     <x-slot:metadesc>
-        <meta name="description" content="Provide details and complete payment for your J V L Y N concert tickets.">
+        <meta name="description" content="Provide details and complete payment for your J V L Y N concert entry pass.">
     </x-slot:metadesc>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -29,7 +29,7 @@
             <span class="text-[11px] font-black tracking-[0.4em] uppercase text-primary mb-3 block">Concert
                 Registration</span>
             <h1 class="text-3xl md:text-5xl font-black tracking-tight uppercase mb-2 text-on-surface">
-                CHECKOUT TICKETS
+                CHECKOUT ENTRY PASS
             </h1>
             <p class="text-xs uppercase tracking-widest text-on-surface-variant opacity-75">
                 Jakarta Festival by Thamrin X: Complete your order details
@@ -69,7 +69,7 @@
                                 <span class="material-symbols-outlined text-sm font-black">check</span>
                             </div>
                             <div>
-                                <h4 class="text-xs font-bold text-on-surface uppercase tracking-wider">Select Ticket
+                                <h4 class="text-xs font-bold text-on-surface uppercase tracking-wider">Select Entry Pass
                                 </h4>
                                 <p class="text-[10px] text-on-surface-variant">Completed</p>
                             </div>
@@ -122,7 +122,8 @@
                             <div>
                                 <h3 class="text-xl font-black uppercase tracking-tight text-on-surface">Contact
                                     Information</h3>
-                                <p class="text-xs text-on-surface-variant">Provide your active contact details. Tickets
+                                <p class="text-xs text-on-surface-variant">Provide your active contact details. Entry
+                                    Pass
                                     will be sent to this email.</p>
                             </div>
 
@@ -131,7 +132,8 @@
                                     <label
                                         class="block text-xs uppercase tracking-wider font-bold mb-2 text-on-surface">Full
                                         Name</label>
-                                    <input type="text" id="input-name" oninput="validateStep()" placeholder="John Doe"
+                                    <input type="text" id="input-name" oninput="validateStep()"
+                                        placeholder="Joshua Sitorus"
                                         class="w-full bg-background border border-outline/20 px-4 py-3 text-sm focus:outline-none focus:border-primary transition-all text-on-surface">
                                 </div>
                                 <div>
@@ -139,7 +141,7 @@
                                         class="block text-xs uppercase tracking-wider font-bold mb-2 text-on-surface">Email
                                         Address</label>
                                     <input type="email" id="input-email" oninput="validateStep()"
-                                        placeholder="johndoe@email.com"
+                                        placeholder="joshua@joshua.com"
                                         class="w-full bg-background border border-outline/20 px-4 py-3 text-sm focus:outline-none focus:border-primary transition-all text-on-surface">
                                 </div>
                                 <div>
@@ -243,7 +245,8 @@
                                 <h2 class="text-2xl font-black uppercase text-on-surface tracking-tight">Order
                                     Registered Successfully!</h2>
                                 <p class="text-xs text-on-surface-variant max-w-md mx-auto mt-2 leading-relaxed">
-                                    Thank you for your purchase. We are currently verifying your payment. Your ticket
+                                    Thank you for your purchase. We are currently verifying your payment. Your entry
+                                    pass
                                     details have been logged and will be dispatched.
                                 </p>
                             </div>
@@ -257,8 +260,8 @@
                                 </div>
                                 <div class="space-y-3">
                                     <div>
-                                        <span
-                                            class="text-[10px] uppercase text-on-surface-variant tracking-wider">Ticket
+                                        <span class="text-[10px] uppercase text-on-surface-variant tracking-wider">Entry
+                                            Pass
                                             Types Purchased</span>
                                         <div id="success-ticket-types" class="text-sm font-bold text-on-surface">VIP
                                             Seat, Festival</div>
@@ -287,7 +290,7 @@
                                 </a>
                                 <a href="/jvlyn/entry_pass"
                                     class="text-xs font-black uppercase tracking-widest bg-primary text-on-primary px-6 py-3 transition-colors hover:opacity-90">
-                                    Purchase More Tickets
+                                    Purchase More Entry Pass
                                 </a>
                             </div>
                         </div>
@@ -351,7 +354,7 @@
             <h4 id="alert-modal-title" class="text-lg font-black uppercase text-on-surface tracking-tight">Checkout
                 Timeout</h4>
             <p id="alert-modal-message" class="text-xs text-on-surface-variant leading-relaxed">
-                Your booking session has expired. You will be redirected back to the ticketing map.
+                Your booking session has expired. You will be redirected back to the entry pass map.
             </p>
             <button onclick="window.location.href='/jvlyn/entry_pass'"
                 class="w-full bg-primary hover:opacity-90 text-on-primary font-black text-xs uppercase tracking-widest py-3 transition-all">
@@ -489,7 +492,7 @@
                     subtitle = item.referral_code ? `Promo Applied (${item.referral_code})` : 'General Admission';
                 } else if (item.category === 'vip-seat') {
                     label = `VIP Seat ${item.seat_number}`;
-                    subtitle = 'Interactive Selection';
+                    subtitle = item.referral_code ? `Promo Applied (${item.referral_code})` : 'Interactive Selection';
                 } else {
                     label = 'VIP Random Pass';
                     subtitle = 'Allocated Seating';
