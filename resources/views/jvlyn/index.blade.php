@@ -483,7 +483,7 @@
 
                     <a href="/jvlyn/entry_pass"
                         class="w-full text-center block bg-primary text-on-primary text-[10px] font-black uppercase tracking-[0.3em] py-4 shadow-md hover:brightness-110 transition-all">
-                        Buy Entry Pass Now
+                        Get Entry Pass Now
                     </a>
                 </div>
 
