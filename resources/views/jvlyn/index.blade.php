@@ -382,8 +382,7 @@
                         <div>
                             <span class="text-lg font-black text-on-surface uppercase">Bandfeat 3</span>
                             <span
-                                class="text-[9px] block font-bold uppercase tracking-widest text-on-surface-variant opacity-60 mt-1">LSPR
-                                Band
+                                class="text-[9px] block font-bold uppercase tracking-widest text-on-surface-variant opacity-60 mt-1">Omnitune
                             </span>
                         </div>
                     </div>
