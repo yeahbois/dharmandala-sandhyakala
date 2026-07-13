@@ -546,8 +546,8 @@
 
                         state.quota['festival'] = Math.max(0, festivalAvailable - festivalSelled);
 
-                        state.quota['vip-seat'] = vipSeatIsClosed ? 0 : Math.max(0, vipSeatAvailable - (vipSeatSelled + vipRandomSelled));
-                        state.quota['vip-random'] = vipRandomIsClosed ? 0 : Math.max(0, vipRandomAvailable - (vipSeatSelled + vipRandomSelled));
+                        state.quota['vip-seat'] = vipSeatIsClosed ? 0 : Math.max(0, 108 - (vipSeatSelled + vipRandomSelled));
+                        state.quota['vip-random'] = vipRandomIsClosed ? 0 : Math.max(0, 108 - (vipSeatSelled + vipRandomSelled));
                     }
                 } catch (e) {
                     console.error("Quota Fetch Error:", e);
