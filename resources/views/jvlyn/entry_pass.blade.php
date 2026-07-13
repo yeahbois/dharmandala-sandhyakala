@@ -760,6 +760,13 @@
                             card.className = "cursor-pointer p-5 border border-outline/10 bg-surface/50 hover:bg-surface-variant/20 hover:border-primary/50 transition-all flex flex-col justify-between relative group";
                             icon.innerText = "radio_button_unchecked";
                         }
+
+                        // Re-apply disabled state if quota is <= 0
+                        if (state.quota[t] <= 0) {
+                            card.classList.add('opacity-40', 'pointer-events-none');
+                        } else {
+                            card.classList.remove('opacity-40', 'pointer-events-none');
+                        }
                     }
                 });
 
