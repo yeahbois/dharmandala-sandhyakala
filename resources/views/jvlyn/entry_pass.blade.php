@@ -517,26 +517,37 @@
                         let festivalSelled = 0;
                         let vipSeatAvailable = 108;
                         let vipSeatSelled = 0;
+                        let vipSeatIsClosed = false;
+                        let vipRandomAvailable = 108;
                         let vipRandomSelled = 0;
+                        let vipRandomIsClosed = false;
 
                         data.forEach(item => {
                             const name = item.category_name.toLowerCase();
+                            const avail = (item.available_quota !== undefined && item.available_quota !== null) ? item.available_quota : null;
+
                             if (name.includes('festival')) {
-                                festivalAvailable = item.available_quota || 0;
+                                festivalAvailable = avail !== null ? avail : 0;
                                 festivalSelled = item.selled || 0;
                             } else if (name.includes('vip seat')) {
-                                vipSeatAvailable = item.available_quota || 108;
+                                vipSeatAvailable = avail !== null ? avail : 108;
                                 vipSeatSelled = item.selled || 0;
+                                if (avail === 0) {
+                                    vipSeatIsClosed = true;
+                                }
                             } else if (name.includes('vip random')) {
+                                vipRandomAvailable = avail !== null ? avail : 108;
                                 vipRandomSelled = item.selled || 0;
+                                if (avail === 0) {
+                                    vipRandomIsClosed = true;
+                                }
                             }
                         });
 
                         state.quota['festival'] = Math.max(0, festivalAvailable - festivalSelled);
 
-                        const vipQuotaResult = Math.max(0, vipSeatAvailable - (vipSeatSelled + vipRandomSelled));
-                        state.quota['vip-seat'] = vipQuotaResult;
-                        state.quota['vip-random'] = vipQuotaResult;
+                        state.quota['vip-seat'] = vipSeatIsClosed ? 0 : Math.max(0, vipSeatAvailable - (vipSeatSelled + vipRandomSelled));
+                        state.quota['vip-random'] = vipRandomIsClosed ? 0 : Math.max(0, vipRandomAvailable - (vipSeatSelled + vipRandomSelled));
                     }
                 } catch (e) {
                     console.error("Quota Fetch Error:", e);
