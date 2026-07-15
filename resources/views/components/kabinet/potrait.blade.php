@@ -1,7 +1,7 @@
 @props([
     'link',
     'name',
-    'role' => null, // Kept for logic, but hidden to match the provided layout
+    'role' => null,
     'ig',
     'quote' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     'logoLink' => null,
@@ -17,6 +17,12 @@
 
     {{-- Info --}}
     <div class="p-4 text-left flex flex-col flex-1">
+        @if($role)
+            <div class="text-[9px] sm:text-[10px] font-bold tracking-widest text-primary uppercase mb-1">
+                {{ $role }}
+            </div>
+        @endif
+
         <h4 class="text-[11px] sm:text-xs md:text-sm font-black tracking-tight mb-0.5 text-on-surface leading-tight">
             {{ $name }}
         </h4>

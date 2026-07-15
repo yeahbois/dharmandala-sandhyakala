@@ -78,19 +78,10 @@
                         "password": "0=-29+5log(x)+(2/1000)x"
                     },
                     {
-                        "link": "osis/bph/ara",
-                        "name": "Azkya Zahra Putrilita",
-                        "ig": "-",
-                        "role": "Humas 1",
-                        "quote": "-",
-                        "username": "azkyazahra",
-                        "password": "azkyazahraputrilita"
-                    },
-                    {
                         "link": "osis/bph/arka",
                         "name": "Khathir Arkananta Irawan",
                         "ig": "terseraharka",
-                        "role": "Humas 2",
+                        "role": "Humas 1",
                         "quote": "“I did it my way” — Frank Sinatra",
                         "username": "Arkaa",
                         "password": "arka1111"
@@ -99,7 +90,7 @@
                         "link": "osis/bph/charlove",
                         "name": "Charlove Aqilah",
                         "ig": "-",
-                        "role": "Humas 3",
+                        "role": "Humas 2",
                         "quote": "-",
                         "username": "charloveaqilah",
                         "password": "charloveaqilah"
