@@ -11,7 +11,9 @@ return new class extends Migration {
     public function up(): void
     {
         // Using DB::statement because Schema doesn't support changing ENUM values easily across all DB drivers
-        DB::statement("ALTER TABLE jvlyn_tickets MODIFY COLUMN ticket_status ENUM('pending_delivery', 'sent', 'failed', 'fail_order') DEFAULT 'pending_delivery'");
+        if (config('database.default') !== 'sqlite') {
+            DB::statement("ALTER TABLE jvlyn_tickets MODIFY COLUMN ticket_status ENUM('pending_delivery', 'sent', 'failed', 'fail_order') DEFAULT 'pending_delivery'");
+        }
     }
 
     /**
@@ -19,6 +21,8 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        DB::statement("ALTER TABLE jvlyn_tickets MODIFY COLUMN ticket_status ENUM('pending_delivery', 'sent', 'failed') DEFAULT 'pending_delivery'");
+        if (config('database.default') !== 'sqlite') {
+            DB::statement("ALTER TABLE jvlyn_tickets MODIFY COLUMN ticket_status ENUM('pending_delivery', 'sent', 'failed') DEFAULT 'pending_delivery'");
+        }
     }
 };
