@@ -1,0 +1,738 @@
+{
+    "osis": {
+        "theme": "red",
+        "hero": {
+            "title": "Dharmandala Sandhyakala",
+            "logo": "images/logo/general/osis514.webp",
+            "slogan": "Selamat datang di OSIS SMAN Unggulan MH Thamrin Kabinet Dharmandala Sandhyakala Tahun 2025/2026."
+        },
+        "structure": [
+            {
+                "type": "bidang",
+                "name": "Badan Pengurus Harian",
+                "group": "Structure I",
+                "logo": "images/logo/osis/ketua.webp",
+                "slug": "bph",
+                "members": [
+                    {
+                        "link": "osis/bph/rafif",
+                        "name": "Rafif Shafy Safaraz Indratno",
+                        "ig": "Apip1708",
+                        "role": "Ketua Umum OSIS",
+                        "quote": "Be a museum.",
+                        "username": "Apip",
+                        "password": "Apipsapi"
+                    },
+                    {
+                        "link": "osis/bph/balqis",
+                        "name": "Balqis Ruehainah",
+                        "ig": "blqisrueee_",
+                        "role": "Ketua Bidang 1",
+                        "quote": "All the world is made of faith, and trust, and pixie dust",
+                        "username": "papoyoyoi",
+                        "password": "xenonewwie"
+                    },
+                    {
+                        "link": "osis/bph/aurel",
+                        "name": "Aurellia Shafina",
+                        "ig": "aurelliashafina",
+                        "role": "Ketua Bidang 2",
+                        "quote": "if there is a will, there is a way",
+                        "username": "aurellias",
+                        "password": "090617"
+                    },
+                    {
+                        "link": "osis/bph/nazwa",
+                        "name": "Nazwa Syafitri",
+                        "ig": "nazwasyaf_",
+                        "role": "Sekretaris 1",
+                        "quote": "99% notes, 1% wondering how we got here.",
+                        "username": "nazwasyaf",
+                        "password": "yaallahmaudemis"
+                    },
+                    {
+                        "link": "osis/bph/aime",
+                        "name": "Puan Batrisyia Aimee Yutria Priharmoko",
+                        "ig": "-",
+                        "role": "Sekretaris 2",
+                        "quote": "-",
+                        "username": "puanbatrisyia",
+                        "password": "puanbatrisyiaaimeeyutriapriharmoko"
+                    },
+                    {
+                        "link": "osis/bph/dedes",
+                        "name": "Desvita Putri Zulhijah",
+                        "ig": "dsvta.p",
+                        "role": "Bendahara 1",
+                        "quote": "Just don't let your poems be ordinary.",
+                        "username": "desvitap",
+                        "password": "desvitta"
+                    },
+                    {
+                        "link": "osis/bph/rasya",
+                        "name": "Hafidz Rasya Putra Permana",
+                        "ig": "hafidzrasya_photography",
+                        "role": "Bendahara 2",
+                        "quote": "Alte in Caelo Vola",
+                        "username": "Antares206265",
+                        "password": "0=-29+5log(x)+(2/1000)x"
+                    },
+                    {
+                        "link": "osis/bph/arka",
+                        "name": "Khathir Arkananta Irawan",
+                        "ig": "terseraharka",
+                        "role": "Humas 1",
+                        "quote": "“I did it my way” — Frank Sinatra",
+                        "username": "Arkaa",
+                        "password": "arka1111"
+                    },
+                    {
+                        "link": "osis/bph/charlove",
+                        "name": "Charlove Aqilah",
+                        "ig": "-",
+                        "role": "Humas 2",
+                        "quote": "-",
+                        "username": "charloveaqilah",
+                        "password": "charloveaqilah"
+                    }
+                ],
+                "about": "Badan Pengurus Harian"
+            },
+            {
+                "type": "container",
+                "name": "Bidang 1",
+                "group": "Structure II",
+                "sections": [
+                    {
+                        "slug": "pudo",
+                        "name": "Publikasi dan Dokumentasi",
+                        "group": "Seksi 1.1",
+                        "logo": "images/logo/osis/pudo.webp",
+                        "icon": "photo_camera",
+                        "members": [
+                            {
+                                "link": "osis/pudo/nasywa",
+                                "name": "Nasywa Kamilah Hakim",
+                                "ig": "nassywahakim",
+                                "role": "Ketua PUDO",
+                                "quote": "Lorem ipsum dolor sit amet",
+                                "username": "meonggendut123",
+                                "password": "meongsupergendut"
+                            },
+                            {
+                                "link": "osis/pudo/salomo",
+                                "name": "Salomo Dominic Dapotanuli Manullang",
+                                "ig": "tomx_by",
+                                "role": "Wakil Ketua PUDO",
+                                "quote": "Lebih baik jadi ular berkepala naga daripada ayam berkepala toreno.",
+                                "username": "Eof",
+                                "password": "Eof"
+                            },
+                            {
+                                "link": "osis/pudo/izwa",
+                                "name": "Izwa Cahya Al Ainaa",
+                                "ig": "-",
+                                "role": "Anggota PUDO",
+                                "quote": "-",
+                                "username": "izwacahya",
+                                "password": "izwacahyaalainaa"
+                            },
+                            {
+                                "link": "osis/pudo/angkasa",
+                                "name": "Angkasa Dewa Purnama",
+                                "ig": "-",
+                                "role": "Anggota PUDO",
+                                "quote": "-",
+                                "username": "angkasadewa",
+                                "password": "angkasadewapurnama"
+                            },
+                            {
+                                "link": "osis/pudo/nadhira",
+                                "name": "Luthfah Galbiena Nadhira Damanik",
+                                "ig": "-",
+                                "role": "Anggota PUDO",
+                                "quote": "-",
+                                "username": "luthfahgalbiena",
+                                "password": "luthfahgalbienanadhiradamanik"
+                            },
+                            {
+                                "link": "osis/pudo/benika",
+                                "name": "Hania Benika Putrimulia",
+                                "ig": "haniabenika",
+                                "role": "Anggota PUDO",
+                                "quote": "Every moment in life is captured with one click📷",
+                                "username": "haniabenika",
+                                "password": "benika10"
+                            },
+                            {
+                                "link": "osis/pudo/quinsha",
+                                "name": "Quinsha Masyitha Riza",
+                                "ig": "quinelopee",
+                                "role": "Anggota PUDO",
+                                "quote": "Even the simplest things can hold meaning.",
+                                "username": "quinelopee",
+                                "password": "ogohyugul"
+                            }
+                        ],
+                        "about": "Publikasi dan Dokumentasi"
+                    },
+                    {
+                        "slug": "k3or",
+                        "name": "Kreativitas, Keterampilan, Kewirausahaan, dan Olahraga",
+                        "group": "Seksi 1.2",
+                        "logo": "images/logo/osis/k3or.webp",
+                        "icon": "fitness_center",
+                        "members": [
+                            {
+                                "link": "osis/k3or/kezia",
+                                "name": "Kezia Jovita Ghassani",
+                                "ig": "-",
+                                "role": "Ketua K3OR",
+                                "quote": "-",
+                                "username": "keziajovita",
+                                "password": "keziajovitaghassani"
+                            },
+                            {
+                                "link": "osis/k3or/zaidan",
+                                "name": "Muhammad Zaidan Alfatih Maimun",
+                                "ig": "-",
+                                "role": "Wakil Ketua K3OR",
+                                "quote": "-",
+                                "username": "muhammadzaidan",
+                                "password": "muhammadzaidanalfatihmaimun"
+                            },
+                            {
+                                "link": "osis/k3or/zharif",
+                                "name": "Teuku Zharif Naraja Jacoeb",
+                                "ig": "teukuzharif",
+                                "role": "Anggota K3OR",
+                                "quote": "\"Too Deep to Turn Back\" — Caesar",
+                                "username": "teukuzharif",
+                                "password": "Pass12345"
+                            },
+                            {
+                                "link": "osis/k3or/yosa",
+                                "name": "Yosa Satrio Ary",
+                                "ig": "-",
+                                "role": "Anggota K3OR",
+                                "quote": "-",
+                                "username": "yosasatrio",
+                                "password": "yosasatrioary"
+                            },
+                            {
+                                "link": "osis/k3or/lala",
+                                "name": "Maylaffathiya Alya Mumtazah",
+                                "ig": "-",
+                                "role": "Anggota K3OR",
+                                "quote": "-",
+                                "username": "maylaffathiyaalya",
+                                "password": "maylaffathiyaalyamumtazah"
+                            },
+                            {
+                                "link": "osis/k3or/rheyvan",
+                                "name": "Muhammad Rheyvan Ibrahim",
+                                "ig": "vanrhey_",
+                                "role": "Anggota K3OR",
+                                "quote": "Systems fail when one part is ignored",
+                                "username": "Vanrhey",
+                                "password": "Vanrhey_"
+                            },
+                            {
+                                "link": "osis/k3or/gendis",
+                                "name": "Gendis Ayu Novita T. D.",
+                                "ig": "ndiiiissss",
+                                "role": "Anggota K3OR",
+                                "quote": "temui titik terang di ruang segelap apapun",
+                                "username": "gndsnvta",
+                                "password": "disneyland-thamnet"
+                            }
+                        ],
+                        "about": "Kreativitas, Keterampilan, Kewirausahaan, dan Olahraga"
+                    },
+                    {
+                        "slug": "sasbud",
+                        "name": "Sastra Budaya",
+                        "group": "Seksi 1.3",
+                        "logo": "images/logo/osis/sasbud.webp",
+                        "icon": "theater_comedy",
+                        "members": [
+                            {
+                                "link": "osis/sasbud/bitha",
+                                "name": "Aisyahbitha Early Ramadhanty",
+                                "ig": "ckissed",
+                                "role": "Ketua Sasbud",
+                                "quote": "But poetry, beauty, romance, love— these are what we stay alive for. ",
+                                "username": "ckissed",
+                                "password": "bithasasbudcihuy"
+                            },
+                            {
+                                "link": "osis/sasbud/fadel",
+                                "name": "Fadel Rayyan Fazlullah",
+                                "ig": "-",
+                                "role": "Wakil Ketua Sasbud",
+                                "quote": "-",
+                                "username": "fadelrayyan",
+                                "password": "fadelrayyanfazlullah"
+                            },
+                            {
+                                "link": "osis/sasbud/netha",
+                                "name": "Nethanya Taurine P. S",
+                                "ig": "-",
+                                "role": "Anggota Sasbud",
+                                "quote": "-",
+                                "username": "nethanyataurine",
+                                "password": "nethanyataurineps"
+                            },
+                            {
+                                "link": "osis/sasbud/fio",
+                                "name": "Fiorenza Zalianty",
+                                "ig": "fiyowen",
+                                "role": "Anggota Sasbud",
+                                "quote": "all you need is faith and a little bit of fairy dust ! ",
+                                "username": "fiounicornpinkglitter",
+                                "password": "glitterpinkunicornfio"
+                            },
+                            {
+                                "link": "osis/sasbud/acit",
+                                "name": "Acitya Paramesthi Nuswantari",
+                                "ig": "acitya_nuswantari",
+                                "role": "Anggota Sasbud",
+                                "quote": "\"Beri aku 10 porsi ketan hitam, niscaya akan kuguncangkan dunia\"",
+                                "username": "Acitya Nuswantari",
+                                "password": "Acitya12"
+                            },
+                            {
+                                "link": "osis/sasbud/ifti",
+                                "name": "Iftitah Hayati Nafisah",
+                                "ig": "Ifti_tatroman",
+                                "role": "Anggota Sasbud",
+                                "quote": "\"Hinaan adalah sebuah motivasi yang nyata \"",
+                                "username": "IftitahTatroman",
+                                "password": "Cancer0609"
+                            }
+                        ],
+                        "about": "Sastra Budaya"
+                    }
+                ]
+            },
+            {
+                "type": "container",
+                "name": "Bidang 2",
+                "group": "Structure III",
+                "sections": [
+                    {
+                        "slug": "akad",
+                        "name": "Akademis",
+                        "group": "Seksi 2.1",
+                        "logo": "images/logo/osis/akad.webp",
+                        "icon": "architecture",
+                        "members": [
+                            {
+                                "link": "osis/akad/cello",
+                                "name": "Marcello Lienarta",
+                                "ig": "-",
+                                "role": "Ketua Akademis",
+                                "quote": "-",
+                                "username": "marcellolienarta",
+                                "password": "marcellolienarta"
+                            },
+                            {
+                                "link": "osis/akad/fakhri",
+                                "name": "Muhammad Fakhri Mumtaz",
+                                "ig": "-",
+                                "role": "Wakil Ketua Akademis",
+                                "quote": "-",
+                                "username": "muhammadfakhri",
+                                "password": "muhammadfakhrimumtaz"
+                            },
+                            {
+                                "link": "osis/akad/joshua",
+                                "name": "Joshua Arya Pandhita Sitorus",
+                                "ig": "joshuaaaaps",
+                                "role": "Anggota Akademis",
+                                "quote": "malu bertanya sesat di jalan, banyak nanya dikira wartawan",
+                                "username": "joshuagantengslebew",
+                                "password": "skandalmarbud67detik"
+                            },
+                            {
+                                "link": "osis/akad/tasnim",
+                                "name": "Tasnim Mumtaz",
+                                "ig": "friednim",
+                                "role": "Anggota Akademis",
+                                "quote": "But a Book is only the Heart’s Portrait— every Page a Pulse.",
+                                "username": "friednim",
+                                "password": "dindingkepalakuning"
+                            },
+                            {
+                                "link": "osis/akad/nadal",
+                                "name": "Nadal Rhamdani Mario",
+                                "ig": "demariooo_",
+                                "role": "Anggota Akademis",
+                                "quote": "\"Mati dengan kenangan, bukan mimpi.\"",
+                                "username": "Sapyens",
+                                "password": "Sapyenssapyens"
+                            },
+                            {
+                                "link": "osis/akad/safior",
+                                "name": "Khansa Fiorenza",
+                                "ig": "khansafiorenzaa",
+                                "role": "Anggota Akademis",
+                                "quote": "Don’t need to be perfect, just keep making progress every day.",
+                                "username": "safiorrr",
+                                "password": "safiorrr0311"
+                            }
+                        ],
+                        "about": "Akademis"
+                    },
+                    {
+                        "slug": "dhl",
+                        "name": "Demokrasi, HAM, dan Lingkungan",
+                        "group": "Seksi 2.2",
+                        "logo": "images/logo/osis/dhl.webp",
+                        "icon": "groups",
+                        "members": [
+                            {
+                                "link": "osis/dhl/thalia",
+                                "name": "Thalia Zalfa Anindita",
+                                "ig": "-",
+                                "role": "Ketua DHL",
+                                "quote": "-",
+                                "username": "thaliazalfa",
+                                "password": "thaliazalfaanindita"
+                            },
+                            {
+                                "link": "osis/dhl/fathimmmm",
+                                "name": "Fathima Azahra Arubusman",
+                                "ig": "-",
+                                "role": "Wakil Ketua DHL",
+                                "quote": "-",
+                                "username": "fathimaazahra",
+                                "password": "fathimaazahraarubusman"
+                            },
+                            {
+                                "link": "osis/dhl/syamil",
+                                "name": "Muhammad Syamil Al Haqq",
+                                "ig": "samil.___aja",
+                                "role": "Anggota DHL",
+                                "quote": "great power comes with great responsibility",
+                                "username": "syamil",
+                                "password": "syamil310109"
+                            },
+                            {
+                                "link": "osis/dhl/evan",
+                                "name": "Evan Yosafat",
+                                "ig": "-",
+                                "role": "Anggota DHL",
+                                "quote": "-",
+                                "username": "evanyosafat",
+                                "password": "evanyosafat"
+                            },
+                            {
+                                "link": "osis/dhl/amanda",
+                                "name": "Amanda Lia Putri Subandi",
+                                "ig": "amandalia13",
+                                "role": "Anggota DHL",
+                                "quote": "Be human to the fullest",
+                                "username": "amandalia13",
+                                "password": "intothestar"
+                            }
+                        ],
+                        "about": "Demokrasi, HAM, dan Lingkungan"
+                    },
+                    {
+                        "slug": "rohani",
+                        "name": "Rohani",
+                        "group": "Seksi 2.3",
+                        "logo": "images/logo/osis/rohani.webp",
+                        "icon": "architecture",
+                        "members": [
+                            {
+                                "link": "osis/rohani/labib",
+                                "name": "Faqih Labib",
+                                "ig": "faqihlb_",
+                                "role": "Ketua Rohani",
+                                "quote": "Nun",
+                                "username": "usernamelabib",
+                                "password": "passwordlabib"
+                            },
+                            {
+                                "link": "osis/rohani/toreno",
+                                "name": "Toreno Matthias Sianturi",
+                                "ig": "-",
+                                "role": "Wakil Ketua Rohani",
+                                "quote": "-",
+                                "username": "torenomatthias",
+                                "password": "torenomatthiassianturi"
+                            },
+                            {
+                                "link": "osis/rohani/zulpan",
+                                "name": "Ahmad Zulfan Auliya",
+                                "ig": "zulfan_auliya",
+                                "role": "Anggota Rohani",
+                                "quote": "Alif Lam Mim",
+                                "username": "OsGhik,",
+                                "password": "Ghik.,"
+                            },
+                            {
+                                "link": "osis/rohani/dasha",
+                                "name": "Dasha Oriana Geraldine Michelle",
+                                "ig": "-",
+                                "role": "Anggota Rohani",
+                                "quote": "-",
+                                "username": "dashaoriana",
+                                "password": "dashaorianageraldinemichelle"
+                            }
+                        ],
+                        "about": "Rohani"
+                    }
+                ]
+            }
+        ]
+    },
+    "mpk": {
+        "theme": "blue",
+        "hero": {
+            "title": "Majelis Perwakilan Kelas",
+            "logo": "images/logo/general/mpk514.webp",
+            "slogan": "Selamat datang di MPK SMAN Unggulan MH Thamrin Kabinet Dharmandala Sandhyakala Tahun 2025/2026."
+        },
+        "structure": [
+            {
+                "type": "bidang",
+                "name": "Badan Pengurus Harian",
+                "group": "Structure I",
+                "logo": "images/logo/mpk/bph.webp",
+                "slug": "mpk-bph",
+                "members": [
+                    {
+                        "link": "mpk/bph/gisel",
+                        "name": "Gisella Frizy Putri Valianda",
+                        "ig": "-",
+                        "role": "Ketua MPK",
+                        "quote": "-",
+                        "username": "gisellafrizy",
+                        "password": "gisellafrizyputrivalianda"
+                    },
+                    {
+                        "link": "mpk/bph/bagas",
+                        "name": "Bagas Saputra",
+                        "ig": "-",
+                        "role": "Wakil Ketua MPK",
+                        "quote": "-",
+                        "username": "bagassaputra",
+                        "password": "bagassaputra"
+                    },
+                    {
+                        "link": "mpk/bph/ghina",
+                        "name": "Santia Ghina Murtaja",
+                        "ig": "-",
+                        "role": "Sekrehara 1",
+                        "quote": "-",
+                        "username": "santiaghina",
+                        "password": "santiaghinamurtaja"
+                    },
+                    {
+                        "link": "mpk/bph/naila_raisha",
+                        "name": "Naila Raisha Mulyanto P.",
+                        "ig": "-",
+                        "role": "Sekrehara 2",
+                        "quote": "-",
+                        "username": "nailaraisha",
+                        "password": "nailaraishamulyantop"
+                    },
+                    {
+                        "link": "mpk/bph/diandra",
+                        "name": "Diandra Kanaya Putri",
+                        "ig": "diandrakanayaa",
+                        "role": "Humas 1",
+                        "quote": "Live as if you were to die tomorrow. Learn as if you were to live forever",
+                        "username": "diandrakanaya",
+                        "password": "Naya130708"
+                    },
+                    {
+                        "link": "mpk/bph/najla",
+                        "name": "Najla' Hitana Dermawan",
+                        "ig": "-",
+                        "role": "Humas 2",
+                        "quote": "-",
+                        "username": "najlahitana",
+                        "password": "najlahitanadermawan"
+                    },
+                    {
+                        "link": "mpk/bph/kenzie_nabil",
+                        "name": "Kenzie Nabil Riefala",
+                        "ig": "-",
+                        "role": "Perangkat Aspirasi 1",
+                        "quote": "-",
+                        "username": "kenzienabil",
+                        "password": "kenzienabilriefala"
+                    },
+                    {
+                        "link": "mpk/bph/nadaura",
+                        "name": "Nadaura Kayyisah",
+                        "ig": "-",
+                        "role": "Perangkat Aspirasi 2",
+                        "quote": "-",
+                        "username": "nadaurakayyisah",
+                        "password": "nadaurakayyisah"
+                    }
+                ],
+                "about": "Badan Pengurus Harian"
+            },
+            {
+                "type": "container",
+                "name": "Commissioners",
+                "group": "Segments",
+                "sections": [
+                    {
+                        "slug": "komisi-a",
+                        "name": "Komisi A",
+                        "group": "Structure II",
+                        "logo": "images/logo/mpk/kom_a.webp",
+                        "icon": "gavel",
+                        "members": [
+                            {
+                                "link": "mpk/kom_a/danisha",
+                                "name": "Danisha Phuti Kayana Suyudi",
+                                "ig": "-",
+                                "role": "Ketua Komisi A",
+                                "quote": "-",
+                                "username": "danishaphuti",
+                                "password": "danishaphutikayanasuyudi"
+                            },
+                            {
+                                "link": "mpk/kom_a/naura",
+                                "name": "Naura Aulia Putri",
+                                "ig": "-",
+                                "role": "Anggota Komisi A",
+                                "quote": "-",
+                                "username": "nauraaulia",
+                                "password": "nauraauliaputri"
+                            },
+                            {
+                                "link": "mpk/kom_a/saut",
+                                "name": "Saut Bartholomeus J. S",
+                                "ig": "-",
+                                "role": "Anggota Komisi A",
+                                "quote": "-",
+                                "username": "sautbartholomeus",
+                                "password": "sautbartholomeusjs"
+                            },
+                            {
+                                "link": "mpk/kom_a/nabil",
+                                "name": "Nabil Pradana Ramaditya S.",
+                                "ig": "-",
+                                "role": "Anggota Komisi A",
+                                "quote": "-",
+                                "username": "nabilpradana",
+                                "password": "nabilpradanaramadityas"
+                            }
+                        ],
+                        "about": "Komisi A"
+                    },
+                    {
+                        "slug": "komisi-b",
+                        "name": "Komisi B",
+                        "group": "Structure III",
+                        "logo": "images/logo/mpk/kom_b.webp",
+                        "icon": "monitoring",
+                        "members": [
+                            {
+                                "link": "mpk/kom_b/amira_altha",
+                                "name": "Amira Althafunnisa",
+                                "ig": "amiraltha_fy",
+                                "role": "Ketua Komisi B",
+                                "quote": "“All we have to decide is what to do with the time that is given to us.”",
+                                "username": "etherformula",
+                                "password": "lucidn0ir!"
+                            },
+                            {
+                                "link": "mpk/kom_b/danu",
+                                "name": "Danu Rizky Setiawan",
+                                "ig": "danurizkysetiawannn",
+                                "role": "Anggota Komisi B",
+                                "quote": "\"The journey of a thousand miles starts with a single step\"",
+                                "username": "ayampekok",
+                                "password": "pekokayam"
+                            },
+                            {
+                                "link": "mpk/kom_b/kiyan",
+                                "name": "Muhammad Kiyan Arsali",
+                                "ig": "-",
+                                "role": "Anggota Komisi B",
+                                "quote": "-",
+                                "username": "muhammadkiyan",
+                                "password": "muhammadkiyanarsali"
+                            },
+                            {
+                                "link": "mpk/kom_b/jasmine",
+                                "name": "Jasmine Anastasya",
+                                "ig": "jas_smile06",
+                                "role": "Anggota Komisi B",
+                                "quote": "\"Tuhan sering kali bekerja dengan cara yang tidak masuk akal, agar manusia tidak berhenti belajar menggunakan iman.\"",
+                                "username": "Jasmine_syaa",
+                                "password": "Nanas manis"
+                            }
+                        ],
+                        "about": "Komisi B"
+                    },
+                    {
+                        "slug": "komisi-c",
+                        "name": "Komisi C",
+                        "group": "Structure IV",
+                        "logo": "images/logo/mpk/kom_c.webp",
+                        "icon": "public",
+                        "members": [
+                            {
+                                "link": "mpk/kom_c/georgina",
+                                "name": "Georgina Secillia Maretti Setia Lumban Gaol",
+                                "ig": "gsecilliaa",
+                                "role": "Ketua Komisi C",
+                                "quote": "memento mori, memento vivere",
+                                "username": "gsecilliaa",
+                                "password": "071908"
+                            },
+                            {
+                                "link": "mpk/kom_c/farhan",
+                                "name": "Muhammad Farhan",
+                                "ig": "-",
+                                "role": "Angota Komisi C",
+                                "quote": "-",
+                                "username": "muhammadfarhan",
+                                "password": "muhammadfarhan"
+                            },
+                            {
+                                "link": "mpk/kom_c/shakina",
+                                "name": "Shakina Arzelia",
+                                "ig": "-",
+                                "role": "Anggota Komisi C",
+                                "quote": "-",
+                                "username": "shakinaarzelia",
+                                "password": "shakinaarzelia"
+                            },
+                            {
+                                "link": "mpk/kom_c/azka_ziyad",
+                                "name": "Azka Ziyad Rifandika",
+                                "ig": "-",
+                                "role": "Anggota Komisi C",
+                                "quote": "-",
+                                "username": "azkaziyad",
+                                "password": "azkaziyadrifandika"
+                            },
+                            {
+                                "link": "mpk/kom_c/amira_nadia",
+                                "name": "Amira Nadia Purnama",
+                                "ig": "-",
+                                "role": "Anggota Komisi C",
+                                "quote": "-",
+                                "username": "amiranadia",
+                                "password": "amiranadiapurnama"
+                            }
+                        ],
+                        "about": "Komisi C"
+                    }
+                ]
+            }
+        ]
+    }
+}

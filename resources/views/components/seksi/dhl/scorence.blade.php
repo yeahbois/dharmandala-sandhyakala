@@ -1,0 +1,1 @@
+<x-proker.card href="/program-kerja/dhl/student-council-conference" seksi="DHL" proker="Student Council Conference" desc="[02/25] SCORENCE adalah acara yang mengajarkan terkait keterampilan teknis maupun nonteknis." imglink="\images\proker\dhl\scorence\IMG_0503600.webp"/>

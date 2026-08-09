@@ -1,0 +1,1 @@
+<x-proker.card href="/program-kerja/akademis/open-house" seksi="Akademis" proker="Open House" desc="[02/25] Kesempatan emas bagi peserta didik SMP untuk lebih mengenal MHT." imglink="\images\proker\akad\oh\IMG_1230600.webp"/>

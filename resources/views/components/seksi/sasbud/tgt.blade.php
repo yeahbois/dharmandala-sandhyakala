@@ -1,0 +1,1 @@
+<x-proker.card href="/program-kerja/sastra-budaya/thamrin-got-talent" seksi="Sastra Budaya" proker="Thamrin Got Talent" desc="[01/25] Ajang pencarian bakat bagi peserta didik SMA Negeri Unggulan M.H. Thamrin." imglink="images/proker/sasbud/tgt/637A9414600.webp"/>

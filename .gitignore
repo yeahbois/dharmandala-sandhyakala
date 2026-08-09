@@ -1,0 +1,17 @@
+# Dependencies
+/vendor/
+/node_modules/
+
+# Secrets & Environment
+.env
+.env.*
+/storage/credentials.json
+storage/*.json
+
+# Heavy Media & Temporary Files
+public/videos/
+*.MOV
+*.mov
+*.mp4
+*.zip
+/storage/app/

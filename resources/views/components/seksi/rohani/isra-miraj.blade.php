@@ -1,0 +1,1 @@
+<x-proker.card href="/program-kerja/rohani/perayaan-isra-miraj" seksi="Rohani" proker="Perayaan Isra Miraj" desc="[01//25] Perayaan Isra Miraj diisi dengan materi bermanfaat, games, dan perlombaan." imglink="images/proker/rohani/isramiraj/IMG_9859600.webp"/>
