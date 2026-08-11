@@ -11,14 +11,19 @@
         class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden w-full bg-background">
         <div class="absolute inset-0 bg-gradient-to-br from-surface to-surface-variant/10 -z-10"></div>
         <div class="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
-            <div class="absolute top-[-10%] right-[-10%] w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-primary/5 blur-[120px]"></div>
-            <div class="absolute bottom-[-10%] left-[-10%] w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-secondary/5 blur-[100px]"></div>
+            <div
+                class="absolute top-[-10%] right-[-10%] w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-primary/5 blur-[120px]">
+            </div>
+            <div
+                class="absolute bottom-[-10%] left-[-10%] w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-secondary/5 blur-[100px]">
+            </div>
         </div>
 
         <div class="relative z-10 mb-12 transition-all duration-700 w-full flex flex-col items-center">
             <img class="w-20 h-20 md:w-32 md:h-32 mx-auto mb-10 hover:scale-110 transition-all duration-700"
                 src="{{ asset('images/logo/general/mpk514.webp') }}" alt="MPK Logo" />
-            <h1 class="text-6xl sm:text-7xl md:text-9xl font-black tracking-tighter text-on-surface mb-8 leading-[0.85] uppercase">
+            <h1
+                class="text-6xl sm:text-7xl md:text-9xl font-black tracking-tighter text-on-surface mb-8 leading-[0.85] uppercase">
                 THALATION
             </h1>
             <p
@@ -43,32 +48,37 @@
             <div class="group">
                 <span class="material-symbols-outlined text-4xl mb-6 text-primary">forum</span>
                 <h3 class="text-2xl font-black mb-4 tracking-tighter uppercase">Aspirasi</h3>
-                <p class="text-on-surface-variant text-sm leading-relaxed font-medium">Menjadi wadah penyalur aspirasi antar seluruh komponen SMA Negeri Unggulan M. H. Thamrin.</p>
+                <p class="text-on-surface-variant text-sm leading-relaxed font-medium">Menjadi wadah penyalur aspirasi
+                    antar seluruh komponen SMA Negeri Unggulan M. H. Thamrin.</p>
             </div>
             <!-- Legislasi -->
             <div class="group">
                 <span class="material-symbols-outlined text-4xl mb-6 text-primary">gavel</span>
                 <h3 class="text-2xl font-black mb-4 tracking-tighter uppercase">Legislasi</h3>
-                <p class="text-on-surface-variant text-sm leading-relaxed font-medium">Merancang, mengubah, dan menetapkan AD/ART OSIS MPK dalam Sidang Paripurna di awal masa jabatan.</p>
+                <p class="text-on-surface-variant text-sm leading-relaxed font-medium">Merancang, mengubah, dan
+                    menetapkan AD/ART OSIS MPK dalam Sidang Paripurna di awal masa jabatan.</p>
             </div>
             <!-- Koreksi -->
             <div class="group">
                 <span class="material-symbols-outlined text-4xl mb-6 text-primary">rule</span>
                 <h3 class="text-2xl font-black mb-4 tracking-tighter uppercase">Koreksi</h3>
-                <p class="text-on-surface-variant text-sm leading-relaxed font-medium">Mengevaluasi atau memberikan penilaian terhadap program kerja OSIS.</p>
+                <p class="text-on-surface-variant text-sm leading-relaxed font-medium">Mengevaluasi atau memberikan
+                    penilaian terhadap program kerja OSIS.</p>
             </div>
             <!-- Supervisi -->
             <div class="group">
                 <span class="material-symbols-outlined text-4xl mb-6 text-primary">visibility</span>
                 <h3 class="text-2xl font-black mb-4 tracking-tighter uppercase">Supervisi</h3>
-                <p class="text-on-surface-variant text-sm leading-relaxed font-medium">Mengawasi jalannya AD/ART OSIS MPK serta program kerja pengurus OSIS.
+                <p class="text-on-surface-variant text-sm leading-relaxed font-medium">Mengawasi jalannya AD/ART OSIS
+                    MPK serta program kerja pengurus OSIS.
                 </p>
             </div>
             <!-- Advisi -->
             <div class="group">
                 <span class="material-symbols-outlined text-4xl mb-6 text-primary">lightbulb</span>
                 <h3 class="text-2xl font-black mb-4 tracking-tighter uppercase">Advisi</h3>
-                <p class="text-on-surface-variant text-sm leading-relaxed font-medium">Memberi saran selama perancangan dan perencanaan program kerja OSIS serta apabila terjadi kendala pada pelaksanaannya.</p>
+                <p class="text-on-surface-variant text-sm leading-relaxed font-medium">Memberi saran selama perancangan
+                    dan perencanaan program kerja OSIS serta apabila terjadi kendala pada pelaksanaannya.</p>
             </div>
         </div>
     </section>
@@ -90,35 +100,47 @@
                     class="bg-surface p-8 rounded-sm shadow-sm hover:shadow-xl transition-all duration-300 border border-outline/5 group hover:-translate-y-1">
                     <span class="material-symbols-outlined text-primary mb-4 text-3xl">auto_awesome</span>
                     <h4 class="font-black text-sm uppercase tracking-wider mb-2">Mantra MPK</h4>
-                    <p class="text-xs text-on-surface-variant font-medium leading-relaxed">MANTRA MPK (Masukan, Kritik, Saran, Evaluasi, dan Aspirasi) adalah wadah bagi siswa/i SMAN Unggulan M.H. Thamrin untuk menyalurkan aspirasinya dimanapun dan kapanpun melalui Thamrin Wall of Aspiration!</p>
+                    <p class="text-xs text-on-surface-variant font-medium leading-relaxed">MANTRA MPK (Masukan, Kritik,
+                        Saran, Evaluasi, dan Aspirasi) adalah wadah bagi siswa/i SMAN Unggulan M.H. Thamrin untuk
+                        menyalurkan aspirasinya dimanapun dan kapanpun melalui Thamrin Wall of Aspiration!</p>
                 </div>
                 <!-- Tanya MPK -->
                 <div
                     class="bg-surface p-8 rounded-sm shadow-sm hover:shadow-xl transition-all duration-300 border border-outline/5 group hover:-translate-y-1">
                     <span class="material-symbols-outlined text-primary mb-4 text-3xl">quiz</span>
                     <h4 class="font-black text-sm uppercase tracking-wider mb-2">Tanya MPK</h4>
-                    <p class="text-xs text-on-surface-variant font-medium leading-relaxed">Tanya MPK merupakan program kerja dimana semua warga sekolah dapat bertanya kepada MPK sebagai perantara dengan pihak sekolah. Pertanyaan akan dijawab oleh pihak sekolah agar aspirasi melalui wadah MPK lebih terdengar.</p>
+                    <p class="text-xs text-on-surface-variant font-medium leading-relaxed">Tanya MPK merupakan program
+                        kerja dimana semua warga sekolah dapat bertanya kepada MPK sebagai perantara dengan pihak
+                        sekolah. Pertanyaan akan dijawab oleh pihak sekolah agar aspirasi melalui wadah MPK lebih
+                        terdengar.</p>
                 </div>
                 <!-- #MPKepo -->
                 <div
                     class="bg-surface p-8 rounded-sm shadow-sm hover:shadow-xl transition-all duration-300 border border-outline/5 group hover:-translate-y-1">
                     <span class="material-symbols-outlined text-primary mb-4 text-3xl">explore</span>
                     <h4 class="font-black text-sm uppercase tracking-wider mb-2">#MPKepo</h4>
-                    <p class="text-xs text-on-surface-variant font-medium leading-relaxed">Kegiatan membuat konten di media sosial bertanya kepada warga SMAN Unggulan M. H. Thamrin mengenai situasi dan kondisi saat ini atau kegiatan yang berlangsung.</p>
+                    <p class="text-xs text-on-surface-variant font-medium leading-relaxed">Kegiatan membuat konten di
+                        media sosial bertanya kepada warga SMAN Unggulan M. H. Thamrin mengenai situasi dan kondisi saat
+                        ini atau kegiatan yang berlangsung.</p>
                 </div>
                 <!-- MPK Legislasi -->
                 <div
                     class="bg-surface p-8 rounded-sm shadow-sm hover:shadow-xl transition-all duration-300 border border-outline/5 group hover:-translate-y-1">
                     <span class="material-symbols-outlined text-primary mb-4 text-3xl">history_edu</span>
                     <h4 class="font-black text-sm uppercase tracking-wider mb-2">Legislasi</h4>
-                    <p class="text-xs text-on-surface-variant font-medium leading-relaxed">MPK Legislasi merupakan program kerja MPK dimana seluruh anggota OSIS dan MPK SMAN Unggulan M. H. Thamrin berkesempatan untuk menerima materi dan pengalaman dalam bidang legislatif secara langsung oleh lembaga pemerintahan.</p>
+                    <p class="text-xs text-on-surface-variant font-medium leading-relaxed">MPK Legislasi merupakan
+                        program kerja MPK dimana seluruh anggota OSIS dan MPK SMAN Unggulan M. H. Thamrin berkesempatan
+                        untuk menerima materi dan pengalaman dalam bidang legislatif secara langsung oleh lembaga
+                        pemerintahan.</p>
                 </div>
                 <!-- MACAPI -->
                 <div
                     class="bg-surface p-8 rounded-sm shadow-sm hover:shadow-xl transition-all duration-300 border border-outline/5 group hover:-translate-y-1">
                     <span class="material-symbols-outlined text-primary mb-4 text-3xl">nights_stay</span>
                     <h4 class="font-black text-sm uppercase tracking-wider mb-2">MACAPI</h4>
-                    <p class="text-xs text-on-surface-variant font-medium leading-relaxed">MACAPI atau Malam Chat Aspirasi dilakukan melalui OA Line MPK yang dikelola oleh BPH MPK. Pada MACAPI siswa/i bercengkrama melalui OA Line MPK dan akan dibalas oleh BPH MPK.</p>
+                    <p class="text-xs text-on-surface-variant font-medium leading-relaxed">MACAPI atau Malam Chat
+                        Aspirasi dilakukan melalui OA Line MPK yang dikelola oleh BPH MPK. Pada MACAPI siswa/i
+                        bercengkrama melalui OA Line MPK dan akan dibalas oleh BPH MPK.</p>
                 </div>
             </div>
         </div>
@@ -152,7 +174,8 @@
                         <div class="w-2.5 h-2.5 rounded-none bg-red-400"></div>
                         <div class="w-2.5 h-2.5 rounded-none bg-yellow-400"></div>
                         <div class="w-2.5 h-2.5 rounded-none bg-green-400"></div>
-                        <span class="ml-4 text-[10px] font-black uppercase tracking-widest opacity-40">STREAM ASPIRASI</span>
+                        <span class="ml-4 text-[10px] font-black uppercase tracking-widest opacity-40">STREAM
+                            ASPIRASI</span>
                     </div>
                     <div class="flex-1 overflow-hidden relative">
                         <!-- Unified Loader -->
@@ -160,7 +183,7 @@
                             <span class="material-symbols-outlined text-primary/20 text-4xl">database</span>
                         </div>
                         <iframe class="relative z-10 w-full h-full border-none"
-                            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRywDcq9Kgb9DCv1ycIdgpkG3VR1CRURsn30DNpBDY9DDu4n2co3IBlPzMm-M0XeAnNcP0RR83ei8OM/pubhtml?gid=0&amp;single=true&amp;widget=false&amp;headers=false&amp;range=B2:F17&amp;chrome=false"></iframe>
+                            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRywDcq9Kgb9DCv1ycIdgpkG3VR1CRURsn30DNpBDY9DDu4n2co3IBlPzMm-M0XeAnNcP0RR83ei8OM/pubhtml?gid=0&amp;single=true&amp;widget=false&amp;headers=false&amp;range=B2:F77&amp;chrome=false"></iframe>
                     </div>
                 </div>
             </div>
@@ -184,7 +207,8 @@
                 </div>
             </div>
             <div class="lg:w-1/2 order-1 lg:order-2 text-center lg:text-left">
-                <h2 class="text-[10px] md:text-xs uppercase tracking-[0.4em] font-black text-primary mb-6">Acara Sorotan</h2>
+                <h2 class="text-[10px] md:text-xs uppercase tracking-[0.4em] font-black text-primary mb-6">Acara Sorotan
+                </h2>
                 <h3 class="text-5xl md:text-7xl font-black tracking-tighter mb-8 leading-none uppercase">Malam
                     Chat<br />Aspirasi</h3>
                 <p
