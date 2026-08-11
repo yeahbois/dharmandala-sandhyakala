@@ -24,7 +24,7 @@
                 src="{{ asset('images/logo/general/mpk514.webp') }}" alt="MPK Logo" />
             <h1
                 class="text-6xl sm:text-7xl md:text-9xl font-black tracking-tighter text-on-surface mb-8 leading-[0.85] uppercase">
-                THALATION
+                T H A L A T I O N
             </h1>
             <p
                 class="text-xs md:text-xl text-on-surface-variant max-w-2xl mx-auto font-medium uppercase tracking-[0.3em] opacity-60 leading-relaxed px-4">
