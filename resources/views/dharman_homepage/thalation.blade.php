@@ -183,7 +183,7 @@
                             <span class="material-symbols-outlined text-primary/20 text-4xl">database</span>
                         </div>
                         <iframe class="relative z-10 w-full h-full border-none"
-                            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRywDcq9Kgb9DCv1ycIdgpkG3VR1CRURsn30DNpBDY9DDu4n2co3IBlPzMm-M0XeAnNcP0RR83ei8OM/pubhtml?gid=0&amp;single=true&amp;widget=false&amp;headers=false&amp;chrome=false"></iframe>
+                            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRywDcq9Kgb9DCv1ycIdgpkG3VR1CRURsn30DNpBDY9DDu4n2co3IBlPzMm-M0XeAnNcP0RR83ei8OM/pubhtml?gid=0&amp;single=true&amp;widget=false&amp;headers=false&amp;range=B2:F100&amp;chrome=false"></iframe>
                     </div>
                 </div>
             </div>
