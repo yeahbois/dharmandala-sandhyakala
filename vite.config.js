@@ -16,7 +16,7 @@ export default defineConfig({
         headers: {
             'Access-Control-Allow-Origin': '*',
         },
-        host: '0.0.0.0',        // Changed: allow Docker to expose this
+        host: 'localhost',        // Changed: allow Docker to expose this
         port: 5000,
         allowedHosts: true,
         hmr: {
