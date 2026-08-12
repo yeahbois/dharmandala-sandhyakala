@@ -223,9 +223,10 @@ Route::get('/kabinet/mpk/ds/bidang/{bidang}', function ($bidang) use ($cabinetDa
     ]);
 });
 
-Route::get('/kabinet/arsip/dharmakala', function () {
-    return "Hello!";
-});
+use App\Http\Controllers\CabinetArchiveController;
+
+Route::get('/kabinet/arsip/dharmakala', [CabinetArchiveController::class, 'viewArsip'])->name('kabinet.arsip.dharmakala');
+Route::get('/api/kabinet/arsip/scrape', [CabinetArchiveController::class, 'scrapeArsip'])->name('api.kabinet.arsip.scrape');
 
 // ThamNet
 Route::get('/thamnet', [ThamNetController::class, 'index'])->name('thamnet.home');
