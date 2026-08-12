@@ -17,9 +17,9 @@
                     {
                         "link": "osis/bph/rafif",
                         "name": "Rafif Shafy Safaraz Indratno",
-                        "ig": "Apip1708",
+                        "ig": "custom_test_ig_username",
                         "role": "Ketua Umum OSIS",
-                        "quote": "Be a museum.",
+                        "quote": "Testing custom quotes from database!",
                         "username": "Apip",
                         "password": "Apipsapi"
                     },
@@ -82,7 +82,7 @@
                         "name": "Khathir Arkananta Irawan",
                         "ig": "terseraharka",
                         "role": "Humas 1",
-                        "quote": "“I did it my way” — Frank Sinatra",
+                        "quote": "\u201cI did it my way\u201d \u2014 Frank Sinatra",
                         "username": "Arkaa",
                         "password": "arka1111"
                     },
@@ -160,7 +160,7 @@
                                 "name": "Hania Benika Putrimulia",
                                 "ig": "haniabenika",
                                 "role": "Anggota PUDO",
-                                "quote": "Every moment in life is captured with one click📷",
+                                "quote": "Every moment in life is captured with one click\ud83d\udcf7",
                                 "username": "haniabenika",
                                 "password": "benika10"
                             },
@@ -206,7 +206,7 @@
                                 "name": "Teuku Zharif Naraja Jacoeb",
                                 "ig": "teukuzharif",
                                 "role": "Anggota K3OR",
-                                "quote": "\"Too Deep to Turn Back\" — Caesar",
+                                "quote": "\"Too Deep to Turn Back\" \u2014 Caesar",
                                 "username": "teukuzharif",
                                 "password": "Pass12345"
                             },
@@ -261,7 +261,7 @@
                                 "name": "Aisyahbitha Early Ramadhanty",
                                 "ig": "ckissed",
                                 "role": "Ketua Sasbud",
-                                "quote": "But poetry, beauty, romance, love— these are what we stay alive for. ",
+                                "quote": "But poetry, beauty, romance, love\u2014 these are what we stay alive for. ",
                                 "username": "ckissed",
                                 "password": "bithasasbudcihuy"
                             },
@@ -359,7 +359,7 @@
                                 "name": "Tasnim Mumtaz",
                                 "ig": "friednim",
                                 "role": "Anggota Akademis",
-                                "quote": "But a Book is only the Heart’s Portrait— every Page a Pulse.",
+                                "quote": "But a Book is only the Heart\u2019s Portrait\u2014 every Page a Pulse.",
                                 "username": "friednim",
                                 "password": "dindingkepalakuning"
                             },
@@ -377,7 +377,7 @@
                                 "name": "Khansa Fiorenza",
                                 "ig": "khansafiorenzaa",
                                 "role": "Anggota Akademis",
-                                "quote": "Don’t need to be perfect, just keep making progress every day.",
+                                "quote": "Don\u2019t need to be perfect, just keep making progress every day.",
                                 "username": "safiorrr",
                                 "password": "safiorrr0311"
                             }
@@ -642,7 +642,7 @@
                                 "name": "Amira Althafunnisa",
                                 "ig": "amiraltha_fy",
                                 "role": "Ketua Komisi B",
-                                "quote": "“All we have to decide is what to do with the time that is given to us.”",
+                                "quote": "\u201cAll we have to decide is what to do with the time that is given to us.\u201d",
                                 "username": "etherformula",
                                 "password": "lucidn0ir!"
                             },
