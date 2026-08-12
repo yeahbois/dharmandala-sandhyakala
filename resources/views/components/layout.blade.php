@@ -61,17 +61,25 @@
 
     /* Slider Helper Navigation */
     .slider-nav-btn {
-      width: 32px; height: 32px; 
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       color: var(--theme-on-surface);
       transition: all 0.2s;
     }
-    .slider-nav-btn:hover { background: rgba(255,255,255,0.15); }
-    
+
+    .slider-nav-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
     @media (max-width: 1023px) {
-        .dp-slide { width: 100% !important; }
+      .dp-slide {
+        width: 100% !important;
+      }
     }
   </style>
 
@@ -240,8 +248,8 @@
                   <!-- Text -->
                   <span class="text-center">Kabinet</span>
                   <!-- Arrow -->
-                  <svg class="w-4 h-4 ml-2 flex-shrink-0" aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <svg class="w-4 h-4 ml-2 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    fill="none" viewBox="0 0 10 6">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="m1 1 4 4 4-4" />
                   </svg>
@@ -260,9 +268,9 @@
                     </li>
                   </ul>
                   <div class="py-1">
-                    <a href="#"
+                    <a href="/kabinet/arsip/dharmakala"
                       class="block px-4 py-2 text-sm text-on-surface-variant hover:bg-surface-variant/50">Arsip
-                      2024/2025</a>
+                      Dharmakala</a>
                   </div>
                 </div>
               </li>
@@ -278,7 +286,8 @@
       </nav>
     </header>
 
-    <div id="content" class="w-full max-w-full mx-auto pt-16 md:pt-20 lg:pt-24 flex flex-col items-center overflow-x-hidden">
+    <div id="content"
+      class="w-full max-w-full mx-auto pt-16 md:pt-20 lg:pt-24 flex flex-col items-center overflow-x-hidden">
 
       @if(session()->has('success') || isset($alert))
         <x-alert :alert="session('success') ?? ($alert ?? '')" :forwardLink="$alertForward ?? '/'" />
@@ -315,7 +324,8 @@
                 class="w-10 h-10 md:w-12 md:h-12 bg-[#313338] shadow-xl ring-offset-2 ring-2 ring-transparent group-hover:ring-[#FFFFFF] transition-all border border-outline/20">
               </div>
               <span
-                class="text-[8px] md:text-[9px] mt-3 font-black uppercase tracking-[0.2em] text-on-surface opacity-40 group-hover:opacity-100 transition-opacity whitespace-nowrap">Ultra Dark</span>
+                class="text-[8px] md:text-[9px] mt-3 font-black uppercase tracking-[0.2em] text-on-surface opacity-40 group-hover:opacity-100 transition-opacity whitespace-nowrap">Ultra
+                Dark</span>
             </button>
             <button onclick="setAppTheme('pastel-blue-purple')" class="flex flex-col items-center group">
               <div

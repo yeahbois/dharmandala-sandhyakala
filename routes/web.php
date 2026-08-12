@@ -223,6 +223,10 @@ Route::get('/kabinet/mpk/ds/bidang/{bidang}', function ($bidang) use ($cabinetDa
     ]);
 });
 
+Route::get('/kabinet/arsip/dharmakala', function () {
+    return "Hello!";
+});
+
 // ThamNet
 Route::get('/thamnet', [ThamNetController::class, 'index'])->name('thamnet.home');
 Route::get('/thamnet/blog/editor/{slug?}', [ThamNetController::class, 'editor'])->middleware('auth')->name('thamnet.editor');
